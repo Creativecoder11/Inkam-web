@@ -33,7 +33,7 @@ export default function HeroSection() {
       <main className="overflow-hidden">
         <div
           aria-hidden
-          className="absolute inset-0 isolate hidden opacity-65 contain-strict lg:block"
+          className=" inset-0 isolate hidden opacity-65 contain-strict lg:block"
         >
           
         </div>

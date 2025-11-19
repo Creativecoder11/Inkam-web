@@ -1,6 +1,7 @@
 "use client";
 
 
+import Benefits from "@/components/sections/home/benefits";
 import FeaturesSection from "@/components/sections/home/features-section";
 import HeroSection from "@/components/sections/home/hero-section";
 import LogoCloud from "@/components/sections/home/logo-marque";
@@ -14,7 +15,8 @@ export default function HomePage() {
       <LogoCloud />
       <StatsSection />
       <FeaturesSection/>
-
+      <Benefits/>
+    
     </div>
   );
 }

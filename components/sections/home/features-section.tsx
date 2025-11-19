@@ -1,5 +1,12 @@
 import React, { useState } from "react";
-import { Handshake, Network, Package } from "lucide-react";
+import Image from "next/image";
+
+// Import your custom icons
+import AcquisitionIcon from "@/public/asset/icons/feature-i-3.svg";
+import ResellingIcon from "@/public/asset/icons/feature-i-2.svg";
+import CollectionIcon from "@/public/asset/icons/feature-i-1.svg";
+import CardVector from "@/public/asset/icons/card-vector.svg";
+import ButtonArrow from "@/public/asset/icons/link-btn-arrow-Icon.svg";
 
 interface SpotlightCardProps {
   children: React.ReactNode;
@@ -11,7 +18,7 @@ interface FeatureCardProps {
   number: string;
   title: string;
   description: string;
-  icon: React.ComponentType<{ className?: string }>;
+  iconSrc: string;
   spotlightColor: string;
 }
 
@@ -19,7 +26,7 @@ interface Feature {
   number: string;
   title: string;
   description: string;
-  icon: React.ComponentType<{ className?: string }>;
+  iconSrc: string;
   spotlightColor: string;
 }
 
@@ -45,7 +52,7 @@ const SpotlightCard: React.FC<SpotlightCardProps> = ({
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setOpacity(1)}
       onMouseLeave={() => setOpacity(0)}
-      className={`relative overflow-hidden rounded-2xl bg-gradient-to-b from-gray-900 to-black border border-gray-800 ${className}`}
+      className={`relative overflow-hidden rounded-2xl ${className}`}
     >
       <div
         className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500"
@@ -64,14 +71,14 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
   number,
   title,
   description,
-  icon: Icon,
+  iconSrc,
   spotlightColor,
 }) => {
   const [isHovered, setIsHovered] = useState<boolean>(false);
 
   return (
     <SpotlightCard
-      className=" transition-transform duration-300 hover:scale-[1.02]"
+      className="transition-all duration-300 hover:scale-[1.02] hover:bg-[#161518]"
       spotlightColor={spotlightColor}
     >
       <div
@@ -79,40 +86,43 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        {/* Overlay Image Effect */}
-        <div
-          className={`absolute inset-0 bg-gradient-to-br from-orange-500/10 via-transparent to-transparent transition-opacity duration-500 ${
-            isHovered ? "opacity-100" : "opacity-0"
-          }`}
-        />
-
         {/* Top Right Icon on Hover */}
         <div
-          className={`absolute top-6 right-6 w-12 h-12 rounded-xl bg-orange-500/20 backdrop-blur-sm flex items-center justify-center transition-all duration-500 ${
-            isHovered ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4"
+          className={`absolute -top-5 -right-22 rounded-xl w-50 h-auto flex items-center justify-center transition-all duration-500 ${
+            isHovered ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-6"
           }`}
         >
-          <Icon className="w-6 h-6 text-orange-500" />
+          <Image
+            src={CardVector}
+            alt={title}
+            width={210}
+            height={24}
+            className="object-contain"
+          />
         </div>
 
         {/* Content */}
         <div className="relative z-10">
           {/* Number and Title */}
           <div className="flex items-center gap-3 mb-6">
-            <span className="text-orange-500 text-xl font-bold">{number}</span>
-            <h3 className="text-white text-xl font-semibold">{title}</h3>
+            <span className="text-(--orange) text-2xl font-medium">{number}</span>
+            <h3 className="text-white text-2xl font-medium">{title}</h3>
           </div>
 
           {/* Icon */}
           <div className="mb-6">
             <div
               className={`w-16 h-16 rounded-2xl flex items-center justify-center transition-all duration-300 ${
-                isHovered ? "bg-orange-500 scale-110" : "bg-gray-800"
+                isHovered ? "bg-(--orange) scale-110" : "bg-white/5"
               }`}
             >
-              <Icon
-                className={`w-8 h-8 transition-colors duration-300 ${
-                  isHovered ? "text-white" : "text-orange-500"
+              <Image
+                src={iconSrc}
+                alt={title}
+                width={32}
+                height={32}
+                className={`object-contain transition-all duration-300 ${
+                  isHovered ? "brightness-0 invert" : ""
                 }`}
               />
             </div>
@@ -124,19 +134,27 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
           </p>
 
           {/* Learn More Link */}
-          <button className="group flex items-center gap-2 text-orange-500 font-medium hover:text-orange-400 transition-colors">
-            Learn More
+          <button className="group relative inline-flex items-center gap-2 text-white font-medium transition-colors overflow-hidden">
+            <span className="relative">
+              Learn More
+              {/* Animated Underline */}
+              <span className="absolute bottom-0 left-0 h-[2px] w-0 bg-orange-500 transition-all duration-500 ease-out group-hover:w-full"></span>
+            </span>
+            {/* Animated Arrow */}
             <svg
-              className="w-4 h-4 transform transition-transform group-hover:translate-x-1"
-              fill="none"
+              width="20"
+              height="20"
               viewBox="0 0 24 24"
-              stroke="currentColor"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              className="opacity-100 -translate-x-1 transition-all duration-500 ease-out group-hover:opacity-100 group-hover:translate-x-0"
             >
               <path
+                d="M7 17L17 7M17 7H7M17 7V17"
+                stroke="currentColor"
+                strokeWidth="1.5"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                strokeWidth={2}
-                d="M9 5l7 7-7 7"
               />
             </svg>
           </button>
@@ -144,7 +162,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
 
         {/* Decorative Elements */}
         <div
-          className={`absolute top-0 right-0 w-32 h-32 bg-orange-500/5 rounded-full blur-3xl transition-opacity duration-500 ${
+          className={`absolute top-0 right-0 w-32 h-32 bg-(--orange)/5 rounded-full blur-3xl transition-opacity duration-500 ${
             isHovered ? "opacity-100" : "opacity-0"
           }`}
         />
@@ -161,7 +179,7 @@ export default function FeaturesSection(): JSX.Element {
       title: "Acquisition",
       description:
         "Helps businesses attract and onboard new users, merchants, and leads through digital and field campaigns.",
-      icon: Handshake,
+      iconSrc: AcquisitionIcon,
       spotlightColor: "rgba(249, 115, 22, 0.2)",
     },
     {
@@ -169,7 +187,7 @@ export default function FeaturesSection(): JSX.Element {
       title: "Product Reselling",
       description:
         "Helps businesses attract and onboard new users, merchants, and leads through digital and field campaigns.",
-      icon: Network,
+      iconSrc: ResellingIcon,
       spotlightColor: "rgba(249, 115, 22, 0.2)",
     },
     {
@@ -177,13 +195,13 @@ export default function FeaturesSection(): JSX.Element {
       title: "Order Collection",
       description:
         "Helps businesses attract and onboard new users, merchants, and leads through digital and field campaigns.",
-      icon: Package,
+      iconSrc: CollectionIcon,
       spotlightColor: "rgba(249, 115, 22, 0.2)",
     },
   ];
 
   return (
-    <div className=" bg-black py-20 px-4">
+    <div className=" py-20 px-4">
       <div className="max-w-7xl mx-auto space-y-12">
         <div className="text-white flex flex-col gap-6">
           {/* Heading Text */}
@@ -199,8 +217,8 @@ export default function FeaturesSection(): JSX.Element {
                 <path
                   d="M166 1H1"
                   stroke="url(#paint0_linear_2239_2185)"
-                  stroke-width="2"
-                  stroke-linecap="round"
+                  strokeWidth="2"
+                  strokeLinecap="round"
                 />
                 <defs>
                   <linearGradient
@@ -211,8 +229,8 @@ export default function FeaturesSection(): JSX.Element {
                     y2="45.5518"
                     gradientUnits="userSpaceOnUse"
                   >
-                    <stop stop-color="#FF8800" />
-                    <stop offset="0.981629" stop-color="#0F0E11" />
+                    <stop stopColor="#FF8800" />
+                    <stop offset="0.981629" stopColor="#0F0E11" />
                   </linearGradient>
                 </defs>
               </svg>
@@ -229,8 +247,8 @@ export default function FeaturesSection(): JSX.Element {
                 <path
                   d="M1 1H166"
                   stroke="url(#paint0_linear_2239_2159)"
-                  stroke-width="2"
-                  stroke-linecap="round"
+                  strokeWidth="2"
+                  strokeLinecap="round"
                 />
                 <defs>
                   <linearGradient
@@ -241,8 +259,8 @@ export default function FeaturesSection(): JSX.Element {
                     y2="45.5518"
                     gradientUnits="userSpaceOnUse"
                   >
-                    <stop stop-color="#FF8800" />
-                    <stop offset="0.981629" stop-color="#0F0E11" />
+                    <stop stopColor="#FF8800" />
+                    <stop offset="0.981629" stopColor="#0F0E11" />
                   </linearGradient>
                 </defs>
               </svg>
@@ -251,12 +269,21 @@ export default function FeaturesSection(): JSX.Element {
           <h2 className="text-4xl font-medium lg:text-6xl text-center">
             What We Offer
           </h2>
-
-          {/* Grid Layout */}
         </div>
+
+        {/* Grid Layout */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {features.map((feature, index) => (
-            <FeatureCard key={index} {...feature} />
+            <React.Fragment key={index}>
+              <FeatureCard {...feature} />
+
+              {/* Add HR after every full row (3 cards) */}
+              {(index + 1) % 3 === 0 && index !== features.length - 1 && (
+                <div className="col-span-3">
+                  <div className="h-px w-full bg-white/20"></div>
+                </div>
+              )}
+            </React.Fragment>
           ))}
         </div>
       </div>

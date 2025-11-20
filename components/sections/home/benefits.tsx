@@ -1,9 +1,34 @@
 import BenefitsCharts from "@/components/ui/benefits-charts";
+import { Users, Clock, TrendingUp } from "lucide-react";
+import ExpandIcon from "@/public/asset/icons/benefits-icon-1.svg";
+import SaveTimeIcon from "@/public/asset/icons/benefits-icon-2.svg";
+import GrowthIcon from "@/public/asset/icons/benefits-icon-3.svg";
+import Image from "next/image";
 import React from "react";
 
 export default function Benefits() {
+  const features = [
+    {
+      icon: <Image src={ExpandIcon} alt="icon" width={24} height={24} />,
+      title: "Expand Your Reach",
+      description:
+        "Access new markets and millions of untapped consumers through Inkam's 19,000+ agents covering 99% of Bangladesh.",
+    },
+    {
+      icon: <Image src={SaveTimeIcon} alt="icon" width={24} height={24} />,
+      title: "Save Time & Cost",
+      description:
+        "Inkam's technology-driven network to reduce marketing expenses, streamline distribution, and boost ROI with efficient operations.",
+    },
+    {
+      icon: <Image src={GrowthIcon} alt="icon" width={24} height={24} />,
+      title: "Drive Real Growth",
+      description:
+        "Use data intelligence and a nationwide sales force to increase leads, accelerate sales, and grow your business faster than ever.",
+    },
+  ];
   return (
-    <div className="max-w-7xl mx-auto space-y-12">
+    <div className="max-w-7xl my-30 mx-auto space-y-12">
       <div className="text-white flex flex-col gap-6">
         {/* Heading Text */}
         <div className="flex justify-center items-center gap-4">
@@ -71,12 +96,34 @@ export default function Benefits() {
           Together, We Build <br /> the Future of Distribution
         </h2>
       </div>
-      <div className="flex">
-        <div className="w-1/2"> 
-            <BenefitsCharts />
+      <div className="flex gap-10">
+        <div className="w-1/2">
+          <BenefitsCharts />
         </div>
-        <div>
-            <h2>ss</h2>
+        <div className="w-1/2">
+          <div className="mx-auto space-y-4">
+            {features.map((feature, index) => (
+              <div key={index} className="bg-[#161518] p-6 rounded-[20px] space-y-4">
+                {/* Logo and Heading in on e div */}
+                <div className="flex items-center gap-6">
+                  <div className="bg-white/5 p-5 rounded-xl">
+                    {feature.icon}
+                  </div>
+                  <h2 className="text-2xl font-medium text-white">
+                    {feature.title}
+                  </h2>
+                </div>
+
+                {/* Horizontal line */}
+                <hr className="border-0 h-1 bg-[linear-gradient(90deg,rgba(255,255,255,0.30)_0%,rgba(39,38,41,0.30)_100%)]" />
+
+                {/* Description */}
+                <p className="text-(--grey) text-lg leading-relaxed">
+                  {feature.description}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>

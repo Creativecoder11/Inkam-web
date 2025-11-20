@@ -78,12 +78,12 @@ export default function BenefitsCharts() {
           </div>
 
           {/* Grid lines */}
-          <div className="ml-16 relative" style={{ height: "400px" }}>
+          <div className="ml-16 relative" style={{ height: "460px" }}>
             {[0, 1, 2, 3, 4, 5].map((i) => (
               <div
                 key={i}
                 className="absolute w-full border-t border-dashed border-gray-700"
-                style={{ top: `${i * ((maxHeight + 20) / 6.9)}px` }}
+                style={{ top: `${i * ((maxHeight + 20) / 5.9)}px` }}
               ></div>
             ))}
 

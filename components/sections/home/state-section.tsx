@@ -68,7 +68,7 @@ export default function StatsSection() {
   };
 
   return (
-    <section className="py-12 md:py-20 " ref={sectionRef}>
+    <section className="py-12 md:py-30 " ref={sectionRef}>
       <div className=" max-w-7xl mx-auto space-y-12 text-white">
         <div className="flex justify-start items-center gap-4">
           <p>ABOUT US</p>

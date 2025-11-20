@@ -201,7 +201,7 @@ export default function FeaturesSection(): JSX.Element {
   ];
 
   return (
-    <div className=" py-20 px-4">
+    <div className=" py-30 px-4">
       <div className="max-w-7xl mx-auto space-y-12">
         <div className="text-white flex flex-col gap-6">
           {/* Heading Text */}

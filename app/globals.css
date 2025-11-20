@@ -159,6 +159,16 @@
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
 }
+/* ACTIVE SWIPER SLIDE BORDER */
+.swiper-slide.swiper-slide-active {
+  border-color: #4f46e5 !important; /* indigo-600 */
+}
+
+/* ACTIVE SLIDE TEXT + ICON COLOR */
+.swiper-slide.swiper-slide-active * {
+  color: #4f46e5 !important;
+}
+
 
 @layer base {
   * {

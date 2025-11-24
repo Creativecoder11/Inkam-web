@@ -83,8 +83,8 @@ export default function StatsSection() {
               <path
                 d="M1 1H166"
                 stroke="url(#paint0_linear_2239_2159)"
-                stroke-width="2"
-                stroke-linecap="round"
+                strokeWidth="2"
+                strokeLinecap="round"
               />
               <defs>
                 <linearGradient
@@ -95,8 +95,8 @@ export default function StatsSection() {
                   y2="45.5518"
                   gradientUnits="userSpaceOnUse"
                 >
-                  <stop stop-color="#FF8800" />
-                  <stop offset="0.981629" stop-color="#0F0E11" />
+                  <stop stopColor="#FF8800" />
+                  <stop offset="0.981629" stopColor="#0F0E11" />
                 </linearGradient>
               </defs>
             </svg>

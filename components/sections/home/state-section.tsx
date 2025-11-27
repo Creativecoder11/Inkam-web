@@ -1,5 +1,7 @@
 "use client";
 
+
+import BgBlurColor from "@/components/ui/bgBlurColor";
 import { useEffect, useRef, useState } from "react";
 
 export default function StatsSection() {
@@ -11,7 +13,7 @@ export default function StatsSection() {
   ];
 
   const duration = 2500; // 2.5 seconds
-  const sectionRef = useRef<HTMLDivElement | null>(null);
+  const sectionRef = useRef<HTMLElement | null>(null);
   const [hasAnimated, setHasAnimated] = useState(false);
   const [currentValues, setCurrentValues] = useState(stats.map(() => 0));
 
@@ -29,6 +31,7 @@ export default function StatsSection() {
     if (sectionRef.current) observer.observe(sectionRef.current);
 
     return () => observer.disconnect();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [hasAnimated]);
 
   const animateNumbers = () => {
@@ -68,33 +71,26 @@ export default function StatsSection() {
   };
 
   return (
-    <section className="py-12 md:py-30 " ref={sectionRef}>
-      <div className=" max-w-7xl mx-auto space-y-12 text-white">
+    // <-- IMPORTANT: make this section positioned so absolute children (BgBlurColor) can reference it
+    <section className="py-12 md:py-30 relative" ref={sectionRef}>
+      {/* BgBlurColor must be placed BEFORE content so it sits behind via -z-10 */}
+      <BgBlurColor
+        leftColor="bg-blue-500/30"
+        rightColor="bg-orange-500/30"
+        leftSize="w-[600px] h-[500px]"
+        rightSize="w-[400px] h-[380px]"
+      />
+
+      {/* Content must be above the blur, so give this wrapper a positive z-index */}
+      <div className="max-w-7xl mx-auto space-y-12 text-white relative z-10">
         <div className="flex justify-start items-center gap-4">
           <p>ABOUT US</p>
           <div>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="167"
-              height="2"
-              viewBox="0 0 167 2"
-              fill="none"
-            >
-              <path
-                d="M1 1H166"
-                stroke="url(#paint0_linear_2239_2159)"
-                strokeWidth="2"
-                strokeLinecap="round"
-              />
+            {/* svg omitted for brevity */}
+            <svg xmlns="http://www.w3.org/2000/svg" width="167" height="2" viewBox="0 0 167 2" fill="none">
+              <path d="M1 1H166" stroke="url(#paint0_linear_2239_2159)" strokeWidth="2" strokeLinecap="round" />
               <defs>
-                <linearGradient
-                  id="paint0_linear_2239_2159"
-                  x1="-3.99979"
-                  y1="0.49994"
-                  x2="8.92156"
-                  y2="45.5518"
-                  gradientUnits="userSpaceOnUse"
-                >
+                <linearGradient id="paint0_linear_2239_2159" x1="-3.99979" y1="0.49994" x2="8.92156" y2="45.5518" gradientUnits="userSpaceOnUse">
                   <stop stopColor="#FF8800" />
                   <stop offset="0.981629" stopColor="#0F0E11" />
                 </linearGradient>
@@ -102,23 +98,20 @@ export default function StatsSection() {
             </svg>
           </div>
         </div>
-        <div className="flex justify-between items-end z-10  text-left">
+
+        <div className="flex justify-between items-end text-left">
           <h2 className="text-4xl font-medium lg:text-6xl w-full md:w-1/2">
             From a Vision to a Nationwide Network
           </h2>
           <p className="w-full md:w-1/2 text-[16px] text-(--grey) pl-20">
-            Inkam connects digital businesses with millions of consumers through
-            a powerful agent network, bridging market gaps and driving inclusive
-            digital growth across Bangladesh.
+            Inkam connects digital businesses with millions of consumers through a powerful agent network, bridging market gaps and driving inclusive digital growth across Bangladesh.
           </p>
         </div>
 
         <div className="grid gap-10 divide-y divide-gray-700 *:text-left md:grid-cols-4 md:gap-6 md:divide-x md:divide-y-0">
           {stats.map((stat, index) => (
             <div key={stat.label} className="space-y-2">
-              <div className="text-4xl md:text-5xl">
-                {formatNumber(currentValues[index], stat.format)}
-              </div>
+              <div className="text-4xl md:text-5xl">{formatNumber(currentValues[index], stat.format)}</div>
               <p className="text-(--grey)">{stat.label}</p>
             </div>
           ))}

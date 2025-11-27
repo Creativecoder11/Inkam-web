@@ -53,16 +53,8 @@ function Carousel({
     {
       ...opts,
       axis: orientation === "horizontal" ? "x" : "y",
-
-      draggable: true,
-      dragFree: false,
       loop: true,
-      inViewThreshold: 0.85,
-      speed: 6,
-      duration: 40,
-      watchDrag: true,
-      watchSlides: true,
-      ease: (t) => 1 - Math.pow(1 - t, 3), // soft ease-out
+      skipSnaps: false,
     },
     plugins
   )
@@ -103,7 +95,9 @@ function Carousel({
     api.on("reInit", onSelect)
     api.on("select", onSelect)
 
-    return () => api?.off("select", onSelect)
+    return () => {
+      api?.off("select", onSelect)
+    }
   }, [api, onSelect])
 
   return (
@@ -142,7 +136,7 @@ function CarouselContent({ className, ...props }: React.ComponentProps<"div">) {
       <div
         className={cn(
           "flex",
-          orientation === "horizontal" ? "-ml-4" : "-mt-4 flex-col",
+          orientation === "horizontal" ? "-ml-8" : "-mt-4 flex-col",
           className
         )}
         {...props}
@@ -161,7 +155,7 @@ function CarouselItem({ className, ...props }: React.ComponentProps<"div">) {
       data-slot="carousel-item"
       className={cn(
         "min-w-0 shrink-0 grow-0 basis-full",
-        orientation === "horizontal" ? "pl-4" : "pt-4",
+        orientation === "horizontal" ? "pl-8" : "pt-4",
         className
       )}
       {...props}

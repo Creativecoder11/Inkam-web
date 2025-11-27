@@ -6,7 +6,7 @@ import Image from "next/image";
 
 export default function AwardsSection() {
   return (
-    <div className="w-full max-w-7xl mx-auto py-16 ">
+    <div className="w-full max-w-7xl mx-auto py-25 ">
       <div className="text-white flex flex-col gap-6">
         {/* Heading Text */}
         <div className="flex justify-center items-center gap-4">
@@ -39,7 +39,7 @@ export default function AwardsSection() {
               </defs>
             </svg>
           </div>
-          <p>ABOUT US</p>
+          <p>AWARDS</p>
           <div>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -71,7 +71,7 @@ export default function AwardsSection() {
           </div>
         </div>
         <h2 className="text-4xl font-medium leading-18 lg:text-6xl text-center">
-          Together, We Build <br /> the Future of Distribution
+          Achievements & Recognitions
         </h2>
       </div>
 

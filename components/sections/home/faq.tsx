@@ -11,30 +11,35 @@ export default function Faq() {
   const faqItems = [
     {
       id: "item-1",
+      no: "01.",
       question: "How long does shipping take?",
       answer:
         "Standard shipping takes 3-5 business days, depending on your location. Express shipping options are available at checkout for 1-2 business day delivery.",
     },
     {
       id: "item-2",
+      no: "02.",
       question: "What payment methods do you accept?",
       answer:
         "We accept all major credit cards (Visa, Mastercard, American Express), PayPal, Apple Pay, and Google Pay. For enterprise customers, we also offer invoicing options.",
     },
     {
       id: "item-3",
+      no: "03.",
       question: "Can I change or cancel my order?",
       answer:
         "You can modify or cancel your order within 1 hour of placing it. After this window, please contact our customer support team who will assist you with any changes.",
     },
     {
       id: "item-4",
+      no: "04.",
       question: "Do you ship internationally?",
       answer:
         "Yes, we ship to over 50 countries worldwide. International shipping typically takes 7-14 business days. Additional customs fees may apply depending on your country's import regulations.",
     },
     {
       id: "item-5",
+      no: "05.",
       question: "What is your return policy?",
       answer:
         "We offer a 30-day return policy for most items. Products must be in original condition with tags attached. Some specialty items may have different return terms, which will be noted on the product page.",
@@ -42,10 +47,10 @@ export default function Faq() {
   ];
 
   return (
-    <div className="flex justify-between max-w-7xl mx-auto ">
-      <div className="w-1/2 space-y-12">
+    <div className="flex justify-between max-w-7xl py-25 mx-auto ">
+      <div className="w-1/2 space-y-7">
         <div className="flex text-white justify-start items-center gap-4">
-          <p>ABOUT US</p>
+          <p>FAQ</p>
           <div>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -77,8 +82,9 @@ export default function Faq() {
           </div>
         </div>
         <div className="flex text-white justify-between items-end z-10  text-left">
-          <h2 className="text-4xl font-medium lg:text-6xl">
-            Everything You<br /> Need to Know
+          <h2 className="text-4xl font-medium leading-18 lg:text-6xl">
+            Everything You
+            <br /> Need to Know
           </h2>
         </div>
       </div>
@@ -88,35 +94,28 @@ export default function Faq() {
             <Accordion
               type="single"
               collapsible
-              className="bg-muted dark:bg-muted/50 w-full rounded-2xl p-1"
+              className=" w-full rounded-2xl p-1"
             >
               {faqItems.map((item) => (
                 <div className="group" key={item.id}>
                   <AccordionItem
                     value={item.id}
-                    className="data-[state=open]:bg-card dark:data-[state=open]:bg-muted peer rounded-xl border-none px-7 py-1 data-[state=open]:border-none data-[state=open]:shadow-sm"
+                    className="data-[state=open]:bg-[#161518] text-white text-xl dark:data-[state=open]:bg-muted peer rounded-xl border-none px-7 py-5 data-[state=open]:border-none data-[state=open]:shadow-sm"
                   >
-                    <AccordionTrigger className="cursor-pointer text-base hover:no-underline">
-                      {item.question}
+                    <AccordionTrigger className="cursor-pointer  text-xl hover:no-underline">
+                      <div className="flex gap-3">
+                        <span className="text-(--orange)">{item.no}</span> 
+                        {item.question}
+                      </div>
                     </AccordionTrigger>
                     <AccordionContent>
-                      <p className="text-base">{item.answer}</p>
+                      <p className="text-base text-(--grey)">{item.answer}</p>
                     </AccordionContent>
                   </AccordionItem>
-                  <hr className="mx-7 border-dashed group-last:hidden peer-data-[state=open]:opacity-0" />
+                  <hr className=" border-chart-1 border-white/20 group-last:hidden peer-data-[state=open]:opacity-0" />
                 </div>
               ))}
             </Accordion>
-
-            <p className="text-muted-foreground mt-6 px-8">
-              Can't find what you're looking for? Contact our{" "}
-              <Link
-                href="#"
-                className="text-primary font-medium hover:underline"
-              >
-                customer support team
-              </Link>
-            </p>
           </div>
         </div>
       </div>

@@ -28,7 +28,7 @@ export default function Benefits() {
     },
   ];
   return (
-    <div className="max-w-7xl my-30 mx-auto space-y-12">
+    <div className="max-w-7xl py-25 mx-auto space-y-12">
       <div className="text-white flex flex-col gap-6">
         {/* Heading Text */}
         <div className="flex justify-center items-center gap-4">
@@ -115,7 +115,7 @@ export default function Benefits() {
                 </div>
 
                 {/* Horizontal line */}
-                <hr className="border-0 h-1 bg-[linear-gradient(90deg,rgba(255,255,255,0.30)_0%,rgba(39,38,41,0.30)_100%)]" />
+                <hr className="border-0 h-[1px] bg-[linear-gradient(90deg,rgba(255,255,255,0.30)_0%,rgba(39,38,41,0.30)_100%)]" />
 
                 {/* Description */}
                 <p className="text-(--grey) text-lg leading-relaxed">

@@ -74,12 +74,12 @@ export default function StatsSection() {
     // <-- IMPORTANT: make this section positioned so absolute children (BgBlurColor) can reference it
     <section className="py-12 md:py-30 relative" ref={sectionRef}>
       {/* BgBlurColor must be placed BEFORE content so it sits behind via -z-10 */}
-      <BgBlurColor
-        leftColor="bg-blue-500/30"
-        rightColor="bg-orange-500/30"
-        leftSize="w-[600px] h-[500px]"
-        rightSize="w-[400px] h-[380px]"
-      />
+      {/* <BgBlurColor
+        rightColor="bg-blue-500/40"
+        leftColor="bg-orange-500/40"
+        leftSize="w-[100px] h-[200px]"
+        rightSize="w-[100px] h-[200px]"
+      /> */}
 
       {/* Content must be above the blur, so give this wrapper a positive z-index */}
       <div className="max-w-7xl mx-auto space-y-12 text-white relative z-10">

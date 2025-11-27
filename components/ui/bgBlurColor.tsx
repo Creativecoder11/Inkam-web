@@ -14,7 +14,7 @@ type Props = {
 export default function BgBlurColor({
   leftColor = "bg-[#005CAF]/20",
   rightColor = "bg-[#FF8800]/20",
-  leftSize = "w-[550px] h-[450px]",
+  leftSize = "w-[250px] h-[150px]",
   rightSize = "w-[550px] h-[450px]",
   className = "",
   animate = true,
@@ -24,7 +24,7 @@ export default function BgBlurColor({
   return (
     <div
       aria-hidden
-      className={`absolute inset-0 w-full h-full overflow-hidden pointer-events-none -z-10 ${className}`}
+      className={`absolute inset-0 w-full h-full overflow-hidden pointer-events-none ${className}`}
     >
       {/* Left Blur Blob */}
       <div

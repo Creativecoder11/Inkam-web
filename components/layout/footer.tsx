@@ -2,8 +2,20 @@ import Link from "next/link";
 import footerLogo from "@/assets/footer-logo1.svg";
 import download from "@/assets/download.svg";
 import Image from "next/image";
+import type { ReactNode } from "react";
+type FooterLinkItem = {
+  title: ReactNode;
+  href?: string;
+  mailto?: string;
+  icon?: string;
+};
 
-const links = [
+type FooterLinkGroup = {
+  group: string;
+  items: FooterLinkItem[];
+};
+
+const links: FooterLinkGroup[] = [
   {
     group: "Quick Links",
     items: [
@@ -304,7 +316,7 @@ const Footer = () => {
                 </span>
 
                 {linkGroup.items.map((item, itemIndex) =>
-                  item.href ? (
+                  "href" in item && item.href ? (
                     <Link
                       key={itemIndex}
                       href={item.href}
@@ -338,7 +350,7 @@ const Footer = () => {
                       )}
                       <span>{item.title}</span>
                     </Link>
-                  ) : item.mailto ? (
+                  ) : "mailto" in item && item.mailto ? (
                     <a
                       key={itemIndex}
                       href={item.mailto}

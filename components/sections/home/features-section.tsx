@@ -172,7 +172,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
 };
 
 // Main Features Section
-export default function FeaturesSection(): JSX.Element {
+export default function FeaturesSection(): React.ReactElement {
   const features: Feature[] = [
     {
       number: "01.",

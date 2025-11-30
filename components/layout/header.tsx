@@ -4,6 +4,7 @@ import { Logo } from "@/components/logo";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import React from "react";
+import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 
 const menuItems = [
@@ -15,6 +16,7 @@ const menuItems = [
 ];
 
 export const HeroHeader = () => {
+  const pathname = usePathname();
   const [menuState, setMenuState] = React.useState(false);
   const [isScrolled, setIsScrolled] = React.useState(false);
 
@@ -56,8 +58,7 @@ export const HeroHeader = () => {
                 className="relative z-20 -m-2.5 -mr-4 block cursor-pointer p-2.5 lg:hidden"
               >
                 <Menu className="text-white in-data-[state=active]:rotate-180 in-data-[state=active]:scale-0 in-data-[state=active]:opacity-0 m-auto size-6 duration-200" />
-<X className="text-white in-data-[state=active]:rotate-0 in-data-[state=active]:scale-100 in-data-[state=active]:opacity-100 absolute inset-0 m-auto size-6 -rotate-180 scale-0 opacity-0 duration-200" />
-
+                <X className="text-white in-data-[state=active]:rotate-0 in-data-[state=active]:scale-100 in-data-[state=active]:opacity-100 absolute inset-0 m-auto size-6 -rotate-180 scale-0 opacity-0 duration-200" />
               </button>
             </div>
 
@@ -68,7 +69,12 @@ export const HeroHeader = () => {
                   <li key={index}>
                     <Link
                       href={item.href}
-                      className="text-(--grey) hover:text-accent-foreground block duration-150"
+                      className={cn(
+                        "relative duration-200 text-(--grey) hover:text-(--orange)",
+                        "before:absolute before:left-0 before:-bottom-1 before:h-[2px] before:w-0 before:bg-current before:transition-all before:duration-300 hover:before:w-full",
+                        pathname === item.href &&
+                          "text-(--orange) before:w-full"
+                      )}
                     >
                       {item.name}
                     </Link>

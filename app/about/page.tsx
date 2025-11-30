@@ -7,10 +7,10 @@ import OurStory from '@/components/sections/about/our-story'
 export default function About() {
   return (
     <div>
-      <HeaderBanner/>
-      <OurStory/>
-      <ImpactStatsSection/> 
-      <CoreValuesSection/>
+      <HeaderBanner />
+      <OurStory />
+      <ImpactStatsSection />
+      <CoreValuesSection />
     </div>
   )
 }

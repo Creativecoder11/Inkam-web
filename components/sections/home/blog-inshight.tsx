@@ -106,29 +106,29 @@ export default function BlogInshight() {
                         d="M9.16666 10.8335H13.3333M6.66666 10.8335H6.67415M10.8333 14.1668H6.66666M13.3333 14.1668H13.3258"
                         stroke="#B7B7B8"
                         strokeWidth="1.4"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                       />
                       <path
                         d="M15 1.6665V3.33317M5 1.6665V3.33317"
                         stroke="#B7B7B8"
                         strokeWidth="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                       />
                       <path
                         d="M2.08334 10.2027C2.08334 6.57161 2.08334 4.75607 3.12677 3.62803C4.1702 2.5 5.84958 2.5 9.20834 2.5H10.7917C14.1504 2.5 15.8298 2.5 16.8732 3.62803C17.9167 4.75607 17.9167 6.57161 17.9167 10.2027V10.6306C17.9167 14.2617 17.9167 16.0773 16.8732 17.2053C15.8298 18.3333 14.1504 18.3333 10.7917 18.3333H9.20834C5.84958 18.3333 4.1702 18.3333 3.12677 17.2053C2.08334 16.0773 2.08334 14.2617 2.08334 10.6306V10.2027Z"
                         stroke="#B7B7B8"
                         strokeWidth="1.4"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                       />
                       <path
                         d="M2.5 6.6665H17.5"
                         stroke="#B7B7B8"
                         strokeWidth="1.4"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                       />
                     </svg>
                     <span>{article.date}</span>
@@ -146,14 +146,14 @@ export default function BlogInshight() {
                         d="M6.66668 11.25H13.3333M6.66668 7.08333H10"
                         stroke="#B7B7B8"
                         strokeWidth="1.3"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                       />
                       <path
                         d="M5.08235 15.8335C3.99892 15.7269 3.1873 15.4015 2.64298 14.8572C1.66667 13.8809 1.66667 12.3095 1.66667 9.16683V8.75016C1.66667 5.60747 1.66667 4.03612 2.64298 3.05981C3.61929 2.0835 5.19064 2.0835 8.33334 2.0835H11.6667C14.8094 2.0835 16.3807 2.0835 17.357 3.05981C18.3333 4.03612 18.3333 5.60747 18.3333 8.75016V9.16683C18.3333 12.3095 18.3333 13.8809 17.357 14.8572C16.3807 15.8335 14.8094 15.8335 11.6667 15.8335C11.1996 15.8439 10.8276 15.8794 10.4622 15.9627C9.46353 16.1926 8.53877 16.7036 7.62489 17.1492C6.32274 17.7842 5.67167 18.1016 5.26308 17.8044C4.48142 17.2223 5.24545 15.4184 5.41667 14.5835"
                         stroke="#B7B7B8"
                         strokeWidth="1.3"
-                        stroke-linecap="round"
+                        strokeLinecap="round"
                       />
                     </svg>
                     <span>{article.comments}</span>

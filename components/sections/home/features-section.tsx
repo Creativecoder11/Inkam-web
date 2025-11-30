@@ -1,12 +1,12 @@
+"use client";
+
 import React, { useState } from "react";
 import Image from "next/image";
 
-// Import your custom icons
 import AcquisitionIcon from "@/public/asset/icons/feature-i-3.svg";
 import ResellingIcon from "@/public/asset/icons/feature-i-2.svg";
 import CollectionIcon from "@/public/asset/icons/feature-i-1.svg";
 import CardVector from "@/public/asset/icons/card-vector.svg";
-import ButtonArrow from "@/public/asset/icons/link-btn-arrow-Icon.svg";
 
 interface SpotlightCardProps {
   children: React.ReactNode;
@@ -22,29 +22,21 @@ interface FeatureCardProps {
   spotlightColor: string;
 }
 
-interface Feature {
-  number: string;
-  title: string;
-  description: string;
-  iconSrc: string;
-  spotlightColor: string;
-}
-
-// SpotlightCard Component
-const SpotlightCard: React.FC<SpotlightCardProps> = ({
+// ⭐ SpotlightCard (only small state kept)
+const SpotlightCard = ({
   children,
   className = "",
-  spotlightColor = "rgba(255, 165, 0, 0.3)",
-}) => {
-  const [position, setPosition] = useState<{ x: number; y: number }>({
-    x: 0,
-    y: 0,
-  });
-  const [opacity, setOpacity] = useState<number>(0);
+  spotlightColor = "rgba(255,165,0,0.3)",
+}: SpotlightCardProps) => {
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [opacity, setOpacity] = useState(0);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();
-    setPosition({ x: e.clientX - rect.left, y: e.clientY - rect.top });
+    setPosition({
+      x: e.clientX - rect.left,
+      y: e.clientY - rect.top,
+    });
   };
 
   return (
@@ -55,7 +47,7 @@ const SpotlightCard: React.FC<SpotlightCardProps> = ({
       className={`relative overflow-hidden rounded-2xl ${className}`}
     >
       <div
-        className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500"
+        className="pointer-events-none absolute inset-0 transition-opacity duration-500"
         style={{
           opacity,
           background: `radial-gradient(600px circle at ${position.x}px ${position.y}px, ${spotlightColor}, transparent 40%)`,
@@ -66,64 +58,53 @@ const SpotlightCard: React.FC<SpotlightCardProps> = ({
   );
 };
 
-// FeatureCard Component
-const FeatureCard: React.FC<FeatureCardProps> = ({
+// ⭐ FeatureCard — No React state needed
+const FeatureCard = ({
   number,
   title,
   description,
   iconSrc,
   spotlightColor,
-}) => {
-  const [isHovered, setIsHovered] = useState<boolean>(false);
-
+}: FeatureCardProps) => {
   return (
     <SpotlightCard
-      className="transition-all duration-300 hover:scale-[1.02] hover:bg-[#161518]"
+      className="transition-all duration-300 hover:scale-[1.02] bg-[#FFFFFF05] hover:bg-[#161518] group"
       spotlightColor={spotlightColor}
     >
-      <div
-        className="relative p-8 h-full flex flex-col"
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-      >
-        {/* Top Right Icon on Hover */}
+      <div className="relative p-5 flex flex-col h-full">
+
+        {/* Hover floating icon */}
         <div
-          className={`absolute -top-5 -right-22 rounded-xl w-50 h-auto flex items-center justify-center transition-all duration-500 ${
-            isHovered ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-6"
-          }`}
+          className="absolute -top-5 -right-22 opacity-0 -translate-y-6 
+          group-hover:opacity-100 group-hover:translate-y-0 
+          transition-all duration-500"
         >
-          <Image
-            src={CardVector}
-            alt={title}
-            width={210}
-            height={24}
-            className="object-contain"
-          />
+          <Image src={CardVector} alt={title} width={210} height={24} />
         </div>
 
-        {/* Content */}
         <div className="relative z-10">
-          {/* Number and Title */}
+          {/* Heading */}
           <div className="flex items-center gap-3 mb-6">
-            <span className="text-(--orange) text-2xl font-medium">{number}</span>
+            <span className="text-(--orange) text-2xl font-medium">
+              {number}
+            </span>
             <h3 className="text-white text-2xl font-medium">{title}</h3>
           </div>
 
           {/* Icon */}
           <div className="mb-6">
             <div
-              className={`w-16 h-16 rounded-2xl flex items-center justify-center transition-all duration-300 ${
-                isHovered ? "bg-(--orange) scale-110" : "bg-white/5"
-              }`}
+              className="w-16 h-16 rounded-2xl bg-white/5 
+              group-hover:bg-(--orange) group-hover:scale-110
+              transition-all duration-300 flex items-center justify-center"
             >
               <Image
                 src={iconSrc}
                 alt={title}
                 width={32}
                 height={32}
-                className={`object-contain transition-all duration-300 ${
-                  isHovered ? "brightness-0 invert" : ""
-                }`}
+                className="transition-all duration-300 
+                group-hover:brightness-0 group-hover:invert"
               />
             </div>
           </div>
@@ -133,21 +114,21 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
             {description}
           </p>
 
-          {/* Learn More Link */}
-          <button className="group relative inline-flex items-center gap-2 text-white font-medium transition-colors overflow-hidden">
+          {/* Learn More */}
+          <button className="relative inline-flex items-center gap-2 font-medium text-white overflow-hidden">
             <span className="relative">
               Learn More
-              {/* Animated Underline */}
-              <span className="absolute bottom-0 left-0 h-[2px] w-0 bg-orange-500 transition-all duration-500 ease-out group-hover:w-full"></span>
+              <span
+                className="absolute bottom-0 left-0 h-0.5 w-0 bg-orange-500 
+                transition-all duration-500 group-hover:w-full"
+              />
             </span>
-            {/* Animated Arrow */}
             <svg
               width="20"
               height="20"
               viewBox="0 0 24 24"
               fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              className="opacity-100 -translate-x-1 transition-all duration-500 ease-out group-hover:opacity-100 group-hover:translate-x-0"
+              className="-translate-x-1 transition-all duration-500 group-hover:translate-x-0"
             >
               <path
                 d="M7 17L17 7M17 7H7M17 7V17"
@@ -160,48 +141,47 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
           </button>
         </div>
 
-        {/* Decorative Elements */}
+        {/* Orange glow */}
         <div
-          className={`absolute top-0 right-0 w-32 h-32 bg-(--orange)/5 rounded-full blur-3xl transition-opacity duration-500 ${
-            isHovered ? "opacity-100" : "opacity-0"
-          }`}
+          className="absolute top-0 right-0 w-32 h-32 bg-(--orange)/5 
+          rounded-full blur-3xl opacity-0 
+          group-hover:opacity-100 transition-opacity duration-500"
         />
       </div>
     </SpotlightCard>
   );
 };
 
-// Main Features Section
-export default function FeaturesSection(): React.ReactElement {
-  const features: Feature[] = [
-    {
-      number: "01.",
-      title: "Acquisition",
-      description:
-        "Helps businesses attract and onboard new users, merchants, and leads through digital and field campaigns.",
-      iconSrc: AcquisitionIcon,
-      spotlightColor: "rgba(249, 115, 22, 0.2)",
-    },
-    {
-      number: "02.",
-      title: "Product Reselling",
-      description:
-        "Helps businesses attract and onboard new users, merchants, and leads through digital and field campaigns.",
-      iconSrc: ResellingIcon,
-      spotlightColor: "rgba(249, 115, 22, 0.2)",
-    },
-    {
-      number: "03.",
-      title: "Order Collection",
-      description:
-        "Helps businesses attract and onboard new users, merchants, and leads through digital and field campaigns.",
-      iconSrc: CollectionIcon,
-      spotlightColor: "rgba(249, 115, 22, 0.2)",
-    },
-  ];
+const features = [
+  {
+    number: "01.",
+    title: "Acquisition",
+    description:
+      "Helps businesses attract and onboard new users, merchants, and leads through digital and field campaigns.",
+    iconSrc: AcquisitionIcon,
+    spotlightColor: "rgba(249,115,22,0.2)",
+  },
+  {
+    number: "02.",
+    title: "Product Reselling",
+    description:
+      "Helps businesses attract and onboard new users, merchants, and leads through digital and field campaigns.",
+    iconSrc: ResellingIcon,
+    spotlightColor: "rgba(249,115,22,0.2)",
+  },
+  {
+    number: "03.",
+    title: "Order Collection",
+    description:
+      "Helps businesses attract and onboard new users, merchants, and leads through digital and field campaigns.",
+    iconSrc: CollectionIcon,
+    spotlightColor: "rgba(249,115,22,0.2)",
+  },
+];
 
+export default function FeaturesSection() {
   return (
-    <div className=" py-30 px-4">
+    <div className="py-30 px-4">
       <div className="max-w-7xl mx-auto space-y-12">
         <div className="text-white flex flex-col gap-6">
           {/* Heading Text */}
@@ -235,7 +215,7 @@ export default function FeaturesSection(): React.ReactElement {
                 </defs>
               </svg>
             </div>
-            <p>ABOUT US</p>
+            <p>SERVICES</p>
             <div>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -271,19 +251,18 @@ export default function FeaturesSection(): React.ReactElement {
           </h2>
         </div>
 
-        {/* Grid Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {features.map((feature, index) => (
-            <React.Fragment key={index}>
-              <FeatureCard {...feature} />
-
-              {/* Add HR after every full row (3 cards) */}
-              {(index + 1) % 3 === 0 && index !== features.length - 1 && (
-                <div className="col-span-3">
-                  <div className="h-px w-full bg-white/20"></div>
-                </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+          {features.map((f, i) => (
+            <div key={i} className="relative">
+              <FeatureCard {...f} />
+              {/* Vertical border on right (except last card) */}
+              {i < features.length - 1 && (
+                <div
+                  className="hidden lg:block absolute top-0 bottom-0 -right-5 w-px"
+                  style={{ backgroundColor: "#FFFFFF33" }}
+                />
               )}
-            </React.Fragment>
+            </div>
           ))}
         </div>
       </div>

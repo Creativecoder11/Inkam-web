@@ -75,25 +75,25 @@ export default function AwardsSection() {
         </h2>
       </div>
 
-      <div className="w-full pt-12 mx-auto flex justify-center items-center gap-16 ">
+      <div className="w-full mt-12 mx-auto flex justify-center items-center gap-16 ">
         {/* Logo 1 */}
-        <div className=" h-[200px] rounded-2xl bg-[#161518] flex w-1/4 items-center justify-center">
-          <Image src={logo1} alt="Logo 1" className="h-18 w-auto" />
+        <div className="h-36 py-7 rounded-2xl bg-[#161518] flex w-1/4 items-center justify-center">
+          <Image src={logo1} alt="Logo 1" className="h-full w-full" />
         </div>
 
         {/* Logo 2 */}
-        <div className="h-[200px] rounded-2xl bg-[#161518] flex w-1/4 items-center justify-center">
-          <Image src={logo2} alt="Logo 2" className="h-18 w-auto" />
+        <div className="h-36 py-7 rounded-2xl bg-[#161518] flex w-1/4 items-center justify-center">
+          <Image src={logo2} alt="Logo 2" className="h-full w-full" />
         </div>
 
         {/* Logo 3 */}
-        <div className=" h-[200px] rounded-2xl bg-[#161518] flex w-1/4 items-center justify-center">
-          <Image src={logo3} alt="Logo 3" className="h-18 w-auto" />
+        <div className=" h-36 py-7 rounded-2xl bg-[#161518] flex w-1/4 items-center justify-center">
+          <Image src={logo3} alt="Logo 3" className="h-full w-full" />
         </div>
 
         {/* Logo 4 */}
-        <div className="h-[200px] rounded-2xl bg-[#161518] flex w-1/4 items-center justify-center">
-          <Image src={logo4} alt="Logo 4" className="h-18 w-auto" />
+        <div className="h-36 py-7 rounded-2xl bg-[#161518] flex w-1/4 items-center justify-center">
+          <Image src={logo4} alt="Logo 4" className="h-full w-full" />
         </div>
       </div>
     </div>

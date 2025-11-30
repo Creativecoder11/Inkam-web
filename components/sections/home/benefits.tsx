@@ -1,10 +1,8 @@
 import BenefitsCharts from "@/components/ui/benefits-charts";
-import { Users, Clock, TrendingUp } from "lucide-react";
 import ExpandIcon from "@/public/asset/icons/benefits-icon-1.svg";
 import SaveTimeIcon from "@/public/asset/icons/benefits-icon-2.svg";
 import GrowthIcon from "@/public/asset/icons/benefits-icon-3.svg";
 import Image from "next/image";
-import React from "react";
 
 export default function Benefits() {
   const features = [
@@ -104,23 +102,16 @@ export default function Benefits() {
           <div className="mx-auto space-y-4">
             {features.map((feature, index) => (
               <div key={index} className="bg-[#161518] p-6 rounded-[20px] space-y-4">
-                {/* Logo and Heading in on e div */}
                 <div className="flex items-center gap-6">
-                  <div className="bg-white/5 p-5 rounded-xl">
-                    {feature.icon}
+                  <div className="bg-white/5 p-3 rounded-xl flex items-center justify-center">
+                    <Image src={feature.icon.props.src} alt={feature.title} className="w-10 h-10" />
                   </div>
-                  <h2 className="text-2xl font-medium text-white">
-                    {feature.title}
-                  </h2>
+                  <h2 className="text-2xl font-medium text-white">{feature.title}</h2>
                 </div>
 
-                {/* Horizontal line */}
-                <hr className="border-0 h-[1px] bg-[linear-gradient(90deg,rgba(255,255,255,0.30)_0%,rgba(39,38,41,0.30)_100%)]" />
+                <hr className="border-0 h-px bg-[linear-gradient(90deg,rgba(255,255,255,0.30)_0%,rgba(39,38,41,0.30)_100%)]" />
 
-                {/* Description */}
-                <p className="text-(--grey) text-lg leading-relaxed">
-                  {feature.description}
-                </p>
+                <p className="text-(--grey) text-lg leading-relaxed">{feature.description}</p>
               </div>
             ))}
           </div>

@@ -16,7 +16,7 @@ export default function About() {
       <CoreValuesSection />
       <TeamSection />
       <Faq />
-      {/* <CircularCarousel /> */}
+      <CircularCarousel />
     </div>
   )
 }

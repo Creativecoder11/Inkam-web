@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+// @ts-ignore: CSS side-effect import without type declarations
 import "./globals.css";
 import { HeroHeader } from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
+import LenisProvider from "@/lib/LenisProvider";
 
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
@@ -28,9 +30,11 @@ export default function RootLayout({
 
         {/* Main content (fills remaining height) */}
         <main className="flex-1">
-          {children}
+          {/* <LenisProvider> */}
+            {children}
+          {/* </LenisProvider> */}
         </main>
-
+ 
         {/* Footer stays at bottom */}
         <Footer />
       </body>

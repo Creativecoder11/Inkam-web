@@ -3,6 +3,26 @@
 
 @custom-variant dark (&:is(.dark *));
 
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
 :root {
   /* Spacing */
   --spacing-xs: 0.25rem;
@@ -13,7 +33,7 @@
   --spacing-2xl: 3rem;
 
   /* Typography */
-  --font-base: 'Inter', sans-serif;
+  --font-base: "Inter", sans-serif;
   --font-size-sm: 0.875rem;
   --font-size-base: 1rem;
   --font-size-lg: 1.125rem;
@@ -23,11 +43,11 @@
   --radius: 0.625rem;
 
   /* Colors */
-  --background: #0F0E11;
+  --background: #0f0e11;
   --blur-background: rgba(255, 255, 255, 0.325);
-  --orange: #F80;
-  --grey: #CFCFCF;
-  --blue: #005CAF;
+  --orange: #f80;
+  --grey: #cfcfcf;
+  --blue: #005caf;
 
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
@@ -62,11 +82,9 @@
 }
 
 @layer base {
-
   html {
     @apply scroll-auto;
-    background-color: #0F0E11;
-
+    background-color: #0f0e11;
   }
 
   body {
@@ -169,12 +187,304 @@
   color: #4f46e5 !important;
 }
 
-
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+/* carousel.css - Add this to your global CSS or as a separate stylesheet */
+
+.carousel-container {
+  width: 100%;
+  /* max-width: 1200px; */
+  /* color: #666666; */
+  position: relative;
+  font-family: "Poppins", sans-serif;
+  aspect-ratio: 2 / 1;
+  overflow: hidden;
+  margin: 0 auto;
+  padding: 30px;
+}
+
+/* .orbit {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  border: 1px solid #d8d8d8;
+  border-radius: 100%;
+  pointer-events: none;
+}
+
+.orbit-1 {
+  width: 70%;
+  height: 70%;
+}
+
+.orbit-2 {
+  width: 60%;
+  height: 60%;
+} */
+
+/* .overlay {
+  bottom: 0;
+  right: 0;
+  left: 0;
+  position: absolute;
+  z-index: 30;
+  height: 80px;
+  background: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+  pointer-events: none;
+} */
+
+.slides-container {
+  position: relative;
+  padding-top: 100%;
+  margin: 0 auto;
+}
+
+.slides-wrapper {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.slide {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  /* bottom: 0; */
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  border: 1px solid #d8d8d8;
+  border-radius: 100%;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+.slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.slide-content {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 16px;
+  aspect-ratio: 2 / 1;
+  width: 100%;
+  text-align: center;
+}
+
+.slide-icon {
+  width: 128px;
+  height: 128px;
+  display: flex;
+  background: white;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.15);
+  border: 1px solid #d8d8d8;
+  padding: 24px;
+  border-radius: 50%;
+}
+
+.slide-img {
+  width: 100%;
+  margin: auto;
+  object-fit: scale-down;
+}
+
+.slide-year {
+  font-weight: 600;
+  color: #ffffff;
+  font-size: 1.5rem;
+}
+
+.slide-text {
+  padding: 0px 164px;
+  width: 75%;
+}
+
+.pagination {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 20;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  transition-property: transform;
+  transition-timing-function: ease-out;
+  pointer-events: none;
+}
+
+.dot-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.dot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  gap: 4px;
+  top: -12px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 60px;
+  pointer-events: auto;
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+
+.dot:hover {
+  transform: translate(-50%, -50%) scale(1.15);
+}
+
+.dot-circle {
+  width: 12px;
+  height: 12px;
+  border-radius: 24px;
+  background: #d8d8d8;
+  transition: background 0.3s;
+}
+
+.dot-item.active .dot-circle {
+  background: var(--orange);
+}
+
+.nav-button {
+  position: absolute;
+  z-index: 20;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  font-size: 1.5rem;
+  transition: 0.3s;
+  cursor: pointer;
+  user-select: none;
+  color: #666666;
+  height: fit-content;
+}
+
+.nav-button:hover {
+  color: black;
+}
+
+.nav-next {
+  right: 5%;
+}
+
+.nav-prev {
+  left: 5%;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .slide-text {
+    padding: 0px 40px;
+    width: 90%;
+  }
+
+  .slide-icon {
+    width: 80px;
+    height: 80px;
+    padding: 16px;
+  }
+
+  .slide-year {
+    font-size: 1.2rem;
+  }
+
+  .carousel-container {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .slide-text {
+    padding: 0px 20px;
+    font-size: 0.9rem;
+  }
+
+  .slide-icon {
+    width: 60px;
+    height: 60px;
+    padding: 12px;
+  }
+
+  .slide-year {
+    font-size: 1rem;
+  }
+
+  .dot {
+    font-size: 0.8rem;
+    width: 40px;
+  }
+
+  .nav-button {
+    font-size: 1.2rem;
+  }
+}
+
+/* Particle Animation */
+
+.bg-grid {
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.05) 1px,
+      transparent 1px
+    ),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+.particle {
+  position: absolute;
+  background: rgba(147, 51, 234, 0.6);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.char {
+  display: inline-block;
+}
+
+.cursor {
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0;
   }
 }

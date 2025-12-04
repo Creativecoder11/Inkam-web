@@ -2,6 +2,11 @@
 
 import { Linkedin } from "lucide-react";
 import { useRef, useEffect } from "react";
+import Blog1 from "@/public/asset/Images/team1.svg";
+import Blog2 from "@/public/asset/Images/team-image.svg";
+import TeamCardIcon from "@/public/asset/icons/team-title-card-bg-icon.svg";
+
+// import BlogImage from '@/public/assets/images/blog/blog-image.png';
 import gsap from "gsap";
 import Image from "next/image";
 
@@ -10,19 +15,19 @@ export default function TeamSection() {
     {
       name: "Avery Collins",
       role: "Chief executive officer",
-      image: "/asset/images/team-image.svg",
+      image: Blog1.src,
       linkedIn: "https://linkedin.com/in/avery-collins",
     },
     {
       name: "Sarah Johnson",
       role: "Chief Technology Officer",
-      image: "/asset/images/team1.svg",
+      image: Blog2.src,
       linkedIn: "https://linkedin.com/in/sarah-johnson",
     },
     {
       name: "Michael Roberts",
       role: "Chief Marketing Officer",
-      image: "/asset/images/team-image.svg",
+      image: Blog1.src,
       linkedIn: "https://linkedin.com/in/michael-roberts",
     },
   ];
@@ -38,7 +43,9 @@ export default function TeamSection() {
       const info = infoRef.current[index];
       const btn = linkedInRef.current[index];
 
-      const img = card.querySelector(".image-wrap img") as HTMLImageElement | null;
+      const img = card.querySelector(
+        ".image-wrap img"
+      ) as HTMLImageElement | null;
 
       if (!info || !btn || !img) return;
 
@@ -50,7 +57,7 @@ export default function TeamSection() {
       tl.to(info, {
         x: 0,
         opacity: 1,
-        duration: 0.6,
+        duration: 0.5,
         ease: "power3.out",
       })
         .to(
@@ -70,6 +77,16 @@ export default function TeamSection() {
             duration: 0.4,
           },
           0
+        )
+        // ⭐ Delay blur so it activates AFTER the info panel shows
+        .to(
+          info,
+          {
+            backdropFilter: "blur(8px)",
+            duration: 0.1,
+            ease: "power3.out",
+          },
+          "+=0.4" // ← delay blur start (adjust this value as needed)
         );
 
       const handleEnter = () => tl.play();
@@ -88,15 +105,31 @@ export default function TeamSection() {
   return (
     <section className="py-16 md:py-25">
       <div className="max-w-7xl mx-auto ">
-
         {/* Header */}
         <div className="text-white flex flex-col gap-6">
           <div className="flex justify-center items-center gap-4">
             <div>
-              <svg xmlns="http://www.w3.org/2000/svg" width="167" height="2" viewBox="0 0 167 2" fill="none">
-                <path d="M166 1H1" stroke="url(#paint0_linear_2239_2185)" strokeWidth="2" strokeLinecap="round" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="167"
+                height="2"
+                viewBox="0 0 167 2"
+                fill="none"
+              >
+                <path
+                  d="M166 1H1"
+                  stroke="url(#paint0_linear_2239_2185)"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                />
                 <defs>
-                  <linearGradient id="paint0_linear_2239_2185" x1="171" y1="0.49994" x2="158.078" y2="45.5518">
+                  <linearGradient
+                    id="paint0_linear_2239_2185"
+                    x1="171"
+                    y1="0.49994"
+                    x2="158.078"
+                    y2="45.5518"
+                  >
                     <stop stopColor="#FF8800" />
                     <stop offset="0.981629" stopColor="#0F0E11" />
                   </linearGradient>
@@ -105,10 +138,27 @@ export default function TeamSection() {
             </div>
             <p>CORE VALUES</p>
             <div>
-              <svg xmlns="http://www.w3.org/2000/svg" width="167" height="2" viewBox="0 0 167 2" fill="none">
-                <path d="M1 1H166" stroke="url(#paint0_linear_2239_2159)" strokeWidth="2" strokeLinecap="round" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="167"
+                height="2"
+                viewBox="0 0 167 2"
+                fill="none"
+              >
+                <path
+                  d="M1 1H166"
+                  stroke="url(#paint0_linear_2239_2159)"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                />
                 <defs>
-                  <linearGradient id="paint0_linear_2239_2159" x1="-3.99979" y1="0.49994" x2="8.92156" y2="45.5518">
+                  <linearGradient
+                    id="paint0_linear_2239_2159"
+                    x1="-3.99979"
+                    y1="0.49994"
+                    x2="8.92156"
+                    y2="45.5518"
+                  >
                     <stop stopColor="#FF8800" />
                     <stop offset="0.981629" stopColor="#0F0E11" />
                   </linearGradient>
@@ -127,7 +177,9 @@ export default function TeamSection() {
           {team.map((member, index) => (
             <div
               key={member.name}
-              ref={(el) => { cardsRef.current[index] = el; }}
+              ref={(el) => {
+                cardsRef.current[index] = el;
+              }}
               className="relative group bg-[#201F22] pt-10 cursor-pointer overflow-hidden rounded-3xl"
             >
               {/* LinkedIn Button */}
@@ -135,12 +187,33 @@ export default function TeamSection() {
                 href={member.linkedIn}
                 target="_blank"
                 rel="noopener noreferrer"
-                ref={(el) => { linkedInRef.current[index] = el; }}
+                ref={(el) => {
+                  linkedInRef.current[index] = el;
+                }}
                 className="absolute top-4 right-4 z-20 w-12 h-12 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center hover:bg-orange-500 transition-colors duration-300"
                 onClick={(e) => e.stopPropagation()}
                 style={{ transform: "translateX(100px)", opacity: 0 }}
               >
-                <Linkedin className="w-5 h-5 text-white" />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="26"
+                  height="26"
+                  viewBox="0 0 26 26"
+                  fill="none"
+                >
+                  <path
+                    d="M25.5999 25.6002V16.2242C25.5999 11.6162 24.6079 8.09619 19.2319 8.09619C16.6399 8.09619 14.9119 9.50419 14.2079 10.8482H14.1439V8.51219H9.05591V25.6002H14.3679V17.1202C14.3679 14.8802 14.7839 12.7362 17.5359 12.7362C20.2559 12.7362 20.2879 15.2642 20.2879 17.2482V25.5682H25.5999V25.6002Z"
+                    fill="white"
+                  />
+                  <path
+                    d="M0.416016 8.51221H5.72802V25.6002H0.416016V8.51221Z"
+                    fill="white"
+                  />
+                  <path
+                    d="M3.072 0C1.376 0 0 1.376 0 3.072C0 4.768 1.376 6.176 3.072 6.176C4.768 6.176 6.144 4.768 6.144 3.072C6.144 1.376 4.768 0 3.072 0Z"
+                    fill="white"
+                  />
+                </svg>
               </a>
 
               {/* Image */}
@@ -156,25 +229,47 @@ export default function TeamSection() {
 
                 {/* Info */}
                 <div
-                  ref={(el) => { infoRef.current[index] = el; }}
-                  className="absolute bottom-0 left-0 right-0 p-6"
-                  style={{ transform: "translateX(100px)", opacity: 0 }}
+                  ref={(el) => {
+                    infoRef.current[index] = el;
+                  }}
+                  className="absolute bottom-10 left-10 right-0 "
+                  style={{
+                    transform: "translateX(100px)",
+                    opacity: 0,
+                    backdropFilter: "blur(12px)",
+                  }}
                 >
-                  <div className="bg-gradient-to-r from-orange-500/90 to-orange-600/90 backdrop-blur-sm rounded-2xl p-4 border-t-2 border-orange-400">
+                  <div
+                    className="
+                        p-4 relative
+                        rounded-tl-[16px] rounded-bl-[16px] rounded-tr-none rounded-br-none
+                        border-t-[4px] border-b-[4px] border-l-[4px] border-(--orange)
+                        bg-[linear-gradient(90deg,rgba(22,21,24,0.90)_0%,rgba(22,21,24,0.60)_100%)]
+
+                        "
+                  >
+                    <div
+                      className="
+                        absolute -right-10 -bottom-4
+                        w-[120px] h-[70px]
+                        bg-no-repeat bg-contain
+                    "
+                      style={{
+                        backgroundImage: `url(${TeamCardIcon.src})`,
+                      }}
+                    />
                     <h3 className="text-xl md:text-2xl font-bold text-white mb-1">
                       {member.name}
                     </h3>
-                    <p className="text-white/90 text-sm md:text-base">{member.role}</p>
+                    <p className="text-white/90 text-sm md:text-base">
+                      {member.role}
+                    </p>
                   </div>
                 </div>
               </div>
-
-              {/* Border */}
-              <div className="absolute inset-0 rounded-3xl border-2 border-transparent group-hover:border-orange-500/50 transition-all duration-500 pointer-events-none"></div>
             </div>
           ))}
         </div>
-
       </div>
     </section>
   );

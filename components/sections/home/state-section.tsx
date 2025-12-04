@@ -1,6 +1,4 @@
 "use client";
-
-
 import BgBlurColor from "@/components/ui/bgBlurColor";
 import { useEffect, useRef, useState } from "react";
 

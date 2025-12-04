@@ -8,11 +8,16 @@ import FeaturesSection from "@/components/sections/home/features-section";
 import HeroSection from "@/components/sections/home/hero-section";
 import StatsSection from "@/components/sections/home/state-section";
 import ChooseUs from "@/components/ui/timeline";
+import useScrollSmooth from "@/lib/useScroll";
+import LenisProvider from "@/lib/LenisProvider";
 
 import bgElementRight from "@/public/asset/icons/bg-elements-right.svg";
 import bgElementLeft from "@/public/asset/icons/bg-elements-right.svg";
+import { useScroll } from "motion/react";
 
 export default function HomePage() {
+  // useScrollSmooth();
+  // LenisProvider();
   return (
     <div className="">
       <HeroSection />

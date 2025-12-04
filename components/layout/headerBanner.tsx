@@ -3,51 +3,42 @@ import React from "react";
 import bgElementRight from "@/public/asset/icons/others-page-icon-right.svg";
 import bgElementLeft from "@/public/asset/icons/others-page-icon-left.svg";
 
-export default function HeaderBanner() {
+interface HeaderBannerProps {
+  title: string; // Small Top Title (ABOUT US)
+  heading: string | React.ReactNode; // Dynamic H2 Heading
+}
+
+export default function HeaderBanner({ title, heading }: HeaderBannerProps) {
   return (
-    <section className="relative w-full  bg-white/3 h-130 overflow-hidden">
+    <section className="relative w-full bg-white/3 overflow-hidden">
       <div
         style={{
           backgroundImage: `url(${bgElementRight.src}), url(${bgElementLeft.src})`,
           backgroundAttachment: "fixed",
           backgroundRepeat: "no-repeat, no-repeat",
-          // backgroundSize: "300px auto, 250px auto",
           backgroundPosition: `
-                  calc(100% - (-50px)) 120px,
-                  -50px 120px
-                `,
+            calc(100% - (-50px)) 120px,
+            -50px 120px
+          `,
         }}
         className="bg-no-repeat w-full"
       >
         <div className="h-full w-full flex flex-col justify-center items-center py-40 relative z-10">
+          {/* Background Blurs */}
           <div className="w-full overflow-hidden pointer-events-none -z-10">
-            {/* Left Color */}
             <div
-              className="
-              absolute -left-20 top-0 w-[550px] h-[450px]
-              bg-[#005CAF]/20 blur-[200px] rounded-full
-
-            "
+              className="absolute -left-20 top-0 w-[550px] h-[450px]
+              bg-[#005CAF]/20 blur-[200px] rounded-full"
             />
-            {/* <Image
-            src={blurLogo}
-            alt="Inkam Logo"
-            width={1003}
-            height={260}
-            className="absolute right-80 top-1/4"
-          /> */}
-            {/* Right Color */}
             <div
-              className="
-              absolute -right-20 bottom-1/4 w-[550px] h-[450px]
-              bg-[#FF8800]/20 blur-[200px] rounded-full
-            "
-              style={{ animationDelay: "1.8s" }}
+              className="absolute -right-20 bottom-1/4 w-[550px] h-[450px]
+              bg-[#FF8800]/20 blur-[200px] rounded-full"
             />
           </div>
 
+          {/* Content */}
           <div className="text-white flex flex-col gap-6">
-            {/* Heading Text */}
+            {/* Dynamic Title */}
             <div className="flex justify-center items-center gap-4">
               <div>
                 <svg
@@ -78,7 +69,9 @@ export default function HeaderBanner() {
                   </defs>
                 </svg>
               </div>
-              <p>ABOUT US</p>
+
+              <p className="uppercase tracking-widest">{title}</p>
+
               <div>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -109,9 +102,10 @@ export default function HeaderBanner() {
                 </svg>
               </div>
             </div>
+
+            {/* Dynamic Heading */}
             <h2 className="text-4xl font-semibold leading-18 lg:text-6xl text-center">
-              Transforming Digital <br />
-              Access Across Bangladesh
+              {heading}
             </h2>
           </div>
         </div>

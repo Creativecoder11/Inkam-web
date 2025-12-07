@@ -22,7 +22,7 @@ interface FeatureCardProps {
   spotlightColor: string;
 }
 
-// ⭐ SpotlightCard (only small state kept)
+// SpotlightCard (only small state kept)
 const SpotlightCard = ({
   children,
   className = "",
@@ -58,7 +58,7 @@ const SpotlightCard = ({
   );
 };
 
-// ⭐ FeatureCard — No React state needed
+// FeatureCard —
 const FeatureCard = ({
   number,
   title,
@@ -183,8 +183,8 @@ export default function FeaturesSection() {
   return (
     <div className="py-30 px-4">
       <div className="max-w-7xl mx-auto space-y-12">
-        <div className="text-white flex flex-col gap-6">
           {/* Heading Text */}
+        <div className="text-white flex flex-col gap-6">
           <div className="flex justify-center items-center gap-4">
             <div>
               <svg

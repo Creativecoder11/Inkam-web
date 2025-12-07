@@ -1,7 +1,7 @@
 "use client";
 import AwardsSection from "@/components/sections/home/awards";
 import Benefits from "@/components/sections/home/benefits";
-import BlogInshight from "@/components/sections/home/blog-inshight";
+import BlogInsight from "@/components/sections/home/blog-inshight";
 import TestimonialCarousel from "@/components/sections/home/carousel-size";
 import Faq from "@/components/sections/home/faq";
 import FeaturesSection from "@/components/sections/home/features-section";
@@ -40,7 +40,7 @@ export default function HomePage() {
         <Benefits />
         <TestimonialCarousel />
         <AwardsSection />
-        <BlogInshight />
+        <BlogInsight />
         <Faq />
       </div>
     </div>

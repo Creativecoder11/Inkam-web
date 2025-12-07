@@ -1,15 +1,8 @@
-"use client";
+'use client';
 
 import Image from "next/image";
 import React, { useState } from "react";
-import {
-  AreaChart,
-  Area,
-  XAxis,
-  YAxis,
-  ResponsiveContainer,
-  Tooltip,
-} from "recharts";
+import { AreaChart, Area, XAxis, YAxis, ResponsiveContainer, Tooltip } from "recharts";
 import HandshakeIcon from "@/public/asset/icons/feature-i-3.svg";
 import CardVector from "@/public/asset/icons/card-vector.svg";
 
@@ -88,8 +81,9 @@ const CustomTooltip = ({ active, payload }: any) => {
 // Main Component
 export default function AcquisitionServices() {
   return (
-    <div className="min-h-screen p-6 mx-auto max-w-7xl">
-      <div className="flex justify-between items-center ">
+    <div className="min-h-screen max-w-7xl mx-auto p-6 ">
+
+         <div className="flex justify-between items-center ">
         <div className="w-1/2">
           <h2 className="text-white text-4xl font-semibold mb-2">
             Acquisition
@@ -102,7 +96,7 @@ export default function AcquisitionServices() {
           </p>
         </div>
       </div>
-      <div className="  items-center justify-center flex gap-6">
+      <div className="max-w-7xl w-full flex gap-6">
         {/* Left Card - Feature Card */}
         <SpotlightCard
           className="w-1/3 group"
@@ -111,17 +105,12 @@ export default function AcquisitionServices() {
           <div className="relative bg-white/6 p-8 flex flex-col h-full">
             {/* Icon at top */}
             <div
-              className="absolute -top-5 -right-22 opacity-0 -translate-y-6 
+          className="absolute -top-5 -right-22 opacity-0 -translate-y-6 
           group-hover:opacity-100 group-hover:translate-y-0 
           transition-all duration-500"
-            >
-              <Image
-                src={CardVector}
-                alt="Acquisition"
-                width={210}
-                height={24}
-              />
-            </div>
+        >
+          <Image src={CardVector} alt="Acquisition" width={210} height={24} />
+        </div>
             <div className="mb-8">
               <div className="w-24 h-24 rounded-2xl bg-white/5 flex items-center justify-center group-hover:bg-(--orange)/10 transition-all duration-300">
                 {/* Handshake Icon */}
@@ -144,8 +133,7 @@ export default function AcquisitionServices() {
 
             {/* Description */}
             <p className="text-white text-base leading-relaxed mb-8">
-              Helps businesses attract and onboard new users, merchants, and
-              leads through digital and field campaigns.
+              Helps businesses attract and onboard new users, merchants, and leads through digital and field campaigns.
             </p>
 
             {/* Bullet Points */}
@@ -161,9 +149,7 @@ export default function AcquisitionServices() {
                       <div className="w-2 h-2 rounded-full bg-(--orange)" />
                     </div>
                   </div>
-                  <p className="text-gray-300 text-base leading-relaxed">
-                    {point}
-                  </p>
+                  <p className="text-gray-300 text-base leading-relaxed">{point}</p>
                 </div>
               ))}
             </div>
@@ -197,24 +183,10 @@ export default function AcquisitionServices() {
                   margin={{ top: 10, right: 10, left: -20, bottom: 0 }}
                 >
                   <defs>
-                    <linearGradient
-                      id="colorGradient"
-                      x1="0"
-                      y1="0"
-                      x2="0"
-                      y2="1"
-                    >
+                    <linearGradient id="colorGradient" x1="0" y1="0" x2="0" y2="1">
                       <stop offset="0%" stopColor="#f97316" stopOpacity={0.8} />
-                      <stop
-                        offset="50%"
-                        stopColor="#c2410c"
-                        stopOpacity={0.4}
-                      />
-                      <stop
-                        offset="100%"
-                        stopColor="#7c2d12"
-                        stopOpacity={0.1}
-                      />
+                      <stop offset="50%" stopColor="#c2410c" stopOpacity={0.4} />
+                      <stop offset="100%" stopColor="#7c2d12" stopOpacity={0.1} />
                     </linearGradient>
                   </defs>
                   <XAxis

@@ -52,8 +52,8 @@ const CircularCarousel: React.FC = () => {
   const [isHovered, setIsHovered] = useState<boolean>(false);
   const autoplayRef = useRef<NodeJS.Timeout | null>(null);
 
-  const step: number = -360 / timelineData.length;
-  const speed: number = 2000;
+  const step = -360 / timelineData.length;
+  const speed = 2000;
 
   useEffect(() => {
     if (!isHovered) {
@@ -61,7 +61,6 @@ const CircularCarousel: React.FC = () => {
         handleNext();
       }, 3000);
     }
-
     return () => {
       if (autoplayRef.current) {
         clearInterval(autoplayRef.current);
@@ -69,49 +68,45 @@ const CircularCarousel: React.FC = () => {
     };
   }, [isHovered, activeIndex]);
 
-  const handleNext = (): void => {
+  const handleNext = () => {
     const newIndex = (activeIndex + 1) % timelineData.length;
     setActiveIndex(newIndex);
     rotateCarousel(newIndex);
   };
 
-  const handlePrev = (): void => {
+  const handlePrev = () => {
     const newIndex = activeIndex === 0 ? timelineData.length - 1 : activeIndex - 1;
     setActiveIndex(newIndex);
     rotateCarousel(newIndex);
   };
 
-  const handleDotClick = (index: number): void => {
+  const handleDotClick = (index: number) => {
     setActiveIndex(index);
     rotateCarousel(index);
   };
 
-  const rotateCarousel = (newIndex: number): void => {
+  const rotateCarousel = (newIndex: number) => {
     const diff = newIndex - activeIndex;
     const half = timelineData.length / 2;
-    
-    let inc: number;
-    if (Math.abs(diff) <= half) {
-      inc = diff;
-    } else if (Math.abs(diff + timelineData.length) <= half) {
-      inc = diff + timelineData.length;
-    } else {
-      inc = diff - timelineData.length;
-    }
-    
+
+    let inc;
+    if (Math.abs(diff) <= half) inc = diff;
+    else if (Math.abs(diff + timelineData.length) <= half) inc = diff + timelineData.length;
+    else inc = diff - timelineData.length;
+
     setAngle(prev => prev + step * inc);
   };
 
   return (
     <div className="text-white max-w-7xl mx-auto flex items-center justify-center p-8">
-      <div 
-        className="carousel-container"
+      <div
+        className="carousel-container relative"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        {/* <div className="overlay"></div>
-        <div className="orbit orbit-1"></div> */}
-        {/* <div className="orbit orbit-2"></div> */}
+        {/* New orbit lines */}
+        <div className="orbit orbit-inner"></div>
+        <div className="orbit orbit-outer"></div>
 
         <div className="slides-container">
           <div className="slides-wrapper">
@@ -128,16 +123,16 @@ const CircularCarousel: React.FC = () => {
             ))}
           </div>
 
-          <div 
+          <div
             className="pagination"
-            style={{ 
+            style={{
               transform: `translate(-50%, -50%) rotate(${angle}deg)`,
               transitionDuration: `${speed}ms`
             }}
           >
             {timelineData.map((item, index) => (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 className={`dot-item ${index === activeIndex ? 'active' : ''}`}
                 style={{ transform: `rotate(${(360 / timelineData.length) * index}deg)` }}
               >
@@ -149,12 +144,8 @@ const CircularCarousel: React.FC = () => {
             ))}
           </div>
 
-          <div className="nav-button nav-next" onClick={handleNext}>
-            ›
-          </div>
-          <div className="nav-button nav-prev" onClick={handlePrev}>
-            ‹
-          </div>
+          <div className="nav-button nav-next" onClick={handleNext}>›</div>
+          <div className="nav-button nav-prev" onClick={handlePrev}>‹</div>
         </div>
       </div>
     </div>

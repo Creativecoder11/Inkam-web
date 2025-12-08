@@ -1,10 +1,10 @@
 import HeaderBanner from "@/components/layout/headerBanner";
+import Faq from "@/components/sections/home/faq";
 import AcquisitionServices from "@/components/sections/services/AcquisitionServices";
+import OrderCollection from "@/components/sections/services/OrderCollection";
+import ProductReselling from "@/components/sections/services/ProductReselling";
 import ServicesOverview from "@/components/sections/services/ServicesOverview";
-import { Button } from "@/components/ui/button";
 
-import Image from "next/image";
-import Link from "next/link";
 
 export default function Services() {
   return (
@@ -86,6 +86,9 @@ export default function Services() {
         </h2>
       </div>
       <AcquisitionServices />
+      <ProductReselling />
+      <OrderCollection />
+      <Faq />
     </div>
   );
 }

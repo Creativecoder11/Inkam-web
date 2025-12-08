@@ -3,8 +3,8 @@
 import Image from "next/image";
 import React, { useState } from "react";
 import {
-  AreaChart,
-  Area,
+  BarChart,
+  Bar,
   XAxis,
   YAxis,
   ResponsiveContainer,
@@ -55,20 +55,20 @@ const SpotlightCard = ({
   );
 };
 
-// Chart data matching the image pattern
+// Chart data matching the reference image
 const chartData = [
-  { month: "Jan", value: 5 },
-  { month: "Feb", value: 8 },
-  { month: "Mar", value: 4 },
-  { month: "Apr", value: 7 },
-  { month: "May", value: 10 },
-  { month: "Jun", value: 30 },
-  { month: "Jul", value: 22 },
-  { month: "Aug", value: 25 },
-  { month: "Sep", value: 18 },
-  { month: "Oct", value: 15 },
-  { month: "Nov", value: 20 },
-  { month: "Dec", value: 12 },
+  { month: "Jan", value: 12 },
+  { month: "Feb", value: 17 },
+  { month: "Mar", value: 35 },
+  { month: "Apr", value: 23 },
+  { month: "May", value: 14 },
+  { month: "Jun", value: 25 },
+  { month: "Jul", value: 28 },
+  { month: "Aug", value: 37 },
+  { month: "Sep", value: 32 },
+  { month: "Oct", value: 52 },
+  { month: "Nov", value: 48 },
+  { month: "Dec", value: 60 },
 ];
 
 // Custom Tooltip
@@ -85,26 +85,37 @@ const CustomTooltip = ({ active, payload }: any) => {
   return null;
 };
 
+// Handshake Icon Component
+// const HandshakeIcon = () => (
+//   <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+//     <path d="M20 25L15 30L20 35M40 25L45 30L40 35M25 15L30 25L35 15" stroke="#f97316" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+//     <circle cx="30" cy="30" r="3" fill="#f97316"/>
+//     <path d="M15 30C15 30 18 27 22 27C26 27 28 30 30 30C32 30 34 27 38 27C42 27 45 30 45 30" stroke="#f97316" strokeWidth="2.5" strokeLinecap="round"/>
+//   </svg>
+// );
+
 // Main Component
-export default function AcquisitionServices() {
+export default function OrderCollectionServices() {
   return (
-    <div className="max-w-7xl mx-auto pt-18 ">
-      <div className="flex justify-between items-center pb-8 ">
-        <div className="w-1/2">
-          <h2 className="text-white text-5xl font-semibold mb-2">
-            Acquisition
-          </h2>
+    <div className=" p-8">
+      <div className="max-w-7xl mx-auto pt-12">
+        <div className="flex justify-between items-start pb-12 gap-8">
+          <div className="w-1/2">
+            <h2 className="text-white text-5xl font-semibold mb-2">
+              Order Collection
+            </h2>
+          </div>
+          <div className="w-1/2">
+            <p className="text-gray-400 text-base leading-relaxed">
+              Inkam connects digital businesses with millions of consumers through
+              a powerful agent network, bridging market gaps and driving
+            </p>
+          </div>
         </div>
-        <div className="w-1/2">
-          <p className="text-(--grey) text-base mb-6">
-            Inkam connects digital businesses with millions of consumers through
-            a powerful agent network, bridging market gaps and driving
-          </p>
-        </div>
-      </div>
-      <div className="max-w-7xl w-full flex gap-6">
-        {/* Left Card - Feature Card */}
-        <SpotlightCard
+        
+        <div className="max-w-7xl w-full flex gap-6">
+          {/* Left Card - Feature Card */}
+          <SpotlightCard
           className="w-1/3 "
           spotlightColor="rgba(249,115,22,0.1)"
         >
@@ -173,98 +184,73 @@ export default function AcquisitionServices() {
           </div>
         </SpotlightCard>
 
-        {/* Right Card - Chart Card */}
-        <SpotlightCard
-          className="w-2/3  group"
-          spotlightColor="rgba(249,115,22,0.1)"
-        >
-          <div className="relative bg-white/6 h-full p-8 flex flex-col">
-            {/* Header */}
-            <div className="mb-8">
-              <h2 className="text-white text-3xl font-medium mb-2">
-                Financial Projection
-              </h2>
-              <p className="text-gray-400 text-base">
-                Monitor your monthly income growth
-              </p>
-            </div>
-
-            {/* Chart Section */}
-            <div className="flex-grow relative">
-              <ResponsiveContainer width="100%" height="100%">
-                <AreaChart
-                  data={chartData}
-                  margin={{ top: 10, right: 10, left: -10, bottom: 0 }}
-                >
-                  <defs>
-                    <linearGradient
-                      id="colorGradient"
-                      x1="0"
-                      y1="0"
-                      x2="0"
-                      y2="1"
-                    >
-                      <stop offset="0%" stopColor="#f97316" stopOpacity={0.8} />
-                      <stop
-                        offset="50%"
-                        stopColor="#c2410c"
-                        stopOpacity={0.4}
-                      />
-                      <stop
-                        offset="100%"
-                        stopColor="#7c2d12"
-                        stopOpacity={0.1}
-                      />
-                    </linearGradient>
-                  </defs>
-                  <XAxis
-                    dataKey="month"
-                    stroke="#666"
-                    tick={{ fill: "rgba(255, 255, 255, 0.8)", fontSize: 14 }}
-                    axisLine={false}
-                    tickLine={false}
-                    padding={{ left: 20 }}
-                  />
-                  <YAxis
-                    stroke="#666"
-                    tick={{ fill: "rgba(255, 255, 255, 0.8)", fontSize: 14 }}
-                    axisLine={false}
-                    tickLine={false}
-                    tickFormatter={(value) => `${value}k`}
-                    domain={[0, 60]}
-                    ticks={[0, 10, 20, 30, 40, 50, 60]}
-
-                  />
-                  <Tooltip content={<CustomTooltip />} cursor={false} />
-                  <Area
-                    type="monotone"
-                    dataKey="value"
-                    stroke="#f97316"
-                    strokeWidth={2}
-                    fill="url(#colorGradient)"
-                    fillOpacity={1}
-                  />
-                </AreaChart>
-              </ResponsiveContainer>
-
-              {/* Horizontal grid lines overlay */}
-              <div className="absolute mt-2 inset-0 pointer-events-none">
-                {[0, 1, 2, 3, 4, 5, 6].map((i) => (
-                  <div
-                    key={i}
-                    className="absolute left-17 right-2 border-t border-dashed border-white/5"
-                    style={{ top: `${(i / 6.5) * 100}%` }}
-                  />
-                ))}
+          {/* Right Card - Chart Card */}
+          <SpotlightCard
+            className="w-2/3 group"
+            spotlightColor="rgba(249,115,22,0.15)"
+          >
+            <div className="relative bg-white/5 backdrop-blur-sm h-full p-8 flex flex-col min-h-[600px] border border-white/10">
+              {/* Header */}
+              <div className="mb-8">
+                <h2 className="text-white text-3xl font-medium mb-2">
+                  Financial Projection
+                </h2>
+                <p className="text-gray-400 text-base">
+                  Monitor your monthly income growth
+                </p>
               </div>
-            </div>
 
-            {/* Orange glow effect */}
-            <div className="absolute top-0 right-0 w-40 h-40 bg-(--orange)/5 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-          </div>
-        </SpotlightCard>
+              {/* Chart Section */}
+              <div className="flex-grow relative">
+                <ResponsiveContainer width="100%" height="100%">
+                  <BarChart
+                    data={chartData}
+                    margin={{ top: 10, right: 20, left: 0, bottom: 0 }}
+                    barSize={40}
+                  >
+                    <XAxis
+                      dataKey="month"
+                      stroke="#666"
+                      tick={{ fill: "rgba(255, 255, 255, 0.6)", fontSize: 13 }}
+                      axisLine={false}
+                      tickLine={false}
+                    />
+                    <YAxis
+                      stroke="#666"
+                      tick={{ fill: "rgba(255, 255, 255, 0.6)", fontSize: 13 }}
+                      axisLine={false}
+                      tickLine={false}
+                      tickFormatter={(value) => `${value}k`}
+                      domain={[0, 60]}
+                      ticks={[0, 10, 20, 30, 40, 50, 60]}
+                    />
+                    <Tooltip content={<CustomTooltip />} cursor={false} />
+                    <Bar
+                      dataKey="value"
+                      fill="#f97316"
+                      radius={[6, 6, 0, 0]}
+                    />
+                  </BarChart>
+                </ResponsiveContainer>
+
+                {/* Horizontal grid lines overlay */}
+                <div className="absolute inset-0 pointer-events-none" style={{ top: '10px', left: '50px', right: '20px', bottom: '30px' }}>
+                  {[0, 1, 2, 3, 4, 5, 6].map((i) => (
+                    <div
+                      key={i}
+                      className="absolute left-0 right-0 border-t border-dashed border-white/10"
+                      style={{ top: `${(i / 6) * 100}%` }}
+                    />
+                  ))}
+                </div>
+              </div>
+
+              {/* Orange glow effect */}
+              <div className="absolute top-0 right-0 w-40 h-40 bg-(--orange)/5 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            </div>
+          </SpotlightCard>
+        </div>    
       </div>
-      <div className="bg-white/20 h-px mt-16" ></div>
     </div>
   );
 }

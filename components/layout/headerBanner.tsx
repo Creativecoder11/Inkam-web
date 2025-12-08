@@ -2,10 +2,11 @@ import React from "react";
 
 import bgElementRight from "@/public/asset/icons/others-page-icon-right.svg";
 import bgElementLeft from "@/public/asset/icons/others-page-icon-left.svg";
+import "./headerBanner.css";
 
 interface HeaderBannerProps {
-  title: string; // Small Top Title (ABOUT US)
-  heading: string | React.ReactNode; // Dynamic H2 Heading
+  title: string;
+  heading: string | React.ReactNode;
 }
 
 export default function HeaderBanner({ title, heading }: HeaderBannerProps) {
@@ -16,14 +17,10 @@ export default function HeaderBanner({ title, heading }: HeaderBannerProps) {
           backgroundImage: `url(${bgElementRight.src}), url(${bgElementLeft.src})`,
           backgroundAttachment: "fixed",
           backgroundRepeat: "no-repeat, no-repeat",
-          backgroundPosition: `
-            calc(100% - (-50px)) 120px,
-            -50px 120px
-          `,
         }}
-        className="bg-no-repeat w-full"
+        className="header-banner-bg bg-no-repeat w-full"
       >
-        <div className="h-full w-full flex flex-col justify-center items-center py-40 relative z-10">
+        <div className="h-full w-full flex flex-col justify-center items-center pt-30 pb-20 md:pt-50 md:pb-40 relative z-10">
           {/* Background Blurs */}
           <div className="w-full overflow-hidden pointer-events-none -z-10">
             <div
@@ -39,8 +36,8 @@ export default function HeaderBanner({ title, heading }: HeaderBannerProps) {
           {/* Content */}
           <div className="text-white flex flex-col gap-6">
             {/* Dynamic Title */}
-            <div className="flex justify-center items-center gap-4">
-              <div>
+            <div className="flex justify-center items-center gap-2 md:gap-4">
+              <div className="mobile-line">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="167"
@@ -70,9 +67,9 @@ export default function HeaderBanner({ title, heading }: HeaderBannerProps) {
                 </svg>
               </div>
 
-              <p className="uppercase tracking-widest">{title}</p>
+              <p className="uppercase text-sm md:text-xl tracking-widest">{title}</p>
 
-              <div>
+              <div className="mobile-line">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="167"
@@ -104,7 +101,7 @@ export default function HeaderBanner({ title, heading }: HeaderBannerProps) {
             </div>
 
             {/* Dynamic Heading */}
-            <h2 className="text-4xl font-semibold leading-18 lg:text-6xl text-center">
+            <h2 className="text-4xl leading-12 font-semibold md:text-[80px] md:leading-22 text-center">
               {heading}
             </h2>
           </div>

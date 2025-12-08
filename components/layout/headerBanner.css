@@ -1,0 +1,13 @@
+/* Mobile (default) — SMALL SIZE */
+.header-banner-bg {
+  background-position: right -10px top 150px, left -10px top 150px;
+  background-size: 90px auto, 160px auto; /* small for mobile */
+}
+
+/* md screen — NORMAL / BIGGER SIZE */
+@media (min-width: 768px) {
+  .header-banner-bg {
+    background-position: right -20px top 100px, left -20px top 100px;
+    background-size: 290px auto, 435px auto;
+  }
+}

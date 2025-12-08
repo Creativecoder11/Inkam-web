@@ -98,13 +98,13 @@ export default function Insights() {
     }, []);
 
     return (
-        <div className="w-full py-25">
-            <div className="max-w-7xl mx-auto">
+        <div className="w-full py-15 md:py-25">
+            <div className="max-w-7xl mx-4 md:mx-auto">
                 {/* ------------------- TOP TITLE ------------------- */}
-                <div className="space-y-7">
-                    <div className="flex text-white justify-start items-center gap-4">
-                        <p>INSIGHTS</p>
-                        <div>
+                <div className="space-y-2 md:space-y-7">
+                    <div className="flex text-white justify-start items-center gap-2 md:gap-4">
+                        <p className="text-sm md:text-xl">INSIGHTS</p>
+                        <div className="mobile-line">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 width="167"
@@ -134,8 +134,8 @@ export default function Insights() {
                             </svg>
                         </div>
                     </div>
-                    <div className="flex text-white justify-between items-end z-10  text-left">
-                        <h2 className="text-4xl font-medium leading-17 lg:text-6xl w-full">
+                    <div className="flex text-white justify-between items-end z-10 text-left">
+                        <h2 className="text-3xl leading-11 font-medium md:text-[60px] md:leading-18 w-full">
                             Press Releases,<br />Announcements, and Insights
                         </h2>
                     </div>
@@ -143,7 +143,7 @@ export default function Insights() {
 
                 {/* ------------------- HIGHLIGHT SECTION ------------------- */}
                 <div
-                    className="w-full mt-12 h-[572px] rounded-2xl relative bg-cover bg-center flex items-end justify-center"
+                    className="w-full mt-12 h-[572px] rounded-2xl relative bg-cover bg-center  items-end justify-center hidden md:flex"
                     style={{ backgroundImage: `url(${highlight.image.src})` }}
                 >
                     <div className="bg-[#201F22] max-w-[950px] -mb-15 py-5 px-6 rounded-xl">
@@ -223,7 +223,7 @@ export default function Insights() {
                 </div>
 
                 {/* ------------------- GRID SECTION ------------------- */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pt-28">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 pt-12 md:pt-28">
                     {articles.map((article) => (
                         <BlogCard
                             key={article.id}

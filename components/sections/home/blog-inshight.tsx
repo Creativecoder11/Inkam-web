@@ -34,11 +34,11 @@ export default function BlogInsight() {
 
   return (
     <div className="w-full py-25">
-      <div className="max-w-7xl mx-auto">
-        <div className="space-y-7">
-          <div className="flex text-white justify-start items-center gap-4">
-            <p>INSIGHTS</p>
-            <div>
+      <div className="max-w-7xl mx-4 md:mx-auto">
+        <div className="space-y-2 md:space-y-7">
+          <div className="flex text-white justify-start items-center gap-2 md:gap-4">
+            <p className="text-sm md:text-xl">INSIGHTS</p>
+            <div className="mobile-line">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="167"
@@ -68,8 +68,8 @@ export default function BlogInsight() {
               </svg>
             </div>
           </div>
-          <div className="flex text-white justify-between items-end z-10  text-left">
-            <h2 className="text-4xl font-medium leading-17 lg:text-6xl w-full">
+          <div className="flex text-white justify-between items-end z-10 text-left">
+            <h2 className="text-3xl leading-11 font-medium md:text-[60px] md:leading-18 w-full">
               Press Releases,<br />Announcements, and Insights
             </h2>
           </div>

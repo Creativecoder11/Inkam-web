@@ -16,9 +16,9 @@ interface BlogCardProps {
 
 export default function BlogCard({ article, actionLabel = "Read More" }: BlogCardProps) {
     return (
-        <div className="rounded-3xl overflow-hidden bg-[#161518] transition-all duration-300 group">
+        <div className="rounded-xl md:rounded-3xl overflow-hidden bg-[#161518] transition-all duration-300 group">
             {/* Image Container */}
-            <div className="relative h-64 overflow-hidden">
+            <div className="relative h-56 md:h-64 overflow-hidden">
                 <Image
                     src={article.image}
                     alt={article.title}
@@ -28,17 +28,17 @@ export default function BlogCard({ article, actionLabel = "Read More" }: BlogCar
             </div>
 
             {/* Content */}
-            <div className="p-5">
+            <div className="p-3 md:p-5">
                 {/* Meta Info */}
-                <div className="flex items-center gap-4 text-gray-400 text-base mb-4">
+                <div className="flex items-center gap-3 md:gap-4 text-gray-400 text-base mb-3 md:mb-4">
                     {/* Date */}
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-1 md:gap-2">
                         {/* calendar icon */}
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
-                            width="20"
-                            height="20"
+                            className="w-4 h-4 md:w-5 md:h-5"
                             fill="none"
+                            viewBox="0 0 20 20" // <-- add this
                         >
                             <path
                                 d="M9.16666 10.8335H13.3333M6.66666 10.8335H6.67415M10.8333 14.1668H6.66666M13.3333 14.1668H13.3258"
@@ -63,13 +63,13 @@ export default function BlogCard({ article, actionLabel = "Read More" }: BlogCar
                                 strokeWidth="1.4"
                             />
                         </svg>
-                        <span>{article.date}</span>
+                        <span className="text-xs md:text-base">{article.date}</span>
                     </div>
 
                     {/* Comments */}
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-1 md:gap-2">
                         {/* comments icon */}
-                        <svg width="20" height="20" fill="none" viewBox="0 0 20 20">
+                        <svg className="w-4 h-4 md:w-5 md:h-5" fill="none" viewBox="0 0 20 20">
                             <path
                                 d="M6.66668 11.25H13.3333M6.66668 7.08333H10"
                                 stroke="#B7B7B8"
@@ -81,22 +81,22 @@ export default function BlogCard({ article, actionLabel = "Read More" }: BlogCar
                                 strokeWidth="1.3"
                             />
                         </svg>
-                        <span>{article.comments}</span>
+                        <span className="text-xs md:text-base">{article.comments}</span>
                     </div>
                 </div>
 
                 {/* Title */}
-                <h3 className="text-white text-2xl font-semibold mb-3">
+                <h3 className="text-white text-lg md:text-2xl font-semibold mb-2 md:mb-3">
                     {article.title}
                 </h3>
 
                 {/* Excerpt */}
-                <p className="text-gray-400 text-base mb-6 line-clamp-2">
+                <p className="text-gray-400 text-sm md:text-base mb-4 md:mb-6 line-clamp-2">
                     {article.excerpt}
                 </p>
 
                 {/* CTA */}
-                <button className="group relative inline-flex items-center gap-2 text-white font-medium transition-colors overflow-hidden">
+                <button className="group relative inline-flex items-center gap-2 text-white text-sm md:text-base font-medium transition-colors overflow-hidden">
                     <span className="relative">
                         {actionLabel}
                         <span className="absolute bottom-0 left-0 h-0.5 w-0 bg-orange-500 transition-all duration-500 ease-out group-hover:w-full"></span>

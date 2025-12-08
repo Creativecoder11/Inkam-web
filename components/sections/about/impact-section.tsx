@@ -207,7 +207,7 @@ export default function ImpactStatsSection() {
               </div>
 
               {/* Decorative Corner */}
-              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-orange-500/10 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute top-0 right-0 w-32 h-32 bg-linear-to-br from-orange-500/10 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </div>
           ))}
         </div>
@@ -215,3 +215,4 @@ export default function ImpactStatsSection() {
     </section>
   );
 }
+  

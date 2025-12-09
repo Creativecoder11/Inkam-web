@@ -26,11 +26,11 @@ export default function Benefits() {
     },
   ];
   return (
-    <div className="max-w-7xl py-25 mx-auto space-y-12">
-      <div className="text-white flex flex-col gap-6">
+    <div className="max-w-7xl py-25 mx-4 md:mx-auto space-y-6 md:space-y-12">
+      <div className="text-white flex flex-col gap-3 md:gap-6">
         {/* Heading Text */}
-        <div className="flex justify-center items-center gap-4">
-          <div>
+        <div className="flex justify-center items-center gap-2 md:gap-4">
+          <div className="mobile-line">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="167"
@@ -59,8 +59,8 @@ export default function Benefits() {
               </defs>
             </svg>
           </div>
-          <p>ABOUT US</p>
-          <div>
+          <p className="text-sm md:text-xl">ABOUT US</p>
+          <div className="mobile-line">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="167"
@@ -90,28 +90,28 @@ export default function Benefits() {
             </svg>
           </div>
         </div>
-        <h2 className="text-4xl font-medium leading-18 lg:text-6xl text-center">
+        <h2 className="text-3xl leading-11 font-medium lg:text-6xl md:leading-18 text-center">
           Together, We Build <br /> the Future of Distribution
         </h2>
       </div>
-      <div className="flex gap-10">
-        <div className="w-1/2">
+      <div className="flex flex-col md:flex-row gap-4 md:gap-10">
+        <div className="w-full md:w-1/2">
           <BenefitsCharts />
         </div>
-        <div className="w-1/2">
+        <div className="w-full md:w-1/2">
           <div className="mx-auto space-y-4">
             {features.map((feature, index) => (
-              <div key={index} className="bg-[#161518] p-6 rounded-[20px] space-y-4">
-                <div className="flex items-center gap-6">
+              <div key={index} className="bg-[#161518] p-4 md:p-6 rounded-[20px] space-y-4">
+                <div className="flex items-center gap-3 md:gap-6">
                   <div className="bg-white/5 p-3 rounded-xl flex items-center justify-center">
-                    <Image src={feature.icon.props.src} alt={feature.title} className="w-10 h-10" />
+                    <Image src={feature.icon.props.src} alt={feature.title} className="w-8 h-8 md:w-10 md:h-10" />
                   </div>
-                  <h2 className="text-2xl font-medium text-white">{feature.title}</h2>
+                  <h2 className="text-lg md:text-2xl font-medium text-white">{feature.title}</h2>
                 </div>
 
                 <hr className="border-0 h-px bg-[linear-gradient(90deg,rgba(255,255,255,0.30)_0%,rgba(39,38,41,0.30)_100%)]" />
 
-                <p className="text-(--grey) text-lg leading-relaxed">{feature.description}</p>
+                <p className="text-(--grey) text-base md:text-lg leading-relaxed">{feature.description}</p>
               </div>
             ))}
           </div>

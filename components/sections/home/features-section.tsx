@@ -71,7 +71,7 @@ const FeatureCard = ({
       className="transition-all duration-300 hover:scale-[1.02] bg-[#FFFFFF05] hover:bg-[#161518] group"
       spotlightColor={spotlightColor}
     >
-      <div className="relative p-5 flex flex-col h-full">
+      <div className="relative p-4 md:p-5 flex flex-col h-full">
 
         {/* Hover floating icon */}
         <div
@@ -84,39 +84,37 @@ const FeatureCard = ({
 
         <div className="relative z-10">
           {/* Heading */}
-          <div className="flex items-center gap-3 mb-6">
-            <span className="text-(--orange) text-2xl font-medium">
+          <div className="flex items-center gap-3 mb-3 md:mb-6">
+            <span className="text-(--orange) text-lg md:text-2xl font-medium">
               {number}
             </span>
-            <h3 className="text-white text-2xl font-medium">{title}</h3>
+            <h3 className="text-white text-lg md:text-2xl font-medium">{title}</h3>
           </div>
 
           {/* Icon */}
-          <div className="mb-6">
+          <div className="mb-3 md:mb-6">
             <div
-              className="w-16 h-16 rounded-2xl bg-white/5 
+              className="w-12 h-12 md:w-16 md:h-16 rounded-lg md:rounded-2xl bg-white/5 
               group-hover:bg-(--orange) group-hover:scale-110
               transition-all duration-300 flex items-center justify-center"
             >
               <Image
                 src={iconSrc}
                 alt={title}
-                width={32}
-                height={32}
-                className="transition-all duration-300 
+                className="w-6 h-6 md:w-8 md:h-8 transition-all duration-300 
                 group-hover:brightness-0 group-hover:invert"
               />
             </div>
           </div>
 
           {/* Description */}
-          <p className="text-gray-400 text-base leading-relaxed mb-8">
+          <p className="text-gray-400 text-sm md:text-base leading-relaxed mb-3 md:mb-8">
             {description}
           </p>
 
           {/* Learn More */}
           <button className="relative inline-flex items-center gap-2 font-medium text-white overflow-hidden">
-            <span className="relative">
+            <span className="relative text-sm md:text-base">
               Learn More
               <span
                 className="absolute bottom-0 left-0 h-0.5 w-0 bg-orange-500 
@@ -181,12 +179,12 @@ const features = [
 
 export default function FeaturesSection() {
   return (
-    <div className="py-30 px-4">
-      <div className="max-w-7xl mx-auto space-y-12">
-          {/* Heading Text */}
-        <div className="text-white flex flex-col gap-6">
-          <div className="flex justify-center items-center gap-4">
-            <div>
+    <div className="w-full py-15 md:py-30">
+      <div className="max-w-7xl px-4 md:mx-auto space-y-6 md:space-y-12">
+        {/* Heading Text */}
+        <div className="text-white flex flex-col gap-2 md:gap-6">
+          <div className="flex justify-center items-center gap-2 md:gap-4">
+            <div className="mobile-line">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="167"
@@ -215,8 +213,8 @@ export default function FeaturesSection() {
                 </defs>
               </svg>
             </div>
-            <p>SERVICES</p>
-            <div>
+            <p className="text-sm md:text-xl">SERVICES</p>
+            <div className="mobile-line">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="167"
@@ -246,12 +244,12 @@ export default function FeaturesSection() {
               </svg>
             </div>
           </div>
-          <h2 className="text-4xl font-medium lg:text-6xl text-center">
+          <h2 className="text-3xl leading-11 font-medium md:text-[60px] md:leading-18 text-center">
             What We Offer
           </h2>
         </div>
-       
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10">
           {features.map((f, i) => (
             <div key={i} className="relative">
               <FeatureCard {...f} />

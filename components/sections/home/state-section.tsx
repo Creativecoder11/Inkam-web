@@ -70,7 +70,7 @@ export default function StatsSection() {
 
   return (
     // <-- IMPORTANT: make this section positioned so absolute children (BgBlurColor) can reference it
-    <section className="py-12 md:py-30 relative" ref={sectionRef}>
+    <section className="py-15 md:py-30 relative" ref={sectionRef}>
       {/* BgBlurColor must be placed BEFORE content so it sits behind via -z-10 */}
       {/* <BgBlurColor
         rightColor="bg-blue-500/40"
@@ -80,10 +80,10 @@ export default function StatsSection() {
       /> */}
 
       {/* Content must be above the blur, so give this wrapper a positive z-index */}
-      <div className="max-w-7xl mx-auto space-y-12 text-white relative z-10">
-        <div className="flex justify-start items-center gap-4">
-          <p>ABOUT US</p>
-          <div>
+      <div className="max-w-7xl mx-4 md:mx-auto space-y-6 md:space-y-12 text-white relative z-10">
+        <div className="flex justify-start items-center gap-2 md:gap-4">
+          <p className="text-sm md:text-xl">ABOUT US</p>
+          <div className="mobile-line">
             {/* svg omitted for brevity */}
             <svg xmlns="http://www.w3.org/2000/svg" width="167" height="2" viewBox="0 0 167 2" fill="none">
               <path d="M1 1H166" stroke="url(#paint0_linear_2239_2159)" strokeWidth="2" strokeLinecap="round" />
@@ -97,20 +97,27 @@ export default function StatsSection() {
           </div>
         </div>
 
-        <div className="flex justify-between items-end text-left">
-          <h2 className="text-4xl font-medium lg:text-6xl w-full md:w-1/2">
+        <div className="flex flex-col md:flex-row justify-between items-end text-left gap-2 md:gap-0">
+          <h2 className="text-3xl font-medium lg:text-6xl w-full md:w-1/2">
             From a Vision to a Nationwide Network
           </h2>
-          <p className="w-full md:w-1/2 text-[16px] text-(--grey) pl-20">
+          <p className="w-full md:w-1/2 text-sm md:text-[16px] text-(--grey) md:pl-20">
             Inkam connects digital businesses with millions of consumers through a powerful agent network, bridging market gaps and driving inclusive digital growth across Bangladesh.
           </p>
         </div>
 
-        <div className="grid gap-10 divide-y divide-gray-700 *:text-left md:grid-cols-4 md:gap-6 md:divide-x md:divide-y-0">
+        <div className="grid *:text-left md:grid-cols-4 gap-8 md:gap-6 md:divide-x">
           {stats.map((stat, index) => (
-            <div key={stat.label} className="space-y-2">
-              <div className="text-4xl md:text-5xl">{formatNumber(currentValues[index], stat.format)}</div>
-              <p className="text-(--grey)">{stat.label}</p>
+            <div
+              key={stat.label}
+              className="space-y-1 md:space-y-2 border-b border-gray-700 md:border-b-0 pb-1 md:pb-0"
+            >
+              <div className="text-3xl md:text-6xl">
+                {formatNumber(currentValues[index], stat.format)}
+              </div>
+              <p className="text-(--grey) text-base md:text-lg">
+                {stat.label}
+              </p>
             </div>
           ))}
         </div>

@@ -10,9 +10,7 @@ import { cn } from "@/lib/utils";
 const menuItems = [
   { name: "About", href: "/about" },
   { name: "Services", href: "/services" },
-  { name: "Benefits", href: "/benefits" },
   { name: "Insights", href: "/insights" },
-  { name: "Awards", href: "/awards" },
 ];
 
 export const HeroHeader = () => {

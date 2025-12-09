@@ -216,7 +216,7 @@ html.lenis {
   padding: 30px;
 }
 
-/* .orbit {
+.orbit {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -236,7 +236,7 @@ html.lenis {
 .orbit-2 {
   width: 60%;
   height: 60%;
-} */
+}
 
 /* .overlay {
   bottom: 0;
@@ -278,7 +278,7 @@ html.lenis {
   width: 100%;
   height: 100%;
   opacity: 0;
-  border: 1px solid #d8d8d8;
+  border: 1px solid #525154;
   border-radius: 100%;
   transition: opacity 0.5s ease;
   pointer-events: none;
@@ -320,8 +320,8 @@ html.lenis {
 
 .slide-year {
   font-weight: 600;
-  color: #ffffff;
-  font-size: 1.5rem;
+  /* color: #ffffff; */
+  /* font-size: 60px; */
 }
 
 .slide-text {

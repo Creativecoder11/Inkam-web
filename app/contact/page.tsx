@@ -52,7 +52,7 @@ export default function ContactSection() {
             <div className="mb-8">
               <p className="text-sm tracking-wider text-gray-400 mb-4 flex items-center gap-3">
                 CONTACT US
-                <span className="h-[1px] w-24 bg-(--orange)"></span>
+                <span className="h-px w-24 bg-(--orange)"></span>
               </p>
               <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-8">
                 Get in Touch
@@ -79,7 +79,7 @@ export default function ContactSection() {
             {/* Email */}
             <div className="mb-8">
               <div className="flex items-start gap-4 mb-4">
-                <div className="bg-(--orange) p-4 rounded-lg flex-shrink-0">
+                <div className="bg-(--orange) p-4 rounded-lg shrink-0">
                   <Mail className="w-6 h-6" />
                 </div>
                 <div>
@@ -96,7 +96,7 @@ export default function ContactSection() {
             {/* Office */}
             <div>
               <div className="flex items-start gap-4 mb-4">
-                <div className="bg-(--orange) p-4 rounded-lg flex-shrink-0">
+                <div className="bg-(--orange) p-4 rounded-lg shrink-0">
                   <MapPin className="w-6 h-6" />
                 </div>
                 <div>

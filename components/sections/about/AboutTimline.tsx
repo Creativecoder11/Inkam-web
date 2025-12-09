@@ -52,8 +52,8 @@ const CircularCarousel: React.FC = () => {
   const [isHovered, setIsHovered] = useState<boolean>(false);
   const autoplayRef = useRef<NodeJS.Timeout | null>(null);
 
-  const step = -360 / timelineData.length;
-  const speed = 2000;
+  const step: number = -360 / timelineData.length;
+  const speed: number = 2000;
 
   useEffect(() => {
     if (!isHovered) {
@@ -61,6 +61,7 @@ const CircularCarousel: React.FC = () => {
         handleNext();
       }, 3000);
     }
+
     return () => {
       if (autoplayRef.current) {
         clearInterval(autoplayRef.current);
@@ -68,71 +69,75 @@ const CircularCarousel: React.FC = () => {
     };
   }, [isHovered, activeIndex]);
 
-  const handleNext = () => {
+  const handleNext = (): void => {
     const newIndex = (activeIndex + 1) % timelineData.length;
     setActiveIndex(newIndex);
     rotateCarousel(newIndex);
   };
 
-  const handlePrev = () => {
+  const handlePrev = (): void => {
     const newIndex = activeIndex === 0 ? timelineData.length - 1 : activeIndex - 1;
     setActiveIndex(newIndex);
     rotateCarousel(newIndex);
   };
 
-  const handleDotClick = (index: number) => {
+  const handleDotClick = (index: number): void => {
     setActiveIndex(index);
     rotateCarousel(index);
   };
 
-  const rotateCarousel = (newIndex: number) => {
+  const rotateCarousel = (newIndex: number): void => {
     const diff = newIndex - activeIndex;
     const half = timelineData.length / 2;
-
-    let inc;
-    if (Math.abs(diff) <= half) inc = diff;
-    else if (Math.abs(diff + timelineData.length) <= half) inc = diff + timelineData.length;
-    else inc = diff - timelineData.length;
-
+    
+    let inc: number;
+    if (Math.abs(diff) <= half) {
+      inc = diff;
+    } else if (Math.abs(diff + timelineData.length) <= half) {
+      inc = diff + timelineData.length;
+    } else {
+      inc = diff - timelineData.length;
+    }
+    
     setAngle(prev => prev + step * inc);
   };
 
   return (
     <div className="text-white max-w-7xl mx-auto flex items-center justify-center p-8">
-      <div
-        className="carousel-container relative"
+      <div 
+        className="carousel-container"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        {/* New orbit lines */}
-        <div className="orbit orbit-inner"></div>
-        <div className="orbit orbit-outer"></div>
+        <div className="overlay"></div>
+        <div className="orbit orbit-1"></div>
+        <div className="orbit orbit-2"></div>
 
         <div className="slides-container">
           <div className="slides-wrapper">
             {timelineData.map((item, index) => (
               <div key={index} className={`slide ${index === activeIndex ? 'active' : ''}`}>
                 <div className="slide-content">
-                  <div className="slide-icon">
+                  {/* <div className="slide-icon">
                     <img src={item.image} alt={item.year} className="slide-img" />
-                  </div>
-                  <div className="slide-year">{item.year}</div>
-                  <div className="slide-text">{item.text}</div>
+                  </div> */}7
+                  <div className="slide-year text-6xl text-(--orange)">{item.year}</div>
+                  <div className="slide-text text-xl">{item.text}</div>
                 </div>
               </div>
             ))}
           </div>
 
-          <div
+          <div 
             className="pagination"
-            style={{
+            style={{ 
               transform: `translate(-50%, -50%) rotate(${angle}deg)`,
               transitionDuration: `${speed}ms`
             }}
           >
             {timelineData.map((item, index) => (
-              <div
-                key={index}
+              <div 
+                key={index} 
                 className={`dot-item ${index === activeIndex ? 'active' : ''}`}
                 style={{ transform: `rotate(${(360 / timelineData.length) * index}deg)` }}
               >
@@ -144,8 +149,12 @@ const CircularCarousel: React.FC = () => {
             ))}
           </div>
 
-          <div className="nav-button nav-next" onClick={handleNext}>›</div>
-          <div className="nav-button nav-prev" onClick={handlePrev}>‹</div>
+          <div className="nav-button nav-next" onClick={handleNext}>
+            ›
+          </div>
+          <div className="nav-button nav-prev" onClick={handlePrev}>
+            ‹
+          </div>
         </div>
       </div>
     </div>

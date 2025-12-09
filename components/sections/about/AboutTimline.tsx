@@ -120,7 +120,7 @@ const CircularCarousel: React.FC = () => {
                 <div className="slide-content">
                   {/* <div className="slide-icon">
                     <img src={item.image} alt={item.year} className="slide-img" />
-                  </div> */}7
+                  </div> */}
                   <div className="slide-year text-6xl text-(--orange)">{item.year}</div>
                   <div className="slide-text text-xl">{item.text}</div>
                 </div>

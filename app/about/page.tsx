@@ -29,7 +29,7 @@ export default function About() {
       <CoreValuesSection />
       <TeamSection />
       <Faq />
-      <AboutCircularCarousel slides={data} autoplay={4000} speed={2500} />
+      {/* <AboutCircularCarousel slides={data} autoplay={4000} speed={2500} /> */}
     </div>
   );
 }

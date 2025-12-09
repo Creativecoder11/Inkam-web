@@ -73,7 +73,7 @@ const StarRating = ({ rating }: { rating: number }) => {
         const fillPercentage = Math.min(Math.max(rating - star + 1, 0), 1) * 100;
 
         return (
-          <div key={star} className="relative w-5 h-5">
+          <div key={star} className="relative w-4 h-4 md:w-5 md:h-5">
             {/* Empty star (gray background) */}
             <svg
               className="w-5 h-5 fill-zinc-600 absolute top-0 left-0"
@@ -121,112 +121,113 @@ export default function TestimonialCarousel() {
   }, [api]);
 
   return (
-    <div className="w-full text-white max-w-7xl space-y-8 mx-auto py-25">
-      <div className="flex justify-start items-center gap-4">
-        <p>TESTIMONIALS</p>
-        <div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="167"
-            height="2"
-            viewBox="0 0 167 2"
-            fill="none"
-          >
-            <path
-              d="M1 1H166"
-              stroke="url(#paint0_linear_2239_2159)"
-              strokeWidth="2"
-              strokeLinecap="round"
-            />
-            <defs>
-              <linearGradient
-                id="paint0_linear_2239_2159"
-                x1="-3.99979"
-                y1="0.49994"
-                x2="8.92156"
-                y2="45.5518"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop stopColor="#FF8800" />
-                <stop offset="0.981629" stopColor="#0F0E11" />
-              </linearGradient>
-            </defs>
-          </svg>
-        </div>
-      </div>
-      <div className="flex justify-between items-end z-10 text-left">
-        <h2 className="text-4xl font-medium lg:text-6xl w-full leading-17 md:w-1/2">
-          Hear from Our Satisfied Partners
-        </h2>
-        <p className="w-full md:w-1/2 text-[16px] text-(--grey) pl-20"></p>
-      </div>
-      <div>
-        <Carousel
-          opts={{
-            align: "start",
-            slidesToScroll: 1,
-          }}
-          setApi={setApi}
-          className="w-full max-w-7xl pt-12 mx-auto"
-        >
-          <CarouselContent className={isDragging ? "cursor-grabbing" : "cursor-grab"}>
-            {testimonials.map((testimonial) => (
-              <CarouselItem key={testimonial.id} className="md:basis-1/2">
-                <div className="">
-                  <Card className="bg-[#161518] border-zinc-800">
-                    <CardContent className="space-y-4.5">
-                      <div className="flex items-center justify-between mb-6">
-                        <div className="flex flex-col gap-1">
-                          <h3 className="text-white text-2xl font-bold">
-                            {testimonial.name}
-                          </h3>
-                          <p className="text-zinc-400 text-base mb-2">
-                            {testimonial.company_designation}
-                          </p>
-                        </div>
-                        <img
-                          src={testimonial.image}
-                          alt={testimonial.name}
-                          className="w-16 h-16 rounded-lg object-cover"
-                        />
-                      </div>
-
-                      <hr className="border-0 h-[1px] bg-[linear-gradient(90deg,rgba(255,255,255,0.30)_0%,rgba(39,38,41,0.30)_100%)]" />
-
-                      <p className="text-zinc-300 leading-relaxed mb-6">
-                        {testimonial.text}
-                      </p>
-
-                      <div className="flex items-center justify-between">
-                        <StarRating rating={testimonial.rating} />
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="48"
-                          height="48"
-                          viewBox="0 0 48 48"
-                          fill="none"
-                        >
-                          <path
-                            d="M12.9997 6C19.3881 6 23.9997 11.2741 23.9996 19.0833C23.9587 30.4295 15.4291 38.4517 3.12395 39.9923C1.98233 40.1352 1.54213 38.5537 2.59342 38.0863C7.315 35.9868 9.69964 33.3226 10.0077 30.6857C10.2378 28.7155 9.16679 26.9898 7.82198 26.6666C4.33562 25.8288 1.99972 21.4872 1.99972 17C1.99972 10.9249 6.92459 6 12.9997 6Z"
-                            fill="#FF8800"
-                          />
-                          <path
-                            d="M36.9997 6C43.3881 6 47.9997 11.2741 47.9996 19.0833C47.9587 30.4295 39.4291 38.4517 27.1239 39.9923C25.9823 40.1352 25.5421 38.5537 26.5934 38.0863C31.315 35.9868 33.6996 33.3226 34.0077 30.6857C34.2378 28.7155 33.1668 26.9898 31.822 26.6666C28.3356 25.8288 25.9997 21.4872 25.9997 17C25.9997 10.9249 30.9246 6 36.9997 6Z"
-                            fill="#FF8800"
-                          />
-                        </svg>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </div>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <div className="flex justify-between">
-            <CarouselPrevious className="bg-white/5 hover:bg-(--orange) border-0 text-white hover:text-white cursor-pointer" />
-            <CarouselNext className="bg-(--orange) border-zinc-700 text-white hover:text-white hover:bg-orange-500 cursor-pointer" />
+    <div className="w-full text-white">
+      <div className="max-w-7xl mx-4 md:mx-auto py-15 md:py-25 space-y-4 md:space-y-8">
+        <div className="flex justify-start items-center gap-2 md:gap-4">
+          <p className="text-sm md:text-xl">TESTIMONIALS</p>
+          <div className="mobile-line">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="167"
+              height="2"
+              viewBox="0 0 167 2"
+              fill="none"
+            >
+              <path
+                d="M1 1H166"
+                stroke="url(#paint0_linear_2239_2159)"
+                strokeWidth="2"
+                strokeLinecap="round"
+              />
+              <defs>
+                <linearGradient
+                  id="paint0_linear_2239_2159"
+                  x1="-3.99979"
+                  y1="0.49994"
+                  x2="8.92156"
+                  y2="45.5518"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop stopColor="#FF8800" />
+                  <stop offset="0.981629" stopColor="#0F0E11" />
+                </linearGradient>
+              </defs>
+            </svg>
           </div>
-        </Carousel>
+        </div>
+        <div className="md:flex justify-between items-end z-10 text-left">
+          <h2 className="text-3xl leading-11 font-medium lg:text-6xl md:leading-18 w-full md:w-1/2">
+            Hear from Our Satisfied Partners
+          </h2>
+
+        </div>
+        <div>
+          <Carousel
+            opts={{
+              align: "start",
+              slidesToScroll: 1,
+            }}
+            setApi={setApi}
+            className="w-full max-w-7xl pt-4 md:pt-12 mx-auto"
+          >
+            <CarouselContent className={isDragging ? "cursor-grabbing" : "cursor-grab"}>
+              {testimonials.map((testimonial) => (
+                <CarouselItem key={testimonial.id} className="md:basis-1/2">
+                  <div className="">
+                    <Card className="bg-[#161518] border-zinc-800">
+                      <CardContent className="space-y-3 md:space-y-4.5">
+                        <div className="flex items-center justify-between mb-3 md:mb-6">
+                          <div className="flex flex-col md:gap-1">
+                            <h3 className="text-white text-lg md:text-2xl font-bold">
+                              {testimonial.name}
+                            </h3>
+                            <p className="text-zinc-400 text-sm md:text-base mb-2">
+                              {testimonial.company_designation}
+                            </p>
+                          </div>
+                          <img
+                            src={testimonial.image}
+                            alt={testimonial.name}
+                            className="w-13 h-13 md:w-16 md:h-16 rounded-lg object-cover"
+                          />
+                        </div>
+
+                        <hr className="border-0 h-[1px] bg-[linear-gradient(90deg,rgba(255,255,255,0.30)_0%,rgba(39,38,41,0.30)_100%)]" />
+
+                        <p className="text-zinc-300 leading-relaxed text-sm md:text-base mb-2 md:mb-6">
+                          {testimonial.text}
+                        </p>
+
+                        <div className="flex items-center justify-between">
+                          <StarRating rating={testimonial.rating} />
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="w-10 h-10 md:w-12 md:h-12"
+                            viewBox="0 0 48 48"
+                            fill="none"
+                          >
+                            <path
+                              d="M12.9997 6C19.3881 6 23.9997 11.2741 23.9996 19.0833C23.9587 30.4295 15.4291 38.4517 3.12395 39.9923C1.98233 40.1352 1.54213 38.5537 2.59342 38.0863C7.315 35.9868 9.69964 33.3226 10.0077 30.6857C10.2378 28.7155 9.16679 26.9898 7.82198 26.6666C4.33562 25.8288 1.99972 21.4872 1.99972 17C1.99972 10.9249 6.92459 6 12.9997 6Z"
+                              fill="#FF8800"
+                            />
+                            <path
+                              d="M36.9997 6C43.3881 6 47.9997 11.2741 47.9996 19.0833C47.9587 30.4295 39.4291 38.4517 27.1239 39.9923C25.9823 40.1352 25.5421 38.5537 26.5934 38.0863C31.315 35.9868 33.6996 33.3226 34.0077 30.6857C34.2378 28.7155 33.1668 26.9898 31.822 26.6666C28.3356 25.8288 25.9997 21.4872 25.9997 17C25.9997 10.9249 30.9246 6 36.9997 6Z"
+                              fill="#FF8800"
+                            />
+                          </svg>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <div className="flex justify-between">
+              <CarouselPrevious className="bg-white/5 hover:bg-(--orange) border-0 text-white hover:text-white cursor-pointer" />
+              <CarouselNext className="bg-(--orange) border-zinc-700 text-white hover:text-white hover:bg-orange-500 cursor-pointer" />
+            </div>
+          </Carousel>
+        </div>
       </div>
     </div>
   );

@@ -47,75 +47,77 @@ export default function Faq() {
   ];
 
   return (
-    <div className="flex justify-between max-w-7xl py-25 mx-auto ">
-      <div className="w-1/2 space-y-7">
-        <div className="flex text-white justify-start items-center gap-4">
-          <p>FAQ</p>
-          <div>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="167"
-              height="2"
-              viewBox="0 0 167 2"
-              fill="none"
-            >
-              <path
-                d="M1 1H166"
-                stroke="url(#paint0_linear_2239_2159)"
-                strokeWidth="2"
-                strokeLinecap="round"
-              />
-              <defs>
-                <linearGradient
-                  id="paint0_linear_2239_2159"
-                  x1="-3.99979"
-                  y1="0.49994"
-                  x2="8.92156"
-                  y2="45.5518"
-                  gradientUnits="userSpaceOnUse"
-                >
-                  <stop stopColor="#FF8800" />
-                  <stop offset="0.981629" stopColor="#0F0E11" />
-                </linearGradient>
-              </defs>
-            </svg>
+    <div className="w-full py-15 md:py-25">
+      <div className="max-w-7xl md:flex justify-between mx-4 md:mx-auto">
+        <div className="md:w-1/2 space-y-2 md:space-y-7">
+          <div className="flex text-white justify-start items-center gap-2 md:gap-4">
+            <p className="text-sm md:text-xl">FAQ</p>
+            <div className="mobile-line">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="167"
+                height="2"
+                viewBox="0 0 167 2"
+                fill="none"
+              >
+                <path
+                  d="M1 1H166"
+                  stroke="url(#paint0_linear_2239_2159)"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                />
+                <defs>
+                  <linearGradient
+                    id="paint0_linear_2239_2159"
+                    x1="-3.99979"
+                    y1="0.49994"
+                    x2="8.92156"
+                    y2="45.5518"
+                    gradientUnits="userSpaceOnUse"
+                  >
+                    <stop stopColor="#FF8800" />
+                    <stop offset="0.981629" stopColor="#0F0E11" />
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+          </div>
+          <div className="flex text-white justify-between items-end z-10  text-left">
+            <h2 className="text-3xl leading-11 font-medium lg:text-6xl md:leading-18">
+              Everything You
+              <br /> Need to Know
+            </h2>
           </div>
         </div>
-        <div className="flex text-white justify-between items-end z-10  text-left">
-          <h2 className="text-4xl font-medium leading-18 lg:text-6xl">
-            Everything You
-            <br /> Need to Know
-          </h2>
-        </div>
-      </div>
-      <div className="w-1/2">
-        <div className="">
+        <div className="md:w-1/2">
           <div className="">
-            <Accordion
-              type="single"
-              collapsible
-              className=" w-full rounded-2xl p-1"
-            >
-              {faqItems.map((item) => (
-                <div className="group" key={item.id}>
-                  <AccordionItem
-                    value={item.id}
-                    className="data-[state=open]:bg-[#161518] text-white text-xl dark:data-[state=open]:bg-muted peer rounded-xl border-none px-7 py-5 data-[state=open]:border-none data-[state=open]:shadow-sm"
-                  >
-                    <AccordionTrigger className="cursor-pointer  text-xl hover:no-underline">
-                      <div className="flex gap-3">
-                        <span className="text-(--orange)">{item.no}</span> 
-                        {item.question}
-                      </div>
-                    </AccordionTrigger>
-                    <AccordionContent>
-                      <p className="text-base text-(--grey)">{item.answer}</p>
-                    </AccordionContent>
-                  </AccordionItem>
-                  <hr className=" border-chart-1 border-white/20 group-last:hidden peer-data-[state=open]:opacity-0" />
-                </div>
-              ))}
-            </Accordion>
+            <div className="">
+              <Accordion
+                type="single"
+                collapsible
+                className=" w-full rounded-2xl p-1"
+              >
+                {faqItems.map((item) => (
+                  <div className="group" key={item.id}>
+                    <AccordionItem
+                      value={item.id}
+                      className="data-[state=open]:bg-[#161518] text-white text-xl dark:data-[state=open]:bg-muted peer rounded-xl border-none px-3 md:px-7 py-2 md:py-5 data-[state=open]:border-none data-[state=open]:shadow-sm"
+                    >
+                      <AccordionTrigger className="cursor-pointer text-base md:text-xl hover:no-underline">
+                        <div className="flex gap-2 md:gap-3">
+                          <span className="text-(--orange)">{item.no}</span>
+                          {item.question}
+                        </div>
+                      </AccordionTrigger>
+                      <AccordionContent>
+                        <p className="text-sm md:text-base text-(--grey)">{item.answer}</p>
+                      </AccordionContent>
+                    </AccordionItem>
+                    <hr className="border-white/20 group-last:hidden peer-data-[state=open]:opacity-0" />
+                  </div>
+                ))}
+              </Accordion>
+            </div>
           </div>
         </div>
       </div>

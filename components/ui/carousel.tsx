@@ -177,10 +177,10 @@ function CarouselPrevious({
       variant={variant}
       size={size}
       className={cn(
-        "absolute w-32 py-6 text-base rounded-4",
+        "absolute w-24 md:w-32 py-4 md:py-6 text-sm md:text-base rounded-4",
         orientation === "horizontal"
-          ? "-top-14 right-36 -translate-y-1/2"
-          : "-top-12 left-1/2 -translate-x-1/2 rotate-90",
+          ? "-bottom-18 md:-top-14 md:right-36 -translate-y-1/2"
+          : "-bottom-18 md:-top-12 left-1/2 -translate-x-1/2 rotate-90",
         className
       )}
       disabled={!canScrollPrev}
@@ -207,10 +207,10 @@ function CarouselNext({
       variant={variant}
       size={size}
       className={cn(
-        "absolute w-32 py-6 text-base rounded-4",
+        "absolute w-24 md:w-32 py-4 md:py-6 text-sm md:text-base rounded-4",
         orientation === "horizontal"
-          ? "-top-14 right-0 -translate-y-1/2"
-          : "-bottom-12 left-1/2 -translate-x-1/2 rotate-90",
+          ? "-bottom-18 md:-top-14 right-0 -translate-y-1/2"
+          : "-bottom-18 md:-bottom-12 left-1/2 -translate-x-1/2 rotate-90",
         className
       )}
       disabled={!canScrollNext}

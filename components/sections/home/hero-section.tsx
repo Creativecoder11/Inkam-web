@@ -61,14 +61,14 @@ export default function HeroSection() {
 
         {/* ===== Hero Content ===== */}
         <section>
-          <div className="relative pt-24 md:pt-36">
-            <div className="mx-auto max-w-7xl">
+          <div className="relative pt-20 md:pt-36">
+            <div className="max-w-7xl mx-4 md:mx-auto">
               <div className="text-center sm:mx-auto lg:mr-auto lg:mt-0">
                 <TextEffect
                   preset="fade-in-blur"
                   speedSegment={0.3}
                   as="h1"
-                  className="mx-auto mt-8 max-w-6xl font-bold text-white text-5xl max-md:font-semibold md:text-7xl lg:mt-16 xl:text-[5rem] leading-[94px]"
+                  className="mx-auto mt-10 md:max-w-6xl font-bold text-white text-5xl leading-[60px] max-md:font-semibold md:text-[80px] md:leading-[88px] -tracking-[0.6px] md:-tracking-[1.6px]"
                 >
                   Unlock Bangladesh’s Untapped Digital Market
                 </TextEffect>
@@ -79,7 +79,7 @@ export default function HeroSection() {
                   speedSegment={0.3}
                   delay={0.5}
                   as="p"
-                  className="mx-auto mt-8 max-w-2xl text-(--grey) text-lg"
+                  className="mx-auto mt-4 md:mt-8 max-w-2xl text-(--grey) text-base md:text-lg"
                 >
                   Subtext highlighting the impact: “Connecting 3,000+ businesses
                   to 170+ million consumers through our 19,000+ agents.
@@ -97,7 +97,7 @@ export default function HeroSection() {
                     },
                     ...transitionVariants,
                   }}
-                  className="mt-12 flex flex-col items-center justify-center gap-2 md:flex-row"
+                  className="mt-8 md:mt-12 flex flex-col items-center justify-center gap-2 md:flex-row"
                 >
                   <div
                     key={1}
@@ -106,7 +106,7 @@ export default function HeroSection() {
                     <Button
                       asChild
                       size="lg"
-                      className="h-14 rounded-xl px-5 py-5 text-base bg-(--orange) hover:bg-orange-500"
+                      className="rounded-xl px-3 py-5 md:px-5 md:py-7 text-sm md:text-base bg-(--orange) border border-(--orange) hover:bg-orange-500"
                     >
                       <Link href="#link">
                         <span className="text-nowrap">Partner with Us</span>
@@ -119,7 +119,7 @@ export default function HeroSection() {
                     asChild
                     size="lg"
                     variant="ghost"
-                    className="h-14 border border-(--orange) text-base text-white backdrop-blur-2xl bg-white/8 rounded-xl px-5"
+                    className="border border-(--orange) px-3 py-5 md:px-5 md:py-7 text-sm md:text-base text-white backdrop-blur-2xl bg-white/8 rounded-xl"
                   >
                     <Link href="#link">
                       <span className="text-nowrap text-(--orange)">

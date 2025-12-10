@@ -1,5 +1,7 @@
 import BlogCard from "@/components/ui/BlogCard";
-import BlogImage from "@/public/asset/Images/blog-image.svg";
+import blogImg1 from "@/public/asset/Images/blogImg1.webp";
+import blogImg2 from "@/public/asset/Images/blogImg2.webp";
+import blogImg3 from "@/public/asset/Images/blogImg3.webp";
 
 export default function BlogInsight() {
   const articles = [
@@ -9,26 +11,26 @@ export default function BlogInsight() {
       comments: 223,
       title: "Singapore Demo Day Spotlights Bangladeshi Turtle Startups",
       excerpt:
-        "Inkam connects digital businesses with millions of consumers through a powerful agent network, bridging market gaps and driving inclusive digital growth across Bangladesh.",
-      image: BlogImage,
+        "Seven startups from Turtle's first cohort including Chhaya, Inkam, Revorium, Drutoloan, Shunboi, MistriMama, and ShopUp showcased their innovative solutions at the Singapore Demo Day.",
+      image: blogImg1,
     },
     {
       id: 2,
       date: "17-01-23",
       comments: 223,
-      title: "Singapore Demo Day Spotlights Bangladeshi Turtle Startups",
+      title: "Rising Together: Meet & Greet with Razor Capital",
       excerpt:
-        "Inkam connects digital businesses with millions of consumers through a powerful agent network, bridging market gaps and driving inclusive digital growth across Bangladesh.",
-      image: BlogImage,
+        "Turtle Venture orchestrated a momentous Meet & Greet event with Razor Capital, a prominent. This gathering fostered connections, insights, and collaboration between startups and investors.",
+      image: blogImg2,
     },
     {
       id: 3,
       date: "17-01-23",
       comments: 223,
-      title: "Singapore Demo Day Spotlights Bangladeshi Turtle Startups",
+      title: "Market Presence and Partnership Meeting",
       excerpt:
-        "Inkam connects digital businesses with millions of consumers through a powerful agent network, bridging market gaps and driving inclusive digital growth across Bangladesh.",
-      image: BlogImage,
+        "Inkam has formed key partnerships with 10 divisional distributors, driving regional growth. These collaborations enhance our market presence and enable us to better serve our customers across various regions.",
+      image: blogImg3,
     },
   ];
 

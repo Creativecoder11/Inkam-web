@@ -10,19 +10,19 @@ export default function Benefits() {
       icon: <Image src={ExpandIcon} alt="icon" width={24} height={24} />,
       title: "Expand Your Reach",
       description:
-        "Access new markets and millions of untapped consumers through Inkam's 19,000+ agents covering 99% of Bangladesh.",
+        "Reach new cities, towns, and rural markets through Inkam’s nationwide agent network covering almost all Bangladesh.",
     },
     {
       icon: <Image src={SaveTimeIcon} alt="icon" width={24} height={24} />,
       title: "Save Time & Cost",
       description:
-        "Inkam's technology-driven network to reduce marketing expenses, streamline distribution, and boost ROI with efficient operations.",
+        "Reduce campaign planning overhead and marketing spend using a coordinated, technology-driven, distribution network that scales.",
     },
     {
       icon: <Image src={GrowthIcon} alt="icon" width={24} height={24} />,
       title: "Drive Real Growth",
       description:
-        "Use data intelligence and a nationwide sales force to increase leads, accelerate sales, and grow your business faster than ever.",
+        "Use data from every agent interaction to improve conversions, scale winning campaigns, and grow faster sustainably.",
     },
   ];
   return (
@@ -59,7 +59,7 @@ export default function Benefits() {
               </defs>
             </svg>
           </div>
-          <p className="text-sm md:text-xl">ABOUT US</p>
+          <p className="text-sm md:text-xl">BENEFITS</p>
           <div className="mobile-line">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -94,7 +94,7 @@ export default function Benefits() {
           Together, We Build <br /> the Future of Distribution
         </h2>
       </div>
-      <div className="flex flex-col md:flex-row gap-4 md:gap-10">
+      <div className="flex flex-col md:flex-row gap-4 md:gap-5">
         <div className="w-full md:w-1/2">
           <BenefitsCharts />
         </div>

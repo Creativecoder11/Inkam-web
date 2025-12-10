@@ -8,62 +8,43 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import sharmin from "@/public/asset/images/Sharmin.webp";
+import abdul from "@/public/asset/images/Abdul.webp";
 
 const testimonials = [
   {
     id: 1,
-    company_designation: "Jamroll Limited",
-    name: "Jenny Wilson",
+    name: "Sharmin Akter",
+    company_designation: "Manager, Marketing & Branding at Priyoshop",
     rating: 5,
-    text: "Lorem ipsum dolor sit amet consectetur. In nulla euismod ut et lacus. Viverra lectus lacus aliquet et dignissim quam sed. Sed.Lorem ipsum dolor sit amet consectetur. In nulla euismod ut et lacus.",
-    image:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop",
+    text: "Inkam has been a fantastic partner for PriyoShop, managing 200–250 agents daily in Dhaka and Chattogram and driving highly successful acquisition campaigns. Their professionalism and results have made them our first choice for future projects.",
+    image: sharmin.src,
   },
   {
     id: 2,
-    company_designation: "Jamroll Limited",
-    name: "Jenny Wilson",
-    rating: 4,
-    text: "Lorem ipsum dolor sit amet consectetur. In nulla euismod ut et lacus. Viverra lectus lacus aliquet et dignissim quam sed. Sed.Lorem ipsum dolor sit amet consectetur. In nulla euismod ut et lacus.",
-    image:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop",
+    name: "Abdul Alim Chowdhury",
+    company_designation: "Founder and CEO at Pakapepe",
+    rating: 5,
+    text: "Inkam successfully onboarded 1,000+ restaurants across key zones in Dhaka and efficiently ran our Pakapepe app download campaign. Their quality work has boosted orders for our partner restaurants and strengthened our platform’s growth.",
+    image: abdul.src,
   },
   {
     id: 3,
-    company_designation: "Jamroll Limited",
-    name: "Jenny Wilson",
+    name: "Sharmin Akter",
+    company_designation: "Manager, Marketing & Branding at Priyoshop",
     rating: 5,
-    text: "Lorem ipsum dolor sit amet consectetur. In nulla euismod ut et lacus. Viverra lectus lacus aliquet et dignissim quam sed. Sed.Lorem ipsum dolor sit amet consectetur. In nulla euismod ut et lacus.",
-    image:
-      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop",
+    text: "Inkam has been a fantastic partner for PriyoShop, managing 200–250 agents daily in Dhaka and Chattogram and driving highly successful acquisition campaigns. Their professionalism and results have made them our first choice for future projects.",
+    image: sharmin.src,
   },
   {
     id: 4,
-    company_designation: "Jamroll Limited",
-    name: "Jenny Wilson",
-    rating: 3,
-    text: "Lorem ipsum dolor sit amet consectetur. In nulla euismod ut et lacus. Viverra lectus lacus aliquet et dignissim quam sed. Sed.Lorem ipsum dolor sit amet consectetur. In nulla euismod ut et lacus.",
-    image:
-      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop",
-  },
-  {
-    id: 5,
-    company_designation: "Jamroll Limited",
-    name: "Jenny Wilson",
-    rating: 4.5,
-    text: "Lorem ipsum dolor sit amet consectetur. In nulla euismod ut et lacus. Viverra lectus lacus aliquet et dignissim quam sed. Sed.Lorem ipsum dolor sit amet consectetur. In nulla euismod ut et lacus.",
-    image:
-      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop",
-  },
-  {
-    id: 6,
-    company_designation: "Jamroll Limited",
-    name: "Jenny Wilson",
+    name: "Abdul Alim Chowdhury",
+    company_designation: "Founder and CEO at Pakapepe",
     rating: 5,
-    text: "Lorem ipsum dolor sit amet consectetur. In nulla euismod ut et lacus. Viverra lectus lacus aliquet et dignissim quam sed. Sed.Lorem ipsum dolor sit amet consectetur. In nulla euismod ut et lacus.",
-    image:
-      "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=150&h=150&fit=crop",
-  },
+    text: "Inkam successfully onboarded 1,000+ restaurants across key zones in Dhaka and efficiently ran our Pakapepe app download campaign. Their quality work has boosted orders for our partner restaurants and strengthened our platform’s growth.",
+    image: abdul.src,
+  }
+
 ];
 
 const StarRating = ({ rating }: { rating: number }) => {

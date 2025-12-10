@@ -5,8 +5,8 @@ import { useEffect, useRef, useState } from "react";
 export default function StatsSection() {
   const stats = [
     { label: "Active Agents", value: 19000, format: "K+" },
-    { label: "Digital Businesses Supported", value: 3000, format: "K+" },
-    { label: "Consumers Reached", value: 170000000, format: "M+" },
+    { label: "Digital Businesses Supported", value: 20, format: "+" },
+    { label: "Consumers Reached", value: 100000, format: "+" },
     { label: "Monthly Revenue Growth", value: 7.8, format: "%" },
   ];
 
@@ -65,6 +65,10 @@ export default function StatsSection() {
       return `${Math.floor(num / 100000) / 10}M+`; // 170000000 → 170M+
     }
 
+    if (type === "+") {
+      return `${num}+`; // Append + for this type
+    }
+
     return num.toLocaleString();
   };
 
@@ -102,7 +106,7 @@ export default function StatsSection() {
             From a Vision to a Nationwide Network
           </h2>
           <p className="w-full md:w-1/2 text-sm md:text-[16px] text-(--grey) md:pl-20">
-            Inkam connects digital businesses with millions of consumers through a powerful agent network, bridging market gaps and driving inclusive digital growth across Bangladesh.
+            Inkam was founded to solve a simple but critical problem: thousands of digital businesses in Bangladesh struggle to reach new markets and convert users beyond major cities.
           </p>
         </div>
 

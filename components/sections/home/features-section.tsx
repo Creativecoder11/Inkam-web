@@ -68,7 +68,7 @@ const FeatureCard = ({
 }: FeatureCardProps) => {
   return (
     <SpotlightCard
-      className="transition-all duration-300 hover:scale-[1.02] bg-[#FFFFFF05] hover:bg-[#161518] group"
+      className="transition-all duration-300 hover:scale-[1.02] bg-[#FFFFFF05] hover:bg-[#201F22] group"
       spotlightColor={spotlightColor}
     >
       <div className="relative p-4 md:p-5 flex flex-col h-full">
@@ -155,7 +155,7 @@ const features = [
     number: "01.",
     title: "Acquisition",
     description:
-      "Helps businesses attract and onboard new users, merchants, and leads through digital and field campaigns.",
+      "Acquire new users, merchants, and leads through targeted digital outreach and agent-led local on-ground campaigns.",
     iconSrc: AcquisitionIcon,
     spotlightColor: "rgba(249,115,22,0.2)",
   },
@@ -163,7 +163,7 @@ const features = [
     number: "02.",
     title: "Product Reselling",
     description:
-      "Helps businesses attract and onboard new users, merchants, and leads through digital and field campaigns.",
+      "Drive product sales as agents promote, explain, and resell your digital offerings in their communities.",
     iconSrc: ResellingIcon,
     spotlightColor: "rgba(249,115,22,0.2)",
   },
@@ -171,7 +171,7 @@ const features = [
     number: "03.",
     title: "Order Collection",
     description:
-      "Helps businesses attract and onboard new users, merchants, and leads through digital and field campaigns.",
+      "Simplify order collection as agents capture, confirm, and forward customer orders from shops and areas.",
     iconSrc: CollectionIcon,
     spotlightColor: "rgba(249,115,22,0.2)",
   },

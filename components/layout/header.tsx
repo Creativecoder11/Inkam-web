@@ -36,7 +36,7 @@ export const HeroHeader = () => {
           className={cn(
             "mx-auto mt-2 max-w-[1440px] px-6 transition-all duration-300 lg:px-12",
             isScrolled &&
-              "max-w-7xl rounded-2xl  border-white/10 bg-white/8 backdrop-blur-xl lg:px-5"
+            "max-w-7xl rounded-2xl  border-white/10 bg-white/8 backdrop-blur-xl lg:px-5"
           )}
         >
           <div className="relative flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 lg:py-4">
@@ -69,9 +69,9 @@ export const HeroHeader = () => {
                       href={item.href}
                       className={cn(
                         "relative duration-200 text-(--grey) hover:text-(--orange)",
-                        "before:absolute before:left-0 before:-bottom-1 before:h-[2px] before:w-0 before:bg-current before:transition-all before:duration-300 hover:before:w-full",
+                        "before:absolute before:left-0 before:-bottom-1 before:h-0.5 before:w-0 before:bg-current before:transition-all before:duration-300 hover:before:w-full",
                         pathname === item.href &&
-                          "text-(--orange) before:w-full"
+                        "text-(--orange) before:w-full"
                       )}
                     >
                       {item.name}
@@ -82,15 +82,18 @@ export const HeroHeader = () => {
             </div>
 
             {/* Mobile Menu + Contact Button */}
-            <div className="bg-background in-data-[state=active]:block lg:in-data-[state=active]:flex mb-6 hidden w-full flex-wrap items-center justify-end space-y-8 rounded-3xl border p-6 shadow-2xl shadow-zinc-300/20 lg:m-0 lg:flex lg:w-fit lg:gap-6 lg:space-y-0 lg:border-transparent lg:bg-transparent lg:p-0 lg:shadow-none dark:shadow-none">
+            <div className="bg-background in-data-[state=active]:block md:in-data-[state=active]:flex mb-6 hidden w-full flex-wrap items-center justify-end space-y-4 rounded-3xl border p-6 shadow-2xl shadow-zinc-300/20 md:m-0 md:flex md:w-fit md:gap-6 md:space-y-0 md:border-transparent md:bg-transparent md:p-0 lg:shadow-none dark:shadow-none">
               {/* Mobile menu list */}
-              <div className="lg:hidden">
-                <ul className="space-y-6 text-base">
+              <div className="md:hidden">
+                <ul className="space-y-3 md:space-y-6 text-base">
                   {menuItems.map((item, index) => (
                     <li key={index}>
                       <Link
                         href={item.href}
-                        className="text-muted-foreground hover:text-accent-foreground block duration-150"
+                        className={cn(
+                          "relative inline-block text-muted-foreground duration-150 hover:text-(--orange) before:absolute before:left-0 before:-bottom-1 before:h-0.5 before:w-0 before:bg-current before:transition-all before:duration-300 hover:before:w-full",
+                          pathname === item.href && "text-(--orange) before:w-full"
+                        )}
                       >
                         {item.name}
                       </Link>
@@ -100,7 +103,7 @@ export const HeroHeader = () => {
               </div>
 
               {/* Only Contact Us Button */}
-              <Button asChild size="sm" className="px-5 py-5 bg-(--orange)">
+              <Button asChild size="sm" className="px-3 py-3 md:px-5 md:py-5 bg-(--orange) hover:bg-[#ffffff0d] hover:text-(--orange) border border-(--orange) hover:border-(--orange) transition-all duration-300">
                 <Link href="/contact">
                   <span>Contact Us</span>
                 </Link>

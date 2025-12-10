@@ -1,8 +1,8 @@
+"use client";
+
+import gsap from "gsap";
 import Link from "next/link";
-import footerLogo from "@/assets/footer-logo1.svg";
-import download from "@/assets/download.svg";
-import Image from "next/image";
-import type { ReactNode } from "react";
+import { useEffect, useRef, type ReactNode } from "react";
 type FooterLinkItem = {
   title: ReactNode;
   href?: string;
@@ -83,7 +83,7 @@ const links: FooterLinkGroup[] = [
         title: (
           <>
             2715 Ash Dr. San Jose,
-            <br />
+            <br className="hidden md:block" />
             South Dakota 83475
           </>
         ),
@@ -92,12 +92,82 @@ const links: FooterLinkGroup[] = [
   },
 ];
 const Footer = () => {
+  const svgRef = useRef(null);
+
+  useEffect(() => {
+    if (!svgRef.current) return;
+
+    const paths = svgRef.current.querySelectorAll("path");
+
+    const resetPaths = () => {
+      paths.forEach((path) => {
+        const length = path.getTotalLength();
+
+        gsap.set(path, {
+          stroke: "#ff8800",
+          strokeWidth: 2,
+          strokeDasharray: length,
+          strokeDashoffset: length,
+          fill: "white",
+        });
+      });
+    };
+
+    const animateStrokes = () => {
+      const tl = gsap.timeline();
+
+      paths.forEach((path, index) => {
+        const length = path.getTotalLength();
+
+        tl.to(
+          path,
+          {
+            strokeDashoffset: 0,
+            duration: 4,
+            ease: "power1.inOut",
+          },
+          index * 0.1
+        );
+
+        tl.to(
+          path,
+          {
+            fill: "#ff8800/50",
+            duration: 1,
+            ease: "power1.inOut",
+          },
+          index * 0.1 + 1
+        );
+      });
+
+      return tl;
+    };
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            resetPaths();
+            animateStrokes();
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    observer.observe(svgRef.current);
+
+    return () => observer.disconnect();
+  }, []);
+
+
+
   return (
-    <footer className="pt-20 bg-[#161518]">
-      <div className="mx-auto max-w-7xl">
-        <div className="w-full flex justify-between gap-12">
-          <div className="w-1/3">
-            <div className="flex flex-col gap-7">
+    <footer className="w-full pt-10 md:pt-20 bg-[#161518]">
+      <div className="mx-4 md:mx-auto max-w-7xl">
+        <div className="w-full flex flex-col md:flex-row justify-between gap-12">
+          <div className="md:w-1/3">
+            <div className="flex flex-col gap-3 md:gap-7">
               <Link href="/" aria-label="go home" className="block size-fit">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -147,16 +217,16 @@ const Footer = () => {
                   </defs>
                 </svg>
               </Link>
-              <p className="text-[#CFCFCF] text-lg leading-[1.4]">
+              <p className="text-[#CFCFCF] text-base md:text-lg leading-[1.4]">
                 Lorem ipsum dolor sit amet consectetur. Lorem <br /> ipsum dolor
                 sit amet consectetur.
               </p>
             </div>
-            <p className="text-[#ffffff] text-base leading-normal py-8">
+            <p className="text-[#ffffff] text-base leading-normal py-5 md:py-8">
               © Copyright {new Date().getFullYear()} Inkam App
             </p>
             {/* social link */}
-            <div className="flex gap-3 mb-10">
+            <div className="flex gap-3 mb-5 md:mb-10">
               <a
                 href="#"
                 target="_blank"
@@ -164,8 +234,7 @@ const Footer = () => {
                 className="inline-block group"
               >
                 <svg
-                  width="40"
-                  height="40"
+                  className="w-8 h-8 md:w-10 md:h-10"
                   viewBox="0 0 40 40"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -192,8 +261,7 @@ const Footer = () => {
                 className="inline-block group"
               >
                 <svg
-                  width="40"
-                  height="40"
+                  className="w-8 h-8 md:w-10 md:h-10"
                   viewBox="0 0 40 40"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -230,8 +298,7 @@ const Footer = () => {
                 className="inline-block group"
               >
                 <svg
-                  width="40"
-                  height="40"
+                  className="w-8 h-8 md:w-10 md:h-10"
                   viewBox="0 0 40 40"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -258,8 +325,7 @@ const Footer = () => {
                 className="inline-block group"
               >
                 <svg
-                  width="40"
-                  height="40"
+                  className="w-8 h-8 md:w-10 md:h-10"
                   viewBox="0 0 40 40"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -283,7 +349,7 @@ const Footer = () => {
 
             <Link
               href="#"
-              className="bg-[#FF8800] text-white text-base leading-1.5 font-medium py-3 px-10.5 rounded-xl hover:bg-[#e67600] inline-flex items-center gap-2"
+              className="bg-[#FF8800] text-white text-sm md:text-base leading-1.5 font-medium py-3 px-7 md:px-10.5 rounded-xl hover:bg-[#e67600] inline-flex items-center gap-2"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -308,9 +374,9 @@ const Footer = () => {
             </Link>
           </div>
 
-          <div className="w-1/2 flex justify-between gap-12">
+          <div className="w-full md:w-1/2 grid grid-cols-2 md:flex justify-between gap-4 md:gap-12">
             {links.map((linkGroup, groupIndex) => (
-              <div key={groupIndex} className="space-y-4 text-sm">
+              <div key={groupIndex} className="space-y-2 md:space-y-4 text-sm">
                 <span className="text-[#FFFFFF] block font-medium">
                   {linkGroup.group}
                 </span>
@@ -320,13 +386,12 @@ const Footer = () => {
                     <Link
                       key={itemIndex}
                       href={item.href}
-                      className="text-[#CFCFCF] hover:text-primary duration-150 flex items-center gap-2"
+                      className="text-[#CFCFCF] hover:text-[#e67600] duration-150 flex items-center gap-1 md:gap-2"
                     >
                       {item.icon && (
                         <span>
                           <svg
-                            width="40"
-                            height="40"
+                            className="w-8 h-8 md:w-10 md:h-10"
                             viewBox="0 0 40 40"
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
@@ -359,8 +424,7 @@ const Footer = () => {
                       {item.icon && (
                         <span>
                           <svg
-                            width="40"
-                            height="40"
+                            className="w-8 h-8 md:w-10 md:h-10"
                             viewBox="0 0 40 40"
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
@@ -415,8 +479,7 @@ const Footer = () => {
                       {item.icon && (
                         <span>
                           <svg
-                            width="40"
-                            height="40"
+                            className="w-8 h-8 md:w-10 md:h-10"
                             viewBox="0 0 40 40"
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
@@ -449,37 +512,36 @@ const Footer = () => {
             ))}
           </div>
         </div>
-        <div className="pt-12 space-y-12">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="1322"
-          height="2"
-          viewBox="0 0 1322 2"
-          fill="none"
-        >
-          <path
-            d="M1 1H1321"
-            stroke="url(#paint0_linear_2239_2591)"
-            strokeWidth="2"
-            strokeLinecap="round"
-          />
-          <defs>
-            <linearGradient
-              id="paint0_linear_2239_2591"
-              x1="-38.9983"
-              y1="0.49994"
-              x2="-37.2525"
-              y2="49.1952"
-              gradientUnits="userSpaceOnUse"
-            >
-              <stop stopColor="#FF8800" />
-              <stop offset="0.981629" stopColor="#0F0E11" />
-            </linearGradient>
-          </defs>
-        </svg>
+        <div className="pt-8 md:pt-12 space-y-8 md:space-y-12">
           <svg
-            width="1280"
-            height="145"
+            xmlns="http://www.w3.org/2000/svg"
+            className="w-full md:w-[1322px] h-1 md:h-0.5"
+            viewBox="0 0 1322 2"
+            fill="none"
+          >
+            <path
+              d="M1 1H1321"
+              stroke="url(#paint0_linear_2239_2591)"
+              strokeWidth="2"
+              strokeLinecap="round"
+            />
+            <defs>
+              <linearGradient
+                id="paint0_linear_2239_2591"
+                x1="-38.9983"
+                y1="0.49994"
+                x2="-37.2525"
+                y2="49.1952"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop stopColor="#FF8800" />
+                <stop offset="0.981629" stopColor="#0F0E11" />
+              </linearGradient>
+            </defs>
+          </svg>
+          <svg
+            ref={svgRef}
+            className="w-full h-auto pb-1"
             viewBox="0 0 1320 145"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"

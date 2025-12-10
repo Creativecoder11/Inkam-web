@@ -12,37 +12,37 @@ export default function Faq() {
     {
       id: "item-1",
       no: "01.",
-      question: "How long does shipping take?",
+      question: "What is Inkam and what core problem does it solve?",
       answer:
-        "Standard shipping takes 3-5 business days, depending on your location. Express shipping options are available at checkout for 1-2 business day delivery.",
+        "Inkam is a digital distribution network that connects businesses with end consumers through a nationwide community of trained “digital entrepreneurs” (agents). We solve the last-mile and adoption problem for digital products and services—helping you reach, educate, and convert customers in markets your existing channels don’t coverz.",
     },
     {
       id: "item-2",
       no: "02.",
-      question: "What payment methods do you accept?",
+      question: "How does Inkam’s distribution model work?",
       answer:
-        "We accept all major credit cards (Visa, Mastercard, American Express), PayPal, Apple Pay, and Google Pay. For enterprise customers, we also offer invoicing options.",
+        "You list your product or campaign on Inkam and define your target audience plus success metrics (downloads, sign-ups, orders, merchant onboarding, etc.). Our agents execute on the ground using the Inkam app—promoting, educating, and closing the loop with customers. You track performance in a dashboard and pay based on verified outcomes, not vanity metrics.",
     },
     {
       id: "item-3",
       no: "03.",
-      question: "Can I change or cancel my order?",
+      question: "What types of businesses does Inkam partner with?",
       answer:
-        "You can modify or cancel your order within 1 hour of placing it. After this window, please contact our customer support team who will assist you with any changes.",
+        "We work with digital-first and consumer-focused businesses across fintech and financial services, edtech, healthtech, ecommerce and retail, subscription/OTT services, logistics, telecom/ISP, and other digital products and services. If your growth depends on reaching more users, merchants, or consumers across Bangladesh, we’re built to support you.",
     },
     {
       id: "item-4",
       no: "04.",
-      question: "Do you ship internationally?",
+      question: "How is Inkam different from a traditional marketing agency or field sales team?",
       answer:
-        "Yes, we ship to over 50 countries worldwide. International shipping typically takes 7-14 business days. Additional customs fees may apply depending on your country's import regulations.",
+        "Traditional agencies focus on media and creatives, while traditional field teams are expensive to build, manage, and scale. Inkam gives you a ready-made, nationwide, tech-enabled distribution network where you pay for performance instead of fixed salaries and overhead. You get structured field execution, quality control, and transparent reporting in one platform.",
     },
     {
       id: "item-5",
       no: "05.",
-      question: "What is your return policy?",
+      question: "How is pricing structured for businesses?",
       answer:
-        "We offer a 30-day return policy for most items. Products must be in original condition with tags attached. Some specialty items may have different return terms, which will be noted on the product page.",
+        "Our model is primarily performance-based. Together we define the desired actions—such as activated app installs, verified leads, completed orders, or merchant onboarding—and set per-unit incentives and campaign budgets. This gives you clear visibility on cost per result, while we optimise execution to improve your ROI over time.",
     },
   ];
 

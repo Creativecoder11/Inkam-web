@@ -13,7 +13,7 @@ export default function LogoCloud() {
                 <div className="items-center md:flex-row">
                     <div>
                         <h3 className="text-base md:text-lg text-center text-white">
-                            More than 200+ companies trusted us
+                            Trusted by leading brands across fintech, edtech, healthcare, ecommerce, and logistics
                         </h3>
                     </div>
 

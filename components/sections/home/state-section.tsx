@@ -6,7 +6,7 @@ export default function StatsSection() {
   const stats = [
     { label: "Active Agents", value: 19000, format: "K+" },
     { label: "Digital Businesses Supported", value: 20, format: "+" },
-    { label: "Consumers Reached", value: 100000, format: "+" },
+    { label: "Consumers Reached", value: 100, format: "K+" },
     { label: "Monthly Revenue Growth", value: 7.8, format: "%" },
   ];
 
@@ -102,7 +102,7 @@ export default function StatsSection() {
         </div>
 
         <div className="flex flex-col md:flex-row justify-between items-end text-left gap-2 md:gap-0">
-          <h2 className="text-3xl font-medium lg:text-6xl w-full md:w-1/2">
+          <h2 className="text-3xl font-semibold lg:text-6xl w-full md:w-1/2">
             From a Vision to a Nationwide Network
           </h2>
           <p className="w-full md:w-1/2 text-sm md:text-[16px] text-(--grey) md:pl-20">

@@ -3,14 +3,15 @@ import storyImage from "@/public/asset/Images/our-story-image.webp";
 
 export default function ServicesOverview() {
   return (
-    <div className=" max-w-7xl py-25 mx-auto flex flex-col gap-13">
-        <div className="flex justify-between items-end gap-20">
+    <div className="w-full py-15 md:py-25">
+      <div className="max-w-7xl mx-4 md:mx-auto flex flex-col gap-6 md:gap-13">
+        <div className="flex flex-col md:flex-row justify-between items-end gap-4 md:gap-20">
           {/* Left Content */}
-          <div className="w-1/2 flex flex-col gap-8">
-            <div className="space-y-7">
-              <div className="flex justify-start text-white items-center gap-4">
-                <p>OVERVIEW</p>
-                <div>
+          <div className="w-full md:w-1/2 flex flex-col gap-3 md:gap-8">
+            <div className="space-y-3 md:space-y-7">
+              <div className="flex justify-start text-white items-center gap-2 md:gap-4">
+                <p className="text-sm md:text-xl">OVERVIEW</p>
+                <div className="mobile-line">
                   {/* svg omitted for brevity */}
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -42,22 +43,22 @@ export default function ServicesOverview() {
                 </div>
               </div>
 
-              <h1 className="text-[40px] md:text-5xl lg:text-6xl font-semibold leading-[1.1] text-white">
+              <h1 className="text-3xl font-semibold lg:text-6xl text-white">
                 From a Vision to a Nationwide Network
               </h1>
             </div>
           </div>
           {/* Right Content */}
-          <div className="w-1/2 pl-12">
-            <p className="text-base text-(--grey)">
+          <div className="w-full md:w-1/2 md:pl-12">
+            <p className="text-sm md:text-[16px] text-(--grey)">
               Inkam empowers digital businesses with nationwide distribution,
               enabling greater reach, higher sales, and seamless access to
               millions of consumers across Bangladesh.
             </p>
           </div>
         </div>
-        <div className="w-full flex gap-10 ">
-          <div className="w-1/2 relative rounded-[20px] overflow-hidden">
+        <div className="w-full flex gap-4 md:gap-10 ">
+          <div className="w-1/2 relative rounded-lg md:rounded-[20px] overflow-hidden">
             <Image
               src={storyImage}
               alt="Team collaborating in modern office"
@@ -67,7 +68,7 @@ export default function ServicesOverview() {
               priority
             />
           </div>
-          <div className="w-1/2 relative rounded-[20px] overflow-hidden">
+          <div className="w-1/2 relative rounded-lg md:rounded-[20px] overflow-hidden">
             <Image
               src={storyImage}
               alt="Team collaborating in modern office"
@@ -79,5 +80,6 @@ export default function ServicesOverview() {
           </div>
         </div>
       </div>
+    </div>
   )
 }

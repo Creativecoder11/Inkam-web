@@ -63,24 +63,24 @@ const EmployeeCard = ({
   avatarColor,
 }: EmployeeCardProps) => {
   return (
-    <div className="bg-white/5 w-[390px] space-y-3 rounded-xl p-4">
+    <div className="bg-white/5 w-full md:w-[390px] space-y-2 md:space-y-3 rounded-lg md:rounded-xl p-2.5 md:p-4">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-4">
           <div
-            className="w-10 h-10 rounded-full"
+            className="w-8 h-8 md:w-10 md:h-10 rounded-full"
             style={{ background: avatarColor }}
           />
           <div>
-            <h3 className="text-white text-base font-medium">{name}</h3>
-            <p className="text-(--grey) text-xs">{title}</p>
+            <h3 className="text-white text-sm md:text-base font-medium">{name}</h3>
+            <p className="text-(--grey) text-xs md:text-sm">{title}</p>
           </div>
         </div>
-        <div className="bg-white py px-2 rounded-full">
-          <span className="text-red-500 font-medium text-xs">Pending</span>
+        <div className="bg-white px-2 rounded-full">
+          <span className="text-red-500 font-medium text-[10px] md:text-xs">Pending</span>
         </div>
       </div>
-      <div className="w-full h-px bg-gradient-to-r from-white/20 to-transparent" />
-      <div className="flex items-center text-xs justify-between">
+      <div className="w-full h-px bg-linear-to-r from-white/20 to-transparent" />
+      <div className="flex items-center text-[10px] md:text-xs justify-between">
         <span className="text-white/80">{date}</span>
         <span className="text-gray-400">Leave Date</span>
       </div>
@@ -166,7 +166,7 @@ const SalesReport = () => {
                 shadowBlur: 10,
                 shadowColor: "rgba(0, 0, 0, 0.3)",
                 borderRadius: 10,
-                
+
               },
             },
             {
@@ -211,29 +211,29 @@ const SalesReport = () => {
 
   return (
     <div className="flex flex-col justify-end rounded-xl">
-      <div className="bg-white/4 p-6 rounded-2xl">
-        <h2 className="text-white text-xl font-medium">Sales report</h2>
+      <div className="bg-white/4 p-4 md:p-6 rounded-xl md:rounded-2xl">
+        <h2 className="text-white text-xl md:text-3xl font-medium">Sales report</h2>
 
-      {/* ECharts Donut Chart */}
-      <div className="flex items-center justify-center mb-8">
-        <div ref={chartRef} style={{ width: "280px", height: "250px" }} />
-      </div>
+        {/* ECharts Donut Chart */}
+        <div className="flex items-center justify-center mb-2 md:mb-8">
+          <div ref={chartRef} style={{ width: "280px", height: "250px" }} />
+        </div>
 
-      {/* Legend */}
-      <div className="space-y-4">
-        {salesData.map((item, index) => (
-          <div key={index} className="flex items-center justify-between">
-            <div className="flex items-center gap-2">
-              <div
-                className="w-3 h-3 rounded-full"
-                style={{ backgroundColor: item.color }}
-              />
-              <span className="text-white text-sm">{item.label}</span>
+        {/* Legend */}
+        <div className="space-y-2 md:space-y-4">
+          {salesData.map((item, index) => (
+            <div key={index} className="flex items-center justify-between">
+              <div className="flex items-center gap-1 md:gap-2">
+                <div
+                  className="w-2 h-2 md:w-3 md:h-3 rounded-full"
+                  style={{ backgroundColor: item.color }}
+                />
+                <span className="text-white text-xs md:text-sm">{item.label}</span>
+              </div>
+              <span className="text-white font-medium text-xs md:text-sm">{item.value}</span>
             </div>
-            <span className="text-white font-medium text-sm">{item.value}</span>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
       </div>
     </div>
   );
@@ -263,124 +263,127 @@ export default function ProductReselling() {
   ];
 
   return (
-    <div className="max-w-7xl mx-auto pt-16">
-      <div className="flex justify-between items-center pb-8">
-        <div className="w-1/2">
-          <h2 className="text-white text-5xl font-semibold mb-2">
-            Product Reselling
-          </h2>
+    <div className="w-full pt-15 md:pt-16">
+      <div className="max-w-7xl mx-4 md:mx-auto">
+        <div className="flex flex-col md:flex-row justify-between md:items-center pb-3 md:pb-8">
+          <div className="w-full md:w-1/2">
+            <h2 className="text-white text-2xl md:text-5xl font-semibold mb-2">
+              Product Reselling
+            </h2>
+          </div>
+          <div className="w-full md:w-1/2">
+            <p className="text-(--grey) text-sm md:text-base mb-3 md:mb-6">
+              Inkam connects digital businesses with millions of consumers through
+              a powerful agent network, bridging market gaps and driving
+            </p>
+          </div>
         </div>
-        <div className="w-1/2">
-          <p className="text-(--grey) text-base mb-6">
-            Inkam connects digital businesses with millions of consumers through
-            a powerful agent network, bridging market gaps and driving
-          </p>
-        </div>
-      </div>
 
-      <div className="flex gap-6">
-        {/* Left Card - Employee List */}
-        <div className="flex w-2/3">
-          <SpotlightCard
-            className="w-full bg-white/6"
-            spotlightColor="rgba(249,115,22,0.1)"
-          >
-            <div className="relative  flex justify-between gap-7 p-8">
-              <div>
-                {/* Header */}
-                <div className="mb-8">
-                  <h2 className="text-white text-3xl font-medium mb-2">
-                    Financial Projection
-                  </h2>
-                  <p className="text-gray-400 text-base">
-                    Monitor your monthly income growth
-                  </p>
-                </div>
-                {/* Employee Cards */}
-                <div className="p-4 bg-white/3 rounded-3xl">
-                  <div className="space-y-4 w-full">
-                    {employees.map((employee, index) => (
-                      <EmployeeCard key={index} {...employee} />
-                    ))}
-                  </div>
-                </div>
-              </div>
-              {/* Right Card - Sales Report with ECharts */}
-              <SalesReport />
-            </div>
-          </SpotlightCard>
-        </div>
-        {/* Right Card - Info Card */}
-        <div className="w-1/3">
-          <SpotlightCard className="" spotlightColor="rgba(249,115,22,0.1)">
-            <div className="relative group bg-white/6 p-8 flex flex-col h-full">
-              {/* Icon at top */}
-              <div
-                className="absolute -top-5 -right-22 opacity-0 -translate-y-6 
-                group-hover:opacity-100 group-hover:translate-y-0 
-                transition-all duration-500"
-              >
-                <Image
-                  src={CardVector}
-                  alt="Acquisition"
-                  width={210}
-                  height={24}
-                />
-              </div>
-              <div className="mb-8">
-                <div className="w-24 h-24 rounded-2xl bg-white/5 flex items-center justify-center group-hover:bg-(--orange)/10 transition-all duration-300">
-                  {/* Handshake Icon */}
-                  <Image
-                    src={HandshakeIcon}
-                    alt="Feature Icon"
-                    width={60}
-                    height={60}
-                  />
-                </div>
-              </div>
-
-              {/* Heading */}
-              <div className="pt-25 mb-6">
-                <h3 className="text-white text-3xl font-medium mb-4">
-                  <span className="text-(--orange)">01.</span> Acquisition
-                </h3>
-                <div className="w-full h-px bg-gradient-to-r from-white/20 to-transparent" />
-              </div>
-
-              {/* Description */}
-              <p className="text-white text-base leading-relaxed mb-8">
-                Helps businesses attract and onboard new users, merchants, and
-                leads through digital and field campaigns.
-              </p>
-
-              {/* Bullet Points */}
-              <div className="space-y-3 flex-grow">
-                {[
-                  "App download and user engagement",
-                  "Merchant and account onboarding",
-                  "Lead collection and customer surveys",
-                ].map((point, idx) => (
-                  <div key={idx} className="flex items-center gap-2">
-                    <div className="flex-shrink-0">
-                      <div className="w-4 h-4 rounded-full border-2 border-(--orange) flex items-center justify-center">
-                        <div className="w-2 h-2 rounded-full bg-(--orange)" />
-                      </div>
-                    </div>
-                    <p className="text-gray-300 text-base leading-relaxed">
-                      {point}
+        <div className="flex flex-col md:flex-row gap-3 md:gap-6">
+          {/* Left Card - Employee List */}
+          <div className="flex w-full md:w-2/3">
+            <SpotlightCard
+              className="w-full bg-white/6"
+              spotlightColor="rgba(249,115,22,0.1)"
+            >
+              <div className="relative flex flex-col md:flex-row justify-between gap-3 md:gap-7 p-4 md:p-8">
+                <div>
+                  {/* Header */}
+                  <div className="mb-8">
+                    <h2 className="text-white text-xl md:text-3xl font-medium mb-1 md:mb-2">
+                      Financial Projection
+                    </h2>
+                    <p className="text-gray-400 text-sm md:text-base">
+                      Monitor your monthly income growth
                     </p>
                   </div>
-                ))}
+                  {/* Employee Cards */}
+                  <div className="p-2.5 md:p-4 bg-white/3 rounded-xl md:rounded-3xl">
+                    <div className="space-y-2 md:space-y-4 w-full">
+                      {employees.map((employee, index) => (
+                        <EmployeeCard key={index} {...employee} />
+                      ))}
+                    </div>
+                  </div>
+                </div>
+                {/* Right Card - Sales Report with ECharts */}
+                <SalesReport />
               </div>
+            </SpotlightCard>
+          </div>
+          {/* Right Card - Info Card */}
+          <div className="w-full md:w-1/3">
+            <SpotlightCard spotlightColor="rgba(249,115,22,0.1)">
+              <div className="relative group bg-white/6 p-4 md:p-8 flex flex-col h-full">
+                {/* Icon at top */}
+                <div
+                  className="absolute -top-5 -right-22 opacity-0 -translate-y-6 
+                group-hover:opacity-100 group-hover:translate-y-0 
+                transition-all duration-500"
+                >
+                  <Image
+                    src={CardVector}
+                    alt="Acquisition"
+                    width={210}
+                    height={24}
+                  />
+                </div>
+                <div className="mb-8">
+                  <div className="w-16 h-16 md:w-24 md:h-24 rounded-2xl bg-white/5 flex items-center justify-center group-hover:bg-(--orange)/10 transition-all duration-300">
+                    {/* Handshake Icon */}
+                    <Image
+                      className="feature-icon"
+                      src={HandshakeIcon}
+                      alt="Feature Icon"
+                      width={60}
+                      height={60}
+                    />
+                  </div>
+                </div>
 
-              {/* Orange glow */}
-              <div className="absolute top-0 right-0 w-40 h-40 bg-(--orange)/5 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            </div>
-          </SpotlightCard>
+                {/* Heading */}
+                <div className="md:pt-25 mb-4 md:mb-6">
+                  <h3 className="text-white text-xl md:text-3xl font-medium mb-2 md:mb-4">
+                    <span className="text-(--orange)">01.</span> Acquisition
+                  </h3>
+                  <div className="w-full h-px bg-linear-to-r from-white/20 to-transparent" />
+                </div>
+
+                {/* Description */}
+                <p className="text-white text-sm md:text-base leading-relaxed mb-4 md:mb-8">
+                  Helps businesses attract and onboard new users, merchants, and
+                  leads through digital and field campaigns.
+                </p>
+
+                {/* Bullet Points */}
+                <div className="space-y-1.5 md:space-y-3 grow">
+                  {[
+                    "App download and user engagement",
+                    "Merchant and account onboarding",
+                    "Lead collection and customer surveys",
+                  ].map((point, idx) => (
+                    <div key={idx} className="flex items-center gap-1 md:gap-2">
+                      <div className="shrink-0">
+                        <div className="w-3 h-3 md:w-4 md:h-4 rounded-full border-2 border-(--orange) flex items-center justify-center">
+                          <div className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-(--orange)" />
+                        </div>
+                      </div>
+                      <p className="text-gray-300 text-sm md:text-base leading-relaxed">
+                        {point}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Orange glow */}
+                <div className="absolute top-0 right-0 w-40 h-40 bg-(--orange)/5 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              </div>
+            </SpotlightCard>
+          </div>
         </div>
-      </div>
 
-      <div className="bg-white/20 h-px mt-16"></div>
+        <div className="bg-white/20 h-px mt-16"></div>
+      </div>
     </div>
   );
 }

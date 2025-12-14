@@ -15,7 +15,7 @@ export default function HeaderBanner({ title, heading }: HeaderBannerProps) {
       <div
         style={{
           backgroundImage: `url(${bgElementRight.src}), url(${bgElementLeft.src})`,
-          backgroundAttachment: "fixed",
+          // backgroundAttachment: "fixed",
           backgroundRepeat: "no-repeat, no-repeat",
         }}
         className="header-banner-bg bg-no-repeat w-full"

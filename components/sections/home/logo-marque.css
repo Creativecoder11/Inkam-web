@@ -1,0 +1,62 @@
+.logo-marquee {
+  display: flex;
+  gap: 112px;
+  width: max-content;
+
+  animation: logo-scroll 28s linear infinite;
+
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+}
+
+.logo-item {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+@keyframes logo-scroll {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+/* === EDGE FADES === */
+
+.marquee-fade-left,
+.marquee-fade-right {
+  position: absolute;
+  top: 0;
+  width: 120px;
+  height: 100%;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.marquee-fade-left {
+  left: 0;
+  background: linear-gradient(
+    to right,
+    rgba(15, 14, 17, 1),
+    rgba(15, 14, 17, 0)
+  );
+}
+
+.marquee-fade-right {
+  right: 0;
+  background: linear-gradient(
+    to left,
+    rgba(15, 14, 17, 1),
+    rgba(15, 14, 17, 0)
+  );
+}
+
+/* Safari fine-tuning */
+@supports (-webkit-touch-callout: none) {
+  .logo-marquee {
+    animation-duration: 32s;
+  }
+}

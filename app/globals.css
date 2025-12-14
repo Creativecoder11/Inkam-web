@@ -14,26 +14,22 @@
   }
 }
 
-@custom-variant dark (&:is(.dark *));
-
-html.lenis {
-  height: auto;
+html {
+  scroll-behavior: auto; /* or remove this property for Safari */
+}
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-.lenis.lenis-smooth {
-  scroll-behavior: auto;
+body {
+  -webkit-overflow-scrolling: touch;
 }
-
-.lenis.lenis-smooth [data-lenis-prevent] {
-  overscroll-behavior: contain;
-}
-
-.lenis.lenis-stopped {
-  overflow: hidden;
-}
-
-.lenis.lenis-scrolling iframe {
-  pointer-events: none;
+@supports (backdrop-filter: blur(10px)) {
+  .header {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
 }
 
 :root {
@@ -94,7 +90,7 @@ html.lenis {
   --sidebar-ring: oklch(0.708 0 0);
 }
 
-@layer base {
+/* @layer base {
   html {
     @apply scroll-auto;
     background-color: #0f0e11;
@@ -104,13 +100,13 @@ html.lenis {
     color: white;
     font-family: var(--font-base);
   }
-}
+} */
 
-@layer utilities {
+/* @layer utilities {
   .scroll-auto {
     scroll-behavior: auto;
   }
-}
+} */
 
 @layer components {
   .container {
@@ -456,7 +452,7 @@ html.lenis {
   }
 
   .dot {
-    font-size:;
+    /* font-size:; */
     width: 40px;
   }
 

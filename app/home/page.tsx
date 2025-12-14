@@ -24,7 +24,7 @@ export default function HomePage() {
       <div
         style={{
           backgroundImage: `url(${bgElementRight.src}), url(${bgElementLeft.src})`,
-          backgroundAttachment: "fixed",
+          // backgroundAttachment: "fixed",
           backgroundRepeat: "no-repeat, no-repeat",
           // backgroundSize: "300px auto, 250px auto",
           backgroundPosition: `

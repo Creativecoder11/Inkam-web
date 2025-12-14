@@ -1,0 +1,31 @@
+.home-fixed-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+
+  background-image:
+    url("/asset/icons/bg-elements-right.svg"),
+    url("/asset/icons/bg-elements-left.svg");
+
+  background-repeat: no-repeat, no-repeat;
+
+  /* Match your original positions */
+  background-position:
+    calc(100% + 240px) 120px,
+    -220px 600px;
+
+  background-size: auto;
+
+  /* Safari performance magic */
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  pointer-events: none;
+}
+
+/* Safari-only fallback (extra safety) */
+@supports (-webkit-touch-callout: none) {
+  .home-fixed-bg {
+    transform: translate3d(0, 0, 0);
+  }
+}

@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import BlogImage from "@/public/asset/Images/blog-image.svg";
+import BlogImage from "@/public/asset/images/blog-image.svg";
 import BlogCard from "@/components/ui/BlogCard";
 
 export default function Insights() {

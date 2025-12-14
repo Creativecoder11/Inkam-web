@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import storyImage from "@/public/asset/Images/our-story-image.webp";
+import storyImage from "@/public/asset/images/our-story-image.webp";
 
 export default function ServicesOverview() {
   return (

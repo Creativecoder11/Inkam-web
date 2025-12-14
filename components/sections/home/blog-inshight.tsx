@@ -1,7 +1,7 @@
 import BlogCard from "@/components/ui/BlogCard";
-import blogImg1 from "@/public/asset/Images/blogImg1.webp";
-import blogImg2 from "@/public/asset/Images/blogImg2.webp";
-import blogImg3 from "@/public/asset/Images/blogImg3.webp";
+import blogImg1 from "@/public/asset/images/blogImg1.webp";
+import blogImg2 from "@/public/asset/images/blogImg2.webp";
+import blogImg3 from "@/public/asset/images/blogImg3.webp";
 
 export default function BlogInsight() {
   const articles = [

@@ -1,10 +1,10 @@
 import Image from "next/image";
 
-import companyImg1 from "@/public/asset/Images/companyImg1.svg";
-import companyImg2 from "@/public/asset/Images/companyImg2.svg";
-import companyImg3 from "@/public/asset/Images/companyImg3.svg";
-import companyImg4 from "@/public/asset/Images/companyImg4.svg";
-import companyImg5 from "@/public/asset/Images/companyImg5.svg";
+import companyImg1 from "@/public/asset/images/companyImg1.svg";
+import companyImg2 from "@/public/asset/images/companyImg2.svg";
+import companyImg3 from "@/public/asset/images/companyImg3.svg";
+import companyImg4 from "@/public/asset/images/companyImg4.svg";
+import companyImg5 from "@/public/asset/images/companyImg5.svg";
 import "./logo-marque.css";
 
 const logos = [

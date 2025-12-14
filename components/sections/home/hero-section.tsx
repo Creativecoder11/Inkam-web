@@ -4,7 +4,7 @@ import { TextEffect } from "@/components/ui/text-effect";
 import { AnimatedGroup } from "@/components/ui/animated-group";
 import type { Variants } from "framer-motion";
 import LogoCloud from "./logo-marque";
-import blurLogo from "@/public/asset/Images/Inkam Logo Blur Logo.svg";
+import blurLogo from "@/public/asset/images/Inkam Logo Blur Logo.svg";
 import Image from "next/image";
 
 const transitionVariants: { item: Variants } = {

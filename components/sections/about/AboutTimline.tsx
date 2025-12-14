@@ -190,9 +190,9 @@ const CircularCarousel: React.FC = () => {
               <path
                 d="M15.5556 5.8335L23.3334 14.0002M23.3334 14.0002L15.5556 22.1668M23.3334 14.0002L4.66675 14.0002"
                 stroke="white"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
             </svg>
           </div>
@@ -207,9 +207,9 @@ const CircularCarousel: React.FC = () => {
               <path
                 d="M12.444 22.1668L4.66626 14.0002M4.66626 14.0002L12.444 5.8335M4.66626 14.0002L23.3329 14.0002"
                 stroke="white"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
             </svg>
           </div>

@@ -100,13 +100,13 @@ export default function ImpactStatsSection() {
   };
 
   return (
-    <section className="py-16 md:py-25 " ref={sectionRef}>
-      <div className="max-w-7xl mx-auto">
+    <section className="w-full py-15 md:py-25" ref={sectionRef}>
+      <div className="max-w-7xl mx-4 md:mx-auto">
         {/* Header */}
-        <div className="text-white flex flex-col gap-6">
+        <div className="text-white flex flex-col gap-3 md:gap-6">
           {/* Heading Text */}
-          <div className="flex justify-center items-center gap-4">
-            <div>
+          <div className="flex justify-center items-center gap-2 md:gap-4">
+            <div className="mobile-line">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="167"
@@ -135,8 +135,8 @@ export default function ImpactStatsSection() {
                 </defs>
               </svg>
             </div>
-            <p>IMPACT NUMBERS</p>
-            <div>
+            <p className="text-sm md:text-xl">IMPACT NUMBERS</p>
+            <div className="mobile-line">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="167"
@@ -166,35 +166,35 @@ export default function ImpactStatsSection() {
               </svg>
             </div>
           </div>
-          <h2 className="text-4xl font-medium leading-18 lg:text-6xl text-center">
-            Driving Economic Growth <br />
+          <h2 className="text-3xl font-semibold lg:text-6xl leading-[1.2] mb-4 md:mb-12 text-white text-center">
+            Driving Economic Growth <br className="hidden md:block" />
             with Financial Projections & Metrics
           </h2>
         </div>
 
         {/* Stats Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 pt-13 gap-4 md:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 pt-4 md:pt-13 gap-4 md:gap-8">
           {stats.map((stat, index) => (
             <div
               key={stat.label}
-              className="relative rounded-2xl p-7 bg-[#201F22]"
+              className="relative rounded-lg md:rounded-2xl p-4 md:p-7 bg-[#201F22]"
             >
               {/* Content */}
-              <div className="relative flex flex-col gap-16 z-10">
+              <div className="relative flex flex-col gap-6 md:gap-16 z-10">
                 {/* Number Badge */}
                 <div className="flex items-center gap-2 mb-4">
-                  <span className="text-(--orange) text-xl font-medium">
+                  <span className="text-(--orange) text-base md:text-xl font-medium">
                     {stat.number}.
                   </span>
-                  <span className="text-gray-300 text-xl font-medium">
+                  <span className="text-gray-300 text-base md:text-xl font-medium">
                     {stat.label}
                   </span>
                 </div>
 
                 <div>
                   {/* Stat Value */}
-                  <div className="mb-4">
-                    <div className="text-8xl text-white tracking-tight">
+                  <div className="mb-2 md:mb-4">
+                    <div className="text-5xl md:text-8xl text-white tracking-tight">
                       {formatNumber(currentValues[index], stat.format)}
                     </div>
                   </div>
@@ -215,4 +215,3 @@ export default function ImpactStatsSection() {
     </section>
   );
 }
-  

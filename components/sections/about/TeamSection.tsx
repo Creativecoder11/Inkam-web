@@ -103,12 +103,13 @@ export default function TeamSection() {
   }, []);
 
   return (
-    <section className="py-16 md:py-25">
-      <div className="max-w-7xl mx-auto ">
+    <section className="w-full py-16 md:py-25">
+      <div className="max-w-7xl mx-4 md:mx-auto">
         {/* Header */}
-        <div className="text-white flex flex-col gap-6">
+        <div className="text-white flex flex-col gap-3 md:gap-6">
+          {/* Heading Text */}
           <div className="flex justify-center items-center gap-4">
-            <div>
+            <div className="mobile-line">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="167"
@@ -129,6 +130,7 @@ export default function TeamSection() {
                     y1="0.49994"
                     x2="158.078"
                     y2="45.5518"
+                    gradientUnits="userSpaceOnUse"
                   >
                     <stop stopColor="#FF8800" />
                     <stop offset="0.981629" stopColor="#0F0E11" />
@@ -136,8 +138,8 @@ export default function TeamSection() {
                 </defs>
               </svg>
             </div>
-            <p>CORE VALUES</p>
-            <div>
+            <p className="text-sm md:text-xl">CORE VALUES</p>
+            <div className="mobile-line">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="167"
@@ -158,6 +160,7 @@ export default function TeamSection() {
                     y1="0.49994"
                     x2="8.92156"
                     y2="45.5518"
+                    gradientUnits="userSpaceOnUse"
                   >
                     <stop stopColor="#FF8800" />
                     <stop offset="0.981629" stopColor="#0F0E11" />
@@ -166,21 +169,20 @@ export default function TeamSection() {
               </svg>
             </div>
           </div>
-
-          <h2 className="text-4xl font-medium leading-18 lg:text-6xl text-center">
+          <h2 className="text-3xl font-semibold lg:text-6xl leading-[1.2] mb-4 md:mb-12 text-white text-center">
             Values Driving Our Mission
           </h2>
         </div>
 
         {/* Team Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 pt-13 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 pt-4 md:pt-13 gap-6 md:gap-8">
           {team.map((member, index) => (
             <div
               key={member.name}
               ref={(el) => {
                 cardsRef.current[index] = el;
               }}
-              className="relative group bg-[#201F22] pt-10 cursor-pointer overflow-hidden rounded-3xl"
+              className="relative group bg-[#201F22] pt-10 cursor-pointer overflow-hidden rounded-xl md:rounded-3xl"
             >
               {/* LinkedIn Button */}
               <a
@@ -190,14 +192,13 @@ export default function TeamSection() {
                 ref={(el) => {
                   linkedInRef.current[index] = el;
                 }}
-                className="absolute top-4 right-4 z-20 w-12 h-12 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center hover:bg-orange-500 transition-colors duration-300"
+                className="absolute top-4 right-4 z-20 w-9 h-9 md:w-12 md:h-12 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center hover:bg-orange-500 transition-colors duration-300"
                 onClick={(e) => e.stopPropagation()}
                 style={{ transform: "translateX(100px)", opacity: 0 }}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="26"
-                  height="26"
+                  className="w-[18px] h-[18px] md:w-[26px] md:h-[26px]"
                   viewBox="0 0 26 26"
                   fill="none"
                 >
@@ -217,14 +218,26 @@ export default function TeamSection() {
               </a>
 
               {/* Image */}
-              <div className="relative aspect-[3/4] overflow-hidden rounded-3xl">
-                <div className="absolute inset-0 image-wrap">
-                  <Image
-                    src={member.image}
-                    alt={member.name}
-                    fill
-                    className="object-cover"
-                  />
+              <div className="relative md:aspect-3/4 overflow-hidden rounded-xl md:rounded-3xl">
+                <div
+                  className="
+    relative 
+    h-[420px] 
+    md:h-[540px] 
+    overflow-hidden 
+    rounded-xl 
+    md:rounded-3xl
+  "
+                >
+                  <div className="absolute inset-0 image-wrap">
+                    <Image
+                      src={member.image}
+                      alt={member.name}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                    />
+                  </div>
                 </div>
 
                 {/* Info */}
@@ -241,9 +254,9 @@ export default function TeamSection() {
                 >
                   <div
                     className="
-                        p-4 relative
-                        rounded-tl-[16px] rounded-bl-[16px] rounded-tr-none rounded-br-none
-                        border-t-[4px] border-b-[4px] border-l-[4px] border-(--orange)
+                        p-2 md:p-4 relative
+                        rounded-tl-2xl rounded-bl-2xl rounded-tr-none rounded-br-none
+                        border-t-4 border-b-4 border-l-4 border-(--orange)
                         bg-[linear-gradient(90deg,rgba(22,21,24,0.90)_0%,rgba(22,21,24,0.60)_100%)]
 
                         "
@@ -258,7 +271,7 @@ export default function TeamSection() {
                         backgroundImage: `url(${TeamCardIcon.src})`,
                       }}
                     />
-                    <h3 className="text-xl md:text-2xl font-bold text-white mb-1">
+                    <h3 className="text-lg md:text-2xl font-bold text-white mb-1">
                       {member.name}
                     </h3>
                     <p className="text-white/90 text-sm md:text-base">

@@ -140,8 +140,8 @@ export default function TestimonialCarousel() {
           <h2 className="text-3xl leading-11 font-medium lg:text-6xl md:leading-18 w-full md:w-1/2">
             Hear from Our Satisfied Partners
           </h2>
-
         </div>
+
         <div>
           <Carousel
             opts={{

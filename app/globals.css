@@ -230,18 +230,18 @@ html.lenis {
   left: 0;
   right: 0;
   margin: auto;
-  border: 1px solid #d8d8d8;
+  border: 1px solid #525154;
   border-radius: 100%;
   pointer-events: none;
 }
 
 .orbit-1 {
-  width: 100%;
-  height: 100%;
-  border-radius: 100%;
+  width: 90%;
+  height: 90%;
+  /* border-radius: 100%; */
 }
 
-.orbit-2 {
+/* .orbit-2 {
   width: 60%;
   height: 60%;
 }
@@ -309,16 +309,6 @@ html.lenis {
   text-align: center;
 }
 
-.slide-icon {
-  width: 128px;
-  height: 128px;
-  display: flex;
-  background: white;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.15);
-  border: 1px solid #d8d8d8;
-  padding: 24px;
-  border-radius: 50%;
-}
 
 .slide-img {
   width: 100%;
@@ -327,7 +317,9 @@ html.lenis {
 }
 
 .slide-year {
-  font-weight: 600;
+
+
+  /* font-weight: 600; */
   /* color: #ffffff; */
   /* font-size: 60px; */
 }
@@ -366,25 +358,25 @@ html.lenis {
   justify-content: center;
   position: absolute;
   gap: 4px;
-  top: -12px;
+  top: 48px;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 50px;
-  height: 60px;
+  height: 150px;
   pointer-events: auto;
   transition: transform 0.3s;
   cursor: pointer;
 }
 
-.dot:hover {
+/* .dot:hover {
   transform: translate(-50%, -50%) scale(1.15);
-}
+} */
 
 .dot-circle {
-  width: 12px;
-  height: 12px;
-  border-radius: 24px;
-  background: #d8d8d8;
+  width: 1px;
+  height: 150px;
+  /* border-radius: 24px; */
+  background: #525154;
   transition: background 0.3s;
 }
 
@@ -396,26 +388,33 @@ html.lenis {
   position: absolute;
   z-index: 20;
   top: 0;
-  bottom: 0;
+  bottom: 60px;
   margin: auto;
-  font-size: 1.5rem;
+  padding: 20px;
+  background: red;
+  border-radius: 50%;
+  /* font-size: 1.5rem; */
   transition: 0.3s;
   cursor: pointer;
   user-select: none;
-  color: #666666;
-  height: fit-content;
+  color: white;
+  width: 20px;
+  height: 20px;
 }
 
-.nav-button:hover {
-  color: black;
+.nav-button .nav-next > svg{
+  top: -20px;
 }
+/* .nav-button:hover {
+  color: black;
+} */
 
 .nav-next {
-  right: 5%;
+  right: 30%;
 }
 
 .nav-prev {
-  left: 5%;
+  left: 30%;
 }
 
 /* Responsive Styles */

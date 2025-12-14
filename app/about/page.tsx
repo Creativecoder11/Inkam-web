@@ -7,6 +7,8 @@ import OurStory from "@/components/sections/about/our-story";
 import TeamSection from "@/components/sections/about/TeamSection";
 import Faq from "@/components/sections/home/faq";
 
+
+
 export default function About() {
   const data = [
     {

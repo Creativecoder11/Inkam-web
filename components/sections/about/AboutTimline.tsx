@@ -4,84 +4,30 @@ import React, { useState, useEffect, useRef } from "react";
 
 interface TimelineItem {
   year: string;
-  image: string;
+  img: string;
   text: string;
-  description: string;
+  description?: string; // Made optional to match page.tsx data
 }
 
-const timelineData: TimelineItem[] = [
-  {
-    year: "2012",
-    image:
-      "https://cdn.prod.website-files.com/6788e6c70fa2b23ccce907d3/6895a34d9342359e1f5d6b31_illustration2.avif",
-    text: "Founded with a focus on simplifying property ownership in Dubai.",
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,",
-  },
-  {
-    year: "2014",
-    image:
-      "https://cdn.prod.website-files.com/6788e6c70fa2b23ccce907d3/6895a5d2fd74c2308c048a50_9a9b5baacc76ea6ec51d52d27ca306b3_illustration2%20%281%29.avif",
-    text: "Legal advisory services added to help landlords win disputes and protect assets.",
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,",
-  },
-  {
-    year: "2016",
-    image:
-      "https://cdn.prod.website-files.com/6788e6c70fa2b23ccce907d3/6895a979f3bb1980b3d22932_illustration1%20(1).avif",
-    text: "Expanded maintenance & vendor network to offer cost-effective solutions across Dubai.",
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,",
-  },
-  {
-    year: "2018",
-    image:
-      "https://cdn.prod.website-files.com/6788e6c70fa2b23ccce907d3/6895a34dcc869b2bc03ddc06_image%2014%20(3).png",
-    text: "Full lease and payment automation introduced. Paperwork reduced. Transparency improved.",
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry' since the 1500s,",
-  },
-  {
-    year: "2020",
-    image:
-      "https://cdn.prod.website-files.com/6788e6c70fa2b23ccce907d3/6895a34db4137fe7cd4af318_image%2014%20(4).png",
-    text: "Cross-border support enabled. Many clients manage properties from abroad— without visiting once.",
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
-  },
-  {
-    year: "2022",
-    image:
-      "https://cdn.prod.website-files.com/6788e6c70fa2b23ccce907d3/6895a34d21555200d75bfee4_image%2014%20(5).png",
-    text: "Launched internal vendor bidding system: clients get top 5 real quotes every time.",
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has.",
-  },
-  {
-    year: "2025",
-    image:
-      "https://cdn.prod.website-files.com/6788e6c70fa2b23ccce907d3/6895a34d54e4ed7a1fd12f23_image%2014%20(6).png",
-    text: "Introducing BSO Club App — a dedicated mobile platform that connects landlords, brokers,",
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,",
-  },
-];
+interface CircularCarouselProps {
+  slides: TimelineItem[];
+  autoplay: number;
+  speed: number;
+}
 
-const CircularCarousel: React.FC = () => {
+const CircularCarousel: React.FC<CircularCarouselProps> = ({ slides, autoplay, speed }) => {
   const [activeIndex, setActiveIndex] = useState<number>(0);
   const [angle, setAngle] = useState<number>(0);
   const [isHovered, setIsHovered] = useState<boolean>(false);
   const autoplayRef = useRef<NodeJS.Timeout | null>(null);
 
-  const step: number = -360 / timelineData.length;
-  const speed: number = 2000;
+  const step: number = -360 / slides.length;
 
   useEffect(() => {
     if (!isHovered) {
       autoplayRef.current = setInterval(() => {
         handleNext();
-      }, 3000);
+      }, autoplay);
     }
 
     return () => {
@@ -89,17 +35,17 @@ const CircularCarousel: React.FC = () => {
         clearInterval(autoplayRef.current);
       }
     };
-  }, [isHovered, activeIndex]);
+  }, [isHovered, activeIndex, autoplay]);
 
   const handleNext = (): void => {
-    const newIndex = (activeIndex + 1) % timelineData.length;
+    const newIndex = (activeIndex + 1) % slides.length;
     setActiveIndex(newIndex);
     rotateCarousel(newIndex);
   };
 
   const handlePrev = (): void => {
     const newIndex =
-      activeIndex === 0 ? timelineData.length - 1 : activeIndex - 1;
+      activeIndex === 0 ? slides.length - 1 : activeIndex - 1;
     setActiveIndex(newIndex);
     rotateCarousel(newIndex);
   };
@@ -111,15 +57,15 @@ const CircularCarousel: React.FC = () => {
 
   const rotateCarousel = (newIndex: number): void => {
     const diff = newIndex - activeIndex;
-    const half = timelineData.length / 2;
+    const half = slides.length / 2;
 
     let inc: number;
     if (Math.abs(diff) <= half) {
       inc = diff;
-    } else if (Math.abs(diff + timelineData.length) <= half) {
-      inc = diff + timelineData.length;
+    } else if (Math.abs(diff + slides.length) <= half) {
+      inc = diff + slides.length;
     } else {
-      inc = diff - timelineData.length;
+      inc = diff - slides.length;
     }
 
     setAngle((prev) => prev + step * inc);
@@ -137,7 +83,7 @@ const CircularCarousel: React.FC = () => {
 
         <div className="slides-container">
           <div className="slides-wrapper">
-            {timelineData.map((item, index) => (
+            {slides.map((item, index) => (
               <div
                 key={index}
                 className={`slide ${index === activeIndex ? "active" : ""}`}
@@ -148,7 +94,9 @@ const CircularCarousel: React.FC = () => {
                     {item.year}
                   </div>
                   <div className="slide-text text-xl">{item.text}</div>
-                  <div className="slide-text text-sm">{item.description}</div>
+                  {item.description && (
+                    <div className="slide-text text-sm">{item.description}</div>
+                  )}
                 </div>
               </div>
             ))}
@@ -161,13 +109,13 @@ const CircularCarousel: React.FC = () => {
               transitionDuration: `${speed}ms`,
             }}
           >
-            {timelineData.map((item, index) => (
+            {slides.map((item, index) => (
               <div
                 key={index}
                 className={`dot-item ${index === activeIndex ? "active" : ""}`}
                 style={{
                   transform: `rotate(${
-                    (360 / timelineData.length) * index
+                    (360 / slides.length) * index
                   }deg)`,
                 }}
               >

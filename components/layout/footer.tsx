@@ -92,7 +92,7 @@ const links: FooterLinkGroup[] = [
   },
 ];
 const Footer = () => {
-  const svgRef = useRef(null);
+  const svgRef = useRef<SVGSVGElement>(null);
 
   useEffect(() => {
     if (!svgRef.current) return;

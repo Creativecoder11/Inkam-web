@@ -2,11 +2,11 @@
 
 import { Linkedin } from "lucide-react";
 import { useRef, useEffect } from "react";
-import Blog1 from "@/public/asset/images/team1.svg";
-import Blog2 from "@/public/asset/images/team-image.svg";
-import TeamCardIcon from "@/public/asset/icons/team-title-card-bg-icon.svg";
+import Blog1 from "@/asset/images/team1.svg";
+import Blog2 from "@/asset/images/team-image.svg";
+import TeamCardIcon from "@/asset/icons/team-title-card-bg-icon.svg";
 
-// import BlogImage from '@/public/assets/images/blog/blog-image.png';
+// import BlogImage from '@/assets/images/blog/blog-image.png';
 import gsap from "gsap";
 import Image from "next/image";
 

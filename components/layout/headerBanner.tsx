@@ -1,7 +1,7 @@
 import React from "react";
 
-import bgElementRight from "@/public/asset/icons/others-page-icon-right.svg";
-import bgElementLeft from "@/public/asset/icons/others-page-icon-left.svg";
+import bgElementRight from "@/asset/icons/others-page-icon-right.svg";
+import bgElementLeft from "@/asset/icons/others-page-icon-left.svg";
 import "./headerBanner.css";
 
 interface HeaderBannerProps {

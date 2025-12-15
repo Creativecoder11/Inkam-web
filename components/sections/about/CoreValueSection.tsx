@@ -1,5 +1,5 @@
 import { Handshake } from "lucide-react";
-// import coreValue from "../../../public/assets/images/about/core-value.png";
+// import coreValue from "../../../assets/images/about/core-value.png";
 
 export default function CoreValuesSection() {
   const values = [

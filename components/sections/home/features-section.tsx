@@ -3,10 +3,10 @@
 import React, { useState } from "react";
 import Image from "next/image";
 
-import AcquisitionIcon from "@/public/asset/icons/feature-i-3.svg";
-import ResellingIcon from "@/public/asset/icons/feature-i-2.svg";
-import CollectionIcon from "@/public/asset/icons/feature-i-1.svg";
-import CardVector from "@/public/asset/icons/card-vector.svg";
+import AcquisitionIcon from "@/asset/icons/feature-i-3.svg";
+import ResellingIcon from "@/asset/icons/feature-i-2.svg";
+import CollectionIcon from "@/asset/icons/feature-i-1.svg";
+import CardVector from "@/asset/icons/card-vector.svg";
 
 interface SpotlightCardProps {
   children: React.ReactNode;

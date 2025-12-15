@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import storyImage from "@/public/asset/images/our-story-image.webp";
+import storyImage from "@/asset/images/our-story-image.webp";
 export default function OurStorySection() {
   return (
     <div className="w-full py-15 md:py-25">

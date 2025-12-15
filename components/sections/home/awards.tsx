@@ -1,7 +1,7 @@
-import logo1 from "@/public/asset/icons/awards-logo-1.svg";
-import logo2 from "@/public/asset/icons/awards-logo-2.svg";
-import logo3 from "@/public/asset/icons/awards-logo-3.svg";
-import logo4 from "@/public/asset/icons/awards-logo-4.svg";
+import logo1 from "@/asset/icons/awards-logo-1.svg";
+import logo2 from "@/asset/icons/awards-logo-2.svg";
+import logo3 from "@/asset/icons/awards-logo-3.svg";
+import logo4 from "@/asset/icons/awards-logo-4.svg";
 import Image from "next/image";
 
 export default function AwardsSection() {

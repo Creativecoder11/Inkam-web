@@ -10,8 +10,8 @@ import {
   ResponsiveContainer,
   Tooltip,
 } from "recharts";
-import HandshakeIcon from "@/public/asset/icons/feature-i-3.svg";
-import CardVector from "@/public/asset/icons/card-vector.svg";
+import HandshakeIcon from "@/asset/icons/feature-i-3.svg";
+import CardVector from "@/asset/icons/card-vector.svg";
 
 interface SpotlightCardProps {
   children: React.ReactNode;

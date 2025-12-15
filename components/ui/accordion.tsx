@@ -3,7 +3,7 @@
 import * as React from "react"
 import * as AccordionPrimitive from "@radix-ui/react-accordion"
 import { ChevronDownIcon } from "lucide-react"
-import arrow from "@/public/asset/icons/elements.svg"
+import arrow from "@/asset/icons/elements.svg"
 import { cn } from "@/lib/utils"
 import Image from "next/image"
 

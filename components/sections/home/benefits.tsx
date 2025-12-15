@@ -1,7 +1,7 @@
 import BenefitsCharts from "@/components/ui/benefits-charts";
-import ExpandIcon from "@/public/asset/icons/benefits-icon-1.svg";
-import SaveTimeIcon from "@/public/asset/icons/benefits-icon-2.svg";
-import GrowthIcon from "@/public/asset/icons/benefits-icon-3.svg";
+import ExpandIcon from "@/asset/icons/benefits-icon-1.svg";
+import SaveTimeIcon from "@/asset/icons/benefits-icon-2.svg";
+import GrowthIcon from "@/asset/icons/benefits-icon-3.svg";
 import Image from "next/image";
 
 export default function Benefits() {

@@ -8,8 +8,8 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import sharmin from "@/public/asset/images/sharmin.webp";
-import abdul from "@/public/asset/images/abdul.webp";
+import sharmin from "@/asset/images/sharmin.webp";
+import abdul from "@/asset/images/abdul.webp";
 
 const testimonials = [
   {

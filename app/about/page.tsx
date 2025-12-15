@@ -14,14 +14,45 @@ export default function About() {
     {
       year: "2012",
       img: "https://cdn.prod.website-files.com/6788e6c70fa2b23ccce907d3/6895a34d9342359e1f5d6b31_illustration2.avif",
-      text: "Founded with a focus on simplifying property ownership in Dubai.",
+      title: "Lorem ipsum dolor sit amet consectetur.",
+      description: "Lorem ipsum dolor sit amet consectetur. In nulla euismod ut et lacus. Viverra lectus lacus aliquet et dignissim quam sed. Sed.Lorem ipsum dolor sit amet consectetur. In nulla euismod ut et lacus. ",
     },
     {
-      year: "2014",
+      year: "2018",
       img: "https://cdn.prod.website-files.com/6788e6c70fa2b23ccce907d3/6895a5d2fd74c2308c048a50_9a9b5baacc76ea6ec51d52d27ca306b3_illustration2%20%281%29.avif",
-      text: "Legal advisory services added to help landlords win disputes and protect assets.",
+      title: "Lorem ipsum dolor sit amet consectetur.",
+      description: "Lorem ipsum dolor sit amet consectetur. In nulla euismod ut et lacus. Viverra lectus lacus aliquet et dignissim quam sed. Sed.Lorem ipsum dolor sit amet consectetur. In nulla euismod ut et lacus. ",
     },
-    // ... add same as your HTML
+    {
+      year: "2019",
+      img: "https://cdn.prod.website-files.com/6788e6c70fa2b23ccce907d3/6895a5d2fd74c2308c048a50_9a9b5baacc76ea6ec51d52d27ca306b3_illustration2%20%281%29.avif",
+      title: "Lorem ipsum dolor sit amet consectetur.",
+      description: "Lorem ipsum dolor sit amet consectetur. In nulla euismod ut et lacus. Viverra lectus lacus aliquet et dignissim quam sed. Sed.Lorem ipsum dolor sit amet consectetur. In nulla euismod ut et lacus. ",
+    },
+    {
+      year: "2020",
+      img: "https://cdn.prod.website-files.com/6788e6c70fa2b23ccce907d3/6895a5d2fd74c2308c048a50_9a9b5baacc76ea6ec51d52d27ca306b3_illustration2%20%281%29.avif",
+      title: "Lorem ipsum dolor sit amet consectetur.",
+      description: "Lorem ipsum dolor sit amet consectetur. In nulla euismod ut et lacus. Viverra lectus lacus aliquet et dignissim quam sed. Sed.Lorem ipsum dolor sit amet consectetur. In nulla euismod ut et lacus. ",
+    },
+    {
+      year: "2021",
+      img: "https://cdn.prod.website-files.com/6788e6c70fa2b23ccce907d3/6895a5d2fd74c2308c048a50_9a9b5baacc76ea6ec51d52d27ca306b3_illustration2%20%281%29.avif",
+      title: "Lorem ipsum dolor sit amet consectetur.",
+      description: "Lorem ipsum dolor sit amet consectetur. In nulla euismod ut et lacus. Viverra lectus lacus aliquet et dignissim quam sed. Sed.Lorem ipsum dolor sit amet consectetur. In nulla euismod ut et lacus. ",
+    },
+    {
+      year: "2022",
+      img: "https://cdn.prod.website-files.com/6788e6c70fa2b23ccce907d3/6895a5d2fd74c2308c048a50_9a9b5baacc76ea6ec51d52d27ca306b3_illustration2%20%281%29.avif",
+      title: "Lorem ipsum dolor sit amet consectetur.",
+      description: "Lorem ipsum dolor sit amet consectetur. In nulla euismod ut et lacus. Viverra lectus lacus aliquet et dignissim quam sed. Sed.Lorem ipsum dolor sit amet consectetur. In nulla euismod ut et lacus. ",
+    },
+    {
+      year: "2025",
+      img: "https://cdn.prod.website-files.com/6788e6c70fa2b23ccce907d3/6895a5d2fd74c2308c048a50_9a9b5baacc76ea6ec51d52d27ca306b3_illustration2%20%281%29.avif",
+      title: "Lorem ipsum dolor sit amet consectetur.",
+      description: "Lorem ipsum dolor sit amet consectetur. In nulla euismod ut et lacus. Viverra lectus lacus aliquet et dignissim quam sed. Sed.Lorem ipsum dolor sit amet consectetur. In nulla euismod ut et lacus. ",
+    },
   ];
   return (
     <div>
@@ -31,7 +62,7 @@ export default function About() {
       <CoreValuesSection />
       <TeamSection />
       <Faq />
-      <AboutCircularCarousel slides={data} autoplay={4000} speed={2500} />
+      <AboutCircularCarousel slides={data} autoplay={4000} speed={1500} />
     </div>
   );
 }

@@ -13,9 +13,9 @@
     height: 40px;
   }
 }
-
+/* 
 html {
-  scroll-behavior: auto; /* or remove this property for Safari */
+  scroll-behavior: auto; 
 }
 * {
   -webkit-font-smoothing: antialiased;
@@ -30,9 +30,10 @@ body {
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
   }
-}
+} */
 
 :root {
+  --carousel-speed: 1500ms;
   /* Spacing */
   --spacing-xs: 0.25rem;
   --spacing-sm: 0.5rem;
@@ -205,261 +206,13 @@ body {
   }
 }
 
-/* carousel.css - Add this to your global CSS or as a separate stylesheet */
-
-.carousel-container {
-  width: 100%;
-  /* max-width: 1200px; */
-  /* color: #666666; */
-  position: relative;
-  font-family: "Poppins", sans-serif;
-  aspect-ratio: 2 / 1;
-  overflow: hidden;
-  margin: 0 auto;
-  padding: 30px;
-}
-
-.orbit {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-  border: 1px solid #525154;
-  border-radius: 100%;
-  pointer-events: none;
-}
-
-.orbit-1 {
-  width: 90%;
-  height: 90%;
-  /* border-radius: 100%; */
-}
-
-/* .orbit-2 {
-  width: 60%;
-  height: 60%;
-}
-
-/* .overlay {
-  bottom: 0;
-  right: 0;
-  left: 0;
-  position: absolute;
-  z-index: 30;
-  height: 80px;
-  background: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
-  pointer-events: none;
-} */
-
-.slides-container {
-  position: relative;
-  padding-top: 100%;
-  margin: 0 auto;
-}
-
-.slides-wrapper {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  margin: 0 auto;
-}
-
-.slide {
-  display: flex;
-  align-items: start;
-  justify-content: center;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  /* bottom: 0; */
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  border: 1px solid #525154;
-  border-radius: 100%;
-  transition: opacity 0.5s ease;
-  pointer-events: none;
-}
-
-.slide.active {
-  opacity: 1;
-  z-index: 1;
-}
-
-.slide-content {
-  display: flex;
-  gap: 16px;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  padding: 16px;
-  aspect-ratio: 2 / 1;
-  width: 100%;
-  text-align: center;
-}
 
 
-.slide-img {
-  width: 100%;
-  margin: auto;
-  object-fit: scale-down;
-}
-
-.slide-year {
 
 
-  /* font-weight: 600; */
-  /* color: #ffffff; */
-  /* font-size: 60px; */
-}
 
-.slide-text {
-  padding: 0px 164px;
-  width: 75%;
-}
 
-.pagination {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  z-index: 20;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  transition-property: transform;
-  transition-timing-function: ease-out;
-  pointer-events: none;
-}
 
-.dot-item {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-}
-
-.dot {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  gap: 4px;
-  top: 48px;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 50px;
-  height: 150px;
-  pointer-events: auto;
-  transition: transform 0.3s;
-  cursor: pointer;
-}
-
-/* .dot:hover {
-  transform: translate(-50%, -50%) scale(1.15);
-} */
-
-.dot-circle {
-  width: 1px;
-  height: 150px;
-  /* border-radius: 24px; */
-  background: #525154;
-  transition: background 0.3s;
-}
-
-.dot-item.active .dot-circle {
-  background: var(--orange);
-}
-
-.nav-button {
-  position: absolute;
-  z-index: 20;
-  top: 0;
-  bottom: 60px;
-  margin: auto;
-  padding: 20px;
-  background: red;
-  border-radius: 50%;
-  /* font-size: 1.5rem; */
-  transition: 0.3s;
-  cursor: pointer;
-  user-select: none;
-  color: white;
-  width: 20px;
-  height: 20px;
-}
-
-.nav-button .nav-next > svg{
-  top: -20px;
-}
-/* .nav-button:hover {
-  color: black;
-} */
-
-.nav-next {
-  right: 30%;
-}
-
-.nav-prev {
-  left: 30%;
-}
-
-/* Responsive Styles */
-@media (max-width: 768px) {
-  .slide-text {
-    padding: 0px 40px;
-    width: 90%;
-  }
-
-  .slide-icon {
-    width: 80px;
-    height: 80px;
-    padding: 16px;
-  }
-
-  .slide-year {
-    font-size: 1.2rem;
-  }
-
-  .carousel-container {
-    padding: 20px;
-  }
-}
-
-@media (max-width: 480px) {
-  .slide-text {
-    padding: 0px 20px;
-    font-size: 0.9rem;
-  }
-
-  .slide-icon {
-    width: 60px;
-    height: 60px;
-    padding: 12px;
-  }
-
-  .slide-year {
-    font-size: 1rem;
-  }
-
-  .dot {
-    /* font-size:; */
-    width: 40px;
-  }
-
-  .nav-button {
-    font-size: 1.2rem;
-  }
-}
 
 /* Particle Animation */
 

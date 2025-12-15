@@ -101,7 +101,7 @@ export default function Faq() {
                   <div className="group" key={item.id}>
                     <AccordionItem
                       value={item.id}
-                      className="data-[state=open]:bg-[#161518] text-white text-xl dark:data-[state=open]:bg-muted peer rounded-xl border-none px-3 md:px-7 py-2 md:py-5 data-[state=open]:border-none data-[state=open]:shadow-sm"
+                      className="data-[state=open]:bg-[#161518] text-white text-xl  peer rounded-xl border-none px-3 md:px-7 py-2 md:py-5 data-[state=open]:border-none data-[state=open]:shadow-sm"
                     >
                       <AccordionTrigger className="cursor-pointer text-base md:text-xl hover:no-underline">
                         <div className="flex gap-2 md:gap-3">

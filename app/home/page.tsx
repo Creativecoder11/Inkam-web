@@ -13,7 +13,7 @@ import LenisProvider from "@/lib/LenisProvider";
 
 import bgElementRight from "@/asset/icons/bg-elements-right.svg";
 import bgElementLeft from "@/asset/icons/bg-elements-right.svg";
-import { useScroll } from "motion/react";
+// import { useScroll } from "motion/react";
 
 export default function HomePage() {
   // useScrollSmooth();

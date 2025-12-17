@@ -1,4 +1,3 @@
-// components/CircularCarousel.tsx
 "use client";
 import React, { useState, useEffect, useRef } from "react";
 import "./AboutTimline.css";

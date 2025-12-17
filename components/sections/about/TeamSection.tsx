@@ -1,6 +1,5 @@
 "use client";
 
-import { Linkedin } from "lucide-react";
 import { useRef, useEffect } from "react";
 import Blog1 from "@/asset/images/team1.svg";
 import Blog2 from "@/asset/images/team-image.svg";
@@ -37,27 +36,42 @@ export default function TeamSection() {
   const linkedInRef = useRef<(HTMLAnchorElement | null)[]>([]);
 
   useEffect(() => {
+    const cleanups: (() => void)[] = [];
+
     cardsRef.current.forEach((card, index) => {
       if (!card) return;
 
       const info = infoRef.current[index];
       const btn = linkedInRef.current[index];
-
       const img = card.querySelector(
         ".image-wrap img"
       ) as HTMLImageElement | null;
 
       if (!info || !btn || !img) return;
 
-      gsap.set([info, btn], { x: 100, opacity: 0 });
-      gsap.set(img, { filter: "grayscale(100%)" });
+      // Initial states
+      gsap.set(info, {
+        x: 100,
+        opacity: 0,
+        backdropFilter: "blur(8px)",
+      });
 
+      gsap.set(btn, {
+        x: 100,
+        opacity: 0,
+      });
+
+      gsap.set(img, {
+        filter: "grayscale(100%)",
+      });
+
+      // Timeline
       const tl = gsap.timeline({ paused: true });
 
       tl.to(info, {
         x: 0,
         opacity: 1,
-        duration: 0.5,
+        duration: 0.45,
         ease: "power3.out",
       })
         .to(
@@ -65,42 +79,44 @@ export default function TeamSection() {
           {
             x: 0,
             opacity: 1,
-            duration: 0.5,
+            duration: 0.45,
             ease: "power3.out",
           },
-          "-=0.3"
+          "-=0.25"
         )
         .to(
           img,
           {
             filter: "grayscale(0%)",
-            duration: 0.4,
+            duration: 0.35,
           },
           0
-        )
-        // ⭐ Delay blur so it activates AFTER the info panel shows
-        .to(
-          info,
-          {
-            backdropFilter: "blur(8px)",
-            duration: 0.1,
-            ease: "power3.out",
-          },
-          "+=0.4" // ← delay blur start (adjust this value as needed)
         );
 
-      const handleEnter = () => tl.play();
-      const handleLeave = () => tl.reverse();
+      // ✅ Smooth enter & leave
+      const handleEnter = () => {
+        tl.play();
+      };
+
+      const handleLeave = () => {
+        tl.reverse();
+      };
 
       card.addEventListener("mouseenter", handleEnter);
       card.addEventListener("mouseleave", handleLeave);
 
-      return () => {
+      cleanups.push(() => {
         card.removeEventListener("mouseenter", handleEnter);
         card.removeEventListener("mouseleave", handleLeave);
-      };
+        tl.kill();
+      });
     });
+
+    return () => {
+      cleanups.forEach((cleanup) => cleanup());
+    };
   }, []);
+
 
   return (
     <section className="w-full py-16 md:py-25">
@@ -249,7 +265,7 @@ export default function TeamSection() {
                   style={{
                     transform: "translateX(100px)",
                     opacity: 0,
-                    backdropFilter: "blur(12px)",
+
                   }}
                 >
                   <div

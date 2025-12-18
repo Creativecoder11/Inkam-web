@@ -79,55 +79,64 @@ const ScrollAnimatedFeatures: React.FC = () => {
   }, []);
 
   const getArrowPath = (from: number, progress: number) => {
-    const totalProgress = scrollProgress * 4;
+    const totalProgress = scrollProgress * 5;
     const arrowProgress = Math.max(0, Math.min(1, (totalProgress - (from - 1)) * 1));
 
     if (from === 1) {
       // Top to Right
-      const startX = 50;
-      const startY = 20;
-      const endX = 85;
-      const endY = 50;
+      const startX = 60;
+      const startY = 14;
+      const endX = 84;
+      const endY = 38;
       const currentX = startX + (endX - startX) * arrowProgress;
       const currentY = startY + (endY - startY) * arrowProgress;
-      return `M ${startX} ${startY} Q ${startX + 20} ${startY}, ${currentX} ${currentY}`;
+      return `M ${startX} ${startY} Q ${startX + 23} ${startY}, ${currentX} ${currentY}`;
     } else if (from === 2) {
       // Right to Bottom
-      const startX = 85;
-      const startY = 50;
-      const endX = 50;
-      const endY = 80;
+      const startX = 84;
+      const startY = 44;
+      const endX = 66;
+      const endY = 64;
       const currentX = startX + (endX - startX) * arrowProgress;
       const currentY = startY + (endY - startY) * arrowProgress;
-      return `M ${startX} ${startY} Q ${startX}, ${startY + 20}, ${currentX} ${currentY}`;
+      return `M ${startX} ${startY} Q ${startX}, ${startY + 16}, ${currentX} ${currentY}`;
     } else if (from === 3) {
       // Bottom to Left
-      const startX = 50;
-      const startY = 80;
-      const endX = 15;
-      const endY = 50;
+      const startX = 35;
+      const startY = 65;
+      const endX = 17;
+      const endY = 45;
       const currentX = startX + (endX - startX) * arrowProgress;
       const currentY = startY + (endY - startY) * arrowProgress;
-      return `M ${startX} ${startY} Q ${startX - 20}, ${startY}, ${currentX} ${currentY}`;
+      return `M ${startX} ${startY} Q ${startX - 16}, ${startY}, ${currentX} ${currentY}`;
+    } else if (from === 4) {
+      // Left to Top
+      const startX = 17;
+      const startY = 35;
+      const endX = 40;
+      const endY = 11;
+      const currentX = startX + (endX - startX) * arrowProgress;
+      const currentY = startY + (endY - startY) * arrowProgress;
+      return `M ${startX} ${startY} Q ${startX}, ${startY - 20}, ${currentX} ${currentY}`;
     }
     return '';
   };
 
   return (
-    <div className="bg-black">
+    <div className="">
       {/* Spacer before section */}
-      <div className="h-screen" />
+      <div className="" />
       
       {/* Main sticky section */}
       <div 
         ref={sectionRef}
         className="relative h-[400vh]"
       >
-        <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden">
+        <div className="sticky top-0  flex items-center justify-center overflow-hidden">
           <div className="relative w-full max-w-7xl mx-auto px-4">
             {/* SVG for animated arrows */}
             <svg 
-              className="absolute inset-0 w-full h-full pointer-events-none"
+              className="inset-0  pointer-events-none"
               viewBox="0 0 100 100"
               preserveAspectRatio="none"
             >
@@ -136,9 +145,9 @@ const ScrollAnimatedFeatures: React.FC = () => {
                 <path
                   d={getArrowPath(1, scrollProgress)}
                   stroke="#FF8C00"
-                  strokeWidth="0.3"
+                  strokeWidth="0.1"
                   fill="none"
-                  strokeDasharray="2,2"
+                  strokeDasharray="0.3, 0.3"
                   className="transition-all duration-300"
                 />
               )}
@@ -148,9 +157,9 @@ const ScrollAnimatedFeatures: React.FC = () => {
                 <path
                   d={getArrowPath(2, scrollProgress)}
                   stroke="#FF8C00"
-                  strokeWidth="0.3"
+                  strokeWidth="0.1"
                   fill="none"
-                  strokeDasharray="2,2"
+                  strokeDasharray="0.3, 0.3"
                   className="transition-all duration-300"
                 />
               )}
@@ -160,14 +169,26 @@ const ScrollAnimatedFeatures: React.FC = () => {
                 <path
                   d={getArrowPath(3, scrollProgress)}
                   stroke="#FF8C00"
-                  strokeWidth="0.3"
+                  strokeWidth="0.1"
                   fill="none"
-                  strokeDasharray="2,2"
+                  strokeDasharray="0.3, 0.3"
                   className="transition-all duration-300"
                 />
               )}
 
-              {/* Arrow endpoints (dots) */}
+              {/* Arrow 3 to 4 */}
+              {activeCard >= 4 && (
+                <path
+                  d={getArrowPath(4, scrollProgress)}
+                  stroke="#FF8C00"
+                  strokeWidth="0.1"
+                  fill="none"
+                  strokeDasharray="0.3, 0.3"
+                  className="transition-all duration-300"
+                />
+              )}
+
+              {/* Arrow endpoints (dots)
               {activeCard >= 2 && (
                 <circle cx="85" cy="50" r="0.5" fill="#FF8C00" />
               )}
@@ -176,11 +197,11 @@ const ScrollAnimatedFeatures: React.FC = () => {
               )}
               {activeCard >= 4 && (
                 <circle cx="15" cy="50" r="0.5" fill="#FF8C00" />
-              )}
+              )} */}
             </svg>
 
             {/* Center logo */}
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+            <div className="absolute top-125 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
               <div className="w-40 h-40 rounded-full border-4 border-gray-800 bg-gray-900 flex items-center justify-center">
                 <svg width="80" height="80" viewBox="0 0 100 100">
                   <path d="M 50 20 L 80 70 L 20 70 Z" fill="#FF8C00" />
@@ -192,10 +213,10 @@ const ScrollAnimatedFeatures: React.FC = () => {
             {features.map((feature, index) => {
               const isActive = activeCard >= feature.id;
               const positionClasses = {
-                top: 'top-20 left-1/2 -translate-x-1/2',
-                right: 'right-8 top-1/2 -translate-y-1/2',
-                bottom: 'bottom-20 left-1/2 -translate-x-1/2',
-                left: 'left-8 top-1/2 -translate-y-1/2'
+                top: 'top-25 left-1/2 -translate-x-1/2',
+                right: 'right-8 top-125 -translate-y-1/2',
+                bottom: 'bottom-92 left-1/2 -translate-x-1/2',
+                left: 'left-8 top-125 -translate-y-1/2'
               };
 
               return (
@@ -233,7 +254,7 @@ const ScrollAnimatedFeatures: React.FC = () => {
             })}
 
             {/* Progress indicator */}
-            <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
+            {/* <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
               <div className="flex gap-2">
                 {[1, 2, 3, 4].map((step) => (
                   <div
@@ -244,13 +265,12 @@ const ScrollAnimatedFeatures: React.FC = () => {
                   />
                 ))}
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
 
       {/* Spacer after section */}
-      <div className="h-screen" />
     </div>
   );
 };

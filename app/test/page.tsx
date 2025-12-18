@@ -5,8 +5,8 @@ import React from 'react'
 export default function Test() {
   return (
     <div>
-        <HeaderBanner title="Test Page" heading={<>Under Construction</>} />
-        <ScrollAnimatedFeatures />
+      <HeaderBanner title="Test Page" heading={<>Under Construction</>} />
+      <ScrollAnimatedFeatures />
     </div>
   )
 }

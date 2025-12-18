@@ -47,12 +47,12 @@ const ScrollAnimatedFeatures: React.FC = () => {
       const section = sectionRef.current;
       const rect = section.getBoundingClientRect();
       const windowHeight = window.innerHeight;
-      
+
       // Calculate scroll progress within the section
       const sectionHeight = section.offsetHeight;
       const scrollStart = rect.top;
       const scrollEnd = rect.bottom - windowHeight;
-      
+
       if (scrollStart <= 0 && scrollEnd >= 0) {
         // Section is in view and sticky
         const progress = Math.abs(scrollStart) / (sectionHeight - windowHeight);
@@ -64,9 +64,9 @@ const ScrollAnimatedFeatures: React.FC = () => {
           setActiveCard(1);
         } else if (clampedProgress < 0.5) {
           setActiveCard(2);
-        } else if (clampedProgress < 0.75) {
+        } else if (clampedProgress < 0.65) {
           setActiveCard(3);
-        } else {
+        } else if (clampedProgress < 0.85) {
           setActiveCard(4);
         }
       }
@@ -74,7 +74,7 @@ const ScrollAnimatedFeatures: React.FC = () => {
 
     window.addEventListener('scroll', handleScroll);
     handleScroll(); // Initial call
-    
+
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -124,18 +124,16 @@ const ScrollAnimatedFeatures: React.FC = () => {
 
   return (
     <div className="">
-      {/* Spacer before section */}
-      <div className="" />
-      
+
       {/* Main sticky section */}
-      <div 
+      <div
         ref={sectionRef}
         className="relative h-[400vh]"
       >
-        <div className="sticky top-0  flex items-center justify-center overflow-hidden">
+        <div className="sticky top-0 flex items-center justify-center overflow-hidden">
           <div className="relative w-full max-w-7xl mx-auto px-4">
             {/* SVG for animated arrows */}
-            <svg 
+            <svg
               className="inset-0  pointer-events-none"
               viewBox="0 0 100 100"
               preserveAspectRatio="none"
@@ -145,51 +143,49 @@ const ScrollAnimatedFeatures: React.FC = () => {
                 <path
                   d={getArrowPath(1, scrollProgress)}
                   stroke="#FF8C00"
-                  strokeWidth="0.1"
+                  strokeWidth="0.3"
                   fill="none"
                   strokeDasharray="0.3, 0.3"
                   className="transition-all duration-300"
                 />
               )}
-              
+
               {/* Arrow 2 to 3 */}
               {activeCard >= 3 && (
                 <path
                   d={getArrowPath(2, scrollProgress)}
                   stroke="#FF8C00"
-                  strokeWidth="0.1"
+                  strokeWidth="0.3"
                   fill="none"
                   strokeDasharray="0.3, 0.3"
                   className="transition-all duration-300"
                 />
               )}
-              
+
               {/* Arrow 3 to 4 */}
-              {activeCard >= 4 && (
+              {scrollProgress >= 0.65 && (
                 <path
                   d={getArrowPath(3, scrollProgress)}
                   stroke="#FF8C00"
-                  strokeWidth="0.1"
+                  strokeWidth="0.3"
                   fill="none"
                   strokeDasharray="0.3, 0.3"
-                  className="transition-all duration-300"
                 />
               )}
 
               {/* Arrow 3 to 4 */}
-              {activeCard >= 4 && (
+              {scrollProgress >= 0.85 && (
                 <path
                   d={getArrowPath(4, scrollProgress)}
                   stroke="#FF8C00"
-                  strokeWidth="0.1"
+                  strokeWidth="0.3"
                   fill="none"
                   strokeDasharray="0.3, 0.3"
-                  className="transition-all duration-300"
                 />
               )}
 
-              {/* Arrow endpoints (dots)
-              {activeCard >= 2 && (
+              {/* Arrow endpoints (dots) */}
+              {/* {activeCard >= 2 && (
                 <circle cx="85" cy="50" r="0.5" fill="#FF8C00" />
               )}
               {activeCard >= 3 && (
@@ -222,20 +218,17 @@ const ScrollAnimatedFeatures: React.FC = () => {
               return (
                 <div
                   key={feature.id}
-                  className={`absolute ${positionClasses[feature.position]} w-96 transition-all duration-700 ${
-                    isActive ? 'opacity-100 scale-100' : 'opacity-30 scale-95'
-                  }`}
+                  className={`absolute ${positionClasses[feature.position]} w-96 transition-all duration-700 ${isActive ? 'opacity-100 scale-100' : 'opacity-30 scale-95'
+                    }`}
                 >
-                  <div className={`bg-gray-800 rounded-2xl p-6 shadow-2xl border-2 transition-all duration-500 ${
-                    isActive ? 'border-orange-500' : 'border-gray-700'
-                  }`}>
+                  <div className={`bg-gray-800 rounded-2xl p-6 shadow-2xl border-2 transition-all duration-500 ${isActive ? 'border-orange-500' : 'border-gray-700'
+                    }`}>
                     <div className="flex items-start gap-4">
-                      <div 
-                        className={`flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg transition-all duration-500 ${
-                          isActive 
-                            ? 'bg-orange-500 text-white scale-110' 
-                            : 'bg-gray-700 text-gray-400'
-                        }`}
+                      <div
+                        className={`flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg transition-all duration-500 ${isActive
+                          ? 'bg-orange-500 text-white scale-110'
+                          : 'bg-gray-700 text-gray-400'
+                          }`}
                       >
                         {feature.id < 10 ? `0${feature.id}` : feature.id}
                       </div>
@@ -252,25 +245,9 @@ const ScrollAnimatedFeatures: React.FC = () => {
                 </div>
               );
             })}
-
-            {/* Progress indicator */}
-            {/* <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
-              <div className="flex gap-2">
-                {[1, 2, 3, 4].map((step) => (
-                  <div
-                    key={step}
-                    className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                      activeCard >= step ? 'bg-orange-500 w-8' : 'bg-gray-600'
-                    }`}
-                  />
-                ))}
-              </div>
-            </div> */}
           </div>
         </div>
       </div>
-
-      {/* Spacer after section */}
     </div>
   );
 };

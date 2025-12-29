@@ -1,6 +1,8 @@
 "use client";
 import BgBlurColor from "@/components/ui/bgBlurColor";
 import { useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
+import TextAnimation from "@/components/ui/textAnimation";
 
 export default function StatsSection() {
   const stats = [
@@ -86,27 +88,73 @@ export default function StatsSection() {
       {/* Content must be above the blur, so give this wrapper a positive z-index */}
       <div className="max-w-7xl mx-4 md:mx-auto space-y-6 md:space-y-12 text-white relative z-10">
         <div className="flex justify-start items-center gap-2 md:gap-4">
-          <p className="text-sm md:text-xl">ABOUT US</p>
-          <div className="mobile-line">
-            {/* svg omitted for brevity */}
-            <svg xmlns="http://www.w3.org/2000/svg" width="167" height="2" viewBox="0 0 167 2" fill="none">
-              <path d="M1 1H166" stroke="url(#paint0_linear_2239_2159)" strokeWidth="2" strokeLinecap="round" />
+          <div className="flex items-center gap-4">
+            {/* TEXT */}
+            <motion.p
+              className="text-sm md:text-xl"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+            >
+              ABOUT US
+            </motion.p>
+
+            {/* LINE */}
+            <motion.svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="167"
+              height="2"
+              viewBox="0 0 167 2"
+              fill="none"
+              initial={{ width: 0 }}
+              whileInView={{ width: 167 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, ease: "easeInOut" }}
+              style={{ overflow: "visible" }}
+            >
+              <motion.path
+                d="M1 1H166"
+                stroke="url(#paint0_linear_2239_2159)"
+                strokeWidth="2"
+                strokeLinecap="round"
+                initial={{ pathLength: 0 }}
+                whileInView={{ pathLength: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, ease: "easeInOut" }}
+              />
+
               <defs>
-                <linearGradient id="paint0_linear_2239_2159" x1="-3.99979" y1="0.49994" x2="8.92156" y2="45.5518" gradientUnits="userSpaceOnUse">
+                <linearGradient
+                  id="paint0_linear_2239_2159"
+                  x1="-3.99979"
+                  y1="0.49994"
+                  x2="8.92156"
+                  y2="45.5518"
+                  gradientUnits="userSpaceOnUse"
+                >
                   <stop stopColor="#FF8800" />
-                  <stop offset="0.981629" stopColor="#0F0E11" />
+                  <stop offset="0.98" stopColor="#0F0E11" />
                 </linearGradient>
               </defs>
-            </svg>
+            </motion.svg>
           </div>
         </div>
 
         <div className="flex flex-col md:flex-row justify-between items-end text-left gap-2 md:gap-0">
+          <TextAnimation
+            text="From a Vision to a Nationwide Network"
+            as="p"
+            className="text-sm md:text-xl"
+          />
+
           <h2 className="text-3xl font-semibold lg:text-6xl w-full md:w-1/2">
             From a Vision to a Nationwide Network
-          </h2>
+          </h2>          
           <p className="w-full md:w-1/2 text-sm md:text-[16px] text-(--grey) md:pl-20">
-            Inkam was founded to solve a simple but critical problem: thousands of digital businesses in Bangladesh struggle to reach new markets and convert users beyond major cities.
+            Inkam was founded to solve a simple but critical problem: thousands
+            of digital businesses in Bangladesh struggle to reach new markets
+            and convert users beyond major cities.
           </p>
         </div>
 
@@ -119,9 +167,7 @@ export default function StatsSection() {
               <div className="text-3xl md:text-6xl">
                 {formatNumber(currentValues[index], stat.format)}
               </div>
-              <p className="text-(--grey) text-base md:text-lg">
-                {stat.label}
-              </p>
+              <p className="text-(--grey) text-base md:text-lg">{stat.label}</p>
             </div>
           ))}
         </div>

@@ -13,6 +13,7 @@ import LenisProvider from "@/lib/LenisProvider";
 
 import bgElementRight from "@/asset/icons/bg-elements-right.svg";
 import bgElementLeft from "@/asset/icons/bg-elements-right.svg";
+import ScrollAnimatedFeatures from "@/components/ui/timeline";
 // import { useScroll } from "motion/react";
 
 export default function HomePage() {
@@ -37,6 +38,7 @@ export default function HomePage() {
         <StatsSection />
         <FeaturesSection />
         {/* <ChooseUs/> */}
+        <ScrollAnimatedFeatures />
         <Benefits />
         <TestimonialCarousel />
         <AwardsSection />

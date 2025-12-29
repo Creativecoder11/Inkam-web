@@ -108,7 +108,7 @@ export default function HeroSection() {
                       size="lg"
                       className="rounded-xl px-3 py-5 md:px-5 md:py-7 text-sm md:text-base bg-(--orange) border border-(--orange) hover:bg-orange-500"
                     >
-                      <Link href="#link">
+                      <Link href="/contact">
                         <span className="text-nowrap">Partner with Us</span>
                       </Link>
                     </Button>
@@ -121,7 +121,7 @@ export default function HeroSection() {
                     variant="ghost"
                     className="border border-(--orange) px-3 py-5 md:px-5 md:py-7 text-sm md:text-base text-white backdrop-blur-2xl bg-white/8 rounded-xl"
                   >
-                    <Link href="#link">
+                    <Link href="/contact">
                       <span className="text-nowrap text-(--orange)">
                         Join as an Agent
                       </span>

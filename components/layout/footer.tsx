@@ -21,27 +21,27 @@ const links: FooterLinkGroup[] = [
     items: [
       {
         title: "Home",
-        href: "#",
+        href: "/",
       },
       {
         title: "About Us",
-        href: "#",
+        href: "about",
       },
       {
         title: "Services",
-        href: "#",
+        href: "services",
       },
       {
-        title: "Benefits",
-        href: "#",
+        title: "Insights",
+        href: "insights",
       },
       {
         title: "Testimonials",
-        href: "#",
+        href: "/#testimonials",
       },
       {
         title: "Awards",
-        href: "#",
+        href: "/#awards",
       },
     ],
   },
@@ -50,11 +50,11 @@ const links: FooterLinkGroup[] = [
     items: [
       {
         title: "Partner with Us",
-        href: "#",
+        href: "contact",
       },
       {
         title: "Join as an Agent",
-        href: "#",
+        href: "contact",
       },
       {
         title: "Privacy and Policy",
@@ -62,7 +62,7 @@ const links: FooterLinkGroup[] = [
       },
       {
         title: "Contact Us",
-        href: "#",
+        href: "contact",
       },
     ],
   },
@@ -75,8 +75,8 @@ const links: FooterLinkGroup[] = [
       },
       {
         icon: "email",
-        title: "info@exampleemail.com",
-        mailto: "mailto:info@exampleemail.com",
+        title: "khalid@inkam.com",
+        mailto: "mailto:khalid@inkam.com",
       },
       {
         icon: "location",
@@ -218,8 +218,7 @@ const Footer = () => {
                 </svg>
               </Link>
               <p className="text-[#CFCFCF] text-base md:text-lg leading-[1.4]">
-                Lorem ipsum dolor sit amet consectetur. Lorem <br /> ipsum dolor
-                sit amet consectetur.
+                Building Bangladesh’s Largest Digital Distribution Network
               </p>
             </div>
             <p className="text-[#ffffff] text-base leading-normal py-5 md:py-8">
@@ -419,7 +418,7 @@ const Footer = () => {
                     <a
                       key={itemIndex}
                       href={item.mailto}
-                      className="text-[#CFCFCF] hover:text-primary duration-150 flex items-center gap-2"
+                      className="text-[#CFCFCF] hover:text-[#ff8800] duration-150 flex items-center gap-2"
                     >
                       {item.icon && (
                         <span>

@@ -81,8 +81,7 @@ export default function HeroSection() {
                   as="p"
                   className="mx-auto mt-4 md:mt-8 max-w-2xl text-(--grey) text-base md:text-lg"
                 >
-                  Subtext highlighting the impact: “Connecting 3,000+ businesses
-                  to 170+ million consumers through our 19,000+ agents.
+                  Inkam connects digital businesses with millions of offline and online consumers through Bangladesh’s largest digital distribution network of 19,000+ agents, covering 99% of the country.
                 </TextEffect>
 
                 <AnimatedGroup

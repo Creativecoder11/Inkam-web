@@ -20,8 +20,7 @@ export default function LogoCloud() {
     <section className="overflow-hidden py-10 md:py-16">
       <div className="relative mx-auto max-w-7xl px-6">
         <h3 className="text-base md:text-lg text-center text-white">
-          Trusted by leading brands across fintech, edtech, healthcare,
-          ecommerce, and logistics
+          Trusted by leading brands across fintech, edtech, healthcare, ecommerce, and logistics
         </h3>
 
         {/* Marquee wrapper */}

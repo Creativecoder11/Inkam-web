@@ -10,6 +10,8 @@ import {
 } from "@/components/ui/carousel";
 import sharmin from "@/asset/images/sharmin.webp";
 import abdul from "@/asset/images/abdul.webp";
+import TextAnimation from "@/components/ui/textAnimation";
+import ScrollReveal from "@/components/ui/ScrollReveal";
 
 const testimonials = [
   {
@@ -102,44 +104,50 @@ export default function TestimonialCarousel() {
   }, [api]);
 
   return (
-    <div className="w-full text-white">
+    <div className="w-full text-white" id="testimonials">
       <div className="max-w-7xl mx-4 md:mx-auto py-15 md:py-25 space-y-4 md:space-y-8">
-        <div className="flex justify-start items-center gap-2 md:gap-4">
-          <p className="text-sm md:text-xl">TESTIMONIALS</p>
-          <div className="mobile-line">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="167"
-              height="2"
-              viewBox="0 0 167 2"
-              fill="none"
-            >
-              <path
-                d="M1 1H166"
-                stroke="url(#paint0_linear_2239_2159)"
-                strokeWidth="2"
-                strokeLinecap="round"
-              />
-              <defs>
-                <linearGradient
-                  id="paint0_linear_2239_2159"
-                  x1="-3.99979"
-                  y1="0.49994"
-                  x2="8.92156"
-                  y2="45.5518"
-                  gradientUnits="userSpaceOnUse"
-                >
-                  <stop stopColor="#FF8800" />
-                  <stop offset="0.981629" stopColor="#0F0E11" />
-                </linearGradient>
-              </defs>
-            </svg>
+        <ScrollReveal>
+          <div className="flex justify-start items-center gap-2 md:gap-4">
+            <p className="title-text text-sm md:text-xl">TESTIMONIALS</p>
+            <div className="mobile-line">
+              <svg
+                className="title-line-right"
+                xmlns="http://www.w3.org/2000/svg"
+                width="167"
+                height="2"
+                viewBox="0 0 167 2"
+                fill="none"
+              >
+                <path
+                  d="M1 1H166"
+                  stroke="url(#paint0_linear_2239_2159)"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                />
+                <defs>
+                  <linearGradient
+                    id="paint0_linear_2239_2159"
+                    x1="-3.99979"
+                    y1="0.49994"
+                    x2="8.92156"
+                    y2="45.5518"
+                    gradientUnits="userSpaceOnUse"
+                  >
+                    <stop stopColor="#FF8800" />
+                    <stop offset="0.981629" stopColor="#0F0E11" />
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
           </div>
-        </div>
+        </ScrollReveal>
+
         <div className="md:flex justify-between items-end z-10 text-left">
-          <h2 className="text-3xl leading-11 font-medium lg:text-6xl md:leading-18 w-full md:w-1/2">
-            Hear from Our Satisfied Partners
-          </h2>
+          <TextAnimation>
+            <h2 className="text-3xl leading-11 font-medium lg:text-6xl md:leading-18 w-full md:w-1/2">
+              Hear from Our Satisfied Partners
+            </h2>
+          </TextAnimation>
         </div>
 
         <div>

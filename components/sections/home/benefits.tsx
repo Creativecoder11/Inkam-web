@@ -3,6 +3,8 @@ import ExpandIcon from "@/asset/icons/benefits-icon-1.svg";
 import SaveTimeIcon from "@/asset/icons/benefits-icon-2.svg";
 import GrowthIcon from "@/asset/icons/benefits-icon-3.svg";
 import Image from "next/image";
+import TextAnimation from "@/components/ui/textAnimation";
+import ScrollReveal from "@/components/ui/ScrollReveal";
 
 export default function Benefits() {
   const features = [
@@ -29,70 +31,77 @@ export default function Benefits() {
     <div className="max-w-7xl py-25 mx-4 md:mx-auto space-y-6 md:space-y-12">
       <div className="text-white flex flex-col gap-3 md:gap-6">
         {/* Heading Text */}
-        <div className="flex justify-center items-center gap-2 md:gap-4">
-          <div className="mobile-line">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="167"
-              height="2"
-              viewBox="0 0 167 2"
-              fill="none"
-            >
-              <path
-                d="M166 1H1"
-                stroke="url(#paint0_linear_2239_2185)"
-                strokeWidth="2"
-                strokeLinecap="round"
-              />
-              <defs>
-                <linearGradient
-                  id="paint0_linear_2239_2185"
-                  x1="171"
-                  y1="0.49994"
-                  x2="158.078"
-                  y2="45.5518"
-                  gradientUnits="userSpaceOnUse"
-                >
-                  <stop stopColor="#FF8800" />
-                  <stop offset="0.981629" stopColor="#0F0E11" />
-                </linearGradient>
-              </defs>
-            </svg>
+        <ScrollReveal>
+          <div className="flex justify-center items-center gap-2 md:gap-4">
+            <div className="mobile-line">
+              <svg
+                className="title-line-left"
+                xmlns="http://www.w3.org/2000/svg"
+                width="167"
+                height="2"
+                viewBox="0 0 167 2"
+                fill="none"
+              >
+                <path
+                  d="M166 1H1"
+                  stroke="url(#paint0_linear_2239_2185)"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                />
+                <defs>
+                  <linearGradient
+                    id="paint0_linear_2239_2185"
+                    x1="171"
+                    y1="0.49994"
+                    x2="158.078"
+                    y2="45.5518"
+                    gradientUnits="userSpaceOnUse"
+                  >
+                    <stop stopColor="#FF8800" />
+                    <stop offset="0.981629" stopColor="#0F0E11" />
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+            <p className="title-text text-sm md:text-xl">BENEFITS</p>
+            <div className="mobile-line">
+              <svg
+                className="title-line-right"
+                xmlns="http://www.w3.org/2000/svg"
+                width="167"
+                height="2"
+                viewBox="0 0 167 2"
+                fill="none"
+              >
+                <path
+                  d="M1 1H166"
+                  stroke="url(#paint0_linear_2239_2159)"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                />
+                <defs>
+                  <linearGradient
+                    id="paint0_linear_2239_2159"
+                    x1="-3.99979"
+                    y1="0.49994"
+                    x2="8.92156"
+                    y2="45.5518"
+                    gradientUnits="userSpaceOnUse"
+                  >
+                    <stop stopColor="#FF8800" />
+                    <stop offset="0.981629" stopColor="#0F0E11" />
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
           </div>
-          <p className="text-sm md:text-xl">BENEFITS</p>
-          <div className="mobile-line">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="167"
-              height="2"
-              viewBox="0 0 167 2"
-              fill="none"
-            >
-              <path
-                d="M1 1H166"
-                stroke="url(#paint0_linear_2239_2159)"
-                strokeWidth="2"
-                strokeLinecap="round"
-              />
-              <defs>
-                <linearGradient
-                  id="paint0_linear_2239_2159"
-                  x1="-3.99979"
-                  y1="0.49994"
-                  x2="8.92156"
-                  y2="45.5518"
-                  gradientUnits="userSpaceOnUse"
-                >
-                  <stop stopColor="#FF8800" />
-                  <stop offset="0.981629" stopColor="#0F0E11" />
-                </linearGradient>
-              </defs>
-            </svg>
-          </div>
-        </div>
-        <h2 className="text-3xl leading-11 font-medium lg:text-6xl md:leading-18 text-center">
-          Together, We Build <br /> the Future of Distribution
-        </h2>
+        </ScrollReveal>
+        <TextAnimation>
+          <h2 className="text-3xl leading-11 font-medium lg:text-6xl md:leading-18 text-center">
+            Together, We Build <br /> the Future of Distribution
+          </h2>
+        </TextAnimation>
+
       </div>
       <div className="flex flex-col md:flex-row gap-4 md:gap-5">
         <div className="w-full md:w-1/2">

@@ -71,7 +71,7 @@ const links: FooterLinkGroup[] = [
     items: [
       {
         icon: "phone",
-        title: "(252) 555-0126",
+        title: "+880 1784-398934",
       },
       {
         icon: "email",
@@ -82,9 +82,9 @@ const links: FooterLinkGroup[] = [
         icon: "location",
         title: (
           <>
-            2715 Ash Dr. San Jose,
+            House: 654, Road: 09 Ave: 04,
             <br className="hidden md:block" />
-            South Dakota 83475
+            Mirpur DOHS, Dhaka 1216, Bangladesh
           </>
         ),
       },

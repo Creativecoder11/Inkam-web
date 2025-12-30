@@ -18,9 +18,15 @@ export default function TextAnimation({
   animateOnScroll = true,
   delay = 0,
 }: TextAnimationProps) {
-  const containerRef = useRef<HTMLElement | null>(null);
+  const containerRef = useRef<HTMLDivElement | null>(null);
   const splitRefs = useRef<SplitText[]>([]);
   const linesRef = useRef<HTMLElement[]>([]);
+
+  const wrappedChildren = React.isValidElement(children)
+    ? React.Children.map(children, (child) =>
+        React.cloneElement(child, { ref: containerRef } as any)
+      )
+    : children;
 
   useEffect(() => {
     const container = containerRef.current;
@@ -50,7 +56,7 @@ export default function TextAnimation({
       // Preserve text-indent for first line
       const style = window.getComputedStyle(el as HTMLElement);
       if (style.textIndent !== "0px" && split.lines.length) {
-        split.lines[0].style.paddingLeft = style.textIndent;
+        (split.lines[0] as HTMLElement).style.paddingLeft = style.textIndent;
         (el as HTMLElement).style.textIndent = "0";
       }
     });
@@ -90,9 +96,7 @@ export default function TextAnimation({
   }, [animateOnScroll, delay]);
 
   if (React.Children.count(children) === 1 && React.isValidElement(children)) {
-    return React.cloneElement(children, {
-      ref: containerRef,
-    });
+    return wrappedChildren;
   }
 
   return (

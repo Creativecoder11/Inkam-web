@@ -13,13 +13,13 @@ export default function Services() {
         title="Our Services"
         heading={
           <>
-            Transforming Digital <br />
-            Access Across Bangladesh
+            Build faster growth with an <br />
+            robust distribution network
           </>
         }
       />
       <ServicesOverview />
-      
+
       <AcquisitionServices />
       <ProductReselling />
       <OrderCollection />

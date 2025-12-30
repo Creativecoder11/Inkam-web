@@ -1,32 +1,34 @@
 "use client";
 
 import { useRef, useEffect } from "react";
-import Blog1 from "@/asset/images/team1.svg";
-import Blog2 from "@/asset/images/team-image.svg";
+import team1 from "@/asset/images/team1.webp";
+import team2 from "@/asset/images/team2.webp";
+import team3 from "@/asset/images/team3.webp";
 import TeamCardIcon from "@/asset/icons/team-title-card-bg-icon.svg";
 
-// import BlogImage from '@/assets/images/blog/blog-image.png';
 import gsap from "gsap";
 import Image from "next/image";
+import ScrollReveal from "@/components/ui/ScrollReveal";
+import TextAnimation from "@/components/ui/textAnimation";
 
 export default function TeamSection() {
   const team = [
     {
-      name: "Avery Collins",
+      name: "Khalid Hossain",
       role: "Chief executive officer",
-      image: Blog1.src,
+      image: team1.src,
       linkedIn: "https://linkedin.com/in/avery-collins",
     },
     {
       name: "Sarah Johnson",
       role: "Chief Technology Officer",
-      image: Blog2.src,
+      image: team2.src,
       linkedIn: "https://linkedin.com/in/sarah-johnson",
     },
     {
       name: "Michael Roberts",
       role: "Chief Marketing Officer",
-      image: Blog1.src,
+      image: team3.src,
       linkedIn: "https://linkedin.com/in/michael-roberts",
     },
   ];
@@ -124,70 +126,76 @@ export default function TeamSection() {
         {/* Header */}
         <div className="text-white flex flex-col gap-3 md:gap-6">
           {/* Heading Text */}
-          <div className="flex justify-center items-center gap-4">
-            <div className="mobile-line">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="167"
-                height="2"
-                viewBox="0 0 167 2"
-                fill="none"
-              >
-                <path
-                  d="M166 1H1"
-                  stroke="url(#paint0_linear_2239_2185)"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                />
-                <defs>
-                  <linearGradient
-                    id="paint0_linear_2239_2185"
-                    x1="171"
-                    y1="0.49994"
-                    x2="158.078"
-                    y2="45.5518"
-                    gradientUnits="userSpaceOnUse"
-                  >
-                    <stop stopColor="#FF8800" />
-                    <stop offset="0.981629" stopColor="#0F0E11" />
-                  </linearGradient>
-                </defs>
-              </svg>
+          <ScrollReveal>
+            <div className="flex justify-center items-center gap-4">
+              <div className="mobile-line">
+                <svg
+                  className="title-line-left"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="167"
+                  height="2"
+                  viewBox="0 0 167 2"
+                  fill="none"
+                >
+                  <path
+                    d="M166 1H1"
+                    stroke="url(#paint0_linear_2239_2185)"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                  />
+                  <defs>
+                    <linearGradient
+                      id="paint0_linear_2239_2185"
+                      x1="171"
+                      y1="0.49994"
+                      x2="158.078"
+                      y2="45.5518"
+                      gradientUnits="userSpaceOnUse"
+                    >
+                      <stop stopColor="#FF8800" />
+                      <stop offset="0.981629" stopColor="#0F0E11" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </div>
+              <p className="title-text text-sm md:text-xl">FOUNDERS</p>
+              <div className="mobile-line">
+                <svg
+                  className="title-line-right"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="167"
+                  height="2"
+                  viewBox="0 0 167 2"
+                  fill="none"
+                >
+                  <path
+                    d="M1 1H166"
+                    stroke="url(#paint0_linear_2239_2159)"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                  />
+                  <defs>
+                    <linearGradient
+                      id="paint0_linear_2239_2159"
+                      x1="-3.99979"
+                      y1="0.49994"
+                      x2="8.92156"
+                      y2="45.5518"
+                      gradientUnits="userSpaceOnUse"
+                    >
+                      <stop stopColor="#FF8800" />
+                      <stop offset="0.981629" stopColor="#0F0E11" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </div>
             </div>
-            <p className="text-sm md:text-xl">CORE VALUES</p>
-            <div className="mobile-line">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="167"
-                height="2"
-                viewBox="0 0 167 2"
-                fill="none"
-              >
-                <path
-                  d="M1 1H166"
-                  stroke="url(#paint0_linear_2239_2159)"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                />
-                <defs>
-                  <linearGradient
-                    id="paint0_linear_2239_2159"
-                    x1="-3.99979"
-                    y1="0.49994"
-                    x2="8.92156"
-                    y2="45.5518"
-                    gradientUnits="userSpaceOnUse"
-                  >
-                    <stop stopColor="#FF8800" />
-                    <stop offset="0.981629" stopColor="#0F0E11" />
-                  </linearGradient>
-                </defs>
-              </svg>
-            </div>
-          </div>
-          <h2 className="text-3xl font-semibold lg:text-6xl leading-[1.2] mb-4 md:mb-12 text-white text-center">
-            Values Driving Our Mission
-          </h2>
+          </ScrollReveal>
+          <TextAnimation>
+            <h2 className="text-3xl font-semibold lg:text-6xl leading-[1.2] mb-4 md:mb-12 text-white text-center">
+              Visionary Leadership
+            </h2>
+          </TextAnimation>
         </div>
 
         {/* Team Grid */}
@@ -198,7 +206,7 @@ export default function TeamSection() {
               ref={(el) => {
                 cardsRef.current[index] = el;
               }}
-              className="relative group bg-[#201F22] pt-10 cursor-pointer overflow-hidden rounded-xl md:rounded-3xl"
+              className="relative group bg-[#201F22] cursor-pointer overflow-hidden rounded-xl md:rounded-3xl"
             >
               {/* LinkedIn Button */}
               <a
@@ -214,7 +222,7 @@ export default function TeamSection() {
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="w-[18px] h-[18px] md:w-[26px] md:h-[26px]"
+                  className="w-4.5 h-4.5 md:w-6.5 md:h-6.5"
                   viewBox="0 0 26 26"
                   fill="none"
                 >
@@ -236,14 +244,7 @@ export default function TeamSection() {
               {/* Image */}
               <div className="relative md:aspect-3/4 overflow-hidden rounded-xl md:rounded-3xl">
                 <div
-                  className="
-    relative 
-    h-[420px] 
-    md:h-[540px] 
-    overflow-hidden 
-    rounded-xl 
-    md:rounded-3xl
-  "
+                  className="relative h-105 md:h-135 overflow-hidden rounded-xl md:rounded-3xl"
                 >
                   <div className="absolute inset-0 image-wrap">
                     <Image
@@ -280,7 +281,7 @@ export default function TeamSection() {
                     <div
                       className="
                         absolute -right-10 -bottom-4
-                        w-[120px] h-[70px]
+                        w-30 h-17.5
                         bg-no-repeat bg-contain
                     "
                       style={{

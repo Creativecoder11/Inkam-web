@@ -1,0 +1,7 @@
+[class^="line"] {
+  overflow: visible;
+}
+
+.line-mask {
+  padding-bottom: 0.25em;
+}

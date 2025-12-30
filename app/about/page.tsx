@@ -56,7 +56,13 @@ export default function About() {
   ];
   return (
     <div>
-      <HeaderBanner title="About Us" heading="Who We Are" />
+      <HeaderBanner title="About Us" heading={
+        <>
+          Transforming Digital
+          <br />
+          Access Across Bangladesh
+        </>
+      } />
       <OurStory />
       <ImpactStatsSection />
       <CoreValuesSection />

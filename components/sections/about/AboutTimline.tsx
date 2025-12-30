@@ -1,6 +1,8 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
 import "./AboutTimline.css";
+import ScrollReveal from "@/components/ui/ScrollReveal";
+import TextAnimation from "@/components/ui/textAnimation";
 
 interface TimelineItem {
   year: string;
@@ -78,70 +80,76 @@ const CircularCarousel: React.FC<CircularCarouselProps> = ({
     <div className="max-w-7xl mx-auto pt-25">
       <div className="text-white flex flex-col gap-3 md:gap-6">
         {/* Heading Text */}
-        <div className="flex justify-center items-center gap-4">
-          <div className="mobile-line">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="167"
-              height="2"
-              viewBox="0 0 167 2"
-              fill="none"
-            >
-              <path
-                d="M166 1H1"
-                stroke="url(#paint0_linear_2239_2185)"
-                strokeWidth="2"
-                strokeLinecap="round"
-              />
-              <defs>
-                <linearGradient
-                  id="paint0_linear_2239_2185"
-                  x1="171"
-                  y1="0.49994"
-                  x2="158.078"
-                  y2="45.5518"
-                  gradientUnits="userSpaceOnUse"
-                >
-                  <stop stopColor="#FF8800" />
-                  <stop offset="0.981629" stopColor="#0F0E11" />
-                </linearGradient>
-              </defs>
-            </svg>
+        <ScrollReveal>
+          <div className="flex justify-center items-center gap-4">
+            <div className="mobile-line">
+              <svg
+                className="title-line-left"
+                xmlns="http://www.w3.org/2000/svg"
+                width="167"
+                height="2"
+                viewBox="0 0 167 2"
+                fill="none"
+              >
+                <path
+                  d="M166 1H1"
+                  stroke="url(#paint0_linear_2239_2185)"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                />
+                <defs>
+                  <linearGradient
+                    id="paint0_linear_2239_2185"
+                    x1="171"
+                    y1="0.49994"
+                    x2="158.078"
+                    y2="45.5518"
+                    gradientUnits="userSpaceOnUse"
+                  >
+                    <stop stopColor="#FF8800" />
+                    <stop offset="0.981629" stopColor="#0F0E11" />
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+            <p className="title-text text-sm md:text-xl">TIMELINE</p>
+            <div className="mobile-line">
+              <svg
+                className="title-line-right"
+                xmlns="http://www.w3.org/2000/svg"
+                width="167"
+                height="2"
+                viewBox="0 0 167 2"
+                fill="none"
+              >
+                <path
+                  d="M1 1H166"
+                  stroke="url(#paint0_linear_2239_2159)"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                />
+                <defs>
+                  <linearGradient
+                    id="paint0_linear_2239_2159"
+                    x1="-3.99979"
+                    y1="0.49994"
+                    x2="8.92156"
+                    y2="45.5518"
+                    gradientUnits="userSpaceOnUse"
+                  >
+                    <stop stopColor="#FF8800" />
+                    <stop offset="0.981629" stopColor="#0F0E11" />
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
           </div>
-          <p className="text-sm md:text-xl">TIMELINE</p>
-          <div className="mobile-line">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="167"
-              height="2"
-              viewBox="0 0 167 2"
-              fill="none"
-            >
-              <path
-                d="M1 1H166"
-                stroke="url(#paint0_linear_2239_2159)"
-                strokeWidth="2"
-                strokeLinecap="round"
-              />
-              <defs>
-                <linearGradient
-                  id="paint0_linear_2239_2159"
-                  x1="-3.99979"
-                  y1="0.49994"
-                  x2="8.92156"
-                  y2="45.5518"
-                  gradientUnits="userSpaceOnUse"
-                >
-                  <stop stopColor="#FF8800" />
-                  <stop offset="0.981629" stopColor="#0F0E11" />
-                </linearGradient>
-              </defs>
-            </svg>
-          </div>
-        </div>
-        <h2 className="text-3xl font-semibold lg:text-6xl leading-[1.2] mb-4 md:mb-12 text-white text-center">
-          Our Multi-Year Plan <br /> for the Digital Ecosystem
-        </h2>
+        </ScrollReveal>
+        <TextAnimation>
+          <h2 className="text-3xl font-semibold lg:text-6xl leading-[1.2] mb-4 md:mb-12 text-white text-center">
+            Our Multi-Year Plan <br /> for the Digital Ecosystem
+          </h2>
+        </TextAnimation>
       </div>
       <div
         className="carousel-container"

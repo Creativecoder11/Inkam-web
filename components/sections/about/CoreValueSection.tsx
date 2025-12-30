@@ -1,3 +1,5 @@
+import ScrollReveal from "@/components/ui/ScrollReveal";
+import TextAnimation from "@/components/ui/textAnimation";
 import { Handshake } from "lucide-react";
 // import coreValue from "../../../assets/images/about/core-value.png";
 
@@ -5,40 +7,40 @@ export default function CoreValuesSection() {
   const values = [
     {
       number: "01",
-      title: "Digital Inclusion",
+      title: "Bridge the Market Gap",
       description:
-        "Connecting the 105 million offline consumers to essential digital services and products across all of Bangladesh.",
+        "We connect digital businesses to real customers nationwide, turning distribution barriers into growth.",
       // image: "",  
     },
     {
       number: "02",
-      title: "Agent Empowerment",
+      title: "Empower Entrepreneurs",
       description:
-        "Providing 19,000+ digital entrepreneurs with financial inclusion and a sustainable, necessary source of income.",
+        "We help thousands of agents earn sustainably through digital work and opportunity.",
     },
     {
       number: "03",
-      title: "Market Access",
+      title: "Trust & Fair Rewards",
       description:
-        "Enabling 3,000+ digital businesses to overcome distribution gaps and efficiently access untapped markets for growth.",
+        "Transparent transactions and fair commissions so everyone wins—business, agent, and customer.",
     },
     {
       number: "04",
-      title: "Technological Efficiency",
+      title: "Data-Driven Growth",
       description:
-        "Utilizing a robust platform and seamless integration to maximize efficiency for digital product selling and channeling.",
+        "We use insights to generate better leads, smarter targeting, and measurable ROI.",
     },
     {
       number: "05",
-      title: "Data-Driven Intelligence",
+      title: "Efficiency by Design",
       description:
-        "Optimizing lead generation and providing businesses with data-driven insights to successfully achieve their marketing goals.",
+        "Fast, seamless delivery and simple workflows that make selling and referrals effortless.",
     },
     {
       number: "06",
-      title: "Sustainable Impact",
+      title: "Partnership First",
       description:
-        "Addressing global challenges like No Poverty and Decent Work through purposeful and inclusive business models.",
+        "We build long-term relationships with businesses to scale into new markets, together.",
     },
   ];
 
@@ -47,70 +49,77 @@ export default function CoreValuesSection() {
       <div className="max-w-7xl mx-4 md:mx-auto">
         <div className="text-white flex flex-col gap-3 md:gap-6">
           {/* Heading Text */}
-          <div className="flex justify-center items-center gap-4">
-            <div className="mobile-line">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="167"
-                height="2"
-                viewBox="0 0 167 2"
-                fill="none"
-              >
-                <path
-                  d="M166 1H1"
-                  stroke="url(#paint0_linear_2239_2185)"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                />
-                <defs>
-                  <linearGradient
-                    id="paint0_linear_2239_2185"
-                    x1="171"
-                    y1="0.49994"
-                    x2="158.078"
-                    y2="45.5518"
-                    gradientUnits="userSpaceOnUse"
-                  >
-                    <stop stopColor="#FF8800" />
-                    <stop offset="0.981629" stopColor="#0F0E11" />
-                  </linearGradient>
-                </defs>
-              </svg>
+          <ScrollReveal>
+            <div className="flex justify-center items-center gap-4">
+              <div className="mobile-line">
+                <svg
+                  className="title-line-left"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="167"
+                  height="2"
+                  viewBox="0 0 167 2"
+                  fill="none"
+                >
+                  <path
+                    d="M166 1H1"
+                    stroke="url(#paint0_linear_2239_2185)"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                  />
+                  <defs>
+                    <linearGradient
+                      id="paint0_linear_2239_2185"
+                      x1="171"
+                      y1="0.49994"
+                      x2="158.078"
+                      y2="45.5518"
+                      gradientUnits="userSpaceOnUse"
+                    >
+                      <stop stopColor="#FF8800" />
+                      <stop offset="0.981629" stopColor="#0F0E11" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </div>
+              <p className="title-text text-sm md:text-xl">CORE VALUES</p>
+              <div className="mobile-line">
+                <svg
+                  className="title-line-right"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="167"
+                  height="2"
+                  viewBox="0 0 167 2"
+                  fill="none"
+                >
+                  <path
+                    d="M1 1H166"
+                    stroke="url(#paint0_linear_2239_2159)"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                  />
+                  <defs>
+                    <linearGradient
+                      id="paint0_linear_2239_2159"
+                      x1="-3.99979"
+                      y1="0.49994"
+                      x2="8.92156"
+                      y2="45.5518"
+                      gradientUnits="userSpaceOnUse"
+                    >
+                      <stop stopColor="#FF8800" />
+                      <stop offset="0.981629" stopColor="#0F0E11" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </div>
             </div>
-            <p className="text-sm md:text-xl">CORE VALUES</p>
-            <div className="mobile-line">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="167"
-                height="2"
-                viewBox="0 0 167 2"
-                fill="none"
-              >
-                <path
-                  d="M1 1H166"
-                  stroke="url(#paint0_linear_2239_2159)"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                />
-                <defs>
-                  <linearGradient
-                    id="paint0_linear_2239_2159"
-                    x1="-3.99979"
-                    y1="0.49994"
-                    x2="8.92156"
-                    y2="45.5518"
-                    gradientUnits="userSpaceOnUse"
-                  >
-                    <stop stopColor="#FF8800" />
-                    <stop offset="0.981629" stopColor="#0F0E11" />
-                  </linearGradient>
-                </defs>
-              </svg>
-            </div>
-          </div>
-          <h2 className="text-3xl font-semibold lg:text-6xl leading-[1.2] mb-4 md:mb-12 text-white text-center">
-            Values Driving Our Mission
-          </h2>
+          </ScrollReveal>
+
+          <TextAnimation>
+            <h2 className="text-3xl font-semibold lg:text-6xl leading-[1.2] mb-4 md:mb-12 text-white text-center">
+              Values Driving Our Mission
+            </h2>
+          </TextAnimation>
         </div>
         {/* Stats Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 pt-4 md:pt-13 gap-4 md:gap-8">

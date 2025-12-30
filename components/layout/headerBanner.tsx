@@ -24,11 +24,11 @@ export default function HeaderBanner({ title, heading }: HeaderBannerProps) {
           {/* Background Blurs */}
           <div className="w-full overflow-hidden pointer-events-none -z-10">
             <div
-              className="absolute -left-20 top-0 w-[550px] h-[450px]
+              className="absolute -left-20 top-0 w-137.5 h-112.5
               bg-[#005CAF]/20 blur-[200px] rounded-full"
             />
             <div
-              className="absolute -right-20 bottom-1/4 w-[550px] h-[450px]
+              className="absolute -right-20 bottom-1/4 w-137.5 h-112.5
               bg-[#FF8800]/20 blur-[200px] rounded-full"
             />
           </div>

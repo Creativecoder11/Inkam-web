@@ -237,8 +237,7 @@ export default function AcquisitionServices() {
 
               {/* Description */}
               <p className="text-white text-sm md:text-base leading-relaxed mb-4 md:mb-8">
-                Helps businesses attract and onboard new users, merchants, and
-                leads through digital and field campaigns.
+                Helps businesses attract and onboard new users, merchants, and leads through digital and field campaigns.
               </p>
 
               {/* Bullet Points */}

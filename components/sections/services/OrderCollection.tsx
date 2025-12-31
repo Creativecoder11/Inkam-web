@@ -164,15 +164,14 @@ export default function OrderCollectionServices() {
               {/* Heading */}
               <div className="md:pt-25 mb-4 md:mb-6">
                 <h3 className="text-white text-xl md:text-3xl font-medium mb-2 md:mb-4">
-                  <span className="text-(--orange)">01.</span> Acquisition
+                  <span className="text-(--orange)">01.</span> Order Collection
                 </h3>
                 <div className="w-full h-px bg-linear-to-r from-white/20 to-transparent" />
               </div>
 
               {/* Description */}
               <p className="text-white text-sm md:text-base leading-relaxed mb-4 md:mb-8">
-                Helps businesses attract and onboard new users, merchants, and
-                leads through digital and field campaigns.
+                Retail-scale field operations to collect, place, and coordinate orders—built for consistent execution.
               </p>
 
               {/* Bullet Points */}

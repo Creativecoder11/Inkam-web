@@ -58,9 +58,7 @@ export default function ServicesOverview() {
           <div className="w-full md:w-1/2 md:pl-12">
             <TextAnimation delay={0.2}>
               <p className="text-sm md:text-[16px] text-(--grey)">
-                Inkam empowers digital businesses with nationwide distribution,
-                enabling greater reach, higher sales, and seamless access to
-                millions of consumers across Bangladesh.
+                Digital businesses often struggle to expand into new markets and reach end consumers at scale, Bridging that distribution gap by combining a field-ready network, campaign operations, and reporting that maps to business KPIs.
               </p>
             </TextAnimation>
           </div>

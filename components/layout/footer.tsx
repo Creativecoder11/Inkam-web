@@ -75,8 +75,8 @@ const links: FooterLinkGroup[] = [
       },
       {
         icon: "email",
-        title: "khalid@inkam.com",
-        mailto: "mailto:khalid@inkam.com",
+        title: "khalid@inkam.app",
+        mailto: "mailto:khalid@inkam.app",
       },
       {
         icon: "location",

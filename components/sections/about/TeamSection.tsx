@@ -17,19 +17,19 @@ export default function TeamSection() {
       name: "Khalid Hossain",
       role: "Chief executive officer",
       image: team1.src,
-      linkedIn: "https://linkedin.com/in/avery-collins",
+      linkedIn: "https://linkedin.com/in/#",
     },
     {
-      name: "Sarah Johnson",
-      role: "Chief Technology Officer",
+      name: "Meraj Ul Islam",
+      role: "Chief Operating Officer",
       image: team2.src,
-      linkedIn: "https://linkedin.com/in/sarah-johnson",
+      linkedIn: "https://linkedin.com/in/#",
     },
     {
-      name: "Michael Roberts",
-      role: "Chief Marketing Officer",
+      name: "Mehedi Hasan Nibir",
+      role: "Business Development Manager",
       image: team3.src,
-      linkedIn: "https://linkedin.com/in/michael-roberts",
+      linkedIn: "https://linkedin.com/in/#",
     },
   ];
 

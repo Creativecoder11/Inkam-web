@@ -14,6 +14,7 @@ import LenisProvider from "@/lib/LenisProvider";
 import bgElementRight from "@/asset/icons/bg-elements-right.svg";
 import bgElementLeft from "@/asset/icons/bg-elements-right.svg";
 import ScrollAnimatedFeatures from "@/components/ui/timeline";
+import MobileTimeline from "@/components/ui/mobileTimeline";
 // import { useScroll } from "motion/react";
 
 export default function HomePage() {
@@ -38,7 +39,12 @@ export default function HomePage() {
         <StatsSection />
         <FeaturesSection />
         {/* <ChooseUs/> */}
-        <ScrollAnimatedFeatures />
+        <div className="hidden md:block">
+          <ScrollAnimatedFeatures />
+        </div>
+        <div className="block md:hidden">
+          <MobileTimeline />
+        </div>
         <Benefits />
         <TestimonialCarousel />
         <AwardsSection />

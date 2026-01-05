@@ -3,6 +3,7 @@ import AboutCircularCarousel from "@/components/sections/about/AboutTimline";
 // import CircularCarousel from '@/components/sections/about/AboutTimline'
 import CoreValuesSection from "@/components/sections/about/CoreValueSection";
 import ImpactStatsSection from "@/components/sections/about/impact-section";
+import MobileAboutTimeline from "@/components/sections/about/mobileAboutTimeline";
 import OurStory from "@/components/sections/about/our-story";
 import TeamSection from "@/components/sections/about/TeamSection";
 import Faq from "@/components/sections/home/faq";
@@ -68,7 +69,12 @@ export default function About() {
       <CoreValuesSection />
       <TeamSection />
       <Faq />
-      <AboutCircularCarousel slides={data} autoplay={4000} speed={1500} />
+      <div className="hidden md:block">
+        <AboutCircularCarousel slides={data} autoplay={4000} speed={1500} />
+      </div>
+      <div className="block md:hidden">
+        <MobileAboutTimeline />
+      </div>
     </div>
   );
 }

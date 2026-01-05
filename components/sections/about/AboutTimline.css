@@ -85,8 +85,6 @@
   width: 75%;
 }
 
-
-
 .pagination {
   position: absolute;
   top: 50%;
@@ -121,9 +119,9 @@
   transform: translate(-50%, -50%);
 
   width: 50px;
-  height: 150px; 
-  min-height: 150px;   
-  max-height: 150px;   
+  height: 150px;
+  min-height: 150px;
+  max-height: 150px;
 
   gap: 4px;
   pointer-events: auto;
@@ -145,10 +143,9 @@
 
 .dot-year {
   font-size: 16px;
-  line-height: 1; 
+  line-height: 1;
   white-space: nowrap;
-  transition:
-    font-size var(--carousel-speed) ease,
+  transition: font-size var(--carousel-speed) ease,
     opacity var(--carousel-speed) ease;
 }
 
@@ -158,8 +155,6 @@
   font-weight: 500;
   color: var(--orange);
 }
-
-
 
 .nav-button {
   position: absolute;
@@ -189,11 +184,11 @@
 .nav-prev {
   left: 30%;
 }
-.next-btn{
-    transform: translate(8px, 8px);
+.next-btn {
+  transform: translate(8px, 8px);
 }
-.prev-btn{
-    transform: translate(8px, 8px);
+.prev-btn {
+  transform: translate(8px, 8px);
 }
 
 /* Responsive Styles */

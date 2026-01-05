@@ -13,6 +13,12 @@
     height: 40px;
   }
 }
+
+.feature-badge,
+.feature-divider {
+  will-change: background-color, background-image;
+}
+
 /* 
 html {
   scroll-behavior: auto; 

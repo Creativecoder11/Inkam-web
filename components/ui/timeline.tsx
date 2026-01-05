@@ -315,7 +315,7 @@ const ScrollAnimatedFeatures: React.FC = () => {
                     <div className="flex flex-col items-start gap-4">
                       <div className="flex items-center gap-4">
                         <div
-                          className={`flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg transition-all duration-500 ${isActive
+                          className={`shrink-0 w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg transition-all duration-500 ${isActive
                             ? "bg-(--orange) text-white scale-110"
                             : "bg-gray-700 text-gray-400"
                             }`}

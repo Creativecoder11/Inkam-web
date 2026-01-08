@@ -26,6 +26,16 @@ export const HeroHeader = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Close menu when pathname changes
+  React.useEffect(() => {
+    setMenuState(false);
+  }, [pathname]);
+
+  // Handler to close menu when clicking a link
+  const handleLinkClick = () => {
+    setMenuState(false);
+  };
+
   return (
     <header>
       <nav
@@ -46,6 +56,7 @@ export const HeroHeader = () => {
                 href="/"
                 aria-label="home"
                 className="flex items-center space-x-2"
+                onClick={handleLinkClick}
               >
                 <Logo />
               </Link>
@@ -90,6 +101,7 @@ export const HeroHeader = () => {
                     <li key={index}>
                       <Link
                         href={item.href}
+                        onClick={handleLinkClick}
                         className={cn(
                           "relative inline-block text-muted-foreground duration-150 hover:text-(--orange) before:absolute before:left-0 before:-bottom-1 before:h-0.5 before:w-0 before:bg-current before:transition-all before:duration-300 hover:before:w-full",
                           pathname === item.href && "text-(--orange) before:w-full"
@@ -104,7 +116,7 @@ export const HeroHeader = () => {
 
               {/* Only Contact Us Button */}
               <Button asChild size="sm" className="px-3 py-3 md:px-5 md:py-5 bg-(--orange) hover:bg-[#ffffff0d] hover:text-(--orange) border border-(--orange) hover:border-(--orange) transition-all duration-300">
-                <Link href="/contact">
+                <Link href="/contact" onClick={handleLinkClick}>
                   <span>Contact Us</span>
                 </Link>
               </Button>

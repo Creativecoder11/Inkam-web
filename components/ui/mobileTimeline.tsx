@@ -190,7 +190,7 @@ const MobileTimeline = () => {
                         >
                             {/* Top */}
                             <div className="flex items-center gap-4">
-                                <span className="feature-badge text-[18px] font-semibold text-white bg-[#FFFFFF0D] px-3 py-2 rounded-full transition-colors">
+                                <span className="feature-badge text-[18px] font-semibold text-white bg-[#FFFFFF0D] px-3 py-[9px]  rounded-full transition-colors">
                                     {String(index + 1).padStart(2, '0')}
                                 </span>
                                 <span className="text-[18px] font-semibold text-white">

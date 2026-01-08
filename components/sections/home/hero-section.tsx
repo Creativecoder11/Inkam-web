@@ -68,7 +68,7 @@ export default function HeroSection() {
                   preset="fade-in-blur"
                   speedSegment={0.3}
                   as="h1"
-                  className="mx-auto mt-10 md:max-w-6xl font-bold text-white text-5xl leading-[60px] max-md:font-semibold md:text-[80px] md:leading-[88px] -tracking-[0.6px] md:-tracking-[1.6px]"
+                  className="mx-auto mt-10 md:max-w-6xl font-bold text-white text-4xl leading-[46px] max-md:font-semibold md:text-[80px] md:leading-[88px] -tracking-[0.6px] md:-tracking-[1.6px]"
                 >
                   Unlock Bangladesh’s Untapped Digital Market
                 </TextEffect>
@@ -96,7 +96,7 @@ export default function HeroSection() {
                     },
                     ...transitionVariants,
                   }}
-                  className="mt-8 md:mt-12 flex flex-col items-center justify-center gap-2 md:flex-row"
+                  className="mt-8 md:mt-12 flex flex-row items-center justify-center gap-2 md:flex-row"
                 >
                   <div
                     key={1}

@@ -89,7 +89,7 @@ const Form = () => {
                                     <div>
                                         <p className="text-[#CFCFCF] text-sm md:text-lg">Call Us:</p>
                                         <p className="text-[#FFF] text-sm md:text-lg font-semibold">
-                                            +880 1234 567890
+                                            +880 1784-398934
                                         </p>
                                     </div>
                                 </div>

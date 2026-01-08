@@ -14,9 +14,9 @@ export default function Faq() {
     {
       id: "item-1",
       no: "01.",
-      question: "What is Inkam and what core problem does it solve?",
+      question: "What is inkam and what core problem does it solve?",
       answer:
-        "Inkam is a digital distribution network that connects businesses with end consumers through a nationwide community of trained “digital entrepreneurs” (agents). We solve the last-mile and adoption problem for digital products and services—helping you reach, educate, and convert customers in markets your existing channels don’t coverz.",
+        "inkam is a digital distribution network that connects businesses with end consumers through a nationwide community of trained “digital entrepreneurs” (agents). We solve the last-mile and adoption problem for digital products and services—helping you reach, educate, and convert customers in markets your existing channels don’t cover.",
     },
     {
       id: "item-2",

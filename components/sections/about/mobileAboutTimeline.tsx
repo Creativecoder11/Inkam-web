@@ -158,9 +158,9 @@ const MobileAboutTimeline = () => {
 
             {/* Time Line */}
 
-            <div ref={timelineRef} className="relative mt-16">
+            <div ref={timelineRef} className="relative mt-16 -ml-50">
                 {/* Vertical Line */}
-                <div className="absolute left-[50%] top-0 h-full w-0.5 bg-[#FFFFFF33] timeline-line" />
+                <div className="absolute left-[50%] mt-2 top-0 h-full w-0.5 bg-[#FFFFFF33] timeline-line" />
 
                 <div className="flex flex-col gap-16">
                     {timelineData.map((item, index) => (
@@ -177,7 +177,7 @@ const MobileAboutTimeline = () => {
 
                             {/* Dot */}
                             <div className="flex justify-center">
-                                <span className="w-3 h-3 rounded-full bg-[#FF8800] timeline-dot" />
+                                <span className="w-3 h-3 mt-2 ml-0.5 rounded-full bg-[#FF8800] timeline-dot" />
                             </div>
 
                             {/* Content */}

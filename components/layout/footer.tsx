@@ -160,8 +160,6 @@ const Footer = () => {
     return () => observer.disconnect();
   }, []);
 
-
-
   return (
     <footer className="w-full pt-10 md:pt-20 bg-[#161518]">
       <div className="mx-4 md:mx-auto max-w-7xl">
@@ -347,7 +345,7 @@ const Footer = () => {
             </div>
 
             <Link
-              href="#"
+              href="/inkam pitch.pdf"
               className="bg-[#FF8800] text-white text-sm md:text-base leading-1.5 font-medium py-3 px-7 md:px-10.5 rounded-xl hover:bg-[#e67600] inline-flex items-center gap-2"
             >
               <svg
@@ -373,9 +371,18 @@ const Footer = () => {
             </Link>
           </div>
 
-          <div className="w-full md:w-1/2 grid grid-cols-2 md:flex justify-between gap-4 md:gap-12">
+          <div className="w-full md:w-1/2 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-12">
             {links.map((linkGroup, groupIndex) => (
-              <div key={groupIndex} className="space-y-2 md:space-y-4 text-sm">
+              <div
+                key={groupIndex}
+                className={`space-y-2 md:space-y-4 text-sm
+                  ${
+                    groupIndex === 2
+                      ? "col-span-2 md:col-span-2" // Contact Info wider
+                      : "col-span-1"
+                  }
+                `}
+              >
                 <span className="text-[#FFFFFF] block font-medium">
                   {linkGroup.group}
                 </span>

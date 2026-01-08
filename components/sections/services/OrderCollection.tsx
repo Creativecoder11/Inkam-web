@@ -216,7 +216,7 @@ export default function OrderCollectionServices() {
               </div>
 
               {/* Chart Section */}
-              <div className="grow relative">
+              <div className="grow relative h-[220px]">
                 <ResponsiveContainer width="100%" height="100%">
                   <BarChart
                     data={chartData}

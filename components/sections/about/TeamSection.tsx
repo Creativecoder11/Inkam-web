@@ -4,6 +4,8 @@ import { useRef, useEffect } from "react";
 import team1 from "@/asset/images/team1.webp";
 import team2 from "@/asset/images/team2.webp";
 import team3 from "@/asset/images/team3.webp";
+import team4 from "@/asset/images/team4.webp";
+import team5 from "@/asset/images/team5.webp";
 import TeamCardIcon from "@/asset/icons/team-title-card-bg-icon.svg";
 
 import gsap from "gsap";
@@ -15,20 +17,32 @@ export default function TeamSection() {
   const team = [
     {
       name: "Khalid Hossain",
-      role: "Chief executive officer",
+      role: "Co-Founder and CEO",
       image: team1.src,
       linkedIn: "https://linkedin.com/in/#",
     },
     {
       name: "Meraj Ul Islam",
-      role: "Chief Operating Officer",
+      role: "Co-Founder and COO",
       image: team2.src,
       linkedIn: "https://linkedin.com/in/#",
     },
     {
-      name: "Mehedi Hasan Nibir",
-      role: "Business Development Manager",
+      name: "Nafis Samee Raidah",
+      role: "Head Of HR and Admin",
       image: team3.src,
+      linkedIn: "https://linkedin.com/in/#",
+    },
+    {
+      name: "Arifa Khatun",
+      role: "Product Manager",
+      image: team4.src,
+      linkedIn: "https://linkedin.com/in/#",
+    },
+    {
+      name: "Mehedi Hasan Nibir",
+      role: "Operation Manager",
+      image: team5.src,
       linkedIn: "https://linkedin.com/in/#",
     },
   ];

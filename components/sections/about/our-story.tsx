@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import storyImage from "@/asset/images/our-story-image.webp";
+import aboutimg1 from "@/asset/images/aboutimg1.webp";
 import TextAnimation from "@/components/ui/textAnimation";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 export default function OurStorySection() {
@@ -73,7 +73,7 @@ export default function OurStorySection() {
           <div className="w-full md:w-1/2">
             <div className="relative rounded-lg md:rounded-[20px] overflow-hidden shadow-[0_10px_20px_rgba(0,0,0,0.5)] md:shadow-[0_20px_60px_rgba(0,0,0,0.5)]">
               <Image
-                src={storyImage}
+                src={aboutimg1}
                 alt="Team collaborating in modern office"
                 width={800}
                 height={600}

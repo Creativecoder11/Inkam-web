@@ -1,11 +1,13 @@
 "use client";
 
 import { useRef, useEffect } from "react";
-import team1 from "@/asset/images/team1.webp";
-import team2 from "@/asset/images/team2.webp";
-import team3 from "@/asset/images/team3.webp";
-import team4 from "@/asset/images/team4.webp";
-import team5 from "@/asset/images/team5.webp";
+import gridBg from "@/asset/images/gridBg.png";
+import team1 from "@/asset/images/team1.png";
+import team2 from "@/asset/images/team2.png";
+import team3 from "@/asset/images/team3.png";
+import team4 from "@/asset/images/team4.png";
+import team5 from "@/asset/images/team5.png";
+import team6 from "@/asset/images/team6.png";
 import TeamCardIcon from "@/asset/icons/team-title-card-bg-icon.svg";
 
 import gsap from "gsap";
@@ -43,6 +45,12 @@ export default function TeamSection() {
       name: "Mehedi Hasan Nibir",
       role: "Operation Manager",
       image: team5.src,
+      linkedIn: "https://linkedin.com/in/#",
+    },
+    {
+      name: "Soyab Mostofa",
+      role: "Brand and Communication Exe.",
+      image: team6.src,
       linkedIn: "https://linkedin.com/in/#",
     },
   ];
@@ -133,7 +141,6 @@ export default function TeamSection() {
     };
   }, []);
 
-
   return (
     <section className="w-full py-16 md:py-25">
       <div className="max-w-7xl mx-4 md:mx-auto">
@@ -220,7 +227,9 @@ export default function TeamSection() {
               ref={(el) => {
                 cardsRef.current[index] = el;
               }}
-              className="relative group bg-[#201F22] cursor-pointer overflow-hidden rounded-xl md:rounded-3xl"
+              // Added style for gridBg and classes for positioning
+              className="relative group bg-[#201F22] bg-cover bg-center bg-no-repeat cursor-pointer overflow-hidden rounded-xl md:rounded-3xl"
+              style={{ backgroundImage: `url(${gridBg.src})` }}
             >
               {/* LinkedIn Button */}
               <a
@@ -257,9 +266,7 @@ export default function TeamSection() {
 
               {/* Image */}
               <div className="relative md:aspect-3/4 overflow-hidden rounded-xl md:rounded-3xl">
-                <div
-                  className="relative h-105 md:h-135 overflow-hidden rounded-xl md:rounded-3xl"
-                >
+                <div className="relative h-105 md:h-135 overflow-hidden rounded-xl md:rounded-3xl">
                   <div className="absolute inset-0 image-wrap">
                     <Image
                       src={member.image}
@@ -280,12 +287,11 @@ export default function TeamSection() {
                   style={{
                     transform: "translateX(100px)",
                     opacity: 0,
-
                   }}
                 >
                   <div
                     className="
-                        p-2 md:p-4 relative
+                        p-2 md:p-4 relative overflow-hidden
                         rounded-tl-2xl rounded-bl-2xl rounded-tr-none rounded-br-none
                         border-t-4 border-b-4 border-l-4 border-(--orange)
                         bg-[linear-gradient(90deg,rgba(22,21,24,0.90)_0%,rgba(22,21,24,0.60)_100%)]
@@ -294,7 +300,7 @@ export default function TeamSection() {
                   >
                     <div
                       className="
-                        absolute -right-10 -bottom-4
+                        absolute -right-4 -bottom-4
                         w-30 h-17.5
                         bg-no-repeat bg-contain
                     "

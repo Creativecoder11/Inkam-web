@@ -189,7 +189,7 @@ export default function AcquisitionServices() {
           <div className="w-full md:w-1/2">
             <p className="text-(--grey) text-sm md:text-base mb-3 md:mb-6">
               Inkam connects digital businesses with millions of consumers through
-              a powerful agent network, bridging market gaps and driving
+              a powerful agent network, bridging market gaps and driving.
             </p>
           </div>
         </div>
@@ -243,9 +243,9 @@ export default function AcquisitionServices() {
               {/* Bullet Points */}
               <div className="space-y-1.5 md:space-y-3 grow">
                 {[
-                  "App download and user engagement",
-                  "Merchant and account onboarding",
-                  "Lead collection and customer surveys",
+                  "App download and activation",
+                  "App rating & review",
+                  "Account opening / registration support",
                 ].map((point, idx) => (
                   <div key={idx} className="flex items-center gap-1 md:gap-2">
                     <div className="shrink-0">

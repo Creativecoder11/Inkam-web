@@ -177,8 +177,8 @@ export default function OrderCollectionServices() {
               {/* Bullet Points */}
               <div className="space-y-1.5 md:space-y-3 grow">
                 {[
-                  "App download and user engagement",
-                  "Merchant and account onboarding",
+                  "Sales force workflow",
+                  "Order vs. delivery tracking",
                   "Lead collection and customer surveys",
                 ].map((point, idx) => (
                   <div key={idx} className="flex items-center gap-1 md:gap-2">

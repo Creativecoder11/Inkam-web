@@ -1,7 +1,7 @@
-import logo1 from "@/asset/icons/awards-logo-1.svg";
-import logo2 from "@/asset/icons/awards-logo-2.svg";
-import logo3 from "@/asset/icons/awards-logo-3.svg";
-import logo4 from "@/asset/icons/awards-logo-4.svg";
+import awardsImg1 from "@/asset/icons/awardsImg1.png";
+import awardsImg2 from "@/asset/icons/awardsImg2.png";
+import awardsImg3 from "@/asset/icons/awardsImg3.png";
+import awardsImg4 from "@/asset/icons/awardsImg4.png";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import TextAnimation from "@/components/ui/textAnimation";
 import Image from "next/image";
@@ -86,25 +86,25 @@ export default function AwardsSection() {
 
         </div>
 
-        <div className="w-full mt-8 md:mt-12 mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-16">
+        <div className="w-full mt-8 md:mt-12 mx-auto grid grid-cols-2 md:grid-cols-4 gap-5 md:gap-8">
           {/* Logo 1 */}
-          <div className="h-26 md:h-36 py-5 md:py-7 rounded-2xl bg-[#161518] flex items-center justify-center">
-            <Image src={logo1} alt="Logo 1" className="h-full w-full" />
+          <div className="h-26 md:h-36 py-4 md:py-8 px-4 md:px-12 rounded-2xl bg-[#161518] flex items-center justify-center">
+            <Image src={awardsImg1} alt="Logo 1" className="h-full w-full" />
           </div>
 
           {/* Logo 2 */}
-          <div className="h-26 md:h-36 py-5 md:py-7 rounded-2xl bg-[#161518] flex items-center justify-center">
-            <Image src={logo2} alt="Logo 2" className="h-full w-full" />
+          <div className="h-26 md:h-36 py-4 md:py-8 px-4 md:px-12 rounded-2xl bg-[#161518] flex items-center justify-center">
+            <Image src={awardsImg2} alt="Logo 2" className="h-full w-full" />
           </div>
 
           {/* Logo 3 */}
-          <div className=" h-26 md:h-36 py-5 md:py-7 rounded-2xl bg-[#161518] flex items-center justify-center">
-            <Image src={logo3} alt="Logo 3" className="h-full w-full" />
+          <div className=" h-26 md:h-36 py-4 md:py-8 px-4 md:px-12 rounded-2xl bg-[#161518] flex items-center justify-center">
+            <Image src={awardsImg3} alt="Logo 3" className="h-full w-full" />
           </div>
 
           {/* Logo 4 */}
-          <div className="h-26 md:h-36 py-5 md:py-7 rounded-2xl bg-[#161518] flex items-center justify-center">
-            <Image src={logo4} alt="Logo 4" className="h-full w-full" />
+          <div className="h-26 md:h-36 py-4 md:py-8 px-4 md:px-12 rounded-2xl bg-[#161518] flex items-center justify-center">
+            <Image src={awardsImg4} alt="Logo 4" className="h-full w-full" />
           </div>
         </div>
       </div>

@@ -1,7 +1,11 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import BlogImage from "@/asset/images/blog-image.svg";
+import blogImg1 from "@/asset/images/blogImg1.webp";
+import blogImg2 from "@/asset/images/blogImg2.webp";
+import blogImg3 from "@/asset/images/blogImg3.webp";
+import blogImg4 from "@/asset/images/blogImg4.png";
+import blogImg5 from "@/asset/images/blogImg5.png";
 import BlogCard from "@/components/ui/BlogCard";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import TextAnimation from "@/components/ui/textAnimation";
@@ -14,85 +18,49 @@ export default function Insights() {
             comments: 223,
             title: "Singapore Demo Day Spotlights Bangladeshi Turtle Startups",
             excerpt:
-                "Inkam connects digital businesses with millions of consumers through a powerful agent network, bridging market gaps and driving inclusive digital growth across Bangladesh.",
-            image: BlogImage,
+                "Seven startups from Turtle's first cohort including Chhaya, Inkam, Revorium, Drutoloan, Shunboi...",
+            image: blogImg1,
         },
         {
             id: 2,
             date: "17-01-23",
             comments: 223,
-            title: "Singapore Demo Day Spotlights Bangladeshi Turtle Startups",
+            title: "Rising Together: Meet & Greet with Razor Capital",
             excerpt:
-                "Inkam connects digital businesses with millions of consumers through a powerful agent network, bridging market gaps and driving inclusive digital growth across Bangladesh.",
-            image: BlogImage,
+                "Turtle Venture orchestrated a momentous Meet & Greet event with Razor Capital, a prominent.",
+            image: blogImg2,
         },
         {
             id: 3,
             date: "17-01-23",
             comments: 223,
-            title: "Singapore Demo Day Spotlights Bangladeshi Turtle Startups",
+            title: "Market Presence and Partnership Meeting",
             excerpt:
-                "Inkam connects digital businesses with millions of consumers through a powerful agent network, bridging market gaps and driving inclusive digital growth across Bangladesh.",
-            image: BlogImage,
+                "inkam has formed key partnerships with 10 divisional distributors, driving regional...",
+            image: blogImg3,
         },
         {
             id: 4,
             date: "17-01-23",
             comments: 223,
-            title: "Singapore Demo Day Spotlights Bangladeshi Turtle Startups",
+            title: "BDjobs Fair 2024 - Chittagong",
             excerpt:
-                "Inkam connects digital businesses with millions of consumers through a powerful agent network, bridging market gaps and driving inclusive digital growth across Bangladesh.",
-            image: BlogImage,
+                "Seven startups from Turtle's first cohort including Chhaya, Inkam, Revorium, Drutoloan, Shunboi...",
+            image: blogImg4,
         },
         {
             id: 5,
             date: "17-01-23",
             comments: 223,
-            title: "Singapore Demo Day Spotlights Bangladeshi Turtle Startups",
+            title: "Next Generation Icon Award in MSME Honours presented",
             excerpt:
-                "Inkam connects digital businesses with millions of consumers through a powerful agent network, bridging market gaps and driving inclusive digital growth across Bangladesh.",
-            image: BlogImage,
-        },
-        {
-            id: 6,
-            date: "17-01-23",
-            comments: 223,
-            title: "Singapore Demo Day Spotlights Bangladeshi Turtle Startups",
-            excerpt:
-                "Inkam connects digital businesses with millions of consumers through a powerful agent network, bridging market gaps and driving inclusive digital growth across Bangladesh.",
-            image: BlogImage,
-        },
-        {
-            id: 7,
-            date: "17-01-23",
-            comments: 223,
-            title: "Singapore Demo Day Spotlights Bangladeshi Turtle Startups",
-            excerpt:
-                "Inkam connects digital businesses with millions of consumers through a powerful agent network, bridging market gaps and driving inclusive digital growth across Bangladesh.",
-            image: BlogImage,
-        },
-        {
-            id: 8,
-            date: "17-01-23",
-            comments: 223,
-            title: "Singapore Demo Day Spotlights Bangladeshi Turtle Startups",
-            excerpt:
-                "Inkam connects digital businesses with millions of consumers through a powerful agent network, bridging market gaps and driving inclusive digital growth across Bangladesh.",
-            image: BlogImage,
-        },
-        {
-            id: 9,
-            date: "17-01-23",
-            comments: 223,
-            title: "Singapore Demo Day Spotlights Bangladeshi Turtle Startups",
-            excerpt:
-                "Inkam connects digital businesses with millions of consumers through a powerful agent network, bridging market gaps and driving inclusive digital growth across Bangladesh.",
-            image: BlogImage,
+                "Inkam has been awarded with Next Generation Icon Award in MSME Honours presented by ....",
+            image: blogImg5,
         },
     ];
 
     // highlight logic
-    const [highlight, setHighlight] = useState(articles[2]);
+    const [highlight, setHighlight] = useState(articles[0]);
 
     useEffect(() => {
         const random = Math.floor(Math.random() * articles.length);
@@ -150,10 +118,10 @@ export default function Insights() {
 
                 {/* ------------------- HIGHLIGHT SECTION ------------------- */}
                 <div
-                    className="w-full mt-12 h-[572px] rounded-2xl relative bg-cover bg-center  items-end justify-center hidden md:flex"
+                    className="w-full mt-12 h-143 rounded-2xl relative bg-cover bg-center  items-end justify-center hidden md:flex"
                     style={{ backgroundImage: `url(${highlight.image.src})` }}
                 >
-                    <div className="bg-[#201F22] max-w-[950px] -mb-15 py-5 px-6 rounded-xl">
+                    <div className="bg-[#201F22] max-w-237.5 -mb-15 py-5 px-6 rounded-xl">
                         {/* META */}
                         <div className="flex items-center gap-4 text-gray-300 text-base mb-3">
                             <div className="flex items-center gap-2">

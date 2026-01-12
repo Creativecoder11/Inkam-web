@@ -1,10 +1,14 @@
 "use client";
 
 import Image from "next/image";
+import type { StaticImageData } from "next/image";
 import React, { useState, useEffect, useRef } from "react";
 import * as echarts from "echarts";
 import HandshakeIcon from "@/asset/icons/feature-i-3.svg";
 import CardVector from "@/asset/icons/card-vector.svg";
+import avatar1 from "@/asset/images/avatar1.png";
+import avatar2 from "@/asset/images/avatar2.png";
+import avatar3 from "@/asset/images/avatar3.png";
 
 interface SpotlightCardProps {
   children: React.ReactNode;
@@ -53,22 +57,26 @@ interface EmployeeCardProps {
   name: string;
   title: string;
   date: string;
-  avatarColor: string;
+  avatarImg: StaticImageData;
 }
 
 const EmployeeCard = ({
   name,
   title,
   date,
-  avatarColor,
+  avatarImg,
 }: EmployeeCardProps) => {
   return (
-    <div className="bg-white/5 w-full md:w-[390px] space-y-2 md:space-y-3 rounded-lg md:rounded-xl p-2.5 md:p-4">
+    <div className="bg-white/5 w-full md:w-97.5 space-y-2 md:space-y-3 rounded-lg md:rounded-xl p-2.5 md:p-4">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-4">
-          <div
-            className="w-8 h-8 md:w-10 md:h-10 rounded-full"
-            style={{ background: avatarColor }}
+          <Image
+            src={avatarImg}
+            alt={name}
+            width={40}
+            height={40}
+            className="rounded-full"
+            priority={false}
           />
           <div>
             <h3 className="text-white text-sm md:text-base font-medium">{name}</h3>
@@ -94,9 +102,9 @@ const SalesReport = () => {
   const chartInstance = useRef<echarts.ECharts | null>(null);
 
   const salesData = [
-    { color: "#ff8c00", label: "IOREM", value: "$380.00" },
-    { color: "#0066cc", label: "IOREM", value: "$280.00" },
-    { color: "#66b3ff", label: "IOREM", value: "$280.00" },
+    { color: "#ff8c00", label: "Premium package 1", value: "$280.00" },
+    { color: "#0066cc", label: "Bongo Subscription", value: "$280.00" },
+    { color: "#66b3ff", label: "ERP joins", value: "$280.00" },
   ];
 
   useEffect(() => {
@@ -246,19 +254,19 @@ export default function ProductReselling() {
       name: "Mostania sia",
       title: "Ceo at Losukia",
       date: "4 Sep 2022",
-      avatarColor: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+      avatarImg: avatar1,
     },
     {
       name: "Brooklyn Simmons",
       title: "Ceo at Losukia",
       date: "4 Sep 2022",
-      avatarColor: "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)",
+      avatarImg: avatar2,
     },
     {
       name: "Darlene Robertson",
       title: "Ceo at Losukia",
       date: "4 Sep 2022",
-      avatarColor: "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)",
+      avatarImg: avatar3,
     },
   ];
 
@@ -274,7 +282,7 @@ export default function ProductReselling() {
           <div className="w-full md:w-1/2">
             <p className="text-(--grey) text-sm md:text-base mb-3 md:mb-6">
               Inkam connects digital businesses with millions of consumers through
-              a powerful agent network, bridging market gaps and driving
+              a powerful agent network, bridging market gaps and driving.
             </p>
           </div>
         </div>
@@ -357,9 +365,9 @@ export default function ProductReselling() {
                 {/* Bullet Points */}
                 <div className="space-y-1.5 md:space-y-3 grow">
                   {[
-                    "App download and user engagement",
-                    "Merchant and account onboarding",
-                    "Lead collection and customer surveys",
+                    "Subscriptions, Educational courses",
+                    "Health packages, Event tickets",
+                    "Financial and investment products",
                   ].map((point, idx) => (
                     <div key={idx} className="flex items-center gap-1 md:gap-2">
                       <div className="shrink-0">

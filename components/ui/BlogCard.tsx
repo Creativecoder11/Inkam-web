@@ -23,7 +23,7 @@ export default function BlogCard({ article, actionLabel = "Read More" }: BlogCar
                     src={article.image}
                     alt={article.title}
                     fill
-                    className="object-cover"
+                    className="object-fill"
                 />
             </div>
 

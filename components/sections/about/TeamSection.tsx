@@ -21,37 +21,37 @@ export default function TeamSection() {
       name: "Khalid Hossain",
       role: "Co-Founder and CEO",
       image: team1.src,
-      linkedIn: "https://linkedin.com/in/#",
+      linkedIn: "https://www.linkedin.com/in/khalidhossainanik/",
     },
     {
       name: "Meraj Ul Islam",
       role: "Co-Founder and COO",
       image: team2.src,
-      linkedIn: "https://linkedin.com/in/#",
+      linkedIn: "https://www.linkedin.com/in/meraj-ul-islam-abb68825/",
     },
     {
       name: "Nafis Samee Raidah",
       role: "Head Of HR and Admin",
       image: team3.src,
-      linkedIn: "https://linkedin.com/in/#",
+      linkedIn: "https://www.linkedin.com/in/nafis-samee-raidah-0a9282214/",
     },
     {
       name: "Arifa Khatun",
       role: "Product Manager",
       image: team4.src,
-      linkedIn: "https://linkedin.com/in/#",
+      linkedIn: "https://www.linkedin.com/in/arifakhatun/",
     },
     {
       name: "Mehedi Hasan Nibir",
       role: "Operation Manager",
       image: team5.src,
-      linkedIn: "https://linkedin.com/in/#",
+      linkedIn: "https://www.linkedin.com/in/mehedihasannibir95/",
     },
     {
       name: "Soyab Mostofa",
       role: "Brand and Communication Exe.",
       image: team6.src,
-      linkedIn: "https://linkedin.com/in/#",
+      linkedIn: "https://www.linkedin.com/in/soyabmostofa/",
     },
   ];
 

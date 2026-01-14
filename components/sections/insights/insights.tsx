@@ -5,7 +5,8 @@ import blogImg1 from "@/asset/images/blogImg1.webp";
 import blogImg2 from "@/asset/images/blogImg2.webp";
 import blogImg3 from "@/asset/images/blogImg3.webp";
 import blogImg4 from "@/asset/images/blogImg4.png";
-import blogImg5 from "@/asset/images/blogImg5.png";
+import blogImg5 from "@/asset/images/blogImg5.webp";
+import blogImg6 from "@/asset/images/blogImg6.png";
 import BlogCard from "@/components/ui/BlogCard";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import TextAnimation from "@/components/ui/textAnimation";
@@ -52,10 +53,19 @@ export default function Insights() {
             id: 5,
             date: "17-01-23",
             comments: 223,
+            title: "BIG top 10 selected startup",
+            excerpt:
+                "Seven startups from Turtle's first cohort including Chhaya, Inkam, Revorium, Drutoloan, Shunboi...",
+            image: blogImg5,
+        },
+        {
+            id: 5,
+            date: "17-01-23",
+            comments: 223,
             title: "Next Generation Icon Award in MSME Honours presented",
             excerpt:
                 "Inkam has been awarded with Next Generation Icon Award in MSME Honours presented by ....",
-            image: blogImg5,
+            image: blogImg6,
         },
     ];
 

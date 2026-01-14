@@ -164,7 +164,7 @@ export default function OrderCollectionServices() {
               {/* Heading */}
               <div className="md:pt-25 mb-4 md:mb-6">
                 <h3 className="text-white text-xl md:text-3xl font-medium mb-2 md:mb-4">
-                  <span className="text-(--orange)">02.</span> Order Collection
+                  <span className="text-(--orange)">03.</span> Order Collection
                 </h3>
                 <div className="w-full h-px bg-linear-to-r from-white/20 to-transparent" />
               </div>

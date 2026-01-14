@@ -102,9 +102,9 @@ const SalesReport = () => {
   const chartInstance = useRef<echarts.ECharts | null>(null);
 
   const salesData = [
-    { color: "#ff8c00", label: "Premium package 1", value: "$280.00" },
-    { color: "#0066cc", label: "Bongo Subscription", value: "$280.00" },
-    { color: "#66b3ff", label: "ERP joins", value: "$280.00" },
+    { color: "#ff8c00", label: "Keraniganj", value: "৳ 20,000" },
+    { color: "#0066cc", label: "Uttara", value: "৳ 15,000" },
+    { color: "#66b3ff", label: "Mirpur", value: "৳ 30,000" },
   ];
 
   useEffect(() => {
@@ -125,10 +125,13 @@ const SalesReport = () => {
         backgroundColor: "rgba(30, 30, 30, 0.9)",
         borderColor: "#ff8c00",
         borderWidth: 1,
-        textStyle: {
-          color: "#fff",
+        textStyle: { color: "#fff" },
+        formatter: (params: any) => {
+          // TypeScript-safe cast
+          const name = params.name ?? "";
+          const value = params.value ?? 0;
+          return `${name}: ৳${Number(value).toLocaleString()}`;
         },
-        formatter: "{b}: ${c}",
       },
       graphic: [
         {
@@ -251,21 +254,21 @@ const SalesReport = () => {
 export default function ProductReselling() {
   const employees = [
     {
-      name: "Mostania sia",
-      title: "Ceo at Losukia",
-      date: "4 Sep 2022",
+      name: "Mostafizur Rahman",
+      title: "MD at BanglaBazar",
+      date: "18 Nov 2025",
       avatarImg: avatar1,
     },
     {
-      name: "Brooklyn Simmons",
-      title: "Ceo at Losukia",
-      date: "4 Sep 2022",
+      name: "Nusrat Jahan",
+      title: "COO at BongoMart",
+      date: "02 Feb 2025",
       avatarImg: avatar2,
     },
     {
-      name: "Darlene Robertson",
-      title: "Ceo at Losukia",
-      date: "4 Sep 2022",
+      name: "Tanvir Ahmed",
+      title: "CSO at Bazaar24",
+      date: "21 Aug 2024",
       avatarImg: avatar3,
     },
   ];

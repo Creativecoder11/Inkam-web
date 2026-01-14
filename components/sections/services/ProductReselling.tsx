@@ -154,53 +154,19 @@ const SalesReport = () => {
           radius: ["50%", "80%"],
           center: ["50%", "50%"],
           avoidLabelOverlap: false,
-          label: {
-            show: false,
-            position: "center",
-          },
-          emphasis: {
-            label: {
-              show: false,
+          label: { show: false, position: "center" },
+          emphasis: { label: { show: false }, scale: true, scaleSize: 5 },
+          labelLine: { show: false },
+          data: salesData.map((item) => ({
+            value: Number(item.value.replace(/[^\d.-]/g, "")),
+            name: item.label,
+            itemStyle: {
+              color: item.color,
+              shadowBlur: 10,
+              shadowColor: "rgba(0, 0, 0, 0.3)",
+              borderRadius: 10,
             },
-            scale: true,
-            scaleSize: 5,
-          },
-          labelLine: {
-            show: false,
-          },
-          data: [
-            {
-              value: 380,
-              name: salesData[0].label,
-              itemStyle: {
-                color: salesData[0].color,
-                shadowBlur: 10,
-                shadowColor: "rgba(0, 0, 0, 0.3)",
-                borderRadius: 10,
-
-              },
-            },
-            {
-              value: 280,
-              name: salesData[1].label,
-              itemStyle: {
-                color: salesData[1].color,
-                shadowBlur: 10,
-                shadowColor: "rgba(0, 0, 0, 0.3)",
-                borderRadius: 10
-              },
-            },
-            {
-              value: 280,
-              name: salesData[2].label,
-              itemStyle: {
-                color: salesData[2].color,
-                shadowBlur: 10,
-                shadowColor: "rgba(0, 0, 0, 0.3)",
-                borderRadius: 10
-              },
-            },
-          ],
+          })),
         },
       ],
     };

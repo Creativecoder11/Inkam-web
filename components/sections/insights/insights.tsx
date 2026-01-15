@@ -72,7 +72,7 @@ export default function Insights() {
       excerpt:
         "Inkam has been awarded with Next Generation Icon Award in MSME Honours presented by ....",
       image: blogImg6,
-      url: "https://www.observerbd.com/news/499476",
+      url: "https://www.thedailystar.net/business/organisation-news/press-releases/news/25-bangladesh-based-companies-win-big-tally-msme-honours-2023-3387036",
     },
   ];
 

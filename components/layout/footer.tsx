@@ -225,7 +225,7 @@ const Footer = () => {
             {/* social link */}
             <div className="flex gap-3 mb-5 md:mb-10">
               <a
-                href="#"
+                href="https://www.facebook.com/inkamapp"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block group"
@@ -252,7 +252,7 @@ const Footer = () => {
                 </svg>
               </a>
               <a
-                href="#"
+                href="https://www.linkedin.com/company/79548722"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block group"
@@ -283,60 +283,6 @@ const Footer = () => {
                   />
                   <path
                     d="M12.704 10.4004C11.432 10.4004 10.4 11.4324 10.4 12.7044C10.4 13.9764 11.432 15.0324 12.704 15.0324C13.976 15.0324 15.008 13.9764 15.008 12.7044C15.008 11.4324 13.976 10.4004 12.704 10.4004Z"
-                    fill="white"
-                    className="transition-colors duration-300 group-hover:fill-[#FF8800]"
-                  />
-                </svg>
-              </a>
-              <a
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block group"
-              >
-                <svg
-                  className="w-8 h-8 md:w-10 md:h-10"
-                  viewBox="0 0 40 40"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <rect
-                    width="40"
-                    height="40"
-                    rx="20"
-                    fill="white"
-                    fillOpacity="0.1"
-                    className="transition-colors duration-300 group-hover:fill-[#FF8800]"
-                  />
-                  <path
-                    d="M21.9027 18.4686L29.3482 10H27.5838L21.119 17.3532L15.9555 10H10L17.8082 21.1193L10 30H11.7644L18.5915 22.2348L24.0445 30H30L21.9023 18.4686H21.9027ZM19.4861 21.2173L18.695 20.1101L12.4002 11.2997H15.1102L20.1902 18.4099L20.9813 19.5172L27.5847 28.7594H24.8746L19.4861 21.2177V21.2173Z"
-                    fill="white"
-                    className="transition-colors duration-300 group-hover:fill-[#FF8800]"
-                  />
-                </svg>
-              </a>
-              <a
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block group"
-              >
-                <svg
-                  className="w-8 h-8 md:w-10 md:h-10"
-                  viewBox="0 0 40 40"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <rect
-                    width="40"
-                    height="40"
-                    rx="20"
-                    fill="white"
-                    fillOpacity="0.1"
-                    className="transition-colors duration-300 group-hover:fill-[#FF8800]"
-                  />
-                  <path
-                    d="M30.7747 14.3762C30.5154 13.4123 29.7554 12.6524 28.7916 12.3929C27.0309 11.9111 19.988 11.9111 19.988 11.9111C19.988 11.9111 12.9454 11.9111 11.1847 12.3746C10.2394 12.6339 9.46091 13.4124 9.20163 14.3762C8.73828 16.1367 8.73828 19.7879 8.73828 19.7879C8.73828 19.7879 8.73828 23.4575 9.20163 25.1996C9.46118 26.1634 10.2209 26.9233 11.1848 27.1828C12.9639 27.6647 19.9883 27.6647 19.9883 27.6647C19.9883 27.6647 27.0309 27.6647 28.7916 27.2012C29.7555 26.9418 30.5154 26.182 30.7749 25.2182C31.2381 23.4575 31.2381 19.8065 31.2381 19.8065C31.2381 19.8065 31.2567 16.1367 30.7747 14.3762ZM17.7457 23.161V16.4148L23.6022 19.7879L17.7457 23.161Z"
                     fill="white"
                     className="transition-colors duration-300 group-hover:fill-[#FF8800]"
                   />

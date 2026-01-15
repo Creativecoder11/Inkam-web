@@ -344,7 +344,7 @@ const Footer = () => {
               </a>
             </div>
 
-            <Link
+            {/* <Link
               href="/inkam pitch.pdf"
               className="bg-[#FF8800] text-white text-sm md:text-base leading-1.5 font-medium py-3 px-7 md:px-10.5 rounded-xl hover:bg-[#e67600] inline-flex items-center gap-2"
             >
@@ -368,7 +368,7 @@ const Footer = () => {
                 />
               </svg>
               Pitch Deck
-            </Link>
+            </Link> */}
           </div>
 
           <div className="w-full md:w-1/2 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-12">

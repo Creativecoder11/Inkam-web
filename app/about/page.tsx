@@ -12,49 +12,56 @@ import Faq from "@/components/sections/home/faq";
 
 export default function About() {
   const data = [
-    {
-      year: "2012",
-      img: "https://cdn.prod.website-files.com/6788e6c70fa2b23ccce907d3/6895a34d9342359e1f5d6b31_illustration2.avif",
-      title: "Lorem ipsum dolor sit amet consectetur.",
-      description: "Lorem ipsum dolor sit amet consectetur. In nulla euismod ut et lacus. Viverra lectus lacus aliquet et dignissim quam sed. Sed.Lorem ipsum dolor sit amet consectetur. In nulla euismod ut et lacus. ",
-    },
-    {
-      year: "2018",
-      img: "https://cdn.prod.website-files.com/6788e6c70fa2b23ccce907d3/6895a5d2fd74c2308c048a50_9a9b5baacc76ea6ec51d52d27ca306b3_illustration2%20%281%29.avif",
-      title: "Lorem ipsum dolor sit amet consectetur.",
-      description: "Lorem ipsum dolor sit amet consectetur. In nulla euismod ut et lacus. Viverra lectus lacus aliquet et dignissim quam sed. Sed.Lorem ipsum dolor sit amet consectetur. In nulla euismod ut et lacus. ",
-    },
-    {
-      year: "2019",
-      img: "https://cdn.prod.website-files.com/6788e6c70fa2b23ccce907d3/6895a5d2fd74c2308c048a50_9a9b5baacc76ea6ec51d52d27ca306b3_illustration2%20%281%29.avif",
-      title: "Lorem ipsum dolor sit amet consectetur.",
-      description: "Lorem ipsum dolor sit amet consectetur. In nulla euismod ut et lacus. Viverra lectus lacus aliquet et dignissim quam sed. Sed.Lorem ipsum dolor sit amet consectetur. In nulla euismod ut et lacus. ",
-    },
-    {
-      year: "2020",
-      img: "https://cdn.prod.website-files.com/6788e6c70fa2b23ccce907d3/6895a5d2fd74c2308c048a50_9a9b5baacc76ea6ec51d52d27ca306b3_illustration2%20%281%29.avif",
-      title: "Lorem ipsum dolor sit amet consectetur.",
-      description: "Lorem ipsum dolor sit amet consectetur. In nulla euismod ut et lacus. Viverra lectus lacus aliquet et dignissim quam sed. Sed.Lorem ipsum dolor sit amet consectetur. In nulla euismod ut et lacus. ",
-    },
-    {
-      year: "2021",
-      img: "https://cdn.prod.website-files.com/6788e6c70fa2b23ccce907d3/6895a5d2fd74c2308c048a50_9a9b5baacc76ea6ec51d52d27ca306b3_illustration2%20%281%29.avif",
-      title: "Lorem ipsum dolor sit amet consectetur.",
-      description: "Lorem ipsum dolor sit amet consectetur. In nulla euismod ut et lacus. Viverra lectus lacus aliquet et dignissim quam sed. Sed.Lorem ipsum dolor sit amet consectetur. In nulla euismod ut et lacus. ",
-    },
-    {
-      year: "2022",
-      img: "https://cdn.prod.website-files.com/6788e6c70fa2b23ccce907d3/6895a5d2fd74c2308c048a50_9a9b5baacc76ea6ec51d52d27ca306b3_illustration2%20%281%29.avif",
-      title: "Lorem ipsum dolor sit amet consectetur.",
-      description: "Lorem ipsum dolor sit amet consectetur. In nulla euismod ut et lacus. Viverra lectus lacus aliquet et dignissim quam sed. Sed.Lorem ipsum dolor sit amet consectetur. In nulla euismod ut et lacus. ",
-    },
-    {
-      year: "2025",
-      img: "https://cdn.prod.website-files.com/6788e6c70fa2b23ccce907d3/6895a5d2fd74c2308c048a50_9a9b5baacc76ea6ec51d52d27ca306b3_illustration2%20%281%29.avif",
-      title: "Lorem ipsum dolor sit amet consectetur.",
-      description: "Lorem ipsum dolor sit amet consectetur. In nulla euismod ut et lacus. Viverra lectus lacus aliquet et dignissim quam sed. Sed.Lorem ipsum dolor sit amet consectetur. In nulla euismod ut et lacus. ",
-    },
-  ];
+  {
+    year: "Feb 2023",
+    title: "Inkam begins the journey",
+    description:
+      "Inkam began building and testing an MVP to simplify digital distribution for retailers and field teams in Bangladesh.",
+  },
+  {
+    year: "Jun 2023",
+    title: "BIG 2023: Top 50 startup",
+    description:
+      "Named Top 50 at the Bangabandhu Innovation Grant grand finale, gaining national validation through a govt-backed programme.",
+  },
+  {
+    year: "Aug 2023",
+    title: "Tally MSME Honours: Next Gen Icon",
+    description:
+      "Won the Next Generation Icon award at Tally MSME Honours Bangladesh for tackling distribution and access gaps.",
+  },
+  {
+    year: "Sep 2023",
+    title: "$125K pre-seed secured",
+    description:
+      "Raised $125K pre-seed to accelerate product development, strengthen field ops, and scale market execution.",
+  },
+  {
+    year: "Oct 2023",
+    title: "Turtle Venture Studio Cohort 1",
+    description:
+      "Joined Turtle Venture Studio Cohort 1 for structured venture building, sharper GTM focus, and investment readiness.",
+  },
+  {
+    year: "Apr 2024",
+    title: "Demo Day in Singapore",
+    description:
+      "Pitched at Turtle Venture Studio Demo Day in Singapore to regional investors and ecosystem leaders.",
+  },
+  {
+    year: "Dec 2024",
+    title: "Agent network hits 10,000",
+    description:
+      "Scaled the agent network to 10,000, improving last-mile execution and consistent retailer service.",
+  },
+  {
+    year: "Feb 2025",
+    title: "99% penetration milestone",
+    description:
+      "Reached 99% penetration in the untapped target segment across active pilots, driven by strong repeat usage.",
+  },
+];
+
   return (
     <div>
       <HeaderBanner title="About Us" heading={

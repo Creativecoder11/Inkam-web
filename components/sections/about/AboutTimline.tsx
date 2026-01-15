@@ -6,7 +6,7 @@ import TextAnimation from "@/components/ui/textAnimation";
 
 interface TimelineItem {
   year: string;
-  img: string;
+  // img: string;
   title: string;
   description?: string; // Made optional to match page.tsx data
 }

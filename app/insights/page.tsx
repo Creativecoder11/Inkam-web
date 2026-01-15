@@ -10,8 +10,7 @@ const page = () => {
                 title="Insights"
                 heading={
                     <>
-                        Transforming Digital <br />
-                        Access Across Bangladesh
+                        Follow our journey to <br/> digitalize distribution
                     </>
                 } />
             <Blogs />

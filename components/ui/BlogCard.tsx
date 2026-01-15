@@ -7,6 +7,7 @@ interface BlogArticle {
     title: string;
     excerpt: string;
     image: StaticImageData;
+    url: string;
 }
 
 interface BlogCardProps {
@@ -17,22 +18,18 @@ interface BlogCardProps {
 export default function BlogCard({ article, actionLabel = "Read More" }: BlogCardProps) {
     return (
         <div className="rounded-xl md:rounded-3xl overflow-hidden bg-[#161518] transition-all duration-300 group">
-            {/* Image Container */}
             <div className="relative h-56 md:h-64 overflow-hidden">
                 <Image
                     src={article.image}
                     alt={article.title}
                     fill
-                    className="object-fill"
+                    className="object-cover"
                 />
             </div>
 
-            {/* Content */}
-            <div className="p-3 md:p-5">
-                {/* Meta Info */}
-                <div className="flex items-center gap-3 md:gap-4 text-gray-400 text-base mb-3 md:mb-4">
-                    {/* Date */}
-                    <div className="flex items-center gap-1 md:gap-2">
+            <div className="p-4 md:p-5">
+              {/* Date */}
+                    <div className="flex items-center my-2 gap-1 md:gap-2">
                         {/* calendar icon */}
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -63,52 +60,35 @@ export default function BlogCard({ article, actionLabel = "Read More" }: BlogCar
                                 strokeWidth="1.4"
                             />
                         </svg>
-                        <span className="text-xs md:text-base">{article.date}</span>
+                        <span className="text-xs text-white md:text-base">{article.date}</span>
                     </div>
 
-                    {/* Comments */}
-                    <div className="flex items-center gap-1 md:gap-2">
-                        {/* comments icon */}
-                        <svg className="w-4 h-4 md:w-5 md:h-5" fill="none" viewBox="0 0 20 20">
-                            <path
-                                d="M6.66668 11.25H13.3333M6.66668 7.08333H10"
-                                stroke="#B7B7B8"
-                                strokeWidth="1.3"
-                            />
-                            <path
-                                d="M5.08235 15.8335C3.99892 15.7269 3.1873 15.4015 2.64298 14.8572C1.66667 13.8809 1.66667 12.3095 1.66667 9.16683V8.75016C1.66667 5.60747 1.66667 4.03612 2.64298 3.05981C3.61929 2.0835 5.19064 2.0835 8.33334 2.0835H11.6667C14.8094 2.0835 16.3807 2.0835 17.357 3.05981C18.3333 4.03612 18.3333 5.60747 18.3333 8.75016V9.16683C18.3333 12.3095 18.3333 13.8809 17.357 14.8572C16.3807 15.8335 14.8094 15.8335 11.6667 15.8335C11.1996 15.8439 10.8276 15.8794 10.4622 15.9627C9.46353 16.1926 8.53877 16.7036 7.62489 17.1492C6.32274 17.7842 5.67167 18.1016 5.26308 17.8044C4.48142 17.2223 5.24545 15.4184 5.41667 14.5835"
-                                stroke="#B7B7B8"
-                                strokeWidth="1.3"
-                            />
-                        </svg>
-                        <span className="text-xs md:text-base">{article.comments}</span>
-                    </div>
-                </div>
-
-                {/* Title */}
-                <h3 className="text-white text-lg md:text-2xl font-semibold mb-2 md:mb-3">
+                <h3 className="text-white text-lg md:text-2xl font-semibold mb-3">
                     {article.title}
                 </h3>
 
-                {/* Excerpt */}
-                <p className="text-gray-400 text-sm md:text-base mb-4 md:mb-6 line-clamp-2">
+                <p className="text-gray-400 text-sm md:text-base mb-6 line-clamp-2">
                     {article.excerpt}
                 </p>
 
-                {/* CTA */}
-                <button className="group relative inline-flex items-center gap-2 text-white text-sm md:text-base font-medium transition-colors overflow-hidden">
+                {/* EXTERNAL LINK */}
+                <a
+                    href={article.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group inline-flex items-center gap-2 text-white font-medium"
+                >
                     <span className="relative">
                         {actionLabel}
-                        <span className="absolute bottom-0 left-0 h-0.5 w-0 bg-orange-500 transition-all duration-500 ease-out group-hover:w-full"></span>
+                        <span className="absolute bottom-0 left-0 h-0.5 w-0 bg-orange-500 transition-all duration-500 group-hover:w-full" />
                     </span>
 
-                    {/* Arrow */}
                     <svg
                         width="20"
                         height="20"
                         viewBox="0 0 24 24"
                         fill="none"
-                        className="-translate-x-1 transition-all duration-500 ease-out group-hover:translate-x-0"
+                        className="-translate-x-1 transition-all duration-500 group-hover:translate-x-0"
                     >
                         <path
                             d="M7 17L17 7M17 7H7M17 7V17"
@@ -116,7 +96,7 @@ export default function BlogCard({ article, actionLabel = "Read More" }: BlogCar
                             strokeWidth="1.5"
                         />
                     </svg>
-                </button>
+                </a>
             </div>
         </div>
     );

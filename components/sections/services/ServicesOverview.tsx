@@ -1,6 +1,6 @@
 import Image from 'next/image'
-import srvcImage1 from "@/asset/images/srvcImage1.jpg";
-import srvcImage2 from "@/asset/images/srvcImage2.png";
+import serviceImage from '@/asset/images/services image 1.webp';
+import serviceImage1 from '@/asset/images/services image 2.webp';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import TextAnimation from '@/components/ui/textAnimation';
 
@@ -67,7 +67,7 @@ export default function ServicesOverview() {
         <div className="w-full flex gap-4 md:gap-10 ">
           <div className="w-1/2 relative rounded-lg md:rounded-[20px] overflow-hidden">
             <Image
-              src={srvcImage1}
+              src={serviceImage1}
               alt="Team collaborating in modern office"
               width={800}
               height={600}
@@ -77,7 +77,7 @@ export default function ServicesOverview() {
           </div>
           <div className="w-1/2 relative rounded-lg md:rounded-[20px] overflow-hidden">
             <Image
-              src={srvcImage2}
+              src={serviceImage}
               alt="Team collaborating in modern office"
               width={800}
               height={600}

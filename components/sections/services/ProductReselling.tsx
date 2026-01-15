@@ -4,7 +4,8 @@ import Image from "next/image";
 import type { StaticImageData } from "next/image";
 import React, { useState, useEffect, useRef } from "react";
 import * as echarts from "echarts";
-import HandshakeIcon from "@/asset/icons/feature-i-3.svg";
+import NetworkingIcon from "@/asset/icons/feature-i-2.svg";
+import HandsboxIcon from "@/asset/icons/feature-i-1.svg";
 import CardVector from "@/asset/icons/card-vector.svg";
 import avatar1 from "@/asset/images/avatar1.png";
 import avatar2 from "@/asset/images/avatar2.png";
@@ -310,7 +311,7 @@ export default function ProductReselling() {
                     {/* Handshake Icon */}
                     <Image
                       className="feature-icon"
-                      src={HandshakeIcon}
+                      src={NetworkingIcon}
                       alt="Feature Icon"
                       width={60}
                       height={60}

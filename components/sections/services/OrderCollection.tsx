@@ -10,7 +10,8 @@ import {
   ResponsiveContainer,
   Tooltip,
 } from "recharts";
-import HandshakeIcon from "@/asset/icons/feature-i-3.svg";
+// import HandshakeIcon from "@/asset/icons/feature-i-3.svg";
+import HandsboxIcon from "@/asset/icons/feature-i-1.svg";
 import CardVector from "@/asset/icons/card-vector.svg";
 
 interface SpotlightCardProps {
@@ -153,7 +154,7 @@ export default function OrderCollectionServices() {
                   {/* Handshake Icon */}
                   <Image
                     className="feature-icon"
-                    src={HandshakeIcon}
+                    src={HandsboxIcon}
                     alt="Feature Icon"
                     width={60}
                     height={60}

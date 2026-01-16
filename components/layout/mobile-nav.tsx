@@ -29,87 +29,87 @@ interface MobileNavProps {
 // Animation variants with proper typing
 const backdropVariants: Variants = {
   hidden: { opacity: 0 },
-  visible: { 
+  visible: {
     opacity: 1,
-    transition: { duration: 0.3, ease: "easeOut" }
+    transition: { duration: 0.3, ease: "easeOut" },
   },
-  exit: { 
+  exit: {
     opacity: 0,
-    transition: { duration: 0.25, ease: "easeIn", delay: 0.1 }
-  }
+    transition: { duration: 0.25, ease: "easeIn", delay: 0.1 },
+  },
 };
 
 const menuContainerVariants: Variants = {
   hidden: { opacity: 0 },
-  visible: { 
+  visible: {
     opacity: 1,
-    transition: { 
+    transition: {
       duration: 0.3,
       ease: "easeOut",
       staggerChildren: 0.06,
-      delayChildren: 0.1
-    }
+      delayChildren: 0.1,
+    },
   },
-  exit: { 
+  exit: {
     opacity: 0,
-    transition: { 
-      duration: 0.2, 
+    transition: {
+      duration: 0.2,
       ease: "easeIn",
       staggerChildren: 0.03,
-      staggerDirection: -1
-    }
-  }
+      staggerDirection: -1,
+    },
+  },
 };
 
 const menuItemVariants: Variants = {
-  hidden: { 
-    opacity: 0, 
+  hidden: {
+    opacity: 0,
     y: 20,
-    filter: "blur(4px)"
+    filter: "blur(4px)",
   },
-  visible: { 
-    opacity: 1, 
+  visible: {
+    opacity: 1,
     y: 0,
     filter: "blur(0px)",
-    transition: { 
-      duration: 0.35, 
-      ease: [0.25, 0.46, 0.45, 0.94] as const // Custom cubic bezier
-    }
+    transition: {
+      duration: 0.35,
+      ease: [0.25, 0.46, 0.45, 0.94] as const, // Custom cubic bezier
+    },
   },
-  exit: { 
-    opacity: 0, 
+  exit: {
+    opacity: 0,
     y: -10,
     filter: "blur(4px)",
-    transition: { 
-      duration: 0.2, 
-      ease: "easeIn"
-    }
-  }
+    transition: {
+      duration: 0.2,
+      ease: "easeIn",
+    },
+  },
 };
 
 const socialContainerVariants: Variants = {
   hidden: { opacity: 0 },
-  visible: { 
+  visible: {
     opacity: 1,
-    transition: { 
+    transition: {
       duration: 0.3,
       ease: "easeOut",
       staggerChildren: 0.05,
-      delayChildren: 0.35
-    }
+      delayChildren: 0.35,
+    },
   },
-  exit: { 
+  exit: {
     opacity: 0,
-    transition: { duration: 0.15 }
-  }
+    transition: { duration: 0.15 },
+  },
 };
 
 // Toggle button component
-export function MobileNavToggle({ 
-  isOpen, 
-  onToggle 
-}: { 
-  isOpen: boolean; 
+export function MobileNavToggle({
+  isOpen,
+  onToggle,
+}: {
+  isOpen: boolean;
   onToggle: () => void;
 }) {
   return (
@@ -181,11 +181,14 @@ export function MobileNavOverlay({
   }, [isOpen]);
 
   // Close on Escape key
-  const handleKeyDown = useCallback((e: KeyboardEvent) => {
-    if (e.key === "Escape" && isOpen) {
-      onClose();
-    }
-  }, [isOpen, onClose]);
+  const handleKeyDown = useCallback(
+    (e: KeyboardEvent) => {
+      if (e.key === "Escape" && isOpen) {
+        onClose();
+      }
+    },
+    [isOpen, onClose]
+  );
 
   useEffect(() => {
     document.addEventListener("keydown", handleKeyDown);
@@ -219,7 +222,7 @@ export function MobileNavOverlay({
             exit="exit"
             onClick={handleBackdropClick}
             className="fixed inset-0 z-9999 bg-black/80 backdrop-blur-md"
-            style={{ 
+            style={{
               paddingTop: "env(safe-area-inset-top)",
               paddingBottom: "env(safe-area-inset-bottom)",
             }}
@@ -232,7 +235,7 @@ export function MobileNavOverlay({
             animate="visible"
             exit="exit"
             className="fixed inset-0 z-10000 flex flex-col overflow-y-auto overscroll-contain"
-            style={{ 
+            style={{
               paddingTop: "calc(env(safe-area-inset-top) + 80px)",
               paddingBottom: "env(safe-area-inset-bottom)",
             }}
@@ -289,7 +292,7 @@ export function MobileNavOverlay({
                 variants={socialContainerVariants}
                 className="mt-auto pt-8"
               >
-                <motion.p 
+                <motion.p
                   variants={menuItemVariants}
                   className="mb-4 text-sm font-medium uppercase tracking-widest text-white/50"
                 >
@@ -314,7 +317,7 @@ export function MobileNavOverlay({
                 </div>
 
                 {/* Copyright / Additional Info */}
-                <motion.p 
+                <motion.p
                   variants={menuItemVariants}
                   className="mt-8 text-sm text-white/40"
                 >
@@ -335,8 +338,17 @@ const defaultSocialLinks: SocialLink[] = [
     name: "Facebook",
     href: "https://www.facebook.com/inkamapp",
     icon: (
-      <svg className="size-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-        <path fillRule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clipRule="evenodd" />
+      <svg
+        className="size-5"
+        fill="currentColor"
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+      >
+        <path
+          fillRule="evenodd"
+          d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
+          clipRule="evenodd"
+        />
       </svg>
     ),
   },
@@ -344,7 +356,12 @@ const defaultSocialLinks: SocialLink[] = [
     name: "LinkedIn",
     href: "https://www.linkedin.com/company/79548722",
     icon: (
-      <svg className="size-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+      <svg
+        className="size-5"
+        fill="currentColor"
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+      >
         <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
       </svg>
     ),

@@ -57,8 +57,8 @@ const links: FooterLinkGroup[] = [
         href: "contact",
       },
       {
-        title: "Privacy and Policy",
-        href: "#",
+        title: "Privacy Policy",
+        href: "privacy-policy",
       },
       {
         title: "Contact Us",

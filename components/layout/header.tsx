@@ -11,7 +11,6 @@ import {
 } from "@/components/layout/mobile-nav";
 
 const menuItems = [
-  { name: "Home", href: "/" },
   { name: "About", href: "/about" },
   { name: "Services", href: "/services" },
   { name: "Insights", href: "/insights" },

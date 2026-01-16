@@ -115,33 +115,11 @@ export function MobileNavToggle({
   return (
     <button
       onClick={onToggle}
-      aria-label={isOpen ? "Close Menu" : "Open Menu"}
+      aria-label="Open Menu"
       aria-expanded={isOpen}
-      className="relative z-10001 flex h-10 w-10 items-center justify-center rounded-lg transition-colors duration-200 hover:bg-white/10 lg:hidden"
+      className="relative z-[10001] flex h-10 w-10 items-center justify-center rounded-lg transition-all duration-200 hover:bg-white/10 lg:hidden"
     >
-      <AnimatePresence mode="wait" initial={false}>
-        {isOpen ? (
-          <motion.div
-            key="close"
-            initial={{ opacity: 0, rotate: -90, scale: 0.8 }}
-            animate={{ opacity: 1, rotate: 0, scale: 1 }}
-            exit={{ opacity: 0, rotate: 90, scale: 0.8 }}
-            transition={{ duration: 0.2, ease: "easeOut" }}
-          >
-            <X className="size-6 text-white" />
-          </motion.div>
-        ) : (
-          <motion.div
-            key="menu"
-            initial={{ opacity: 0, rotate: 90, scale: 0.8 }}
-            animate={{ opacity: 1, rotate: 0, scale: 1 }}
-            exit={{ opacity: 0, rotate: -90, scale: 0.8 }}
-            transition={{ duration: 0.2, ease: "easeOut" }}
-          >
-            <Menu className="size-6 text-white" />
-          </motion.div>
-        )}
-      </AnimatePresence>
+      <Menu className="size-6 text-white" />
     </button>
   );
 }
@@ -240,6 +218,46 @@ export function MobileNavOverlay({
               paddingBottom: "env(safe-area-inset-bottom)",
             }}
           >
+            {/* Close Button */}
+            <motion.button
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.2 }}
+              onClick={onClose}
+              className="group absolute right-6 top-6 z-[10002] flex h-10 w-10 items-center justify-center transition-transform duration-200 hover:scale-110"
+              aria-label="Close menu"
+            >
+              <div className="relative size-8">
+                {/* Base X icon */}
+                <X className="size-8 text-white/60 stroke-[2]" />
+                
+                {/* Masked glowing X overlay */}
+                <div className="absolute inset-0 overflow-hidden">
+                  <div className="relative size-full" style={{ maskImage: 'url("data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'24\' height=\'24\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'white\' stroke-width=\'2\' stroke-linecap=\'round\' stroke-linejoin=\'round\'%3E%3Cpath d=\'M18 6 6 18\'/%3E%3Cpath d=\'m6 6 12 12\'/%3E%3C/svg%3E")', maskSize: 'contain', maskPosition: 'center', maskRepeat: 'no-repeat', WebkitMaskImage: 'url("data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'24\' height=\'24\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'white\' stroke-width=\'2\' stroke-linecap=\'round\' stroke-linejoin=\'round\'%3E%3Cpath d=\'M18 6 6 18\'/%3E%3Cpath d=\'m6 6 12 12\'/%3E%3C/svg%3E")', WebkitMaskSize: 'contain', WebkitMaskPosition: 'center', WebkitMaskRepeat: 'no-repeat' }}>
+                    {/* Scanning glow line - angled and glowy */}
+                    <motion.div
+                      initial={{ left: "-30%" }}
+                      animate={{ left: "130%" }}
+                      transition={{ 
+                        delay: 1,
+                        duration: 1.2,
+                        ease: "linear",
+                        repeat: Infinity,
+                        repeatDelay: 3
+                      }}
+                      className="absolute -top-2 h-[140%] w-[6px]"
+                      style={{
+                        transform: "rotate(-20deg)",
+                        background: "linear-gradient(to bottom, transparent 0%, rgba(255, 200, 100, 0.4) 15%, rgba(255, 140, 0, 1) 50%, rgba(255, 200, 100, 0.4) 85%, transparent 100%)",
+                        boxShadow: "0 0 25px 6px rgba(255, 140, 0, 0.9), 0 0 15px 3px rgba(255, 200, 100, 0.6), 0 0 8px 2px rgba(255, 255, 255, 0.5)",
+                        filter: "blur(1px)"
+                      }}
+                    />
+                  </div>
+                </div>
+              </div>
+            </motion.button>
+
             <div className="flex flex-1 flex-col justify-between px-8 py-6">
               {/* Primary Navigation Links */}
               <div className="flex flex-col gap-1">

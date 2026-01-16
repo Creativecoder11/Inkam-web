@@ -41,13 +41,14 @@ const logos = [
 export default function LogoCloud() {
   return (
     <section className="overflow-hidden py-10 md:py-16">
-      <div className="relative mx-auto max-w-7xl px-6">
-        <h3 className="text-base md:text-lg text-center text-white">
-          Trusted by leading brands across fintech, edtech, healthcare, ecommerce, and logistics
+      <div className="relative mx-auto max-w-7xl">
+        <h3 className="text-base md:text-lg text-center text-white px-6">
+          Trusted by leading brands across fintech, edtech, healthcare,
+          ecommerce, and logistics
         </h3>
 
         {/* Marquee wrapper */}
-        <div className="relative mt-6 overflow-hidden">
+        <div className="relative mt-12 overflow-hidden">
           {/* Left fade */}
           <div className="marquee-fade-left" />
           {/* Right fade */}

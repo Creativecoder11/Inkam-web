@@ -14,6 +14,7 @@ const menuItems = [
   { name: "About", href: "/about" },
   { name: "Services", href: "/services" },
   { name: "Insights", href: "/insights" },
+  { name: "Agent", href: "/agent" },
 ];
 
 export const HeroHeader = () => {

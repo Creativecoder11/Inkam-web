@@ -79,6 +79,8 @@ export default function AgentStory() {
                 height={600}
                 className="w-full h-auto"
                 priority
+                sizes="100vw"
+                style={{ width: "100%", height: "auto" }}
               />
             </div>
 

@@ -1,8 +1,32 @@
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import TextAnimation from "@/components/ui/textAnimation";
+import bdjobs from "@/asset/logos/bdjobs.svg";
+import priyoshop from "@/asset/logos/priyoshop.svg";
+import drutoloan from "@/asset/logos/drutoloan.svg";
+import keeron from "@/asset/logos/keeron.svg";
+import sourcing from "@/asset/logos/sourcing.svg";
+import dhakabank from "@/asset/logos/dhakabank.svg";
+import amarlab from "@/asset/logos/amarlab.svg";
+import tenminute from "@/asset/logos/10minute.svg";
+import swap from "@/asset/logos/swap.svg";
+import medigo from "@/asset/logos/medigo.svg";
+import khaodao from "@/asset/logos/khaodao.svg";
 import React from "react";
 
 export default function AgentPartners() {
+  const logos = [
+    bdjobs,
+    priyoshop,
+    drutoloan,
+    keeron,
+    sourcing,
+    dhakabank,
+    amarlab,
+    tenminute,
+    swap,
+    medigo,
+    khaodao,
+  ];
   return (
     <div className="max-w-7xl mx-auto py-15 md:py-25">
       <div className="text-center space-y-4 mb-16">
@@ -38,7 +62,7 @@ export default function AgentPartners() {
                 </defs>
               </svg>
             </div>
-            <p className="title-text text-sm md:text-xl">IMPACT NUMBERS</p>
+            <p className="title-text text-sm md:text-xl">Partners</p>
             <div className="mobile-line">
               <svg
                 className="title-line-right"
@@ -73,12 +97,51 @@ export default function AgentPartners() {
         </ScrollReveal>
         <TextAnimation>
           <h2 className="text-3xl font-semibold lg:text-6xl leading-[1.2] mb-4 md:mb-12 text-white text-center">
-            Driving Economic Growth <br className="hidden md:block" />
-            with Financial Projections & Metrics
+            Partner with the Best
           </h2>
         </TextAnimation>
       </div>
 
+      <div className="space-y-8 md:space-y-14">
+        {/* First Row - 4 logos */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 items-center justify-items-center">
+          {logos.slice(0, 4).map((logo, index) => (
+            <div key={index} className="flex items-center justify-center w-full">
+              <img
+                src={logo.src}
+                alt="Partner Logo"
+                className="max-h-12 md:max-h-16 object-contain grayscale opacity-80 hover:opacity-100 transition duration-300"
+              />
+            </div>
+          ))}
+        </div>
+
+        {/* Second Row - 4 logos */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 items-center justify-items-center">
+          {logos.slice(4, 8).map((logo, index) => (
+            <div key={index} className="flex items-center justify-center w-full">
+              <img
+                src={logo.src}
+                alt="Partner Logo"
+                className="max-h-12 md:max-h-16 object-contain grayscale opacity-80 hover:opacity-100 transition duration-300"
+              />
+            </div>
+          ))}
+        </div>
+
+        {/* Third Row - 3 logos centered */}
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-12 items-center justify-items-center max-w-4xl mx-auto">
+          {logos.slice(8, 11).map((logo, index) => (
+            <div key={index} className="flex items-center justify-center w-full">
+              <img
+                src={logo.src}
+                alt="Partner Logo"
+                className="max-h-12 md:max-h-16 object-contain grayscale opacity-80 hover:opacity-100 transition duration-300"
+              />
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }

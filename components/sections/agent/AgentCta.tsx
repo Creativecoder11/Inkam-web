@@ -1,47 +1,134 @@
-import React from 'react';
+import ScrollReveal from "@/components/ui/ScrollReveal";
+import TextAnimation from "@/components/ui/textAnimation";
+import bgElementRight from "@/asset/icons/others-page-icon-right.svg";
+import bgElementLeft from "@/asset/icons/others-page-icon-left.svg";
+import React from "react";
 
 const AgentCTA: React.FC = () => {
   return (
-    <div className=" flex items-center justify-center px-4 py-12 overflow-hidden">
-      {/* Background decorative elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        {/* Top left corner decoration */}
-        <div className="absolute -top-32 -left-32 w-96 h-96 border border-blue-900/30 rounded-3xl transform rotate-45"></div>
-        
-        {/* Top right corner decoration */}
-        <div className="absolute -top-32 -right-32 w-96 h-96 border border-yellow-900/30 rounded-3xl transform rotate-45"></div>
-        
-        {/* Bottom left corner decoration */}
-        <div className="absolute -bottom-32 -left-32 w-96 h-96 border border-blue-900/30 rounded-3xl transform rotate-45"></div>
-        
-        {/* Bottom right corner decoration */}
-        <div className="absolute -bottom-32 -right-32 w-96 h-96 border border-yellow-900/30 rounded-3xl transform rotate-45"></div>
-      </div>
-
+    <div className=" flex items-center justify-center mt-15 mb-28 overflow-hidden">
       {/* Main content card */}
-      <div className="relative w-full max-w-6xl bg-gradient-to-br from-gray-900/50 to-gray-800/50 rounded-3xl border border-gray-700/50 backdrop-blur-sm p-12 md:p-20">
-        {/* Join US header with decorative lines */}
-        <div className="flex items-center justify-center gap-4 mb-8">
-          <div className="h-px w-24 bg-gradient-to-r from-transparent via-orange-500 to-orange-500"></div>
-          <h3 className="text-gray-300 text-sm md:text-base tracking-wider">Join US</h3>
-          <div className="h-px w-24 bg-gradient-to-l from-transparent via-orange-500 to-orange-500"></div>
-        </div>
+      <div className="relative w-full max-w-7xl space-y-6 overflow-hidden bg-white/5 rounded-3xl">
+        <div style={{
+          backgroundImage: `url(${bgElementRight.src}), url(${bgElementLeft.src})`,
+          // backgroundAttachment: "fixed",
+          backgroundRepeat: "no-repeat, no-repeat",
+          backgroundSize: "265px auto, 265px auto",
+          backgroundPosition: `
+            calc(100% - (-40px)) 0px,
+            -50px 0px
+          `,
+        }}
+        className="bg-no-repeat w-full py-15">
+          <div className="w-full h-full pointer-events-none -z-1">
+            {/* Left Color */}
+            <div
+              className="
+              absolute -left-20 top-0 w-[550px] h-[450px]
+              bg-[#005CAF]/20 blur-[200px] rounded-full
 
-        {/* Main heading */}
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white text-center mb-6 leading-tight">
-          Ready to Be an Entrepreneur?
-        </h1>
+            "
+            />
+            {/* Right Color */}
+            <div
+              className="
+              absolute -right-20 bottom-1/4 w-[550px] h-[450px]
+              bg-[#FF8800]/20 blur-[200px] rounded-full
+            "
+              style={{ animationDelay: "1.8s" }}
+            />
+          </div>
+          {/* Join US header with decorative lines */}
+          <div className="flex items-center justify-center">
+            <div className="text-white flex flex-col gap-4">
+              {/* Heading Text */}
+              <ScrollReveal>
+                <div className="flex justify-center items-center gap-2 md:gap-4">
+                  <div className="mobile-line">
+                    <svg
+                      className="title-line-left"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="167"
+                      height="2"
+                      viewBox="0 0 167 2"
+                      fill="none"
+                    >
+                      <path
+                        d="M166 1H1"
+                        stroke="url(#paint0_linear_2239_2185)"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                      />
+                      <defs>
+                        <linearGradient
+                          id="paint0_linear_2239_2185"
+                          x1="171"
+                          y1="0.49994"
+                          x2="158.078"
+                          y2="45.5518"
+                          gradientUnits="userSpaceOnUse"
+                        >
+                          <stop stopColor="#FF8800" />
+                          <stop offset="0.981629" stopColor="#0F0E11" />
+                        </linearGradient>
+                      </defs>
+                    </svg>
+                  </div>
+                  <p className="title-text text-sm md:text-xl">
+                    Join US
+                  </p>
+                  <div className="mobile-line">
+                    <svg
+                      className="title-line-right"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="167"
+                      height="2"
+                      viewBox="0 0 167 2"
+                      fill="none"
+                    >
+                      <path
+                        d="M1 1H166"
+                        stroke="url(#paint0_linear_2239_2159)"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                      />
+                      <defs>
+                        <linearGradient
+                          id="paint0_linear_2239_2159"
+                          x1="-3.99979"
+                          y1="0.49994"
+                          x2="8.92156"
+                          y2="45.5518"
+                          gradientUnits="userSpaceOnUse"
+                        >
+                          <stop stopColor="#FF8800" />
+                          <stop offset="0.981629" stopColor="#0F0E11" />
+                        </linearGradient>
+                      </defs>
+                    </svg>
+                  </div>
+                </div>
+              </ScrollReveal>
+              <TextAnimation>
+                <h2 className="text-3xl font-semibold lg:text-5xl leading-[1.2] text-white text-center">
+                  Ready to Be an Entrepreneur?
+                </h2>
+              </TextAnimation>
+            </div>
+          </div>
 
-        {/* Subheading */}
-        <p className="text-gray-400 text-center text-base md:text-lg lg:text-xl mb-10 max-w-3xl mx-auto">
-          The digital economy is growing. Claim your share of this market today.
-        </p>
+          {/* Subheading */}
+          <p className="text-gray-400 text-center text-xl py-5 md:text-lg lg:text-xl mx-auto">
+            The digital economy is growing. Claim your share of this market
+            today.
+          </p>
 
-        {/* CTA Button */}
-        <div className="flex justify-center">
-          <button className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-semibold px-8 py-4 rounded-xl text-base md:text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-orange-500/30">
-            Download Inkam Agent App
-          </button>
+          {/* CTA Button */}
+          <div className="flex justify-center">
+            <button className="bg-(--orange) hover:bg-orange-500 text-white font-semibold px-8 py-4 rounded-xl text-base md:text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-orange-500/30">
+              Download Inkam Agent App
+            </button>
+          </div>
         </div>
       </div>
     </div>

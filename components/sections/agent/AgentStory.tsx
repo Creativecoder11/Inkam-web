@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import aboutimg1 from "@/asset/images/aboutimg1.webp";
+import agentImg from "@/asset/images/agentImg.png";
 import TextAnimation from "@/components/ui/textAnimation";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 export default function AgentStory() {
@@ -16,7 +16,7 @@ export default function AgentStory() {
             <div className="space-y-3 md:space-y-7">
               <ScrollReveal>
                 <div className="flex justify-start text-white items-center gap-2 md:gap-4">
-                  <p className="title-text text-sm md:text-xl">OUR STORY</p>
+                  <p className="title-text text-sm md:text-xl uppercase">Become an Agent</p>
                   <div className="mobile-line">
                     {/* svg omitted for brevity */}
                     <svg
@@ -53,7 +53,7 @@ export default function AgentStory() {
 
               <TextAnimation>
                 <h1 className="text-3xl font-semibold lg:text-6xl leading-[1.2] mb-4 md:mb-12 text-white">
-                  Driving Growth Through Smarter Digital Distribution
+                  Connect, Refer, Earn, from anywhere in Bangladesh.
                 </h1>
               </TextAnimation>
 
@@ -73,7 +73,7 @@ export default function AgentStory() {
           <div className="w-full md:w-1/2">
             <div className="relative rounded-lg md:rounded-[20px] overflow-hidden shadow-[0_10px_20px_rgba(0,0,0,0.5)] md:shadow-[0_20px_60px_rgba(0,0,0,0.5)]">
               <Image
-                src={aboutimg1}
+                src={agentImg}
                 alt="Team collaborating in modern office"
                 width={800}
                 height={600}
@@ -84,7 +84,7 @@ export default function AgentStory() {
 
             <TextAnimation delay={0.2}>
               <p className="mt-4 md:mt-8 text-base text-(--grey)">
-                Inkam empowers digital businesses with nationwide distribution, enabling greater reach, higher sales, and seamless access to millions of untapped customers across Bangladesh.
+                Start your own digital business in minutes, no fixed hours—just you, the Inkam app, and endless opportunities to earn. Join 19,000+ people who are already earning on their own terms.
               </p>
             </TextAnimation>
 

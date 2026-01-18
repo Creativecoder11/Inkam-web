@@ -1,98 +1,49 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import TextAnimation from "@/components/ui/textAnimation";
 import ScrollReveal from "@/components/ui/ScrollReveal";
+import handShake from "@/asset/icons/handShake.svg";
+import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function AgentBenefits() {
-  const stats = [
+  const values = [
     {
       number: "01",
-      label: "Active Agents",
-      value: 19000,
-      format: "K+",
+      title: "Complete Flexibility",
+      subTitle: "Work Anytime, Anywhere",
       description:
-        "Digital entrepreneurs nationwide using the inkam app to connect businesses with consumers across 99% of Bangladesh.",
+        "Whether you are at home, on campus, or at a tea stall, your business travels with you. Our network covers 99% of Bangladesh, so your location is never a barrier.",
     },
     {
       number: "02",
-      label: "Digital Businesses Supported",
-      value: 3000,
-      format: "K+",
+      title: "Guaranteed Earnings",
+      subTitle: "On-Time Payments",
       description:
-        "Over 3,000 businesses partner with inkam to boost sales and overcome hurdles in digital product distribution.",
+        "Say goodbye to chasing invoices. We ensure transparent tracking and reliable payouts for every sale you make. You focus on the hustle; we handle the transaction.",
     },
     {
       number: "03",
-      label: "Consumers Reached",
-      value: 100000,
-      format: "K+",
+      title: "Professional Identity",
+      subTitle: "Become a Digital Entrepreneur",
       description:
-        "Target market includes 105 million currently offline consumers and 67 million online users in Bangladesh.",
+        "You aren't just a user; you are a partner. We empower you to build a sustainable source of income and gain financial independence as a recognized digital entrepreneur.",
     },
     {
       number: "04",
-      label: "Monthly Revenue Growth",
-      value: 7.8,
-      format: "%",
+      title: "Zero Investment, High Reward",
+      subTitle: "No Capital Required",
       description:
-        "Inkam's strong Month-to-Month growth rate, setting the company on a fast track for significant financial milestones by 2028.",
+        "Starting a business usually costs money. With Inkam, it’s free. You get instant access to a massive inventory of products without spending a single taka on stock or setup.",
     },
   ];
 
   const sectionRef = useRef<HTMLElement | null>(null);
-  const [currentValues, setCurrentValues] = useState(stats.map(() => 0));
 
-  // -------------------------
-  // GSAP number animations
-  // -------------------------
-  useEffect(() => {
-    if (!sectionRef.current) return;
-
-    const ctx = gsap.context(() => {
-      stats.forEach((stat, index) => {
-        const counter = { value: 0 };
-
-        gsap.to(counter, {
-          value: stat.value,
-          duration: 2.2,
-          ease: "power1.out",
-          scrollTrigger: {
-            trigger: `.impact-stat-${index}`,
-            start: "top 85%",
-            once: true,
-          },
-          onUpdate: () => {
-            setCurrentValues((prev) => {
-              const next = [...prev];
-              next[index] =
-                stat.format === "%"
-                  ? Number(counter.value.toFixed(1))
-                  : Math.floor(counter.value);
-              return next;
-            });
-          },
-        });
-      });
-    }, sectionRef);
-
-    return () => ctx.revert();
-  }, []);
-
-  // -------------------------
-  // Number formatting
-  // -------------------------
-  const formatNumber = (num: number, type: string) => {
-    if (type === "%") return `${num}%`;
-    if (type === "K+") return `${Math.floor(num / 100) / 10}K+`;
-    if (type === "M+") return `${Math.floor(num / 100000) / 10}M+`;
-    if (type === "+") return `${num}+`;
-    return num.toLocaleString();
-  };
 
 
   return (
@@ -133,7 +84,7 @@ export default function AgentBenefits() {
                   </defs>
                 </svg>
               </div>
-              <p className="title-text text-sm md:text-xl">IMPACT NUMBERS</p>
+              <p className="title-text text-sm md:text-xl uppercase">Benefits</p>
               <div className="mobile-line">
                 <svg
                   className="title-line-right"
@@ -168,48 +119,51 @@ export default function AgentBenefits() {
           </ScrollReveal>
           <TextAnimation>
             <h2 className="text-3xl font-semibold lg:text-6xl leading-[1.2] mb-4 md:mb-12 text-white text-center">
-              Driving Economic Growth <br className="hidden md:block" />
-              with Financial Projections & Metrics
+              Why Become an Inkam Agent?
             </h2>
           </TextAnimation>
         </div>
 
         {/* Stats Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 pt-4 md:pt-13 gap-4 md:gap-8">
-          {stats.map((stat, index) => (
+          {values.map((value, index) => (
             <div
-              key={stat.label}
-              className={`impact-stat-${index} relative rounded-lg md:rounded-2xl p-4 md:p-7 bg-[#201F22]`}
+              key={value.number}
+              className="relative bg-[#201F22] flex flex-col gap-12 rounded-xl md:rounded-2xl p-4 md:p-8"
             >
-              {/* Content */}
-              <div className="relative flex flex-col gap-6 md:gap-16 z-10">
-                {/* Number Badge */}
-                <div className="flex items-center gap-2 mb-4">
-                  <span className="text-(--orange) text-base md:text-xl font-medium">
-                    {stat.number}.
-                  </span>
-                  <span className="text-gray-300 text-base md:text-xl font-medium">
-                    {stat.label}
-                  </span>
-                </div>
-
-                <div>
-                  {/* Stat Value */}
-                  <div className="mb-2 md:mb-4">
-                    <div className="text-5xl md:text-8xl text-white tracking-tight">
-                      {formatNumber(currentValues[index], stat.format)}
-                    </div>
-                  </div>
-
-                  {/* Description */}
-                  <p className="text-(--grey) text-sm md:text-base leading-relaxed">
-                    {stat.description}
-                  </p>
-                </div>
+              {/* Icon Container */}
+              <div className="w-12 h-12 md:w-16 md:h-16 bg-white/5 rounded-lg md:rounded-xl flex items-center justify-center mb-2 md:mb-6">
+                <Image src={handShake || ""} alt={value.title} />
               </div>
+              <div>
+                {/* Number and Title */}
+                <div className="mb-2 md:mb-7">
+                  <h3 className="text-xl md:text-2xl font-medium text-white">
+                    <span className="text-(--orange)">{value.number}.</span>{" "}
+                    {value.title}
+                  </h3>
+                </div>
 
-              {/* Decorative Corner */}
-              <div className="absolute top-0 right-0 w-32 h-32 bg-linear-to-br from-orange-500/10 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <hr
+                  className="mb-1 md:mb-4"
+                  style={{
+                    border: "1px solid",
+                    borderImageSource:
+                      "linear-gradient(90deg, rgba(255, 255, 255, 0.3) 0%, rgba(39, 38, 41, 0.3) 100%)",
+                    borderImageSlice: 1,
+                  }}
+                />
+
+                {/* Sub Title */}
+                <p className="text-(--orange) text-lg md:text-2xl leading-relaxed italic mb-1">
+                  {value.subTitle}
+                </p>
+
+                {/* Description */}
+                <p className="text-gray-400 text-sm md:text-base leading-relaxed">
+                  {value.description}
+                </p>
+              </div>
             </div>
           ))}
         </div>

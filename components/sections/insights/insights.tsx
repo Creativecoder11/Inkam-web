@@ -2,80 +2,12 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import blogImg1 from "@/asset/images/Blog/inkam insights - image.webp";
-import blogImg2 from "@/asset/images/Blog/inkam insights - image-2.webp";
-import blogImg3 from "@/asset/images/Blog/inkam insights - image-5.webp";
-import blogImg4 from "@/asset/images/Blog/inkam insights - image-4.webp";
-import blogImg5 from "@/asset/images/Blog/inkam insights - image-1.webp";
-import blogImg6 from "@/asset/images/Blog/inkam insights - image-3.webp";
 import BlogCard from "@/components/ui/BlogCard";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import TextAnimation from "@/components/ui/textAnimation";
+import { articles } from "@/lib/articles-data";
 
 export default function Insights() {
-  const articles = [
-    {
-      id: 1,
-      date: "20-04-24",
-      comments: 223,
-      title: "Singapore Demo Day Spotlights Bangladeshi Turtle Startups",
-      excerpt:
-        "Seven startups from Turtle's first cohort including Chhaya, Inkam, Revorium, Drutoloan, Shunboi...",
-      image: blogImg1,
-      url: "https://www.dhakatribune.com/business/344448/turtle-venture-studio-s-demo-day-in-singapore",
-    },
-    {
-      id: 2,
-      date: "12-06-24",
-      comments: 223,
-      title: "Rising Together: Meet & Greet with Razor Capital",
-      excerpt:
-        "Turtle Venture orchestrated a momentous Meet & Greet event with Razor Capital, a prominent.",
-      image: blogImg2,
-      url: "#",
-    },
-    {
-      id: 3,
-      date: "15-07-24",
-      comments: 223,
-      title: "Market Presence and Partnership Meeting",
-      excerpt:
-        "inkam has formed key partnerships with 10 divisional distributors, driving regional...",
-      image: blogImg3,
-      url: "#",
-    },
-    {
-      id: 4,
-      date: "17-01-23",
-      comments: 223,
-      title: "BDjobs Fair 2024 - Chittagong",
-      excerpt:
-        "Seven startups from Turtle's first cohort including Chhaya, Inkam, Revorium, Drutoloan, Shunboi...",
-      image: blogImg4,
-      url: "#",
-    },
-    {
-      id: 5,
-      date: "20-06-23",
-      comments: 223,
-      title: "BIG top 10 selected startup",
-      excerpt:
-        "Seven startups from Turtle's first cohort including Chhaya, Inkam, Revorium, Drutoloan, Shunboi...",
-      image: blogImg5,
-      url: "https://www.dhakatribune.com/business/344448/turtle-venture-studio-s-demo-day-in-singapore",
-    },
-    {
-      id: 6,
-      date: "07-11-24",
-      comments: 223,
-      title: "Next Generation Icon Award in MSME Honours presented",
-      excerpt:
-        "Inkam has been awarded with Next Generation Icon Award in MSME Honours presented by ....",
-      image: blogImg6,
-      url: "https://www.thedailystar.net/business/organisation-news/press-releases/news/25-bangladesh-based-companies-win-big-tally-msme-honours-2023-3387036",
-    },
-  ];
-
   const [highlight, setHighlight] = useState(articles[0]);
 
   useEffect(() => {
@@ -87,20 +19,53 @@ export default function Insights() {
     <div className="w-full py-15 md:py-25">
       <div className="max-w-7xl mx-4 md:mx-auto">
         {/* ------------------- TOP TITLE ------------------- */}
-        <ScrollReveal>
-          <div className="space-y-2 md:space-y-7 text-white">
+        <div className="w-full flex flex-col gap-3 md:gap-8">
+          <div className="space-y-3 md:space-y-7">
+            <ScrollReveal>
+              <div className="flex justify-start text-white items-center gap-2 md:gap-4">
+                <p className="title-text text-sm md:text-xl">INSIGHTS</p>
+                <div className="mobile-line">
+                  <svg
+                    className="title-line-right"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="167"
+                    height="2"
+                    viewBox="0 0 167 2"
+                    fill="none"
+                  >
+                    <path
+                      d="M1 1H166"
+                      stroke="url(#paint0_linear_2239_2159)"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                    />
+                    <defs>
+                      <linearGradient
+                        id="paint0_linear_2239_2159"
+                        x1="-3.99979"
+                        y1="0.49994"
+                        x2="8.92156"
+                        y2="45.5518"
+                        gradientUnits="userSpaceOnUse"
+                      >
+                        <stop stopColor="#FF8800" />
+                        <stop offset="0.981629" stopColor="#0F0E11" />
+                      </linearGradient>
+                    </defs>
+                  </svg>
+                </div>
+              </div>
+            </ScrollReveal>
             <TextAnimation>
-              <h2 className="text-3xl md:text-[60px] leading-tight">
-                Press Releases,
-                <br />
-                Announcements, and Insights
-              </h2>
+              <h1 className="text-3xl font-semibold lg:text-6xl text-white">
+                Press Releases, <br /> Announcements, and Insights
+              </h1>
             </TextAnimation>
           </div>
-        </ScrollReveal>
+        </div>
 
         {/* ------------------- HIGHLIGHT SECTION ------------------- */}
-        <div className="w-full mt-12 min-h-[550px] rounded-2xl relative flex items-end justify-center">
+        <div className="w-full mt-12 min-h-137.5 rounded-2xl relative flex items-end justify-center">
           <Image
             src={highlight.image}
             alt={highlight.title}
@@ -111,12 +76,11 @@ export default function Insights() {
 
           <div className="bg-[#201F22] max-w-237.5 -mb-15 py-5 px-6 rounded-xl relative z-10">
             <div className="flex items-center my-2 gap-1 md:gap-2">
-              {/* calendar icon */}
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="w-4 h-4 md:w-5 md:h-5"
                 fill="none"
-                viewBox="0 0 20 20" // <-- add this
+                viewBox="0 0 20 20"
               >
                 <path
                   d="M9.16666 10.8335H13.3333M6.66666 10.8335H6.67415M10.8333 14.1668H6.66666M13.3333 14.1668H13.3258"
@@ -147,11 +111,11 @@ export default function Insights() {
 
             <p className="text-gray-300 text-xl mb-6">{highlight.excerpt}</p>
 
-            {/* EXTERNAL LINK */}
+            {/* LINK - External or Internal */}
             <a
-              href={highlight.url}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={highlight.url || `/insights/${highlight.slug}`}
+              target={highlight.url ? "_blank" : "_self"}
+              rel={highlight.url ? "noopener noreferrer" : undefined}
               className="group inline-flex items-center gap-2 text-white font-medium"
             >
               <span className="relative">

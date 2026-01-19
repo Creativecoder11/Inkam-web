@@ -3,11 +3,11 @@ import Image, { StaticImageData } from "next/image";
 interface BlogArticle {
     id: number;
     date: string;
-    comments: number;
     title: string;
     excerpt: string;
     image: StaticImageData;
-    url: string;
+    url: string | null;
+    slug: string | null;
 }
 
 interface BlogCardProps {
@@ -16,6 +16,10 @@ interface BlogCardProps {
 }
 
 export default function BlogCard({ article, actionLabel = "Read More" }: BlogCardProps) {
+    // Determine the href: use external URL if available, otherwise use internal slug
+    const href = article.url || `/insights/${article.slug}`;
+    const isExternal = !!article.url;
+
     return (
         <div className="rounded-xl md:rounded-3xl overflow-hidden bg-[#161518] transition-all duration-300 group">
             <div className="relative h-56 md:h-64 overflow-hidden">
@@ -35,7 +39,7 @@ export default function BlogCard({ article, actionLabel = "Read More" }: BlogCar
                             xmlns="http://www.w3.org/2000/svg"
                             className="w-4 h-4 md:w-5 md:h-5"
                             fill="none"
-                            viewBox="0 0 20 20" // <-- add this
+                            viewBox="0 0 20 20"
                         >
                             <path
                                 d="M9.16666 10.8335H13.3333M6.66666 10.8335H6.67415M10.8333 14.1668H6.66666M13.3333 14.1668H13.3258"
@@ -71,11 +75,11 @@ export default function BlogCard({ article, actionLabel = "Read More" }: BlogCar
                     {article.excerpt}
                 </p>
 
-                {/* EXTERNAL LINK */}
+                {/* LINK - External or Internal */}
                 <a
-                    href={article.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href={href}
+                    target={isExternal ? "_blank" : "_self"}
+                    rel={isExternal ? "noopener noreferrer" : undefined}
                     className="group inline-flex items-center gap-2 text-white font-medium"
                 >
                     <span className="relative">

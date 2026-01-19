@@ -1,45 +1,13 @@
 "use client";
 
 import BlogCard from "@/components/ui/BlogCard";
-import blogImg1 from "@/asset/images/Blog/inkam insights - image.webp";
-import blogImg2 from "@/asset/images/Blog/inkam insights - image-2.webp";
-import blogImg3 from "@/asset/images/Blog/inkam insights - image-5.webp";
 import TextAnimation from "@/components/ui/textAnimation";
 import ScrollReveal from "@/components/ui/ScrollReveal";
+import { articles } from "@/lib/articles-data";
 
 export default function BlogInsight() {
-  const articles = [
-    {
-            id: 1,
-            date: "20-04-24",
-            comments: 223,
-            title: "Singapore Demo Day Spotlights Bangladeshi Turtle Startups",
-            excerpt:
-                "Seven startups from Turtle's first cohort including Chhaya, Inkam, Revorium, Drutoloan, Shunboi...",
-            image: blogImg1,
-            url: "https://www.dhakatribune.com/business/344448/turtle-venture-studio-s-demo-day-in-singapore",
-        },
-        {
-            id: 2,
-            date: "12-06-24",
-            comments: 223,
-            title: "Rising Together: Meet & Greet with Razor Capital",
-            excerpt:
-                "Turtle Venture orchestrated a momentous Meet & Greet event with Razor Capital, a prominent.",
-            image: blogImg2,
-            url: "#",
-        },
-        {
-            id: 3,
-            date: "15-07-24",
-            comments: 223,
-            title: "Market Presence and Partnership Meeting",
-            excerpt:
-                "inkam has formed key partnerships with 10 divisional distributors, driving regional...",
-            image: blogImg3,
-            url: "#",
-        },
-  ];
+  // Get only the first 3 articles
+  const featuredArticles = articles.slice(0, 3);
 
   return (
     <div className="w-full py-25">
@@ -93,7 +61,7 @@ export default function BlogInsight() {
 
         {/* ---------- BLOG GRID ---------- */}
         <div className="grid grid-cols-1 pt-12 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {articles.map((article) => (
+          {featuredArticles.map((article) => (
             <BlogCard
               key={article.id}
               article={article}

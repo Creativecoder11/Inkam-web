@@ -6,9 +6,9 @@ import React from "react";
 
 const AgentCTA: React.FC = () => {
   return (
-    <div className=" flex items-center justify-center mt-15 mb-28 overflow-hidden">
+    <div className="flex items-center justify-center mt-15 mb-28 overflow-hidden">
       {/* Main content card */}
-      <div className="relative w-full max-w-7xl space-y-6 overflow-hidden bg-white/5 rounded-3xl">
+      <div className="relative w-full max-w-7xl mx-4 space-y-3 md:space-y-6 overflow-hidden bg-white/5 rounded-3xl">
         <div style={{
           backgroundImage: `url(${bgElementRight.src}), url(${bgElementLeft.src})`,
           // backgroundAttachment: "fixed",
@@ -19,12 +19,12 @@ const AgentCTA: React.FC = () => {
             -50px 0px
           `,
         }}
-        className="bg-no-repeat w-full py-15">
+          className="bg-no-repeat w-full py-15">
           <div className="w-full h-full pointer-events-none -z-1">
             {/* Left Color */}
             <div
               className="
-              absolute -left-20 top-0 w-[550px] h-[450px]
+              absolute -left-20 top-0 w-137.5 h-112.5
               bg-[#005CAF]/20 blur-[200px] rounded-full
 
             "
@@ -32,7 +32,7 @@ const AgentCTA: React.FC = () => {
             {/* Right Color */}
             <div
               className="
-              absolute -right-20 bottom-1/4 w-[550px] h-[450px]
+              absolute -right-20 bottom-1/4 w-137.5 h-112.5
               bg-[#FF8800]/20 blur-[200px] rounded-full
             "
               style={{ animationDelay: "1.8s" }}
@@ -75,7 +75,7 @@ const AgentCTA: React.FC = () => {
                     </svg>
                   </div>
                   <p className="title-text text-sm md:text-xl">
-                    Join US
+                    JOIN US
                   </p>
                   <div className="mobile-line">
                     <svg
@@ -118,7 +118,7 @@ const AgentCTA: React.FC = () => {
           </div>
 
           {/* Subheading */}
-          <p className="text-gray-400 text-center text-xl py-5 md:text-lg lg:text-xl mx-auto">
+          <p className="text-gray-400 text-center text-base py-5 px-4 md:text-lg lg:text-xl mx-auto">
             The digital economy is growing. Claim your share of this market
             today.
           </p>

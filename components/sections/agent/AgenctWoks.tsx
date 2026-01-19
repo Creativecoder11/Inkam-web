@@ -3,7 +3,7 @@
 import Image, { StaticImageData } from "next/image";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import TextAnimation from "@/components/ui/textAnimation";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import handShake from "@/asset/icons/handShake.svg";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
@@ -18,7 +18,26 @@ interface Step {
   detailDescription: string;
 }
 
+const useIsMdUp = () => {
+  const [isMdUp, setIsMdUp] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(min-width: 768px)");
+
+    const handler = () => setIsMdUp(mediaQuery.matches);
+    handler();
+
+    mediaQuery.addEventListener("change", handler);
+    return () => mediaQuery.removeEventListener("change", handler);
+  }, []);
+
+  return isMdUp;
+};
+
 const AgentWoks: React.FC = () => {
+  const isMdUp = useIsMdUp();
+  const [activeStep, setActiveStep] = useState<number>(1);
+
   const steps: Step[] = [
     {
       id: 1,
@@ -52,13 +71,13 @@ const AgentWoks: React.FC = () => {
     },
   ];
 
-  const [activeStep, setActiveStep] = useState<number>(1);
+
 
   const activeStepData =
     steps.find((step) => step.id === activeStep) || steps[0];
 
   return (
-    <div className=" text-white py-20 px-6 relative overflow-hidden">
+    <div className=" text-white py-20 px-4 relative overflow-hidden">
       {/* Add custom CSS animations */}
       <style jsx>{`
         @keyframes fadeInUp {
@@ -181,21 +200,23 @@ const AgentWoks: React.FC = () => {
         {/* Content Grid */}
         <div className="grid md:grid-cols-2 gap-12 justify-between">
           {/* Left Side - Steps */}
-          <div className="space-y-8 w-full">
+          <div className="space-y-4 md:space-y-8 w-full">
             {steps.map((step, index) => (
               <React.Fragment key={step.id}>
                 <div
-                  onMouseEnter={() => setActiveStep(step.id)}
-                  className="relative flex items-center gap-6 rounded-xl cursor-pointer"
+                  onMouseEnter={isMdUp ? () => setActiveStep(step.id) : undefined}
+                  onClick={!isMdUp ? () => setActiveStep(step.id) : undefined}
+                  className="relative flex items-center gap-3 rounded-xl cursor-pointer"
                 >
                   {/* Icon */}
                   <div className="shrink-0 relative z-10">
-                    <div className="w-16 h-16 rounded-full flex items-center justify-center text-2xl bg-[#ffffff0d]">
+                    <div className="w-12 md:w-16 h-12 md:h-16 rounded-full flex items-center justify-center text-2xl bg-[#ffffff0d]">
                       <Image
                         src={step.icon}
                         alt={step.title}
                         width={32}
                         height={32}
+                        className="w-6 md:w-8 h-6 md:h-8 object-cover"
                       />
                     </div>
                   </div>
@@ -212,7 +233,7 @@ const AgentWoks: React.FC = () => {
                     </div>
 
                     <h3
-                      className={`text-2xl font-bold mb-3 transition-all duration-500 ${activeStep === step.id
+                      className={`text-xl md:text-2xl font-bold mb-1.5 md:mb-3 transition-all duration-500 ${activeStep === step.id
                         ? "text-(--orange) translate-x-1"
                         : "text-white translate-x-0"
                         }`}
@@ -221,7 +242,7 @@ const AgentWoks: React.FC = () => {
                     </h3>
 
                     <p
-                      className={`leading-relaxed transition-all duration-500 ${activeStep === step.id ? "text-gray-300" : "text-gray-400"
+                      className={`text-sm md:text-base leading-relaxed transition-all duration-500 ${activeStep === step.id ? "text-gray-300" : "text-gray-400"
                         }`}
                     >
                       {step.description}
@@ -231,7 +252,7 @@ const AgentWoks: React.FC = () => {
 
                 {/* HR divider (only between steps) */}
                 {index < steps.length - 1 && (
-                  <hr className="border-0 h-px bg-[#ffffff1a] my-8" />
+                  <hr className="border-0 h-px bg-[#ffffff1a] my-6 md:my-8" />
                 )}
               </React.Fragment>
             ))}
@@ -239,8 +260,8 @@ const AgentWoks: React.FC = () => {
           </div>
 
           {/* Right Side - Details */}
-          <div className="w-[80%] sticky top-20 justify-self-end">
-            <div className="bg-linear-to-br from-gray-800/40 to-gray-900/40 backdrop-blur-sm rounded-2xl p-5 md:p-8 min-h-100 flex flex-col justify-between shadow-2xl relative overflow-hidden transition-all duration-500">
+          <div className="md:w-[80%] sticky top-20 justify-self-end">
+            <div className="bg-linear-to-br from-gray-800/40 to-gray-900/40 backdrop-blur-sm rounded-2xl p-5 md:p-8 min-h-74 md:min-h-100 flex flex-col justify-between shadow-2xl relative overflow-hidden transition-all duration-500">
               {/* Animated background gradient */}
               <div
                 className={`absolute inset-0 bg-linear-to-br from-(--orange)/10 to-transparent transition-opacity duration-700 ${activeStep ? "opacity-100" : "opacity-0"
@@ -249,10 +270,10 @@ const AgentWoks: React.FC = () => {
 
               {/* Detail Content with fade-in animation */}
               <div key={activeStep} className="animate-fadeInUp relative z-10">
-                <h2 className="text-4xl font-bold mb-6 leading-tight bg-linear-to-r from-white to-gray-300 bg-clip-text text-transparent">
+                <h2 className="text-2xl md:text-4xl font-bold mb-3 md:mb-6 leading-tight bg-linear-to-r from-white to-gray-300 bg-clip-text text-transparent">
                   {activeStepData.detailTitle}
                 </h2>
-                <p className="text-gray-300 text-lg leading-relaxed mb-8">
+                <p className="text-gray-300 text-base md:text-lg leading-relaxed md:mb-8">
                   {activeStepData.detailDescription}
                 </p>
               </div>

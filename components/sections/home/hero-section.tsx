@@ -81,7 +81,10 @@ export default function HeroSection() {
                   as="p"
                   className="mx-auto mt-4 md:mt-8 max-w-2xl text-(--grey) text-base md:text-lg"
                 >
-                  Inkam connects digital businesses with millions of offline and online consumers through Bangladesh’s largest digital distribution network of 19,000+ agents, covering 99% of the country.
+                  Inkam connects digital businesses with millions of offline and
+                  online consumers through Bangladesh’s largest digital
+                  distribution network of 19,000+ agents, covering 99% of the
+                  country.
                 </TextEffect>
 
                 <AnimatedGroup
@@ -120,7 +123,7 @@ export default function HeroSection() {
                     variant="ghost"
                     className="border border-(--orange) px-3 py-5 md:px-5 md:py-7 text-sm md:text-base text-white backdrop-blur-2xl bg-white/8 rounded-xl"
                   >
-                    <Link href="/contact">
+                    <Link href="/agent">
                       <span className="text-nowrap text-(--orange)">
                         Join as an Agent
                       </span>

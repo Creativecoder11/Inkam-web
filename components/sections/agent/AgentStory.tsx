@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import agentImg from "@/asset/images/inkam-agents.webp";
+import agentImg from "@/asset/images/agent-hero.webp";
 
 import TextAnimation from "@/components/ui/textAnimation";
 import ScrollReveal from "@/components/ui/ScrollReveal";
@@ -18,7 +18,9 @@ export default function AgentStory() {
             <div className="space-y-3 md:space-y-5">
               <ScrollReveal>
                 <div className="flex justify-start text-white items-center gap-2 md:gap-4">
-                  <p className="title-text text-sm md:text-xl uppercase">Become an Agent</p>
+                  <p className="title-text text-sm md:text-xl uppercase">
+                    Become an Agent
+                  </p>
                   <div className="mobile-line">
                     {/* svg omitted for brevity */}
                     <svg
@@ -60,7 +62,9 @@ export default function AgentStory() {
               </TextAnimation>
               <TextAnimation>
                 <p className="text-base md:text-lg text-(--grey) mb-6 md:mb-0 leading-[140%]">
-                  Join Inkam's Agent Network and empower your community with digital access while earning attractive commissions. Be the bridge to a brighter, more connected future.
+                  Join Inkam's Agent Network and empower your community with
+                  digital access while earning attractive commissions. Be the
+                  bridge to a brighter, more connected future.
                 </p>
               </TextAnimation>
             </div>
@@ -71,7 +75,7 @@ export default function AgentStory() {
               className="h-10 md:h-14 rounded-lg md:rounded-xl px-4 py-2 md:px-5 md:py-5 text-sm md:text-base bg-(--orange) hover:bg-orange-500"
             >
               <Link href="#link">
-                <span className="text-nowrap">Partner with Us</span>
+                <span className="text-nowrap">Become an Agent</span>
               </Link>
             </Button>
           </div>

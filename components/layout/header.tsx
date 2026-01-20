@@ -45,7 +45,7 @@ export const HeroHeader = () => {
           className={cn(
             "mx-auto mt-2 max-w-[1440px] px-6 transition-all duration-300 lg:px-12",
             isScrolled &&
-              "max-w-7xl rounded-2xl border-white/10 bg-white/8 backdrop-blur-xl lg:px-5"
+              "max-w-7xl rounded-2xl border-white/10 bg-white/8 backdrop-blur-xl lg:px-5",
           )}
         >
           <div className="relative flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 lg:py-4">
@@ -74,7 +74,7 @@ export const HeroHeader = () => {
                         "relative duration-200 text-(--grey) hover:text-(--orange)",
                         "before:absolute before:left-0 before:-bottom-1 before:h-0.5 before:w-0 before:bg-current before:transition-all before:duration-300 hover:before:w-full",
                         pathname === item.href &&
-                          "text-(--orange) before:w-full"
+                          "text-(--orange) before:w-full",
                       )}
                     >
                       {item.name}
@@ -86,6 +86,19 @@ export const HeroHeader = () => {
 
             {/* Desktop Contact Button */}
             <div className="hidden lg:block">
+              <Button
+                key={2}
+                asChild
+                size="lg"
+                // variant="ghost"
+                className="border border-(--orange) mr-4 px-3 py-5 md:px-5 md:py-5 text-sm md:text-base text-white backdrop-blur-2xl bg-white/10 rounded-lg"
+              >
+                <Link href="/agent">
+                  <span className="text-nowrap text-(--orange)">
+                    Join as an Agent
+                  </span>
+                </Link>
+              </Button>
               <Button
                 asChild
                 size="sm"

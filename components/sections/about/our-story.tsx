@@ -13,10 +13,10 @@ export default function OurStorySection() {
         <div className="w-full flex flex-col md:flex-row gap-8 md:gap-20">
           {/* Left Content */}
           <div className="w-full md:w-1/2 flex flex-col justify-between items-start gap-0 md:gap-8">
-            <div className="space-y-3 md:space-y-7">
+            <div className="space-y-3 md:space-y-5">
               <ScrollReveal>
                 <div className="flex justify-start text-white items-center gap-2 md:gap-4">
-                  <p className="title-text text-sm md:text-xl">OUR STORY</p>
+                  <p className="title-text text-sm md:text-xl uppercase">OUR STORY</p>
                   <div className="mobile-line">
                     {/* svg omitted for brevity */}
                     <svg
@@ -52,11 +52,15 @@ export default function OurStorySection() {
               </ScrollReveal>
 
               <TextAnimation>
-                <h1 className="text-3xl font-semibold lg:text-6xl leading-[1.2] mb-4 md:mb-12 text-white">
+                <h1 className="text-3xl font-semibold lg:text-6xl leading-[1.2] mb-6 text-white">
                   Driving Growth Through Smarter Digital Distribution
                 </h1>
               </TextAnimation>
-
+              <TextAnimation>
+                <p className="text-base md:text-lg text-(--grey) leading-[140%]">
+                  Inkam empowers digital businesses with nationwide distribution, enabling greater reach, higher sales, and seamless access to millions of untapped customers across Bangladesh.
+                </p>
+              </TextAnimation>
             </div>
 
             <Button
@@ -81,13 +85,6 @@ export default function OurStorySection() {
                 priority
               />
             </div>
-
-            <TextAnimation delay={0.2}>
-              <p className="mt-4 md:mt-8 text-base text-(--grey)">
-                Inkam empowers digital businesses with nationwide distribution, enabling greater reach, higher sales, and seamless access to millions of untapped customers across Bangladesh.
-              </p>
-            </TextAnimation>
-
           </div>
         </div>
       </div>

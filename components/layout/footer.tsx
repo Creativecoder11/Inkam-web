@@ -54,7 +54,7 @@ const links: FooterLinkGroup[] = [
       },
       {
         title: "Join as an Agent",
-        href: "contact",
+        href: "agent",
       },
       {
         title: "Privacy Policy",

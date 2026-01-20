@@ -43,6 +43,12 @@ export default function About() {
       "Joined Turtle Venture Studio Cohort 1 for structured venture building, sharper GTM focus, and investment readiness.",
   },
   {
+    year: "Jan 2024",
+    title: "Selected for Smart Bangladesh Accelerator Program",
+    description:
+      "A major step forward in building Bangladesh’s next-generation distribution infrastructure",
+  },
+  {
     year: "Apr 2024",
     title: "Demo Day in Singapore",
     description:

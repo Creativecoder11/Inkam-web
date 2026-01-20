@@ -3,9 +3,10 @@
 import Image from "next/image";
 import { articles } from "@/lib/articles-data";
 import Link from "next/link";
+import PartnershipMeeting from "./partnership-meeting";
 
-const PartnershipMeeting = () => {
-  const article = articles[2];
+const BangladeshAccelerator = () => {
+  const article = articles[5];
 
   // Convert date from "dd-mm-yy" to "ddth Month yyyy" format
   const formatDate = (dateStr: string) => {
@@ -49,8 +50,7 @@ const PartnershipMeeting = () => {
       <div className="text-white max-w-7xl mx-4 md:mx-auto">
         <div className="pt-10 md:pt-20">
           <h1 className="text-2xl md:text-5xl font-semibold leading-[130%] md:tracking-[-2px]">
-            Inkam Hosts Divisional Partner Meetup to Accelerate Nationwide
-            Growth & Field Execution
+            Inkam Joins the Smart Bangladesh Accelerator Program (GSS-C02)
           </h1>
           <p className="text-[#CFCFCF] text-base md:text-base md:text-lg leading-[140%] mt-2">
             Posted on {formatDate(article.date)}
@@ -69,131 +69,205 @@ const PartnershipMeeting = () => {
           <div className="flex flex-col gap-8 md:gap-12 md:mx-30">
             <div className="flex flex-col gap-2 md:gap-4">
               <p className="text-base md:text-lg leading-[140%]">
-                Inkam hosted its <strong>Divisional Partner Meetup 2026</strong>
-                , bringing together key regional partners from across Bangladesh
-                to strengthen alignment on execution, expand last-mile reach,
-                and accelerate the next phase of Inkam’s platform-led growth.
-                The meetup convened Inkam’s divisional representatives, channel
-                partners, and operational leaders for a day of roadmap sharing,
-                partner enablement, and collaborative planning.
+                <strong>
+                  A major step forward in building Bangladesh’s next-generation
+                  distribution infrastructure
+                </strong>
               </p>
               <p className="text-base md:text-lg leading-[140%]">
-                The gathering focused on one clear goal: building a stronger
-                nationwide ecosystem where partners can grow their income,
-                support retailers more efficiently, and scale distribution with
-                smarter tools and clearer processes.
+                Inkam is proud to announce a major milestone in our journey:{" "}
+                <strong>
+                  we have been selected for the Growth-Stage Startup Program
+                  (GSS-C02 Cohort) under the Smart Bangladesh Accelerator
+                  Program.
+                </strong>
               </p>
               <p className="text-base md:text-lg leading-[140%]">
-                “Inkam is built on partnerships — the people who drive execution
-                on the ground are the reason scale becomes possible,” said
-                Khalid Hossain, <strong>Cofounder, Inkam</strong>. “This meetup
-                was about sharpening alignment, upgrading how we work, and
-                ensuring every division has the tools and clarity to win in the
-                field.”
+                This inclusion is more than recognition—it is a strong
+                validation of what we are building: a{" "}
+                <strong>pioneering, scalable distribution platform</strong>{" "}
+                designed to make commerce more efficient, accessible, and
+                opportunity-driven across Bangladesh.
               </p>
             </div>
             <div className="flex flex-col gap-2 md:gap-4">
               <p className="text-2xl md:text-[32px] font-semibold leading-[120%]">
-                Strengthening the Backbone of Growth
+                A Milestone That Reflects Our Mission
               </p>
               <p className="text-base md:text-lg leading-[140%]">
-                The Divisional Partner Meetup served as a platform to reinforce
-                Inkam’s operational model and strengthen the capabilities of its
-                partner network. Participants shared divisional learnings, local
-                market realities, and field insights — helping shape a more
-                responsive and scalable execution strategy.
+                From day one, Inkam has been focused on solving a critical
+                problem in Bangladesh’s economy: distribution.
               </p>
               <p className="text-base md:text-lg leading-[140%]">
-                Key discussions highlighted the importance of speed,
-                reliability, and partner empowerment in building a nationwide
-                network that can sustainably serve retailers and customers at
-                scale.
+                Across the country, millions of retailers and
+                micro-entrepreneurs rely on fragmented systems, outdated supply
+                chains, limited market visibility, and manual operations. These
+                challenges slow down growth, limit income potential, and reduce
+                access to consistent product supply—especially outside major
+                cities.
+              </p>
+              <p className="text-base md:text-lg leading-[140%]">
+                Inkam exists to change that reality.
+              </p>
+              <p className="text-base md:text-lg leading-[140%]">
+                By leveraging technology, partner networks, and real-time
+                operational systems, Inkam is building a distribution model that
+                is:
+              </p>
+              <ul className="list-disc pl-6 flex flex-col gap-3 text-base md:text-lg leading-[140%]">
+                <li>structured and scalable</li>
+                <li>driven by transparency and performance</li>
+                <li>designed to empower partners and retailers</li>
+                <li>built to unlock more earning opportunities nationwide</li>
+              </ul>
+              <p className="text-base md:text-lg leading-[140%]">
+                Being part of the GSS-C02 Cohort strengthens our ability to
+                accelerate this mission with sharper execution and greater
+                ecosystem access.
               </p>
             </div>
 
-
             <div className="flex flex-col gap-4 md:gap-6 text-white">
               <p className="text-2xl md:text-[32px] font-semibold leading-[120%]">
-                Roadmap Highlights Shared at the Meetup
+                Why This Matters: Distribution is the Backbone of Growth
               </p>
               <p className="text-base md:text-lg leading-[140%] opacity-90">
-                During the session, Inkam presented major upcoming priorities
-                and partner-focused improvements, including:
+                Bangladesh is entering a new era—where “Digital Bangladesh” is
+                evolving into **Smart Bangladesh**, and technology is expected
+                to play a deeper role in enabling national progress.
+              </p>
+              <p className="text-base md:text-lg leading-[140%] opacity-90">
+                But no economy becomes “smart” without fixing how goods move,
+                how retailers operate, and how businesses grow from the ground
+                up.
+              </p>
+              <p className="text-base md:text-lg leading-[140%] opacity-90">
+                Distribution is not just a logistics challenge—it’s a **national
+                growth unlock**.
+              </p>
+              <p className="text-base md:text-lg leading-[140%] opacity-90">
+                A more intelligent distribution system creates ripple effects
+                across the economy:
               </p>
               <ul className="list-disc pl-6 flex flex-col gap-3 text-base md:text-lg leading-[140%]">
-                <li>
-                  <span className="font-semibold">
-                    Upgraded partner workflows
-                  </span>{" "}
-                  for faster onboarding, structured reporting, and smoother
-                  coordination
-                </li>
-
-                <li>
-                  <span className="font-semibold">
-                    Improved retailer engagement models
-                  </span>{" "}
-                  to increase repeat orders and strengthen long-term retention
-                </li>
-
-                <li>
-                  <span className="font-semibold">Operational playbooks</span>{" "}
-                  for divisional teams to standardize execution across regions
-                </li>
-
-                <li>
-                  <span className="font-semibold">
-                    Clearer incentive & performance frameworks
-                  </span>{" "}
-                  designed to reward consistency and quality delivery
-                </li>
+                <li>small shops stay stocked and stable</li>
+                <li>suppliers get stronger market reach</li>
+                <li>sales teams become more productive</li>
+                <li>communities gain faster access to essential products</li>
+                <li>entrepreneurship becomes more viable in every district</li>
               </ul>
               <p className="text-base md:text-lg leading-[140%] opacity-90">
-                The roadmap conversation also reinforced Inkam’s mission:
-                enabling more people across Bangladesh to earn better through
-                technology-powered systems and fair growth opportunities.
+                Inkam’s platform aims to make distribution not only faster—but
+                more fair, trackable, and opportunity-focused.
               </p>
             </div>
 
+            <div className="flex flex-col gap-6 md:gap-10 text-white">
+              <div className="flex flex-col gap-4 md:gap-6">
+                <h2 className="text-2xl md:text-[32px] font-semibold leading-[120%]">
+                  What Joining GSS-C02 Means for Inkam
+                </h2>
+                <p className="text-base md:text-lg leading-[140%] opacity-90">
+                  The Smart Bangladesh Accelerator Program’s Growth-Stage
+                  Startup Program is built for startups that are moving beyond
+                  early validation and aiming for serious scale.
+                </p>
+                <p className="text-base md:text-lg leading-[140%] opacity-90">
+                  For Inkam, this opportunity brings stronger momentum across
+                  multiple areas:
+                </p>
+              </div>
+              <div className="flex flex-col gap-8 md:gap-10">
+                <div className="flex flex-col gap-3">
+                  <h3 className="text-xl md:text-2xl font-semibold leading-[130%]">
+                    1) Better Strategic Support for Scale
+                  </h3>
+                  <p className="text-base md:text-lg leading-[140%] opacity-90">
+                    With access to structured guidance and ecosystem-level
+                    support, Inkam will sharpen long-term strategy, execution
+                    planning, and sustainable scaling models.
+                  </p>
+                </div>
+                <div className="flex flex-col gap-3">
+                  <h3 className="text-xl md:text-2xl font-semibold leading-[130%]">
+                    2) Stronger Ecosystem Connectivity
+                  </h3>
+                  <p className="text-base md:text-lg leading-[140%] opacity-90">
+                    Programs like GSS-C02 bring visibility to the right
+                    partners—industry leaders, mentors, stakeholders, and
+                    collaborators who can strengthen real-world implementation
+                    and expansion.
+                  </p>
+                </div>                
+                <div className="flex flex-col gap-3">
+                  <h3 className="text-xl md:text-2xl font-semibold leading-[130%]">
+                    3) Acceleration of Product & Operational Excellence
+                  </h3>
+                  <p className="text-base md:text-lg leading-[140%] opacity-90">
+                    From tech to operations, we’ll be working to improve
+                    platform capabilities, partner workflows, and field-level
+                    efficiency—ensuring Inkam becomes even more scalable and
+                    reliable across regions.
+                  </p>
+                </div>
+                <div className="flex flex-col gap-3">
+                  <h3 className="text-xl md:text-2xl font-semibold leading-[130%]">
+                    4) National Relevance & Validation
+                  </h3>
+                  <p className="text-base md:text-lg leading-[140%] opacity-90">
+                    Inclusion in this cohort signals that the work we are doing
+                    is aligned with national digital priorities—supporting Smart
+                    Bangladesh through real economic infrastructure.
+                  </p>
+                </div>
+              </div>
+            </div>
 
-            <div className="flex flex-col gap-4 md:gap-6 text-white">
+            <div className="flex flex-col gap-2 md:gap-4">
               <p className="text-2xl md:text-[32px] font-semibold leading-[120%]">
-                Field Enablement & Training Sessions
+                The Bigger Vision: Building Opportunity at Scale
               </p>
-              <p className="text-base md:text-lg leading-[140%] opacity-90">
-                The meetup featured hands-on sessions designed to make partner operations stronger in real market conditions. Topics included:
+              <p className="text-base md:text-lg leading-[140%]">
+                At its core, Inkam is not just a platform.
+              </p>
+              <p className="text-base md:text-lg leading-[140%]">
+                It is a system designed to **unlock earning opportunities for people across Bangladesh**—from divisional partners to local retailers.
+              </p>
+              <p className="text-base md:text-lg leading-[140%]">
+                We believe distribution can become a growth engine where:
               </p>
               <ul className="list-disc pl-6 flex flex-col gap-3 text-base md:text-lg leading-[140%]">
-                <li>
-                  improving partner communication and retailer support standards
-                </li>
-                <li>
-                  best practices for customer trust-building and service discipline
-                </li>
-                <li>
-                  division-level coordination to reduce friction and improve fulfillment efficiency
-                </li>
-                <li>
-                  structured learning paths for new partners entering the network
-                </li>
+                <li>partners build stable income through performance</li>
+                <li>retailers gain easier access to products and business tools</li>
+                <li>brands expand reach without heavy operational friction</li>
+                <li>the supply chain becomes smarter, faster, and measurable</li>
               </ul>
-              <p className="text-base md:text-lg leading-[140%] opacity-90">
-                This partner enablement approach reflects Inkam’s belief that the strongest ecosystems are built through shared knowledge, repeatable systems, and clear accountability.
+              <p className="text-base md:text-lg leading-[140%]">
+                That is the future we are building toward—step by step, division by division, market by market.
               </p>
             </div>
 
             <div className="flex flex-col gap-2 md:gap-4">
               <p className="text-2xl md:text-[32px] font-semibold leading-[120%]">
-                A Shared Commitment to Nationwide Expansion
+                Our Next Chapter Starts Now
               </p>
               <p className="text-base md:text-lg leading-[140%]">
-                Inkam concluded the meetup with divisional action planning, setting collective priorities for the months ahead — focused on building deeper coverage, increasing partner productivity, and strengthening performance across the network.
+                This milestone energizes us. But more importantly, it reinforces responsibility.
               </p>
               <p className="text-base md:text-lg leading-[140%]">
-                “The next stage of growth is not only about expansion — it’s about execution quality,” added <strong>Meraj Ul Islam</strong>, COO, <strong>Inkam</strong>. “When every division runs with clarity, discipline, and shared purpose, scale becomes predictable.”
+                Being included in the <strong>Smart Bangladesh Accelerator Program (GSS-C02)</strong> is a reminder that what we are building has the potential to influence how commerce operates across the country.
+              </p>
+              <p className="text-base md:text-lg leading-[140%]">
+                We are grateful for the recognition, and even more committed to delivering impact.
+              </p>
+              <p className="text-base md:text-lg leading-[140%]">
+                To our team, partners, supporters, and everyone who believes in the mission—this is just the beginning.
+              </p>
+              <p className="text-base md:text-lg leading-[140%]">
+                <strong>Inkam is scaling. Bangladesh is moving forward. And opportunity is being built—nationwide.</strong>
               </p>
             </div>
-            
+
             <div>
               <p className="text-base md:text-lg leading-[140%] mt-5 mb-3">
                 Share
@@ -288,4 +362,4 @@ const PartnershipMeeting = () => {
   );
 };
 
-export default PartnershipMeeting;
+export default BangladeshAccelerator;

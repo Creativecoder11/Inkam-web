@@ -3,9 +3,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import agentImg from "@/asset/images/agentImg.png";
+import agentImg from "@/asset/images/inkam-agents.webp";
+
 import TextAnimation from "@/components/ui/textAnimation";
 import ScrollReveal from "@/components/ui/ScrollReveal";
+
 export default function AgentStory() {
   return (
     <div className="w-full py-15 md:py-25">

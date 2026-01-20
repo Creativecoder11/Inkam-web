@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import aboutimg1 from "@/asset/images/aboutimg1.webp";
+import aboutimg1 from "@/asset/images/about-us-agent.webp";
 import TextAnimation from "@/components/ui/textAnimation";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 export default function OurStorySection() {

@@ -1,6 +1,6 @@
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import TextAnimation from "@/components/ui/textAnimation";
-import agentImg2 from "@/asset/images/agentImg2.png";
+import agentImg2 from "@/asset/images/inkam-agents 1.webp";
 import React from "react";
 import Image from "next/image";
 

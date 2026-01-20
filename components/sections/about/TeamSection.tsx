@@ -49,7 +49,7 @@ export default function TeamSection() {
     },
     {
       name: "Soyab Mostofa",
-      role: "Brand and Communication Exe.",
+      role: "Manager",
       image: team6.src,
       linkedIn: "https://www.linkedin.com/in/soyabmostofa/",
     },

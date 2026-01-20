@@ -11,7 +11,10 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
   title: "Inkam App",
-  description: "This is most useable wolrdwide application",
+  description: "Inkam - Digital Distribution Simplified",
+  icons: {
+    icon: "/Favicon.svg",
+  },
 };
 
 

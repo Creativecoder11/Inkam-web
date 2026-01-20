@@ -57,7 +57,7 @@ export default function OurStorySection() {
                 </h1>
               </TextAnimation>
               <TextAnimation>
-                <p className="text-base md:text-lg text-(--grey) leading-[140%]">
+                <p className="text-base md:text-lg text-(--grey) mb-6 md:mb-0 leading-[140%]">
                   Inkam empowers digital businesses with nationwide distribution, enabling greater reach, higher sales, and seamless access to millions of untapped customers across Bangladesh.
                 </p>
               </TextAnimation>

@@ -57,7 +57,7 @@ export default function AgentStory() {
                 </h1>
               </TextAnimation>
               <TextAnimation>
-                <p className="text-base md:text-lg text-(--grey) leading-[140%]">
+                <p className="text-base md:text-lg text-(--grey) mb-6 md:mb-0 leading-[140%]">
                   Join Inkam's Agent Network and empower your community with digital access while earning attractive commissions. Be the bridge to a brighter, more connected future.
                 </p>
               </TextAnimation>

@@ -294,11 +294,18 @@ export function MobileNavOverlay({
                 ))}
 
                 {/* Contact Button */}
-                <motion.div variants={menuItemVariants}>
+                <motion.div variants={menuItemVariants} className="flex gap-4">
+                  <Link
+                    href="/agent"
+                    onClick={handleLinkClick}
+                    className="mt-6 inline-flex items-center justify-center rounded-full border border-(--orange) bg-white/20 px-6 py-2 text-lg font-semibold text-white transition-all duration-300 hover:bg-transparent hover:text-(--orange)"
+                  >
+                    Become an Agent
+                  </Link>
                   <Link
                     href="/contact"
                     onClick={handleLinkClick}
-                    className="mt-6 inline-flex items-center justify-center rounded-full border border-(--orange) bg-(--orange) px-8 py-4 text-lg font-semibold text-black transition-all duration-300 hover:bg-transparent hover:text-(--orange)"
+                    className="mt-6 inline-flex items-center justify-center rounded-full border border-(--orange) bg-(--orange) px-6 py-2 text-lg font-semibold text-black transition-all duration-300 hover:bg-transparent hover:text-(--orange)"
                   >
                     Contact Us
                   </Link>

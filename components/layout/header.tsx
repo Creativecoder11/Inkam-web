@@ -71,7 +71,7 @@ export const HeroHeader = () => {
                     <Link
                       href={item.href}
                       className={cn(
-                        "relative duration-200 text-(--grey) hover:text-(--orange)",
+                        "relative duration-200 text-base text-(--grey) hover:text-(--orange)",
                         "before:absolute before:left-0 before:-bottom-1 before:h-0.5 before:w-0 before:bg-current before:transition-all before:duration-300 hover:before:w-full",
                         pathname === item.href &&
                           "text-(--orange) before:w-full",
@@ -102,7 +102,7 @@ export const HeroHeader = () => {
               <Button
                 asChild
                 size="sm"
-                className="px-5 py-5 bg-(--orange) hover:bg-[#ffffff0d] hover:text-(--orange) border border-(--orange) hover:border-(--orange) transition-all duration-300"
+                className="px-5 py-5 bg-(--orange) hover:bg-[#ffffff0d] text-sm md:text-base hover:text-(--orange) border border-(--orange) hover:border-(--orange) transition-all duration-300"
               >
                 <Link href="/contact">
                   <span>Contact Us</span>

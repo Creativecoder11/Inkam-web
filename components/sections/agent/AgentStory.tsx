@@ -62,9 +62,9 @@ export default function AgentStory() {
               </TextAnimation>
               <TextAnimation>
                 <p className="text-base md:text-lg text-(--grey) mb-6 md:mb-0 leading-[140%]">
-                  Join Inkam's Agent Network and empower your community with
-                  digital access while earning attractive commissions. Be the
-                  bridge to a brighter, more connected future.
+                  Join Inkam&apos;s Agent Network and empower your community
+                  with digital access while earning attractive commissions. Be
+                  the bridge to a brighter, more connected future.
                 </p>
               </TextAnimation>
             </div>
@@ -74,7 +74,7 @@ export default function AgentStory() {
               size="lg"
               className="h-10 md:h-14 rounded-lg md:rounded-xl px-4 py-2 md:px-5 md:py-5 text-sm md:text-base bg-(--orange) hover:bg-orange-500"
             >
-              <Link href="#link">
+              <Link href="/agent">
                 <span className="text-nowrap">Become an Agent</span>
               </Link>
             </Button>

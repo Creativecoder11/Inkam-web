@@ -165,7 +165,7 @@ export function MobileNavOverlay({
         onClose();
       }
     },
-    [isOpen, onClose]
+    [isOpen, onClose],
   );
 
   useEffect(() => {
@@ -230,27 +230,43 @@ export function MobileNavOverlay({
               <div className="relative size-8">
                 {/* Base X icon */}
                 <X className="size-8 text-white/60 stroke-[2]" />
-                
+
                 {/* Masked glowing X overlay */}
                 <div className="absolute inset-0 overflow-hidden">
-                  <div className="relative size-full" style={{ maskImage: 'url("data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'24\' height=\'24\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'white\' stroke-width=\'2\' stroke-linecap=\'round\' stroke-linejoin=\'round\'%3E%3Cpath d=\'M18 6 6 18\'/%3E%3Cpath d=\'m6 6 12 12\'/%3E%3C/svg%3E")', maskSize: 'contain', maskPosition: 'center', maskRepeat: 'no-repeat', WebkitMaskImage: 'url("data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'24\' height=\'24\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'white\' stroke-width=\'2\' stroke-linecap=\'round\' stroke-linejoin=\'round\'%3E%3Cpath d=\'M18 6 6 18\'/%3E%3Cpath d=\'m6 6 12 12\'/%3E%3C/svg%3E")', WebkitMaskSize: 'contain', WebkitMaskPosition: 'center', WebkitMaskRepeat: 'no-repeat' }}>
+                  <div
+                    className="relative size-full"
+                    style={{
+                      maskImage:
+                        "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M18 6 6 18'/%3E%3Cpath d='m6 6 12 12'/%3E%3C/svg%3E\")",
+                      maskSize: "contain",
+                      maskPosition: "center",
+                      maskRepeat: "no-repeat",
+                      WebkitMaskImage:
+                        "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M18 6 6 18'/%3E%3Cpath d='m6 6 12 12'/%3E%3C/svg%3E\")",
+                      WebkitMaskSize: "contain",
+                      WebkitMaskPosition: "center",
+                      WebkitMaskRepeat: "no-repeat",
+                    }}
+                  >
                     {/* Scanning glow line - angled and glowy */}
                     <motion.div
                       initial={{ left: "-30%" }}
                       animate={{ left: "130%" }}
-                      transition={{ 
+                      transition={{
                         delay: 1,
                         duration: 1.2,
                         ease: "linear",
                         repeat: Infinity,
-                        repeatDelay: 3
+                        repeatDelay: 3,
                       }}
                       className="absolute -top-2 h-[140%] w-[6px]"
                       style={{
                         transform: "rotate(-20deg)",
-                        background: "linear-gradient(to bottom, transparent 0%, rgba(255, 200, 100, 0.4) 15%, rgba(255, 140, 0, 1) 50%, rgba(255, 200, 100, 0.4) 85%, transparent 100%)",
-                        boxShadow: "0 0 25px 6px rgba(255, 140, 0, 0.9), 0 0 15px 3px rgba(255, 200, 100, 0.6), 0 0 8px 2px rgba(255, 255, 255, 0.5)",
-                        filter: "blur(1px)"
+                        background:
+                          "linear-gradient(to bottom, transparent 0%, rgba(255, 200, 100, 0.4) 15%, rgba(255, 140, 0, 1) 50%, rgba(255, 200, 100, 0.4) 85%, transparent 100%)",
+                        boxShadow:
+                          "0 0 25px 6px rgba(255, 140, 0, 0.9), 0 0 15px 3px rgba(255, 200, 100, 0.6), 0 0 8px 2px rgba(255, 255, 255, 0.5)",
+                        filter: "blur(1px)",
                       }}
                     />
                   </div>
@@ -274,7 +290,7 @@ export function MobileNavOverlay({
                         "group relative flex items-center py-4 text-4xl font-medium tracking-tight transition-colors duration-200",
                         pathname === item.href
                           ? "text-(--orange)"
-                          : "text-white hover:text-(--orange)"
+                          : "text-white hover:text-(--orange)",
                       )}
                     >
                       <span className="relative">
@@ -294,7 +310,10 @@ export function MobileNavOverlay({
                 ))}
 
                 {/* Contact Button */}
-                <motion.div variants={menuItemVariants} className="flex flex-col gap-4">
+                <motion.div
+                  variants={menuItemVariants}
+                  className="flex flex-col gap-4"
+                >
                   <Link
                     href="/agent"
                     onClick={handleLinkClick}

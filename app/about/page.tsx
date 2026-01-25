@@ -86,7 +86,7 @@ export default function About() {
         <AboutCircularCarousel slides={data} autoplay={4000} speed={1500} />
       </div>
       <div className="block md:hidden">
-        <MobileAboutTimeline />
+        <MobileAboutTimeline data={data} />
       </div>
     </div>
   );

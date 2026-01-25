@@ -88,7 +88,7 @@ export default function AwardsSection() {
 
         <div className="w-full mt-8 md:mt-12 mx-auto grid grid-cols-2 md:grid-cols-5 gap-5 md:gap-8">
           {/* Logo 1 */}
-          <div className="h-26 md:h-36 rounded-2xl px-16 bg-[#161518] flex items-center justify-center overflow-hidden">
+          <div className="h-26 md:h-36 rounded-2xl px-10 bg-[#161518] flex items-center justify-center overflow-hidden">
             <Image
               src={awardsImg1}
               alt="Logo 1"
@@ -97,7 +97,7 @@ export default function AwardsSection() {
           </div>
 
           {/* Logo 2 */}
-          <div className="h-26 md:h-36 rounded-2xl px-16 bg-[#161518] flex items-center justify-center overflow-hidden">
+          <div className="h-26 md:h-36 rounded-2xl px-10 bg-[#161518] flex items-center justify-center overflow-hidden">
             <Image
               src={awardsImg2}
               alt="Logo 2"
@@ -106,7 +106,7 @@ export default function AwardsSection() {
           </div>
 
           {/* Logo 3 */}
-          <div className="h-26 md:h-36 rounded-2xl px-16 bg-[#161518] flex items-center justify-center overflow-hidden">
+          <div className="h-26 md:h-36 rounded-2xl px-10 bg-[#161518] flex items-center justify-center overflow-hidden">
             <Image
               src={awardsImg3}
               alt="Logo 3"
@@ -115,14 +115,14 @@ export default function AwardsSection() {
           </div>
 
           {/* Logo 4 */}
-          <div className="h-26 md:h-36 rounded-2xl px-16 bg-[#161518] flex items-center justify-center overflow-hidden">
+          <div className="h-26 md:h-36 rounded-2xl px-10 bg-[#161518] flex items-center justify-center overflow-hidden">
             <Image
               src={awardsImg4}
               alt="Logo 4"
               className="h-full w-full object-contain"
             />
           </div>
-          <div className="h-26 md:h-36 rounded-2xl px-16 bg-[#161518] flex items-center justify-center overflow-hidden">
+          <div className="h-26 md:h-36 rounded-2xl px-10 bg-[#161518] flex items-center justify-center overflow-hidden">
             <Image
               src={awardsImg5}
               alt="Logo 4"

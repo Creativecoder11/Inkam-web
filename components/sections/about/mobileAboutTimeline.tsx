@@ -8,30 +8,14 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const timelineData = [
-    {
-        year: "2022",
-        title: "Foundation",
-        desc: "Research, planning, and ecosystem architecture for long-term growth.",
-    },
-    {
-        year: "2023",
-        title: "Infrastructure",
-        desc: "Platform development, tooling, and internal systems launch.",
-    },
-    {
-        year: "2024",
-        title: "Expansion",
-        desc: "Public rollout, partnerships, and user-driven optimization.",
-    },
-    {
-        year: "2025",
-        title: "Ecosystem",
-        desc: "Automation, AI workflows, and global scaling.",
-    },
-];
 
-const MobileAboutTimeline = () => {
+type TimelineItem = {
+    year: string;
+    title: string;
+    description: string;
+};
+
+const MobileAboutTimeline = ({ data }: { data: TimelineItem[] }) => {
 
     const timelineRef = useRef<HTMLDivElement | null>(null);
 
@@ -162,31 +146,33 @@ const MobileAboutTimeline = () => {
                 {/* Vertical Line */}
                 <div className="absolute left-[50%] mt-2 top-0 h-full w-0.5 bg-[#FFFFFF33] timeline-line" />
 
-                <div className="flex flex-col gap-16">
-                    {timelineData.map((item, index) => (
+                <div className="flex flex-col gap-12">
+                    {data.map((item, index) => (
                         <div
                             key={index}
                             className="timeline-item grid grid-cols-[1fr_40px_1fr] items-start"
                         >
                             {/* Year */}
-                            <div className="text-right pr-4">
-                                <p className="text-[#FF8800] font-semibold text-lg">
-                                    {item.year}
+                            <div className="text-right pr-2">
+                                <p className="text-[#FF8800] font-semibold text-lg leading-tight">
+                                    {item.year.split(" ")[0]}
+                                    <br />
+                                    {item.year.split(" ")[1]}
                                 </p>
                             </div>
 
                             {/* Dot */}
                             <div className="flex justify-center">
-                                <span className="w-3 h-3 mt-2 ml-0.5 rounded-full bg-[#FF8800] timeline-dot" />
+                                <span className="w-3 h-3 mt-4 ml-0.5 rounded-full bg-[#FF8800] timeline-dot" />
                             </div>
 
                             {/* Content */}
-                            <div className="pl-4">
+                            <div className="pl-2 max-w-58">
                                 <h3 className="text-white text-lg font-semibold mb-1">
                                     {item.title}
                                 </h3>
                                 <p className="text-white/70 text-sm leading-relaxed">
-                                    {item.desc}
+                                    {item.description}
                                 </p>
                             </div>
                         </div>
